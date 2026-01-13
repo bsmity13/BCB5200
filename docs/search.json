@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BCB 5200: Foundations of Data Visualization",
+    "section": "",
+    "text": "This is a Quarto website, written using RStudio. To learn more about Quarto websites visit https://quarto.org/docs/websites.\nThis website houses all the materials for BCB 4200/5200 at the University of Idaho for Spring 2026. Current students please note that we are still using Canvas for submitting assignments and grading.\nThis course material was adapted and developed by Brian J. Smith. The course was originally designed and taught by Barrie Robison, and his version of the material is a valuable resource, available here: https://professorpolymorphic.github.io/BCB520/\nOn this website, you will find an abbreviated syllabus, lectures, code walkthroughs, and assignments."
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This is an abbreviated version of the official course syllabus. The full syllabus is available to University of Idaho students on Canvas."
+  },
+  {
+    "objectID": "syllabus.html#bcb-42005200",
+    "href": "syllabus.html#bcb-42005200",
+    "title": "Syllabus",
+    "section": "BCB 4200/5200",
+    "text": "BCB 4200/5200\n\nSpring 2026\nDr. Brian J. Smith\n3 Credits"
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "Course Description",
+    "text": "Course Description\nThis class will help students establish a core understanding of data visualization. We will consider how data type (including tabular, network, and spatial data) interacts with visualization task to guide design choices. Diverse types of visual encodings and how they relate to human perception will be presented, along with practical exercises using the R programming language. Upon completion of the course, students will understand WHY particular visualization approaches are effective for a given data set and HOW to implement those visualizations using R. The course is designed to be “discipline agnostic” – each student is encouraged to use data sets that they deem important/interesting. The goal is to have students learn how to develop visualizations that are relevant to their own disciplinary interests."
+  },
+  {
+    "objectID": "syllabus.html#required-course-materials",
+    "href": "syllabus.html#required-course-materials",
+    "title": "Syllabus",
+    "section": "Required Course Materials",
+    "text": "Required Course Materials\n\nInclusive Access Textbook\n\nNone\n\n\n\nAdditional Reading Materials\n\nMunzner, T. 2014. Visualization Analysis and Design. A K Peters Visualization Series, CRC Press, Boca Raton, FL.\n\n\n\nWhile the book is not required, both Dr. Robison and I have leaned heavily on the structure and approach to visualization that Dr. Munzner has developed.\n\n\n\nOther Required Materials\n\nR (free, open source)\nRStudio (free, open source)\nOptional: QGIS (free, open source)"
+  },
+  {
+    "objectID": "syllabus.html#student-learning-outcomes",
+    "href": "syllabus.html#student-learning-outcomes",
+    "title": "Syllabus",
+    "section": "Student Learning Outcomes",
+    "text": "Student Learning Outcomes\n\nDescribe and manipulate tabular, network, and spatial data; transform these data into a form suitable for visualization.\nAnalyze data visualization design choices related to marks and channels, spatial arrangement, and components of color.\nDesign new data visualizations with appropriate use of visual channels for tabular, network, and spatial data with quantitative and categorical attributes.\nImplement their data visualization designs using existing tools in R (or other toolkits preferred by the student).\nExplain whether a visual encoding is perceptually appropriate for a specific combination of task and data.\nDemonstrate their skills with at least two novel visualizations suitable for inclusion in an online Data Science Portfolio."
+  },
+  {
+    "objectID": "syllabus.html#class-schedule",
+    "href": "syllabus.html#class-schedule",
+    "title": "Syllabus",
+    "section": "Class Schedule",
+    "text": "Class Schedule\nThis current schedule is tentative. Current students please see Canvas for the most current due dates.\n\nsched &lt;- read.csv(\"schedule_2026.csv\")\nknitr::kable(sched, caption = \"\")\n\n\n\n\n\n\n\n\n\n\n\nDate\nWeek\nDay\nTopic\nHomework\n\n\n\n\n1/15/2026\n1\nThursday\nIntroductions, expectations, install software\nNA\n\n\n1/20/2026\n2\nTuesday\nComputing basics for data science; setup GitHub\nNA\n\n\n1/22/2026\n2\nThursday\nLiterate programming\n1\n\n\n1/27/2026\n3\nTuesday\nData Visualization: What and Why\nNA\n\n\n1/29/2026\n3\nThursday\nGraphics Formats\n2\n\n\n2/3/2026\n4\nThursday\nData Abstraction\nNA\n\n\n2/5/2026\n4\nTuesday\nData Wrangling in R\nNA\n\n\n2/10/2026\n5\nThursday\nNo class – Brian at Montana State\nNA\n\n\n2/12/2026\n5\nTuesday\n\nNA\n\n\n2/17/2026\n6\nThursday\nMarks and Channels\nNA\n\n\n2/19/2026\n6\nThursday\nggplot2 in R\n3\n\n\n2/24/2026\n7\nTuesday\nTabular Data\nNA\n\n\n2/26/2026\n7\nThursday\n\n4\n\n\n3/3/2026\n8\nTuesday\nManipulating Views\nNA\n\n\n3/5/2026\n8\nThursday\n\n5\n\n\n3/10/2026\n9\nThursday\nMid-term Project Presentations\nNA\n\n\n3/12/2026\n9\nTuesday\n\nNA\n\n\n3/17/2026\n10\nThursday\nSpring break\nNA\n\n\n3/19/2026\n10\nTuesday\n\nNA\n\n\n3/24/2026\n11\nThursday\nReducing Items and Attributes\nNA\n\n\n3/26/2026\n11\nThursday\n\n6\n\n\n3/31/2026\n12\nTuesday\nAnimation\nNA\n\n\n4/2/2026\n12\nThursday\n\n7\n\n\n4/7/2026\n13\nTuesday\nSpatial Data Review\nNA\n\n\n4/9/2026\n13\nThursday\nSpatial Data in R\n8\n\n\n4/14/2026\n14\nThursday\nNetwork Data Review\nNA\n\n\n4/16/2026\n14\nTuesday\nNetwork Data in R\n9\n\n\n4/21/2026\n15\nThursday\nEmbedding\nNA\n\n\n4/23/2026\n15\nTuesday\n\n10\n\n\n4/28/2026\n16\nThursday\nMiscellaneous (buffer week)\nNA\n\n\n4/30/2026\n16\nThursday\n\nNA\n\n\n5/5/2026\n17\nTuesday\nFinal Project Presentations\nNA\n\n\n5/7/2026\n17\nThursday\n\nNA"
+  },
+  {
+    "objectID": "lectures/01_intro.html",
+    "href": "lectures/01_intro.html",
+    "title": "Lecture 1: Introduction",
+    "section": "",
+    "text": "Slide 1\n\nSlide 2\n\nLast slide"
+  },
+  {
+    "objectID": "lectures.html",
+    "href": "lectures.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1\n\n\n1/20/2026\nLecture 2"
+  }
+]
