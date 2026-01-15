@@ -60,7 +60,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1\n\n\n1/20/2026\nLecture 2"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Placeholder"
   },
   {
     "objectID": "lectures/01_intro.html#slide-2",
@@ -124,5 +124,89 @@
     "title": "Lecture 1: Introduction",
     "section": "Course Website",
     "text": "Course Website"
+  },
+  {
+    "objectID": "code/00_dummy.html",
+    "href": "code/00_dummy.html",
+    "title": "Code Walkthrough 00",
+    "section": "",
+    "text": "Some text will go here.\n\n# Some code will go here\n\ndd &lt;- data.frame(x = seq(0, 2*pi, length.out = 100))\ndd$y &lt;- sin(dd$x)\nplot(dd$x, dd$y, type = \"b\")"
+  },
+  {
+    "objectID": "readme.html",
+    "href": "readme.html",
+    "title": "BCB5200",
+    "section": "",
+    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
+  },
+  {
+    "objectID": "readme.html#bcb-42005200",
+    "href": "readme.html#bcb-42005200",
+    "title": "BCB5200",
+    "section": "",
+    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
+  },
+  {
+    "objectID": "code.html",
+    "href": "code.html",
+    "title": "Code",
+    "section": "",
+    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/15/2026\nPlaceholder\nCode 1\n\n\n1/20/2026\nPlaceholder\nCode 2"
+  },
+  {
+    "objectID": "assignments/00_dummy.html",
+    "href": "assignments/00_dummy.html",
+    "title": "Assignment 00",
+    "section": "",
+    "text": "Some text will go here.\n\n# Some code will go here\n\ndd &lt;- data.frame(x = seq(0, 2*pi, length.out = 100))\ndd$y &lt;- sin(dd$x)\nplot(dd$x, dd$y, type = \"b\")"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/15/2026\nPlaceholder\nAssignment 1\n\n\n1/20/2026\nPlaceholder\nAssignment 2"
+  },
+  {
+    "objectID": "lectures/00_test.html",
+    "href": "lectures/00_test.html",
+    "title": "Lecture 1: Introduction",
+    "section": "",
+    "text": "Text here\n\nBullet 1\nBullet 2\n\n\n\nSome additional commentary of more peripheral interest.\n\n\n\n\n\nText here\n\nBlockquote here"
+  },
+  {
+    "objectID": "lectures/00_test.html#slide-1",
+    "href": "lectures/00_test.html#slide-1",
+    "title": "Lecture 1: Introduction",
+    "section": "",
+    "text": "Text here\n\nBullet 1\nBullet 2\n\n\n\nSome additional commentary of more peripheral interest."
+  },
+  {
+    "objectID": "lectures/00_test.html#slide-2",
+    "href": "lectures/00_test.html#slide-2",
+    "title": "Lecture 1: Introduction",
+    "section": "",
+    "text": "Text here\n\nBlockquote here"
+  },
+  {
+    "objectID": "lectures/00_test.html#slide-3",
+    "href": "lectures/00_test.html#slide-3",
+    "title": "Lecture 1: Introduction",
+    "section": "Slide 3",
+    "text": "Slide 3\nSome commentary here with a footnote 1"
+  },
+  {
+    "objectID": "lectures/00_test.html#references",
+    "href": "lectures/00_test.html#references",
+    "title": "Lecture 1: Introduction",
+    "section": "References",
+    "text": "References\nMunzner, T. (2014NA). Visualization Analysis & Design. A K Peters Visualization Series. Boca Raton, FL: CRC Press."
+  },
+  {
+    "objectID": "lectures/00_test.html#footnotes",
+    "href": "lectures/00_test.html#footnotes",
+    "title": "Lecture 1: Introduction",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nthis footnote is of minimal interest↩︎"
   }
 ]
