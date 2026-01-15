@@ -61,5 +61,68 @@
     "title": "Lectures",
     "section": "",
     "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1\n\n\n1/20/2026\nLecture 2"
+  },
+  {
+    "objectID": "lectures/01_intro.html#slide-2",
+    "href": "lectures/01_intro.html#slide-2",
+    "title": "Lecture 1: Introduction",
+    "section": "Slide 2",
+    "text": "Slide 2\nHeading 3\nText here\n\nBlockquote here"
+  },
+  {
+    "objectID": "lectures/01_intro.html#slide-3",
+    "href": "lectures/01_intro.html#slide-3",
+    "title": "Lecture 1: Introduction",
+    "section": "Slide 3",
+    "text": "Slide 3\nSome commentary here with a footnote 1\nthis footnote is of minimal interest"
+  },
+  {
+    "objectID": "lectures/01_intro.html#references",
+    "href": "lectures/01_intro.html#references",
+    "title": "Lecture 1: Introduction",
+    "section": "References",
+    "text": "References\nMunzner, T. (2014NA). Visualization Analysis & Design. A K Peters Visualization Series. Boca Raton, FL: CRC Press."
+  },
+  {
+    "objectID": "lectures/01_intro.html#slide-1",
+    "href": "lectures/01_intro.html#slide-1",
+    "title": "Lecture 1: Introduction",
+    "section": "Slide 1",
+    "text": "Slide 1\nText here\n\nBullet 1\nBullet 2\n\n\n\nSome additional commentary of more peripheral interest."
+  },
+  {
+    "objectID": "lectures/01_intro.html#dr.-brian-j.-smith",
+    "href": "lectures/01_intro.html#dr.-brian-j.-smith",
+    "title": "Lecture 1: Introduction",
+    "section": "Dr. Brian J. Smith",
+    "text": "Dr. Brian J. Smith\n\n\n\n\n\n\nB.S. in Wildlife Ecology & Conservation from University of Florida\nM.S. in Wildlife Ecology & Conservation from University of Florida\nPh.D. in Ecology from Utah State University"
+  },
+  {
+    "objectID": "lectures/01_intro.html#data-science-background",
+    "href": "lectures/01_intro.html#data-science-background",
+    "title": "Lecture 1: Introduction",
+    "section": "Data Science Background",
+    "text": "Data Science Background"
+  },
+  {
+    "objectID": "lectures/01_intro.html#introduce-yourself",
+    "href": "lectures/01_intro.html#introduce-yourself",
+    "title": "Lecture 1: Introduction",
+    "section": "Introduce Yourself",
+    "text": "Introduce Yourself\n\nName\nWhere you’re from\nYour degree program\nYour area of interest\nWhy you’re interested in data visualization\nYour background and comfort with:\n\nStatistics (particularly regression models)\nR\nAny other programming languages\nSpatial data (GIS)\nNetwork data"
+  },
+  {
+    "objectID": "lectures/01_intro.html#canvas-page",
+    "href": "lectures/01_intro.html#canvas-page",
+    "title": "Lecture 1: Introduction",
+    "section": "Canvas Page",
+    "text": "Canvas Page"
+  },
+  {
+    "objectID": "lectures/01_intro.html#course-website",
+    "href": "lectures/01_intro.html#course-website",
+    "title": "Lecture 1: Introduction",
+    "section": "Course Website",
+    "text": "Course Website"
   }
 ]
