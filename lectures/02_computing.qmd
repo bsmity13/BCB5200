@@ -1,0 +1,215 @@
+---
+title: "Lecture 2: Computing Basics"
+author: "Brian J. Smith"
+date: "20 January 2026"
+format: 
+  revealjs:
+    theme: default
+    mermaid: 
+      theme: forest
+editor: source
+---
+
+# Computing Basics
+
+## Basic Computer Operations
+
+```{mermaid}
+%%| label: fig-computing
+%%| fig-cap: A very simplified diagram of a computer.
+%%| file: mermaid/computing.mmd
+```
+
+What's the difference between Random Access Memory (RAM) and a hard disk drive (HDD)?
+
+## Operating Systems
+
+What does an operating system do?
+
+What are some example operating systems?
+
+## Operating Systems
+
+- Windows
+- Unix-like  
+  - macOS
+  - (iOS)
+  - Linux
+  - (Android)
+  
+## Operating Systems
+
+|                     | Windows       | Unix                   |
+|---------------------|---------------|------------------------|
+| CLI                 | `cmd.exe`     | `bash`                 |
+| Directory separator | `\`           | `/`                    | 
+| Root directory      | `C:\`         | `~/`                   |
+
+
+## File Structure
+
+ - Hierarchical databases
+
+![Example file structure](img/files.gif)\
+
+## File structure
+
+ - Absolute vs. relative paths
+
+What's the difference between an absolute and relative path?
+
+When should you use each one?
+
+## File structure {.smaller}
+
+Absolute path:
+
+`C:/Users/bsmith/Teaching/UI 2026-01 Spring/BCB5200/BCB5200_Website/lectures/01_intro.qmd`
+
+Relative path:
+
+`./lectures/01_intro.qmd`
+
+## File structure
+
+Relative paths
+
+`.` points to the current directory
+
+`..` points to the parent directory
+
+## File structure
+
+
+```
+|---C:/
+|---|---Users/
+|---|---|---bsmith/
+|---|---|---|---Documents/
+|---|---|---|---|---Website/
+|---|---|---|---|---|---index.html
+|---|---|---|---|---|---img/
+|---|---|---|---|---|---|---img1.png
+|---|---|---|---|---|---|---img2.png
+|---|---|---|---Pictures/
+|---|---|---|---|---img3.png
+```
+
+From `index.html`:  
+
+::: {.incremental}
+- How do I get to `img1`?
+  - `C:/Users/bsmith/Documents/Website/img/img1.png`
+  - `img/img1.png` 
+  - `./img/img1.png`
+:::
+
+## File structure
+
+
+```
+|---C:/
+|---|---Users/
+|---|---|---bsmith/
+|---|---|---|---Documents/
+|---|---|---|---|---Website/
+|---|---|---|---|---|---index.html
+|---|---|---|---|---|---img/
+|---|---|---|---|---|---|---img1.png
+|---|---|---|---|---|---|---img2.png
+|---|---|---|---Pictures/
+|---|---|---|---|---img3.png
+```
+
+From `index.html`:  
+
+::: {.incremental}
+- How do I get to `img2`?
+  - `img/img2.png` 
+:::
+
+## File structure
+
+
+```
+|---C:/
+|---|---Users/
+|---|---|---bsmith/
+|---|---|---|---Documents/
+|---|---|---|---|---Website/
+|---|---|---|---|---|---index.html
+|---|---|---|---|---|---img/
+|---|---|---|---|---|---|---img1.png
+|---|---|---|---|---|---|---img2.png
+|---|---|---|---Pictures/
+|---|---|---|---|---img3.png
+```
+
+From `index.html`:  
+
+::: {.incremental}
+- How do I get to `img3`?
+  - `../../Pictures/img3.png` 
+  - `C:/Users/bsmith/Pictures/img3.png` 
+:::
+
+## RStudio Projects
+
+![RStudio Project Example](img/RStudio_proj.png)\
+
+---
+
+::: {.absolute top=20% right=10% width=80%}  
+
+> "There are only two hard things in computer science: cache invalidation and naming things."
+
+
+[&mdash; Phil Karlton (Netscape)]{style="float:right"}
+
+
+:::
+
+
+## git and GitHub
+
+- `git` is version control software ![git Logo](img/Git-logo.svg){width=10%}\  
+
+![git Screenshot](img/git_ss.png)\
+
+## git and GitHub
+
+- `GitHub` is a platform for `git` repositories ![GitHub Logo](img/GitHub_Invertocat_Logo.svg){width=10%}\  
+
+![GitHub Screenshot](img/GH_ss.png)\
+
+# Software Setup
+
+## Installing software
+
+- R
+- RStudio
+- git
+
+## RStudio Setup
+
+![RStudio 'Tools' Menu](img/RStudio_tools.png){width=30% .lightbox}\
+
+## RStudio Setup
+
+![RStudio 'Global Options'](img/RStudio_global.png){width=30% .lightbox}\
+
+## RStudio Setup
+
+![RStudio 'Workspace' Settings](img/RStudio_workspace.png){width=100%}\
+
+I *highly* recommend that you setup your workspace so that it **does not** automatically save/restore.
+
+## git Setup
+
+*Reproducible Data Science*  
+
+Dr. Simona Picardi, CNR, University of Idaho
+
+[https://ecorepsci.github.io/reproducible-science/version-control-git.html#configuring-git](https://ecorepsci.github.io/reproducible-science/version-control-git.html#configuring-git)
+
+# Questions?

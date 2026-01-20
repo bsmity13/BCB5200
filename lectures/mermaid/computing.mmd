@@ -1,0 +1,10 @@
+flowchart LR
+ subgraph B["Process"]
+        RAM["RAM"]
+        CPU["CPU"]
+        HDD["HDD"]
+  end
+    CPU <--> RAM & HDD
+    A["Inputs"] --> B
+    B --> C["Outputs"]
+    

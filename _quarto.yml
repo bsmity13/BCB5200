@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "BCB5200"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: lectures.qmd
+        text: Lectures      
+      - href: code.qmd
+        text: Code
+      - href: assignments.qmd
+        text: Assignments
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

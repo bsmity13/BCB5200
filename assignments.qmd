@@ -1,0 +1,12 @@
+---
+title: "Assignments"
+author: "Brian J. Smith"
+---
+
+Links to assignments.
+
+
+| Date     | Topic        |  Code                                       |
+|:---------|:-------------|:--------------------------------------------|
+|1/15/2026 | Placeholder  |[Assignment 1](assignments/00_dummy.qmd)     |
+|1/20/2026 | Placeholder  |[Assignment 2](assignments/00_dummy.qmd)     |

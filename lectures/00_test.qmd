@@ -1,0 +1,56 @@
+---
+title: "Lecture 1: Introduction"
+author: "Brian J. Smith"
+date: "15 January 2026"
+format: 
+  revealjs:
+    theme: default
+editor: source
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(RefManageR)
+BibOptions(check.entries = FALSE, bib.style = "authoryear", style = "markdown",
+           dashed = TRUE)
+bib <- ReadBib(here::here("bib/01_refs.bib"))
+```
+
+# Section Heading 1
+
+## Slide 1
+
+Text here
+
+ - Bullet 1
+ - Bullet 2
+ 
+::: aside
+Some additional commentary of more peripheral interest.
+:::
+ 
+## Slide 2
+
+### Heading 3
+
+Text here
+
+> Blockquote here
+
+# Section Heading 2
+
+## Slide 3
+
+Some commentary here with a footnote ^[this footnote is of minimal interest]
+
+
+
+# Questions?
+
+## References {.smaller}
+
+```{r, results='asis', echo=FALSE}
+NoCite(bib)
+PrintBibliography(bib, .opts = 
+                    list(no.print.fields = c("issn", "url")))
+```

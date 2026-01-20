@@ -1,0 +1,51 @@
+---
+title: "Syllabus"
+---
+
+This is an abbreviated version of the official course syllabus. The full syllabus is available to University of Idaho students on [Canvas](https://canvas.uidaho.edu).
+
+## BCB 4200/5200
+### Spring 2026  
+
+Dr. Brian J. Smith  
+3 Credits
+
+## Course Description  
+
+This class will help students establish a core understanding of data visualization. We will consider how data type (including tabular, network, and spatial data) interacts with visualization task to guide design choices. Diverse types of visual encodings and how they relate to human perception will be presented, along with practical exercises using the R programming language. Upon completion of the course, students will understand WHY particular visualization approaches are effective for a given data set and HOW to implement those visualizations using R. The course is designed to be “discipline agnostic” – each student is encouraged to use data sets that they deem important/interesting. The goal is to have students learn how to develop visualizations that are relevant to their own disciplinary interests.
+
+## Required Course Materials  
+
+### Inclusive Access Textbook  
+
+- None  
+
+### Additional Reading Materials  
+
+- Munzner, T. 2014. *Visualization Analysis and Design*. A K Peters Visualization Series, CRC Press, Boca Raton, FL.  \
+  
+> While the book is not required, both Dr. Robison and I have leaned heavily on the structure and approach to visualization that Dr. Munzner has developed.  
+
+### Other Required Materials  
+
+- [R](https://www.r-project.org/) (free, open source)
+- [RStudio](https://posit.co/download/rstudio-desktop/) (free, open source)
+- *Optional*: [QGIS](https://qgis.org/) (free, open source)
+
+## Student Learning Outcomes  
+
+- Describe and manipulate tabular, network, and spatial data; transform these data into a form suitable for visualization.
+- Analyze data visualization design choices related to marks and channels, spatial arrangement, and components of color.
+- Design new data visualizations with appropriate use of visual channels for tabular, network, and spatial data with quantitative and categorical attributes.
+- Implement their data visualization designs using existing tools in R (or other toolkits preferred by the student).
+- Explain whether a visual encoding is perceptually appropriate for a specific combination of task and data.
+- Demonstrate their skills with at least two novel visualizations suitable for inclusion in an online Data Science Portfolio.
+
+## Class Schedule
+
+This current schedule is tentative. Current students please see [Canvas](https://canvas.uidaho.edu) for the most current due dates.
+
+```{r schedule}
+sched <- read.csv("schedule_2026.csv")
+knitr::kable(sched, caption = "")
+```

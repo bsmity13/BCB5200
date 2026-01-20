@@ -1,0 +1,14 @@
+---
+title: "Assignment 00"
+author: "Brian J. Smith"
+---
+
+Some text will go here.
+
+```{r dummy}
+# Some code will go here
+
+dd <- data.frame(x = seq(0, 2*pi, length.out = 100))
+dd$y <- sin(dd$x)
+plot(dd$x, dd$y, type = "b")
+```
