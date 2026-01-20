@@ -60,7 +60,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Placeholder"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming"
   },
   {
     "objectID": "lectures/01_intro.html#slide-2",
@@ -208,5 +208,138 @@
     "title": "Lecture 1: Introduction",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nthis footnote is of minimal interest↩︎"
+  },
+  {
+    "objectID": "lectures/02_computing.html#basic-computer-operations",
+    "href": "lectures/02_computing.html#basic-computer-operations",
+    "title": "Lecture 2: Computing Basics",
+    "section": "Basic Computer Operations",
+    "text": "Basic Computer Operations\n\n\n\n\n\n\nflowchart LR\n subgraph B[\"Process\"]\n        RAM[\"RAM\"]\n        CPU[\"CPU\"]\n        HDD[\"HDD\"]\n  end\n    CPU &lt;--&gt; RAM & HDD\n    A[\"Inputs\"] --&gt; B\n    B --&gt; C[\"Outputs\"]\n    \n\n\n\nFigure 1: A very simplified diagram of a computer.\n\n\n\n\n\nWhat’s the difference between Random Access Memory (RAM) and a hard disk drive (HDD)?"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure",
+    "href": "lectures/02_computing.html#file-structure",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File Structure",
+    "text": "File Structure\n\nHierarchical databases"
+  },
+  {
+    "objectID": "lectures/02_computing.html#operating-systems",
+    "href": "lectures/02_computing.html#operating-systems",
+    "title": "Lecture 2: Computing Basics",
+    "section": "Operating Systems",
+    "text": "Operating Systems\nWhat does an operating system do?\nWhat are some example operating systems?"
+  },
+  {
+    "objectID": "lectures/02_computing.html#operating-systems-1",
+    "href": "lectures/02_computing.html#operating-systems-1",
+    "title": "Lecture 2: Computing Basics",
+    "section": "Operating Systems",
+    "text": "Operating Systems\n\nWindows\nUnix-like\n\nmacOS\n(iOS)\nLinux\n(Android)"
+  },
+  {
+    "objectID": "lectures/02_computing.html#operating-systems-2",
+    "href": "lectures/02_computing.html#operating-systems-2",
+    "title": "Lecture 2: Computing Basics",
+    "section": "Operating Systems",
+    "text": "Operating Systems\n\n\n\n\nWindows\nUnix\n\n\n\n\nCLI\ncmd.exe\nbash\n\n\nDirectory separator\n\\\n/\n\n\nRoot directory\nC:\\\n~/"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-1",
+    "href": "lectures/02_computing.html#file-structure-1",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\n\nAbsolute vs. relative paths\n\nWhat’s the difference between an absolute and relative path?\nWhen should you use each one?"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-2",
+    "href": "lectures/02_computing.html#file-structure-2",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\nAbsolute path:\nC:/Users/bsmith/Teaching/UI 2026-01 Spring/BCB5200/BCB5200_Website/lectures/01_intro.qmd\nRelative path:\n./lectures/01_intro.qmd"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-3",
+    "href": "lectures/02_computing.html#file-structure-3",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\nRelative paths\n. points to the current directory\n.. points to the parent directory"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-4",
+    "href": "lectures/02_computing.html#file-structure-4",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\n|---C:/\n|---|---Users/\n|---|---|---bsmith/\n|---|---|---|---Documents/\n|---|---|---|---|---Website/\n|---|---|---|---|---|---index.html\n|---|---|---|---|---|---img/\n|---|---|---|---|---|---|---img1.png\n|---|---|---|---|---|---|---img2.png\n|---|---|---|---Pictures/\n|---|---|---|---|---img3.png\nFrom index.html:\n\n\nHow do I get to img1?\n\nC:/Users/bsmith/Documents/Website/img/img1.png\nimg/img1.png\n./img/img1.png"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-5",
+    "href": "lectures/02_computing.html#file-structure-5",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\n|---C:/\n|---|---Users/\n|---|---|---bsmith/\n|---|---|---|---Documents/\n|---|---|---|---|---Website/\n|---|---|---|---|---|---index.html\n|---|---|---|---|---|---img/\n|---|---|---|---|---|---|---img1.png\n|---|---|---|---|---|---|---img2.png\n|---|---|---|---Pictures/\n|---|---|---|---|---img3.png\nFrom index.html:\n\n\nHow do I get to img2?\n\nimg/img2.png"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-6",
+    "href": "lectures/02_computing.html#file-structure-6",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\n|---C:/\n|---|---Users/\n|---|---|---bsmith/\n|---|---|---|---Documents/\n|---|---|---|---|---Website/\n|---|---|---|---|---|---index.html\n|---|---|---|---|---|---img/\n|---|---|---|---|---|---|---img1.png\n|---|---|---|---|---|---|---img2.png\n|---|---|---|---Pictures/\n|---|---|---|---|---img3.png\nFrom index.html:\n\n\nHow do I get to img3?\n\n../../Pictures/img3.png\nC:/Users/bsmith/Pictures/img3.png"
+  },
+  {
+    "objectID": "lectures/02_computing.html#rstudio-projects",
+    "href": "lectures/02_computing.html#rstudio-projects",
+    "title": "Lecture 2: Computing Basics",
+    "section": "RStudio Projects",
+    "text": "RStudio Projects"
+  },
+  {
+    "objectID": "lectures/02_computing.html#git-and-github",
+    "href": "lectures/02_computing.html#git-and-github",
+    "title": "Lecture 2: Computing Basics",
+    "section": "git and GitHub",
+    "text": "git and GitHub\n\ngit is version control software"
+  },
+  {
+    "objectID": "lectures/02_computing.html#git-and-github-1",
+    "href": "lectures/02_computing.html#git-and-github-1",
+    "title": "Lecture 2: Computing Basics",
+    "section": "git and GitHub",
+    "text": "git and GitHub\n\nGitHub is a platform for git repositories"
+  },
+  {
+    "objectID": "lectures/02_computing.html#installing-software",
+    "href": "lectures/02_computing.html#installing-software",
+    "title": "Lecture 2: Computing Basics",
+    "section": "Installing software",
+    "text": "Installing software\n\nR\nRStudio\ngit"
+  },
+  {
+    "objectID": "lectures/02_computing.html#rstudio-setup",
+    "href": "lectures/02_computing.html#rstudio-setup",
+    "title": "Lecture 2: Computing Basics",
+    "section": "RStudio Setup",
+    "text": "RStudio Setup"
+  },
+  {
+    "objectID": "lectures/02_computing.html#git-setup",
+    "href": "lectures/02_computing.html#git-setup",
+    "title": "Lecture 2: Computing Basics",
+    "section": "git Setup",
+    "text": "git Setup\nReproducible Data Science\nDr. Simona Picardi, CNR, University of Idaho\nhttps://ecorepsci.github.io/reproducible-science/version-control-git.html#configuring-git"
+  },
+  {
+    "objectID": "lectures/02_computing.html#rstudio-setup-1",
+    "href": "lectures/02_computing.html#rstudio-setup-1",
+    "title": "Lecture 2: Computing Basics",
+    "section": "RStudio Setup",
+    "text": "RStudio Setup"
+  },
+  {
+    "objectID": "lectures/02_computing.html#rstudio-setup-2",
+    "href": "lectures/02_computing.html#rstudio-setup-2",
+    "title": "Lecture 2: Computing Basics",
+    "section": "RStudio Setup",
+    "text": "RStudio Setup\n\n\nI highly recommend that you setup your workspace so that it does not automatically save/restore."
   }
 ]
