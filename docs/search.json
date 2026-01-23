@@ -341,5 +341,26 @@
     "title": "Lecture 2: Computing Basics",
     "section": "RStudio Setup",
     "text": "RStudio Setup\n\n\nI highly recommend that you setup your workspace so that it does not automatically save/restore."
+  },
+  {
+    "objectID": "lectures/03_literate.html",
+    "href": "lectures/03_literate.html",
+    "title": "Lecture 3: Literate Programming",
+    "section": "",
+    "text": "In class, I live-coded in Quarto to demonstrate Literate Programming. The homepage.qmd document and the lecture recording are available on Canvas.\n\n\nHere are some useful resources that I referred to during the lecture or would like to make you aware of now.\n\nQuarto Website\n\nQuarto Cheatsheet\n\nQuarto HTML Basics (for a bunch of good ideas!)\nQuarto HTML Format Options\nTinyTeX (if you want to render to PDF)\nMarkdown Wikipedia Page (in case you’re interested in the history)\nLaTeX Wikipedia Page (in case you’re interested in the history)\nQuarto LaTeX Equations (in case you want math in your document; see below)\nMathJax Quick Reference (for help writing equations)\n\n\n\n\nI forgot to mention this during the lecture, but easily including Greek letters, math symbols, or equations is also very easy in a Quarto document. By default, HTML pages render the math using MathJax.\n\n\nYou can include equations, like \\(y = mx + b\\), inline in your documents. You create an inline equation by wrapping the expression in $.\n\n\n\nYou can also write math in chunks on their own line(s). You begin a chunk with $$, write the chunk, and end it with $$.\n\\[\n\\mu = \\beta_0 + \\beta_1 x  \n\\] \\[\ny \\sim Normal(\\mu, \\sigma^2 )\n\\]"
+  },
+  {
+    "objectID": "lectures/03_literate.html#resources",
+    "href": "lectures/03_literate.html#resources",
+    "title": "Lecture 3: Literate Programming",
+    "section": "",
+    "text": "Here are some useful resources that I referred to during the lecture or would like to make you aware of now.\n\nQuarto Website\n\nQuarto Cheatsheet\n\nQuarto HTML Basics (for a bunch of good ideas!)\nQuarto HTML Format Options\nTinyTeX (if you want to render to PDF)\nMarkdown Wikipedia Page (in case you’re interested in the history)\nLaTeX Wikipedia Page (in case you’re interested in the history)\nQuarto LaTeX Equations (in case you want math in your document; see below)\nMathJax Quick Reference (for help writing equations)"
+  },
+  {
+    "objectID": "lectures/03_literate.html#math",
+    "href": "lectures/03_literate.html#math",
+    "title": "Lecture 3: Literate Programming",
+    "section": "",
+    "text": "I forgot to mention this during the lecture, but easily including Greek letters, math symbols, or equations is also very easy in a Quarto document. By default, HTML pages render the math using MathJax.\n\n\nYou can include equations, like \\(y = mx + b\\), inline in your documents. You create an inline equation by wrapping the expression in $.\n\n\n\nYou can also write math in chunks on their own line(s). You begin a chunk with $$, write the chunk, and end it with $$.\n\\[\n\\mu = \\beta_0 + \\beta_1 x  \n\\] \\[\ny \\sim Normal(\\mu, \\sigma^2 )\n\\]"
   }
 ]

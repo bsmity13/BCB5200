@@ -1,0 +1,46 @@
+---
+title: "Lecture 3: Literate Programming"
+author: "Brian J. Smith"
+date: "22 January 2026"
+format: 
+  html:    
+    link-external-icon: true
+    link-external-newwindow: true
+---
+
+# Literate Programming
+
+In class, I live-coded in Quarto to demonstrate Literate Programming. The `homepage.qmd` document and the lecture recording are available on Canvas.
+
+## Resources
+
+Here are some useful resources that I referred to during the lecture or would like to make you aware of now.
+
+- [Quarto Website](https://quarto.org/)  
+- [Quarto Cheatsheet](https://rstudio.github.io/cheatsheets/html/quarto.html)  
+- [Quarto HTML Basics](https://quarto.org/docs/output-formats/html-basics.html) (for a bunch of good ideas!)
+- [Quarto HTML Format Options](https://quarto.org/docs/reference/formats/html.html)
+- [TinyTeX](https://yihui.org/tinytex/) (if you want to render to PDF) 
+- [Markdown Wikipedia Page](https://en.wikipedia.org/wiki/Markdown) (in case you're interested in the history)
+- [LaTeX Wikipedia Page](https://en.wikipedia.org/wiki/LaTeX) (in case you're interested in the history)
+- [Quarto LaTeX Equations](https://quarto.org/docs/output-formats/html-basics.html#latex-equations) (in case you want math in your document; see below)
+- [MathJax Quick Reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) (for help writing equations)
+
+## Math
+
+I forgot to mention this during the lecture, but easily including Greek letters, math symbols, or equations is also very easy in a Quarto document. By default, HTML pages render the math using MathJax.
+
+### Inline
+
+You can include equations, like $y = mx + b$, inline in your documents. You create an inline equation by wrapping the expression in `$`.
+
+### Chunks
+
+You can also write math in chunks on their own line(s). You begin a chunk with `$$`, write the chunk, and end it with `$$`.
+
+$$
+\mu = \beta_0 + \beta_1 x  
+$$
+$$
+y \sim Normal(\mu, \sigma^2 )
+$$
