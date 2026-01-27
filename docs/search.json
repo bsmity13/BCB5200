@@ -362,5 +362,222 @@
     "title": "Lecture 3: Literate Programming",
     "section": "",
     "text": "I forgot to mention this during the lecture, but easily including Greek letters, math symbols, or equations is also very easy in a Quarto document. By default, HTML pages render the math using MathJax.\n\n\nYou can include equations, like \\(y = mx + b\\), inline in your documents. You create an inline equation by wrapping the expression in $.\n\n\n\nYou can also write math in chunks on their own line(s). You begin a chunk with $$, write the chunk, and end it with $$.\n\\[\n\\mu = \\beta_0 + \\beta_1 x  \n\\] \\[\ny \\sim Normal(\\mu, \\sigma^2 )\n\\]"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#data-vis-what-and-why",
+    "href": "lectures/04_what_why.html#data-vis-what-and-why",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Data Vis: What and Why?",
+    "text": "Data Vis: What and Why?\n\n\nThis lecture is based on Chapter 2 of Visualization Analysis & Design.\n\n“What’s Vis, and Why Do It?”"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#the-big-picture",
+    "href": "lectures/04_what_why.html#the-big-picture",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nThe definition of visualization structuring this book\n(and thus, this course):\n\n\nComputer-based visualization systems provide visual representations of datasets designed to help people carry out tasks more effectively."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop",
+    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a human in the loop?",
+    "text": "Why have a human in the loop?\nSome tasks are so well understood that we can automate solutions.\nFor example, stock brokers have algorithms that can automatically (and nearly instantaneously) trade stocks based on predetermine criteria.\nFor these tasks, you wouldn’t design a tool that helps humans make decisions faster, because the algorithms are already thousands of times faster than even a human armed with great tools."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-computer-in-the-loop",
+    "href": "lectures/04_what_why.html#why-have-a-computer-in-the-loop",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a computer in the loop?",
+    "text": "Why have a computer in the loop?\nComputers can:\n\nDraw and present large datasets that would be completely infeasible to draw by hand.\nRecreate visualizations “on the fly” when datasets are updated.\n\nImportant for reproducibility."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-use-an-external-representation",
+    "href": "lectures/04_what_why.html#why-use-an-external-representation",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why use an external representation?",
+    "text": "Why use an external representation?\nExternal representations augment human capacity.\nWe have limits to our internal cognition and memory.\nVisualizations replace cognition with perception."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-depend-on-vision",
+    "href": "lectures/04_what_why.html#why-depend-on-vision",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why depend on vision?",
+    "text": "Why depend on vision?\nThe human visual system provides a very high-bandwidth channel to our brains.\nA significant amount of visual information processing occurs in parallel at the preconscious level.\n\nFor example, visual popout is what allows you to immediately recognize the red object in a sea of gray ones."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-show-the-data-in-detail",
+    "href": "lectures/04_what_why.html#why-show-the-data-in-detail",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why show the data in detail?",
+    "text": "Why show the data in detail?\nNumerical summaries lose information. The “famous” example is Anscombe’s quartet.\nAll four datasets have the same mean, variance, correlation coefficient, and linear regression lines."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-use-interactivity",
+    "href": "lectures/04_what_why.html#why-use-interactivity",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why use interactivity?",
+    "text": "Why use interactivity?\nInteractivity is where user actions cause the view to change.\nFor large datasets, limitations of humans and of displays cause visualizations to mask complexity.\nInteractively changing visualizations can allow a user to investigate many possible queries."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge",
+    "href": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why is the vis idiom design space huge?",
+    "text": "Why is the vis idiom design space huge?\nA visualization idiom is a distinct approach to creating and manipulating visual representations."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-focus-on-tasks",
+    "href": "lectures/04_what_why.html#why-focus-on-tasks",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why focus on tasks?",
+    "text": "Why focus on tasks?\nTools are designed to be task-specific.\nReframing a user’s task from domain-specific to an abstract form can highlight similarities and differences between visualizations in different fields.\nFor example, visualization can be used to generate new hypotheses when exploring a completely new dataset, or it can be used to test existing hypotheses in a system already better understood."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-focus-on-effectiveness",
+    "href": "lectures/04_what_why.html#why-focus-on-effectiveness",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why focus on effectiveness?",
+    "text": "Why focus on effectiveness?\nI think this is somewhat self-evident.\nFrom the book:\n\nThe focus on effectiveness is a corollary of defining vis to have the goal of supporting user tasks."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-are-most-designs-ineffective",
+    "href": "lectures/04_what_why.html#why-are-most-designs-ineffective",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why are most designs ineffective?",
+    "text": "Why are most designs ineffective?\nThe possible design space is much larger than the optimal design space."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-is-validation-difficult",
+    "href": "lectures/04_what_why.html#why-is-validation-difficult",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why is validation difficult?",
+    "text": "Why is validation difficult?\nThe problem of validation is identifying whether the visualization tool meets your design goals.\n\nHow do you know if it works?\nWhat does better mean?\nWhat does effectively mean?\nCan you measure insight or engagement?\nWho is the user?"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-are-there-resource-limitations",
+    "href": "lectures/04_what_why.html#why-are-there-resource-limitations",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why are there resource limitations?",
+    "text": "Why are there resource limitations?\nAgain, I argue this is self-evident\nSome limitations:\n\nScalability (to bigger datasets)\nData acquisition\nData processing\nComputer memory\nHuman memory and attention"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-analyze",
+    "href": "lectures/04_what_why.html#why-analyze",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why analyze?",
+    "text": "Why analyze?\nAnalyzing existing visualizations is a good stepping stone to designing new ones.\nMunzner relates this analysis to three questions:\n\nWhat data does the user see?\nWhy does the user intend to use this visualization tool?\nHow are the visual encoding and interaction idioms constructed (design choices)?"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#some-take-home-points-from-me",
+    "href": "lectures/04_what_why.html#some-take-home-points-from-me",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Some take-home points from me",
+    "text": "Some take-home points from me"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#the-big-picture-1",
+    "href": "lectures/04_what_why.html#the-big-picture-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nMunzner continues on, building out a framework for the book (1/3):\n\n\nVisualization is suitable when there is a need to augment human capabilities rather than replace people with computational decision-making methods. The design space of possible vis idioms is huge, and includes the considerations of both how to create and how to interact with visual representations."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#the-big-picture-2",
+    "href": "lectures/04_what_why.html#the-big-picture-2",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nMunzner continues on, building out a framework for the book (2/3):\n\n\nVis design is full of trade-offs, and most possibilities in the design space are ineffective for a particular task, so validating the effectiveness of a design is both necessary and difficult."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#the-big-picture-3",
+    "href": "lectures/04_what_why.html#the-big-picture-3",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nMunzner continues on, building out a framework for the book (3/3):\n\n\nVis designers must take into account three very different kinds of resource limitations: those of computers, of humans, and of displays. Vis usage can be analyzed in terms of why the user needs it, what data is shown, and how the idiom is designed."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#the-big-picture-4",
+    "href": "lectures/04_what_why.html#the-big-picture-4",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nThis definition raises a series of questions that help describe the rationale for this definition and the scope of the book (and, again, this course)."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-1",
+    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a human in the loop?",
+    "text": "Why have a human in the loop?\nBut other tasks are not clearly understood or clearly specified.\nIn these cases, an analysis process with a human in the loop is preferable."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-2",
+    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-2",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a human in the loop?",
+    "text": "Why have a human in the loop?\nWe have powerful pattern detection abilities that are still better than what an unsupervised computer can accomplish.\nVisualization systems are thus used when the goal is to augment human capabilities, rather than replace the human."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-3",
+    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-3",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a human in the loop?",
+    "text": "Why have a human in the loop?\nIt makes sense to create visualization tools to:\n\nGain a clearer understanding of a system you wish to eventually automate.\nEvaluate automation success in the middle of a transition.\nMonitor whether the automated system is performing well according to human judgement."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-4",
+    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-4",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a human in the loop?",
+    "text": "Why have a human in the loop?\nIt makes sense to create visualization tools to:\n\nAugment humans indefinitely, for example, exploratory analysis tools for generating hypotheses.\nPresent or explain knowledge to others.\n\nI have a feeling most of us are here for this one."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-depend-on-vision-1",
+    "href": "lectures/04_what_why.html#why-depend-on-vision-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why depend on vision?",
+    "text": "Why depend on vision?\nSound is a poor choice for convey a large amount of information.\nWe can separate an enormous amount of visual information and process it in parallel, but we experience sound in a sequential stream."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-depend-on-vision-2",
+    "href": "lectures/04_what_why.html#why-depend-on-vision-2",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why depend on vision?",
+    "text": "Why depend on vision?\nOur other senses are mostly unused because of technological limitations:\n\nWe can’t reliable record and reproduce taste or smell.\nWe have some haptic input and feedback devices, but they cover only a small part of our perceptual range for touch and kinesthetic senses.\n\nApparently active research in this field."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-show-the-data-in-detail-1",
+    "href": "lectures/04_what_why.html#why-show-the-data-in-detail-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why show the data in detail?",
+    "text": "Why show the data in detail?\nAnscombe’s quartet shows that a single summary is often an oversimplification of the true structure in a dataset.\nThis applies even more strongly to large and complex datasets."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-1",
+    "href": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why is the vis idiom design space huge?",
+    "text": "Why is the vis idiom design space huge?\nFrom the Merriam-Webster Dictionary:\nIdiom: a style or form of artistic expression that is characteristic of an individual, a period or movement, or a medium or instrument."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-2",
+    "href": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-2",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why is the vis idiom design space huge?",
+    "text": "Why is the vis idiom design space huge?\nUnfortunately, Munzner doesn’t directly answer this question. But she goes on to say:\n\nThis book provides a framework for thinking about the space of vis design idioms systematically by considering a set of design choices…\n\nSo I guess we’ll find out the answer together!"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-are-there-resource-limitations-1",
+    "href": "lectures/04_what_why.html#why-are-there-resource-limitations-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why are there resource limitations?",
+    "text": "Why are there resource limitations?\nChange blindness occurs when even very large changes are not noticed if we are paying attention to something else in our view.\nInformation density is a measure of the amount of information encoded versus the amount of unused space."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-is-validation-difficult-1",
+    "href": "lectures/04_what_why.html#why-is-validation-difficult-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why is validation difficult?",
+    "text": "Why is validation difficult?\n\nEven a concept like faster is tricky:\n\nAre users limited by computer speed?\nOr by the speed of their own cognition?\n\nHow can you collect benchmark data?"
   }
 ]
