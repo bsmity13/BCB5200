@@ -1,9 +1,14 @@
 ---
 title: "BCB 5200: Foundations of Data Visualization"
-author: "Brian J. Smith"
+subtitle: "Spring 2026"
+author: 
+  name: "Brian J. Smith"
+date: "2026-01-15"
 ---
 
-This is a Quarto website, written using RStudio. To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+</br>
+
+![BCB5200 Flyer Images](img/BCB5200_flyer_images.png){width="100%"}\  
 
 This website houses all the materials for BCB 4200/5200 at the University of Idaho for Spring 2026. Current students please note that we are still using [Canvas](https://canvas.uidaho.edu) for submitting assignments and grading.
 
@@ -11,3 +16,9 @@ This course material was adapted and developed by [Brian J. Smith](https://githu
 
 On this website, you will find an [abbreviated syllabus](syllabus.qmd), [lectures](lectures.qmd), [code walkthroughs](code.qmd), and [assignments](assignments.qmd).
 
+
+:::{style="font-size: 50%"}
+
+This is a Quarto website, written using RStudio. To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+:::
