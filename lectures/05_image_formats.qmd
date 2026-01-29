@@ -10,6 +10,18 @@ format:
 editor: source
 ---
 
+## My first big first-author paper
+
+[Smith et al. (2016) *Biological Invasions*](https://doi.org/10.1007/s10530-016-1211-5){target="_blank"}
+
+</br>
+
+I assumed that after the paper was accepted, the production team would let me know if they thought the size or the aspect ratios of my figures were awkward. 
+
+</br>
+
+They didn't.
+
 # Digital Image Formats
 
 ## Digital Image Formats
@@ -157,7 +169,7 @@ The number of possible colors for $n$-bit color depth is $2^n$.
 </br>
 
 ::: {style="font-size: 50%"}
-If you're interested in image compression, the Wikipedia page [Image compression](https://en.wikipedia.org/wiki/Image_compression) has a lot of detail.
+If you're interested in image compression, the Wikipedia page [Image compression](https://en.wikipedia.org/wiki/Image_compression){target="_blank"} has a lot of detail.
 
 :::
 
@@ -219,7 +231,7 @@ help("Devices")
 
 </br>
 
-You can also find the help page rendered on the web [here](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html).
+You can also find the help page rendered on the web [here](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html){target="_blank"}.
 
 ## R Graphical Devices
 
@@ -235,7 +247,7 @@ capabilities()
 
 ## R Graphical Devices
 
-Additional graphical devices can be accessed through packages. I often use the AGG library through the package `ragg`  ([https://ragg.r-lib.org/](https://ragg.r-lib.org/)).
+Additional graphical devices can be accessed through packages. I often use the AGG library through the package `ragg`  ([https://ragg.r-lib.org/](https://ragg.r-lib.org/){target="_blank"}).
 
 </br>
 

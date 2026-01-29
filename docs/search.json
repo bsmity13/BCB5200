@@ -726,5 +726,12 @@
     "title": "Lecture 5: Image Formats",
     "section": "Footnotes",
     "text": "Footnotes\n\n\ngrayscale for navigation imaging; limits data transmission size↩︎\nthe human eye can discriminate \\(\\approx\\) 10M colors↩︎\nNote that RStudio has it’s own graphics device↩︎"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#my-first-big-first-author-paper",
+    "href": "lectures/05_image_formats.html#my-first-big-first-author-paper",
+    "title": "Lecture 5: Image Formats",
+    "section": "My first big first-author paper",
+    "text": "My first big first-author paper\nSmith et al. (2016) Biological Invasions\n\nI assumed that after the paper was accepted, the production team would let me know if they thought the size or the aspect ratios of my figures were awkward.\n\nThey didn’t."
   }
 ]
