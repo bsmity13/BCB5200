@@ -1,0 +1,31 @@
+---
+title: "Assignment 2: Image Formats"
+author: "Brian J. Smith"
+date: "29 January 2026"
+format: 
+  html:    
+    link-external-icon: true
+    link-external-newwindow: true
+---
+
+For this assignment, I'm asking you to create a single Word document (or similar non-Microsoft \*.doc or \*.docx file) to demonstrate different image qualities. Note I'm not having you render a document with Quarto because the point is to access the exported images rather than to create them in the document.
+
+You can approximately follow the script we created in class [link will be posted after class]. Create a figure using `ggplot2` or base R. Save it 5 ways:
+
+1. Using RStudio "Export" button (choose any options you want or use all the defaults)
+2. Using `agg_jpeg` with `quality = 100` (no compression)
+3. Using `agg_jpeg` with `quality = 10` (high compression)
+4. Using `agg_tiff` with `compression = "none"`
+5. Using `agg_tiff` with `compression = "lzw"`
+
+For each file, follow the [*Science* figure guidelines](https://www.science.org/cms/asset/62583409-a188-466e-8cc0-6fb5f083bbff/author_prep_guide_2025.pdf){target="_blank"}, and choose whether you'll create a one-column or two-column figure. Make sure your figure meets the size and resolution criteria.
+
+Then, in your Word doc:
+
+1. Create a table showing the properties of each of the 5 images: device, compression, and file size.
+2. Insert the high compression JPEG and the LZW compression TIFF. Write a short paragraph describing the differences you notice.
+3. Insert the RStudio Export image. Write a short paragraph describing how you sized the image for the Science guidelines and whether it was easier or harder than using the scripted graphics devices.
+
+Upload the completed Word doc on Canvas.
+
+Let me know if you have any questions!

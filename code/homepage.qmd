@@ -1,0 +1,100 @@
+---
+title: "Literate Programming"
+format:
+  html: 
+    code-fold: true
+    toc: true
+---
+
+# Heading 1
+  
+Writing some information, include some text that is **bold**.  
+
+## Heading 2
+  
+Some more information, including some that is *italicized*.
+
+## Heading 2
+  
+Again
+
+# Tables
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Row 1    | Row 1    | Row 1    |
+| Row 2    | Row 2    | Row 2    |
+| Row 3    | Row 3    | Row 3    |
+
+# R Code
+
+## Example 1
+
+First, we can include code-formatted font in our narrative. So for example, if we wanted to say we were using the package `ggplot2` in our Methods, we can enclose it in "backticks" (\`).
+
+## Example 2
+
+Second, we can actually execute some code inline. For example, we might want to know what 1 + 1 equals: `{r} print(1+1)`.
+
+## Example 3
+
+Third, you might want a whole section of code (a "code chunk").
+
+```{r ex3}
+#| echo: true
+# A bunch of R code to execute
+# Attach sample data
+data("mtcars")
+# Print out the first 6 rows
+head(mtcars)
+```
+
+## Example 4
+
+Fourth, you might want to display the output without displaying the whole chunk of code.
+
+```{r ex4}
+#| echo: false
+
+# A bunch of R code to execute
+# Attach sample data
+data("mtcars")
+# Print out the first 6 rows
+head(mtcars)
+```
+
+## Example 5
+
+Since our output here was a table, we might want some formatting.
+
+```{r}
+#| echo: false
+
+# A bunch of R code to execute
+# Attach sample data
+data("mtcars")
+# Print out the first 6 rows
+knitr::kable(head(mtcars))
+```
+
+## Example 6
+
+We can include a figure in our output
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-cap: "Relationship between number of cylinders and gas mileage."
+#| fig-width: 3
+#| fig-asp: 0.67
+#| fig-align: "left"
+
+library(ggplot2)
+
+ggplot(mtcars, aes(x = cyl, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_bw()
+
+
+```

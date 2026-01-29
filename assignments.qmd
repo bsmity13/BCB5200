@@ -8,5 +8,5 @@ Links to assignments.
 
 | Date     | Topic        |  Code                                       |
 |:---------|:-------------|:--------------------------------------------|
-|1/15/2026 | Placeholder  |[Assignment 1](assignments/00_dummy.qmd)     |
-|1/20/2026 | Placeholder  |[Assignment 2](assignments/00_dummy.qmd)     |
+|1/22/2026 | Literate Programming  |[Assignment 1](assign/01_literate.qmd)     |
+|1/29/2026 | Image Formats  |[Assignment 2](assign/02_formats.qmd)     |

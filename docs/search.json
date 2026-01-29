@@ -151,7 +151,7 @@
     "href": "code.html",
     "title": "Code",
     "section": "",
-    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/15/2026\nPlaceholder\nCode 1\n\n\n1/20/2026\nPlaceholder\nCode 2"
+    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nPlaceholder\nCode 2"
   },
   {
     "objectID": "assignments/00_dummy.html",
@@ -165,7 +165,7 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/15/2026\nPlaceholder\nAssignment 1\n\n\n1/20/2026\nPlaceholder\nAssignment 2"
+    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2"
   },
   {
     "objectID": "lectures/00_test.html",
@@ -733,5 +733,82 @@
     "title": "Lecture 5: Image Formats",
     "section": "My first big first-author paper",
     "text": "My first big first-author paper\nSmith et al. (2016) Biological Invasions\n\nI assumed that after the paper was accepted, the production team would let me know if they thought the size or the aspect ratios of my figures were awkward.\n\nThey didn’t."
+  },
+  {
+    "objectID": "assign/01_literate.html",
+    "href": "assign/01_literate.html",
+    "title": "Assignment 1: Literate Programming",
+    "section": "",
+    "text": "For this assignment, you will be creating an HTML page using Quarto. You can refer to the homepage.qmd document document we created in class for some ideas.\nYour document should have:\n\nA YAML header with:\n\nA title\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nA narrative explaining the figure you’re going to show us (this can be really trivial or something you find really interesting)\n\nwith at least two headings (H1 or H2)\nwith at least one short paragraph\n\nA code chunk that loads data and creates a figure\nThe figure\n\nDecide whether you want the figure to be centered/left-justified/right-justified\nDecide what you want the width and height to be\n\n\nFeel free to play with the options in the YAML header to see what cool features are available. There’s a list of options for the Quarto HTML format here: https://quarto.org/docs/reference/formats/html.html.\nWe haven’t even dipped our toes into creating data visualizations yet, so the figure doesn’t have to be any good. If you want to use base R’s\n\nplot(x = dat$x, y = dat$y) \n\nthat’s totally fine. If you want to make something a little nicer, feel free!\nI also don’t want you to spend a ton of time on the narrative. The point is to demonstrate how to combine the narrative with the code and the figure. I’d rather have you spend your time playing with YAML options and code than writing an interesting narrative.\nWhen you’re done, render the HTML document, and upload the HTML file here.\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "code/homepage.html",
+    "href": "code/homepage.html",
+    "title": "Literate Programming",
+    "section": "",
+    "text": "Writing some information, include some text that is bold.\n\n\nSome more information, including some that is italicized.\n\n\n\nAgain"
+  },
+  {
+    "objectID": "code/homepage.html#heading-2",
+    "href": "code/homepage.html#heading-2",
+    "title": "Literate Programming",
+    "section": "",
+    "text": "Some more information, including some that is italicized."
+  },
+  {
+    "objectID": "code/homepage.html#heading-2-1",
+    "href": "code/homepage.html#heading-2-1",
+    "title": "Literate Programming",
+    "section": "",
+    "text": "Again"
+  },
+  {
+    "objectID": "code/homepage.html#example-1",
+    "href": "code/homepage.html#example-1",
+    "title": "Literate Programming",
+    "section": "Example 1",
+    "text": "Example 1\nFirst, we can include code-formatted font in our narrative. So for example, if we wanted to say we were using the package ggplot2 in our Methods, we can enclose it in “backticks” (`)."
+  },
+  {
+    "objectID": "code/homepage.html#example-2",
+    "href": "code/homepage.html#example-2",
+    "title": "Literate Programming",
+    "section": "Example 2",
+    "text": "Example 2\nSecond, we can actually execute some code inline. For example, we might want to know what 1 + 1 equals: 2."
+  },
+  {
+    "objectID": "code/homepage.html#example-3",
+    "href": "code/homepage.html#example-3",
+    "title": "Literate Programming",
+    "section": "Example 3",
+    "text": "Example 3\nThird, you might want a whole section of code (a “code chunk”).\n\n\nCode\n# A bunch of R code to execute\n# Attach sample data\ndata(\"mtcars\")\n# Print out the first 6 rows\nhead(mtcars)\n\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
+  },
+  {
+    "objectID": "code/homepage.html#example-4",
+    "href": "code/homepage.html#example-4",
+    "title": "Literate Programming",
+    "section": "Example 4",
+    "text": "Example 4\nFourth, you might want to display the output without displaying the whole chunk of code.\n\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
+  },
+  {
+    "objectID": "code/homepage.html#example-5",
+    "href": "code/homepage.html#example-5",
+    "title": "Literate Programming",
+    "section": "Example 5",
+    "text": "Example 5\nSince our output here was a table, we might want some formatting.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1"
+  },
+  {
+    "objectID": "code/homepage.html#example-6",
+    "href": "code/homepage.html#example-6",
+    "title": "Literate Programming",
+    "section": "Example 6",
+    "text": "Example 6\nWe can include a figure in our output\n\n\n\n\n\nRelationship between number of cylinders and gas mileage."
+  },
+  {
+    "objectID": "assign/02_formats.html",
+    "href": "assign/02_formats.html",
+    "title": "Assignment 2: Image Formats",
+    "section": "",
+    "text": "For this assignment, I’m asking you to create a single Word document (or similar non-Microsoft *.doc or *.docx file) to demonstrate different image qualities. Note I’m not having you render a document with Quarto because the point is to access the exported images rather than to create them in the document.\nYou can approximately follow the script we created in class [link will be posted after class]. Create a figure using ggplot2 or base R. Save it 5 ways:\n\nUsing RStudio “Export” button (choose any options you want or use all the defaults)\nUsing agg_jpeg with quality = 100 (no compression)\nUsing agg_jpeg with quality = 10 (high compression)\nUsing agg_tiff with compression = \"none\"\nUsing agg_tiff with compression = \"lzw\"\n\nFor each file, follow the Science figure guidelines, and choose whether you’ll create a one-column or two-column figure. Make sure your figure meets the size and resolution criteria.\nThen, in your Word doc:\n\nCreate a table showing the properties of each of the 5 images: device, compression, and file size.\nInsert the high compression JPEG and the LZW compression TIFF. Write a short paragraph describing the differences you notice.\nInsert the RStudio Export image. Write a short paragraph describing how you sized the image for the Science guidelines and whether it was easier or harder than using the scripted graphics devices.\n\nUpload the completed Word doc on Canvas.\nLet me know if you have any questions!"
   }
 ]

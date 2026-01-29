@@ -1,0 +1,43 @@
+---
+title: "Assignment 1: Literate Programming"
+author: "Brian J. Smith"
+date: "22 January 2026"
+format: 
+  html:    
+    link-external-icon: true
+    link-external-newwindow: true
+---
+
+For this assignment, you will be creating an HTML page using Quarto. You can refer to the [homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd) document document we created in class for some ideas.
+
+Your document should have:
+
+- A YAML header with:
+  - A title
+  - The option `embed-resources: true`
+    - This goes under the html: format option.
+    - It will make sure the HTML file stands alone, rather than referring to an external figure. I won't be able to see your figure if you upload and HTML file without this option.
+- A narrative explaining the figure you're going to show us (this can be really trivial or something you find really interesting)
+  - with at least two headings (H1 or H2)
+  - with at least one short paragraph
+- A code chunk that loads data and creates a figure
+- The figure
+  - Decide whether you want the figure to be centered/left-justified/right-justified
+  - Decide what you want the width and height to be
+
+Feel free to play with the options in the YAML header to see what cool features are available. There's a list of options for the Quarto HTML format here: [https://quarto.org/docs/reference/formats/html.html](https://quarto.org/docs/reference/formats/html.html).
+
+We haven't even dipped our toes into creating data visualizations yet, so the figure doesn't have to be any good. If you want to use base R's
+
+```{r}
+#| echo: true
+#| eval: false
+plot(x = dat$x, y = dat$y) 
+```
+that's totally fine. If you want to make something a little nicer, feel free!
+
+I also don't want you to spend a ton of time on the narrative. The point is to demonstrate how to combine the narrative with the code and the figure. I'd rather have you spend your time playing with YAML options and code than writing an interesting narrative.
+
+When you're done, render the HTML document, and upload the HTML file here.
+
+Let me know if you have any questions!
