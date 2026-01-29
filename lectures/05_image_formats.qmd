@@ -1,0 +1,250 @@
+---
+title: "Lecture 5: Image Formats"
+author: "Brian J. Smith"
+date: "28 January 2026"
+format: 
+  revealjs:
+    theme: simple
+    mermaid: 
+      theme: forest
+editor: source
+---
+
+# Digital Image Formats
+
+## Digital Image Formats
+
+::: {layout="[ 0.48, -0.04, 0.48 ]" style="font-size: 75%"}
+
+:::: {#first-column}
+
+### Raster 
+
+- By far, the most common digital image format
+- Composed of picture elements ("pixels")
+- Discrete grid of pixels contains color or intensity information
+- Fixed resolution, determined by pixel size
+- AKA bitmap, referring to a spatial arrangement of bits
+
+::::
+
+:::: {#second-column}
+
+### Vector
+
+- Far less common format
+- Composed of mathematical geometry
+- Continuous space
+- Scales well to any resolution thanks to mathematical definitions unrelated to pixels
+
+::::
+:::
+
+
+## Digital Image Formats
+::: {layout="[ 0.48, -0.04, 0.48 ]" style="font-size: 75%"}
+
+:::: {#first-column}
+
+### Raster 
+
+- JPEG
+- GIF
+- PNG
+- TIFF
+- *etc.*
+
+::::
+
+:::: {#second-column}
+
+### Vector
+
+- SVG
+- PDF
+- EPS
+- *etc.*
+
+::::
+:::
+
+
+## Image Resolution
+
+</br>
+
+A raster image's **resolution** describes how much detail it has. 
+
+</br>
+
+We often express resolution using pixel count, expressed either as a single value (*e.g.*, 2.1 megapixels) or as a pair of numbers showing width and height (*e.g.*, 1920 x 1080).
+
+## Image Resolution
+
+</br>
+
+For example a "full HD" image has dimensions 1920 x 1080.
+
+If you are familiar with megapixels, that's:
+
+$$1920 \times 1080 = 2,073,600 \approx 2.1\,\mathrm{Megapixels}$$
+
+## Image Resolution
+
+While pixels ultimately describe the resolution of an image, whether or not the image appears to be high-quality depends on how large it is displayed. If you display an image at a certain physical size, you can refer to the resolution in:
+
+- DPI (dots per inch; a term related to dots of ink in a printed image)
+- PPI (pixels per inch; technically more correct on screen).
+
+You will often see DPI/PPI used interchangeably.
+
+## Image Resolution
+
+Some common DPI values: 
+
+| DPI      | Use                            |
+|----------|--------------------------------|
+| 72       | Standard Mac display           |
+| 96       | Standard Windows display       |
+| 300-400  | Modern Apple Retina HD display |
+| 300-720  | Inkjet printer                 |
+| 600-2400 | Laser printer                  |
+
+
+## File Size
+
+Vector image file sizes are determined by the number of vectors.
+
+</br>
+
+Uncompressed, raster image file sizes are related to the image's **resolution** and **color depth**.
+
+</br>
+
+**Color depth** is the number of bits used to indicate the color of a single pixel and is measured in bits per pixel (bpp).
+
+
+## File Size {.smaller}
+
+If that image had 24-bit color (web standard), it's file size would be:
+
+$$1920 \times 1080 \times 24 = 49,766,400\,\mathrm{bits} \times \frac{1\,\mathrm{bit}}{8\,\mathrm{bytes}} = 6,220,800\,\mathrm{bytes}\approx5.9\,\mathrm{MiB}$$
+
+
+## Color Depth {.smaller}
+
+The number of possible colors for $n$-bit color depth is $2^n$.
+
+| Bit Depth | Bits per pixel     | Examples                                                  |
+|-----------|--------------------|-----------------------------------------------------------|
+| 1-bit     | $2^1=2$            | Usually black-and-white                                   |
+| 2-bit     | $2^2=4$            | Many early computer systems; original Game Boy            |
+| 3-bit     | $2^3=8$            | RGB; early home computers with TV displays                |
+| 8-bit     | $2^8=256$          | 1980s PCs; modern smartwatches; Mars Exploration Rovers[^1]|
+| 15-bit    | $2^{15}=32,768$    | Super Nintendo, Game Boy Color                           |
+| 24-bit    | $2^{24}\approx16M$ | "True color"[^2]; modern computer and phone displays      |
+
+[^1]: grayscale for navigation imaging; limits data transmission size
+[^2]: the human eye can discriminate $\approx$ 10M colors
+
+## Image Compression 
+
+</br>
+**Data compression** is the process of encoding information using fewer bits that the original representation.
+
+</br>
+**Image compression** is data compression optimized for image data by taking advantage of visual perception or statistical properties of the data.
+</br>
+
+::: {style="font-size: 50%"}
+If you're interested in image compression, the Wikipedia page [Image compression](https://en.wikipedia.org/wiki/Image_compression) has a lot of detail.
+
+:::
+
+
+## Image Compression
+
+</br>
+Image compression can be **lossless** or **lossy**.
+
+</br>
+Lossy compression usually (but not always) results in smaller file sizes, but it can introduce noticeable artifacts.
+
+## Image Compression {.smaller .scrollable}
+
+Photo taken by Brian on a Nikon ZIII Mirrorless Camera
+
+2048 x 1365 pixels (2.8 Megapixels)  
+
+(*Note most web browsers (except Safari) don't display TIFFs.*)
+
+|   Compression         |   Image          |  File Size  |
+|-----------------------|------------------|-------------|
+| JPEG, 100 Quality     | ![JPEG, full quality](img/JPEG_100.jpg){.lightbox} | 0.99 MiB |
+| JPEG, 10 Quality      | ![JPEG, high compression](img/JPEG_10.jpg){.lightbox} | 88.2 KiB |
+| TIFF, No compression  | ![TIFF, no compression](img/TIFF_full.tif){.lightbox} | 8.03 MiB |
+| TIFF, LZW compression | ![TIFF, LZW compression](img/TIFF_LZW.tif){.lightbox} | 2.88 MiB |
+
+## Scientific Publishing
+
+</br>
+
+Most journals have explicit figure guidelines in their "Instructions for Authors" material.
+
+</br>
+
+For example, *Science* has an entire [figure guideline PDF](https://www.science.org/cms/asset/62583409-a188-466e-8cc0-6fb5f083bbff/author_prep_guide_2025.pdf){target="_blank"}.
+
+</br>
+
+They require images to be at least 300 PPI, they prefer vector over raster graphics, and they give exact measurements for one-column and two-column figures.
+
+# R Graphical Devices
+
+## R Graphical Devices
+
+</br>
+
+You can read about graphical devices in R on the help page.
+
+```{r}
+#| eval: false
+#| echo: true
+?Devices
+
+# OR
+
+help("Devices")
+```
+
+</br>
+
+You can also find the help page rendered on the web [here](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html).
+
+## R Graphical Devices
+
+You will notice that the help file indicates that many of the devices are platform-specific. You can check what devices are available on your current system [^3]:
+
+```{r}
+#| echo: true
+
+capabilities()
+```
+
+[^3]: Note that RStudio has it's own graphics device
+
+## R Graphical Devices
+
+Additional graphical devices can be accessed through packages. I often use the AGG library through the package `ragg`  ([https://ragg.r-lib.org/](https://ragg.r-lib.org/)).
+
+</br>
+
+`ragg` claims to be faster (*I haven't tried*) and higher quality (*I can confirm*) than `base` R graphics (`grDevices`).
+
+</br>
+
+It is also system-independent, so you should get the same output from Windows, Mac, or Linux.
+
+# Code Demo
+
+# Questions?

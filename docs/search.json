@@ -60,7 +60,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/27/2026\nLecture 5"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/27/2026\nLecture 5: Image Formats"
   },
   {
     "objectID": "lectures/01_intro.html#slide-2",
@@ -579,5 +579,152 @@
     "title": "Lecture 4: Data Visualization: What and Why?",
     "section": "Why is validation difficult?",
     "text": "Why is validation difficult?\n\nEven a concept like faster is tricky:\n\nAre users limited by computer speed?\nOr by the speed of their own cognition?\n\nHow can you collect benchmark data?"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#digital-image-formats-1",
+    "href": "lectures/05_image_formats.html#digital-image-formats-1",
+    "title": "Lecture 5: Image Formats",
+    "section": "Digital Image Formats",
+    "text": "Digital Image Formats\n\n\n\n\n\n\nRaster\n\nBy far, the most common digital image format\nComposed of picture elements (“pixels”)\nDiscrete grid of pixels contains color or intensity information\nFixed resolution, determined by pixel size\nAKA bitmap, referring to a spatial arrangement of bits\n\n\n\n \n\n\nVector\n\nFar less common format\nComposed of mathematical geometry\nContinuous space\nScales well to any resolution thanks to mathematical definitions unrelated to pixels"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#digital-image-formats-2",
+    "href": "lectures/05_image_formats.html#digital-image-formats-2",
+    "title": "Lecture 5: Image Formats",
+    "section": "Digital Image Formats",
+    "text": "Digital Image Formats\n\n\n\n\n\n\nRaster\n\nJPEG\nGIF\nPNG\nTIFF\netc.\n\n\n\n \n\n\nVector\n\nSVG\nPDF\nEPS\netc."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#compression",
+    "href": "lectures/05_image_formats.html#compression",
+    "title": "Lecture 5: Image Formats",
+    "section": "Compression",
+    "text": "Compression\nhttps://en.wikipedia.org/wiki/Image_compression"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#r-graphical-devices",
+    "href": "lectures/05_image_formats.html#r-graphical-devices",
+    "title": "Lecture 5: Image Formats",
+    "section": "R Graphical Devices",
+    "text": "R Graphical Devices\n\nYou can read about graphical devices in R on the help page.\n\n?Devices\n\n# OR\n\nhelp(\"Devices\")\n\n\nYou can also find the help page rendered on the web here."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#file-size",
+    "href": "lectures/05_image_formats.html#file-size",
+    "title": "Lecture 5: Image Formats",
+    "section": "File Size",
+    "text": "File Size\nVector image file sizes are determined by the number of vectors.\n\nUncompressed, raster image file sizes are related to the image’s resolution and color depth.\n\nColor depth is the number of bits used to indicate the color of a single pixel and is measured in bits per pixel (bpp)."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#color-depth",
+    "href": "lectures/05_image_formats.html#color-depth",
+    "title": "Lecture 5: Image Formats",
+    "section": "Color Depth",
+    "text": "Color Depth\nThe number of possible colors for \\(n\\)-bit color depth is \\(2^n\\).\n\n\n\n\n\n\n\n\nBit Depth\nBits per pixel\nExamples\n\n\n\n\n1-bit\n\\(2^1=2\\)\nUsually black-and-white\n\n\n2-bit\n\\(2^2=4\\)\nMany early computer systems; original Game Boy\n\n\n3-bit\n\\(2^3=8\\)\nRGB; early home computers with TV displays\n\n\n8-bit\n\\(2^8=256\\)\n1980s PCs; modern smartwatches; Mars Exploration Rovers1\n\n\n15-bit\n\\(2^{15}=32,768\\)\nSuper Nintendo, Game Boy Color\n\n\n24-bit\n\\(2^{24}\\approx16M\\)\n“True color”2; modern computer and phone displays\n\n\n\ngrayscale for navigation imaging; limits data transmission sizethe human eye can discriminate \\(\\approx\\) 10M colors"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-compression",
+    "href": "lectures/05_image_formats.html#image-compression",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Compression",
+    "text": "Image Compression\n Data compression is the process of encoding information using fewer bits that the original representation.\n Image compression is data compression optimized for image data by taking advantage of visual perception or statistical properties of the data. \n\nIf you’re interested in image compression, the Wikipedia page Image compression has a lot of detail."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#file-size-1",
+    "href": "lectures/05_image_formats.html#file-size-1",
+    "title": "Lecture 5: Image Formats",
+    "section": "File Size",
+    "text": "File Size\nIf that image had 24-bit color (web standard), it’s file size would be:\n\\[1920 \\times 1080 \\times 24 = 49,766,400\\,\\mathrm{bits} \\times \\frac{1\\,\\mathrm{bit}}{8\\,\\mathrm{bytes}} = 6,220,800\\,\\mathrm{bytes}\\approx5.9\\,\\mathrm{MiB}\\]"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#file-size-2",
+    "href": "lectures/05_image_formats.html#file-size-2",
+    "title": "Lecture 5: Image Formats",
+    "section": "File Size",
+    "text": "File Size\nIf that image had 24-bit color (web standard), it’s file size would be:\n\\[1920 \\times 1080 \\times 24 = 49,766,400\\,\\mathrm{bits} \\times \\frac{1\\,\\mathrm{bit}}{8\\,\\mathrm{bytes}} = 6,220,800\\,\\mathrm{bytes}\\approx5.9\\,\\mathrm{MiB}\\]"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-compression-1",
+    "href": "lectures/05_image_formats.html#image-compression-1",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Compression",
+    "text": "Image Compression\n Image compression can be lossless or lossy.\n Lossy compression usually (but not always) results in smaller file sizes, but it can introduce noticeable artifacts."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-compression-2",
+    "href": "lectures/05_image_formats.html#image-compression-2",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Compression",
+    "text": "Image Compression\nPhoto taken by Brian on a Nikon ZIII Mirrorless Camera\n2048 x 1365 pixels (2.8 Megapixels)\n(Note most web browsers (except Safari) don’t display TIFFs.)\n\n\n\n\n\n\n\n\nCompression\nImage\nFile Size\n\n\n\n\nJPEG, 100 Quality\n\n0.99 MiB\n\n\nJPEG, 10 Quality\n\n88.2 KiB\n\n\nTIFF, No compression\n\n8.03 MiB\n\n\nTIFF, LZW compression\n\n2.88 MiB"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#r-graphical-devices-1",
+    "href": "lectures/05_image_formats.html#r-graphical-devices-1",
+    "title": "Lecture 5: Image Formats",
+    "section": "R Graphical Devices",
+    "text": "R Graphical Devices\n\nYou can read about graphical devices in R on the help page.\n\n?Devices\n\n# OR\n\nhelp(\"Devices\")\n\n\nYou can also find the help page rendered on the web here."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#r-graphical-devices-2",
+    "href": "lectures/05_image_formats.html#r-graphical-devices-2",
+    "title": "Lecture 5: Image Formats",
+    "section": "R Graphical Devices",
+    "text": "R Graphical Devices\nYou will notice that the help file indicates that many of the devices are platform-specific. You can check what devices are available on your current system 1:\n\ncapabilities()\n\n       jpeg         png        tiff       tcltk         X11        aqua \n       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE \n   http/ftp     sockets      libxml        fifo      cledit       iconv \n       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE \n        NLS       Rprof     profmem       cairo         ICU long.double \n       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE \n    libcurl \n       TRUE \n\n\nNote that RStudio has it’s own graphics device"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-resolution",
+    "href": "lectures/05_image_formats.html#image-resolution",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Resolution",
+    "text": "Image Resolution\n\nA raster image’s resolution describes how much detail it has.\n\nWe often express resolution using pixel count, expressed either as a single value (e.g., 2.1 megapixels) or as a pair of numbers showing width and height (e.g., 1920 x 1080)."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-resolution-1",
+    "href": "lectures/05_image_formats.html#image-resolution-1",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Resolution",
+    "text": "Image Resolution\n\nFor example a “full HD” image has dimensions 1920 x 1080.\nIf you are familiar with megapixels, that’s:\n\\[1920 \\times 1080 = 2,073,600 \\approx 2.1\\,\\mathrm{Megapixels}\\]"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#r-graphical-devices-3",
+    "href": "lectures/05_image_formats.html#r-graphical-devices-3",
+    "title": "Lecture 5: Image Formats",
+    "section": "R Graphical Devices",
+    "text": "R Graphical Devices\nAdditional graphical devices can be accessed through packages. I often use the AGG library through the package ragg (https://ragg.r-lib.org/).\n\nragg claims to be faster (I haven’t tried) and higher quality (I can confirm) than base R graphics (grDevices).\n\nIt is also system-independent, so you should get the same output from Windows, Mac, or Linux."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-resolution-2",
+    "href": "lectures/05_image_formats.html#image-resolution-2",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Resolution",
+    "text": "Image Resolution\nWhile pixels ultimately describe the resolution of an image, whether or not the image appears to be high-quality depends on how large it is displayed. If you display an image at a certain physical size, you can refer to the resolution in:\n\nDPI (dots per inch; a term related to dots of ink in a printed image)\nPPI (pixels per inch; technically more correct on screen).\n\nYou will often see DPI/PPI used interchangeably."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-resolution-3",
+    "href": "lectures/05_image_formats.html#image-resolution-3",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Resolution",
+    "text": "Image Resolution\nSome common DPI values:\n\n\n\nDPI\nUse\n\n\n\n\n72\nStandard Mac display\n\n\n96\nStandard Windows display\n\n\n300-400\nModern Apple Retina HD display\n\n\n300-720\nInkjet printer\n\n\n600-2400\nLaser printer"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#scientific-publishing",
+    "href": "lectures/05_image_formats.html#scientific-publishing",
+    "title": "Lecture 5: Image Formats",
+    "section": "Scientific Publishing",
+    "text": "Scientific Publishing\n\nMost journals have explicit figure guidelines in their “Instructions for Authors” material.\n\nFor example, Science has an entire figure guideline PDF.\n\nThey require images to be at least 300 PPI, they prefer vector over raster graphics, and they give exact measurements for one-column and two-column figures."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html",
+    "href": "lectures/05_image_formats.html",
+    "title": "Lecture 5: Image Formats",
+    "section": "",
+    "text": "By far, the most common digital image format\nComposed of picture elements (“pixels”)\nDiscrete grid of pixels contains color or intensity information\nFixed resolution, determined by pixel size\nAKA bitmap, referring to a spatial arrangement of bits\n\n\n\n\n \n\n\n\n\n\nFar less common format\nComposed of mathematical geometry\nContinuous space\nScales well to any resolution thanks to mathematical definitions unrelated to pixels\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJPEG\nGIF\nPNG\nTIFF\netc.\n\n\n\n\n \n\n\n\n\n\nSVG\nPDF\nEPS\netc.\n\n\n\n\n\n\n\n\n\nA raster image’s resolution describes how much detail it has.\n\nWe often express resolution using pixel count, expressed either as a single value (e.g., 2.1 megapixels) or as a pair of numbers showing width and height (e.g., 1920 x 1080).\n\n\n\n\nFor example a “full HD” image has dimensions 1920 x 1080.\nIf you are familiar with megapixels, that’s:\n\\[1920 \\times 1080 = 2,073,600 \\approx 2.1\\,\\mathrm{Megapixels}\\]\n\n\n\nWhile pixels ultimately describe the resolution of an image, whether or not the image appears to be high-quality depends on how large it is displayed. If you display an image at a certain physical size, you can refer to the resolution in:\n\nDPI (dots per inch; a term related to dots of ink in a printed image)\nPPI (pixels per inch; technically more correct on screen).\n\nYou will often see DPI/PPI used interchangeably.\n\n\n\nSome common DPI values:\n\n\n\nDPI\nUse\n\n\n\n\n72\nStandard Mac display\n\n\n96\nStandard Windows display\n\n\n300-400\nModern Apple Retina HD display\n\n\n300-720\nInkjet printer\n\n\n600-2400\nLaser printer\n\n\n\n\n\n\nVector image file sizes are determined by the number of vectors.\n\nUncompressed, raster image file sizes are related to the image’s resolution and color depth.\n\nColor depth is the number of bits used to indicate the color of a single pixel and is measured in bits per pixel (bpp).\n\n\n\nIf that image had 24-bit color (web standard), it’s file size would be:\n\\[1920 \\times 1080 \\times 24 = 49,766,400\\,\\mathrm{bits} \\times \\frac{1\\,\\mathrm{bit}}{8\\,\\mathrm{bytes}} = 6,220,800\\,\\mathrm{bytes}\\approx5.9\\,\\mathrm{MiB}\\]\n\n\n\nThe number of possible colors for \\(n\\)-bit color depth is \\(2^n\\).\n\n\n\n\n\n\n\n\nBit Depth\nBits per pixel\nExamples\n\n\n\n\n1-bit\n\\(2^1=2\\)\nUsually black-and-white\n\n\n2-bit\n\\(2^2=4\\)\nMany early computer systems; original Game Boy\n\n\n3-bit\n\\(2^3=8\\)\nRGB; early home computers with TV displays\n\n\n8-bit\n\\(2^8=256\\)\n1980s PCs; modern smartwatches; Mars Exploration Rovers1\n\n\n15-bit\n\\(2^{15}=32,768\\)\nSuper Nintendo, Game Boy Color\n\n\n24-bit\n\\(2^{24}\\approx16M\\)\n“True color”2; modern computer and phone displays\n\n\n\n\n\n\n Data compression is the process of encoding information using fewer bits that the original representation.\n Image compression is data compression optimized for image data by taking advantage of visual perception or statistical properties of the data. \n\nIf you’re interested in image compression, the Wikipedia page Image compression has a lot of detail.\n\n\n\n\n Image compression can be lossless or lossy.\n Lossy compression usually (but not always) results in smaller file sizes, but it can introduce noticeable artifacts.\n\n\n\nPhoto taken by Brian on a Nikon ZIII Mirrorless Camera\n2048 x 1365 pixels (2.8 Megapixels)\n(Note most web browsers (except Safari) don’t display TIFFs.)\n\n\n\n\n\n\n\n\nCompression\nImage\nFile Size\n\n\n\n\nJPEG, 100 Quality\n\n0.99 MiB\n\n\nJPEG, 10 Quality\n\n88.2 KiB\n\n\nTIFF, No compression\n\n8.03 MiB\n\n\nTIFF, LZW compression\n\n2.88 MiB\n\n\n\n\n\n\n\nMost journals have explicit figure guidelines in their “Instructions for Authors” material.\n\nFor example, Science has an entire figure guideline PDF.\n\nThey require images to be at least 300 PPI, they prefer vector over raster graphics, and they give exact measurements for one-column and two-column figures."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#footnotes",
+    "href": "lectures/05_image_formats.html#footnotes",
+    "title": "Lecture 5: Image Formats",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\ngrayscale for navigation imaging; limits data transmission size↩︎\nthe human eye can discriminate \\(\\approx\\) 10M colors↩︎\nNote that RStudio has it’s own graphics device↩︎"
   }
 ]
