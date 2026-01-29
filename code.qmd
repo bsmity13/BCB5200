@@ -8,5 +8,5 @@ Links to code walkthroughs.
 
 | Date     | Topic        |  Code                                       |
 |:---------|:-------------|:--------------------------------------------|
-|1/22/2026 | Literate Programming  |[homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd)                  |
+|1/22/2026 | Literate Programming  |[homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd){target="blank"} |
 |1/29/2026 | Placeholder  |[Code 2](code/00_dummy.qmd)                  |
