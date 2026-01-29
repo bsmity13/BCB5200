@@ -263,3 +263,12 @@ Munzner relates this analysis to three questions:
 3. How are the visual encoding and interaction idioms constructed (design choices)?
 
 # Questions?
+
+</br>
+
+</br>
+
+
+:::{style="font-size: 50%"}
+[BCB5200 Home](https://bsmity13.github.io/BCB5200/)
+:::

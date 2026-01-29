@@ -213,3 +213,12 @@ Dr. Simona Picardi, CNR, University of Idaho
 [https://ecorepsci.github.io/reproducible-science/version-control-git.html#configuring-git](https://ecorepsci.github.io/reproducible-science/version-control-git.html#configuring-git)
 
 # Questions?
+
+</br>
+
+</br>
+
+
+:::{style="font-size: 50%"}
+[BCB5200 Home](https://bsmity13.github.io/BCB5200/)
+:::
