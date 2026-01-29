@@ -634,7 +634,7 @@
     "href": "lectures/05_image_formats.html#file-size-1",
     "title": "Lecture 5: Image Formats",
     "section": "File Size",
-    "text": "File Size\nIf that image had 24-bit color (web standard), it’s file size would be:\n\\[1920 \\times 1080 \\times 24 = 49,766,400\\,\\mathrm{bits} \\times \\frac{1\\,\\mathrm{bit}}{8\\,\\mathrm{bytes}} = 6,220,800\\,\\mathrm{bytes}\\approx5.9\\,\\mathrm{MiB}\\]"
+    "text": "File Size\nIf that image had 24-bit color (web standard), its file size would be:\n\\[1920 \\times 1080 \\times 24 = 49,766,400\\,\\mathrm{bits} \\times \\frac{1\\,\\mathrm{bit}}{8\\,\\mathrm{bytes}} = 6,220,800\\,\\mathrm{bytes}\\approx5.9\\,\\mathrm{MiB}\\]"
   },
   {
     "objectID": "lectures/05_image_formats.html#file-size-2",
@@ -669,7 +669,7 @@
     "href": "lectures/05_image_formats.html#r-graphical-devices-2",
     "title": "Lecture 5: Image Formats",
     "section": "R Graphical Devices",
-    "text": "R Graphical Devices\nYou will notice that the help file indicates that many of the devices are platform-specific. You can check what devices are available on your current system 1:\n\ncapabilities()\n\n       jpeg         png        tiff       tcltk         X11        aqua \n       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE \n   http/ftp     sockets      libxml        fifo      cledit       iconv \n       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE \n        NLS       Rprof     profmem       cairo         ICU long.double \n       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE \n    libcurl \n       TRUE \n\n\nNote that RStudio has it’s own graphics device"
+    "text": "R Graphical Devices\nYou will notice that the help file indicates that many of the devices are platform-specific. You can check what devices are available on your current system 1:\n\ncapabilities()\n\n       jpeg         png        tiff       tcltk         X11        aqua \n       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE \n   http/ftp     sockets      libxml        fifo      cledit       iconv \n       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE \n        NLS       Rprof     profmem       cairo         ICU long.double \n       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE \n    libcurl \n       TRUE \n\n\nNote that RStudio has its own graphics device"
   },
   {
     "objectID": "lectures/05_image_formats.html#image-resolution",

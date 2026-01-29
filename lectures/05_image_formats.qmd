@@ -126,7 +126,7 @@ Uncompressed, raster image file sizes are related to the image's **resolution** 
 
 ## File Size {.smaller}
 
-If that image had 24-bit color (web standard), it's file size would be:
+If that image had 24-bit color (web standard), its file size would be:
 
 $$1920 \times 1080 \times 24 = 49,766,400\,\mathrm{bits} \times \frac{1\,\mathrm{bit}}{8\,\mathrm{bytes}} = 6,220,800\,\mathrm{bytes}\approx5.9\,\mathrm{MiB}$$
 
@@ -231,7 +231,7 @@ You will notice that the help file indicates that many of the devices are platfo
 capabilities()
 ```
 
-[^3]: Note that RStudio has it's own graphics device
+[^3]: Note that RStudio has its own graphics device
 
 ## R Graphical Devices
 

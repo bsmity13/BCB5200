@@ -417,7 +417,7 @@ Brian J. Smith
 <div>
 
 </div>
-<div class="quarto-layout-panel" data-layout="[ 0.48, -0.04, 0.48 ]" style="font-size: 75%">
+<div class="quarto-layout-panel" style="font-size: 75%" data-layout="[ 0.48, -0.04, 0.48 ]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 48.0%;justify-content: flex-start;">
 <h3 id="raster">Raster</h3>
@@ -449,7 +449,7 @@ Brian J. Smith
 <div>
 
 </div>
-<div class="quarto-layout-panel" data-layout="[ 0.48, -0.04, 0.48 ]" style="font-size: 75%">
+<div class="quarto-layout-panel" style="font-size: 75%" data-layout="[ 0.48, -0.04, 0.48 ]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 48.0%;justify-content: flex-start;">
 <h3 id="raster-1">Raster</h3>
@@ -543,7 +543,7 @@ Brian J. Smith
 </section>
 <section id="file-size-1" class="slide level2 smaller">
 <h2>File Size</h2>
-<p>If that image had 24-bit color (web standard), it’s file size would be:</p>
+<p>If that image had 24-bit color (web standard), its file size would be:</p>
 <p><span class="math display">\[1920 \times 1080 \times 24 = 49,766,400\,\mathrm{bits} \times \frac{1\,\mathrm{bit}}{8\,\mathrm{bytes}} = 6,220,800\,\mathrm{bytes}\approx5.9\,\mathrm{MiB}\]</span></p>
 </section>
 <section id="color-depth" class="slide level2 smaller">
@@ -695,7 +695,7 @@ Brian J. Smith
        TRUE </code></pre>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>Note that RStudio has it’s own graphics device</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Note that RStudio has its own graphics device</p></li></ol></aside></section>
 <section id="r-graphical-devices-3" class="slide level2">
 <h2>R Graphical Devices</h2>
 <p>Additional graphical devices can be accessed through packages. I often use the AGG library through the package <code>ragg</code> (<a href="https://ragg.r-lib.org/">https://ragg.r-lib.org/</a>).</p>
@@ -930,6 +930,82 @@ Brian J. Smith
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -1117,7 +1193,7 @@ Brian J. Smith
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
+    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
     (function() {
       let previousOnload = window.onload;
       window.onload = () => {
