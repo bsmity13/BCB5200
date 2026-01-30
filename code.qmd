@@ -9,4 +9,4 @@ Links to code walkthroughs.
 | Date     | Topic        |  Code                                       |
 |:---------|:-------------|:--------------------------------------------|
 |1/22/2026 | Literate Programming  |[homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd){target="blank"} |
-|1/29/2026 | Image Formats  |[Code 2](https://github.com/bsmity13/BCB5200/blob/main/code/image_formats.R){target="blank"} |                  |
+|1/29/2026 | Image Formats  |[image_formats.R](https://github.com/bsmity13/BCB5200/blob/main/code/image_formats.R){target="blank"} |                  |
