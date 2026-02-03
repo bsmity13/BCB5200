@@ -45,6 +45,7 @@ Figure 2.1 (next slide) summarizes the topic.
 ## Data Abstraction
 
 ![Figure 2.1](fig/fig2_1.png){width=30% fig-align=center .lightbox}\
+
 # Semantics and Types
 
 ## Why do data semantics and types matter? {.smaller}

@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BCB 5200: Foundations of Data Visualization",
-    "section": "",
-    "text": "This website houses all the materials for BCB 4200/5200 at the University of Idaho for Spring 2026. Current students please note that we are still using Canvas for submitting assignments and grading.\nThis course material was adapted and developed by Brian J. Smith. The course was originally designed and taught by Barrie Robison, and his version of the material is a valuable resource, available here: https://professorpolymorphic.github.io/BCB520/\nOn this website, you will find an abbreviated syllabus, lectures, code walkthroughs, and assignments.\n\nThis is a Quarto website, written using RStudio. To learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
     "title": "Syllabus",
@@ -49,767 +42,11 @@
     "text": "Class Schedule\nThis current schedule is tentative. Current students please see Canvas for the most current due dates.\n\nsched &lt;- read.csv(\"schedule_2026.csv\")\nknitr::kable(sched, caption = \"\")\n\n\n\n\n\n\n\n\n\n\nDate\nWeek\nDay\nTopic\n\n\n\n\n1/15/2026\n1\nThursday\nIntroductions, expectations, install software\n\n\n1/20/2026\n2\nTuesday\nComputing basics for data science; setup GitHub\n\n\n1/22/2026\n2\nThursday\nLiterate programming\n\n\n1/27/2026\n3\nTuesday\nData Visualization: What and Why\n\n\n1/29/2026\n3\nThursday\nGraphics Formats\n\n\n2/3/2026\n4\nThursday\nData Abstraction\n\n\n2/5/2026\n4\nTuesday\nData Wrangling in R\n\n\n2/10/2026\n5\nThursday\nNo class – Brian at Montana State\n\n\n2/12/2026\n5\nTuesday\n\n\n\n2/17/2026\n6\nThursday\nMarks and Channels\n\n\n2/19/2026\n6\nThursday\nggplot2 in R\n\n\n2/24/2026\n7\nTuesday\nTabular Data\n\n\n2/26/2026\n7\nThursday\n\n\n\n3/3/2026\n8\nTuesday\nManipulating Views\n\n\n3/5/2026\n8\nThursday\n\n\n\n3/10/2026\n9\nThursday\nMid-term Project Presentations\n\n\n3/12/2026\n9\nTuesday\n\n\n\n3/17/2026\n10\nThursday\nSpring break\n\n\n3/19/2026\n10\nTuesday\n\n\n\n3/24/2026\n11\nThursday\nReducing Items and Attributes\n\n\n3/26/2026\n11\nThursday\n\n\n\n3/31/2026\n12\nTuesday\nAnimation\n\n\n4/2/2026\n12\nThursday\n\n\n\n4/7/2026\n13\nTuesday\nSpatial Data Review\n\n\n4/9/2026\n13\nThursday\nSpatial Data in R\n\n\n4/14/2026\n14\nThursday\nNetwork Data Review\n\n\n4/16/2026\n14\nTuesday\nNetwork Data in R\n\n\n4/21/2026\n15\nThursday\nEmbedding\n\n\n4/23/2026\n15\nTuesday\n\n\n\n4/28/2026\n16\nThursday\nMiscellaneous (buffer week)\n\n\n4/30/2026\n16\nThursday\n\n\n\n5/5/2026\n17\nTuesday\nFinal Project Presentations\n\n\n5/7/2026\n17\nThursday"
   },
   {
-    "objectID": "lectures/01_intro.html",
-    "href": "lectures/01_intro.html",
-    "title": "Lecture 1: Introduction",
-    "section": "",
-    "text": "Slide 1\n\nSlide 2\n\nLast slide"
-  },
-  {
     "objectID": "lectures.html",
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
     "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling"
-  },
-  {
-    "objectID": "lectures/01_intro.html#slide-2",
-    "href": "lectures/01_intro.html#slide-2",
-    "title": "Lecture 1: Introduction",
-    "section": "Slide 2",
-    "text": "Slide 2\nHeading 3\nText here\n\nBlockquote here"
-  },
-  {
-    "objectID": "lectures/01_intro.html#slide-3",
-    "href": "lectures/01_intro.html#slide-3",
-    "title": "Lecture 1: Introduction",
-    "section": "Slide 3",
-    "text": "Slide 3\nSome commentary here with a footnote 1\nthis footnote is of minimal interest"
-  },
-  {
-    "objectID": "lectures/01_intro.html#references",
-    "href": "lectures/01_intro.html#references",
-    "title": "Lecture 1: Introduction",
-    "section": "References",
-    "text": "References\nMunzner, T. (2014NA). Visualization Analysis & Design. A K Peters Visualization Series. Boca Raton, FL: CRC Press."
-  },
-  {
-    "objectID": "lectures/01_intro.html#slide-1",
-    "href": "lectures/01_intro.html#slide-1",
-    "title": "Lecture 1: Introduction",
-    "section": "Slide 1",
-    "text": "Slide 1\nText here\n\nBullet 1\nBullet 2\n\n\n\nSome additional commentary of more peripheral interest."
-  },
-  {
-    "objectID": "lectures/01_intro.html#dr.-brian-j.-smith",
-    "href": "lectures/01_intro.html#dr.-brian-j.-smith",
-    "title": "Lecture 1: Introduction",
-    "section": "Dr. Brian J. Smith",
-    "text": "Dr. Brian J. Smith\n\n\n\n\n\n\nB.S. in Wildlife Ecology & Conservation from University of Florida\nM.S. in Wildlife Ecology & Conservation from University of Florida\nPh.D. in Ecology from Utah State University"
-  },
-  {
-    "objectID": "lectures/01_intro.html#data-science-background",
-    "href": "lectures/01_intro.html#data-science-background",
-    "title": "Lecture 1: Introduction",
-    "section": "Data Science Background",
-    "text": "Data Science Background"
-  },
-  {
-    "objectID": "lectures/01_intro.html#introduce-yourself",
-    "href": "lectures/01_intro.html#introduce-yourself",
-    "title": "Lecture 1: Introduction",
-    "section": "Introduce Yourself",
-    "text": "Introduce Yourself\n\nName (nickname?)\nWhere you’re from\nYour degree program\nYour area of interest\nWhy you’re interested in data visualization\nYour background and comfort with:\n\nStatistics (particularly regression models)\nR\nAny other programming languages\nSpatial data (GIS)\nNetwork data"
-  },
-  {
-    "objectID": "lectures/01_intro.html#canvas-page",
-    "href": "lectures/01_intro.html#canvas-page",
-    "title": "Lecture 1: Introduction",
-    "section": "Canvas Page",
-    "text": "Canvas Page"
-  },
-  {
-    "objectID": "lectures/01_intro.html#course-website",
-    "href": "lectures/01_intro.html#course-website",
-    "title": "Lecture 1: Introduction",
-    "section": "Course Website",
-    "text": "Course Website"
-  },
-  {
-    "objectID": "code/00_dummy.html",
-    "href": "code/00_dummy.html",
-    "title": "Code Walkthrough 00",
-    "section": "",
-    "text": "Some text will go here.\n\n# Some code will go here\n\ndd &lt;- data.frame(x = seq(0, 2*pi, length.out = 100))\ndd$y &lt;- sin(dd$x)\nplot(dd$x, dd$y, type = \"b\")"
-  },
-  {
-    "objectID": "readme.html",
-    "href": "readme.html",
-    "title": "BCB5200",
-    "section": "",
-    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
-  },
-  {
-    "objectID": "readme.html#bcb-42005200",
-    "href": "readme.html#bcb-42005200",
-    "title": "BCB5200",
-    "section": "",
-    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
-  },
-  {
-    "objectID": "code.html",
-    "href": "code.html",
-    "title": "Code",
-    "section": "",
-    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nImage Formats\nimage_formats.R"
-  },
-  {
-    "objectID": "assignments/00_dummy.html",
-    "href": "assignments/00_dummy.html",
-    "title": "Assignment 00",
-    "section": "",
-    "text": "Some text will go here.\n\n# Some code will go here\n\ndd &lt;- data.frame(x = seq(0, 2*pi, length.out = 100))\ndd$y &lt;- sin(dd$x)\nplot(dd$x, dd$y, type = \"b\")"
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2"
-  },
-  {
-    "objectID": "lectures/00_test.html",
-    "href": "lectures/00_test.html",
-    "title": "Lecture 1: Introduction",
-    "section": "",
-    "text": "Text here\n\nBullet 1\nBullet 2\n\n\n\nSome additional commentary of more peripheral interest.\n\n\n\n\n\nText here\n\nBlockquote here"
-  },
-  {
-    "objectID": "lectures/00_test.html#slide-1",
-    "href": "lectures/00_test.html#slide-1",
-    "title": "Lecture 1: Introduction",
-    "section": "",
-    "text": "Text here\n\nBullet 1\nBullet 2\n\n\n\nSome additional commentary of more peripheral interest."
-  },
-  {
-    "objectID": "lectures/00_test.html#slide-2",
-    "href": "lectures/00_test.html#slide-2",
-    "title": "Lecture 1: Introduction",
-    "section": "",
-    "text": "Text here\n\nBlockquote here"
-  },
-  {
-    "objectID": "lectures/00_test.html#slide-3",
-    "href": "lectures/00_test.html#slide-3",
-    "title": "Lecture 1: Introduction",
-    "section": "Slide 3",
-    "text": "Slide 3\nSome commentary here with a footnote 1"
-  },
-  {
-    "objectID": "lectures/00_test.html#references",
-    "href": "lectures/00_test.html#references",
-    "title": "Lecture 1: Introduction",
-    "section": "References",
-    "text": "References\nMunzner, T. (2014NA). Visualization Analysis & Design. A K Peters Visualization Series. Boca Raton, FL: CRC Press."
-  },
-  {
-    "objectID": "lectures/00_test.html#footnotes",
-    "href": "lectures/00_test.html#footnotes",
-    "title": "Lecture 1: Introduction",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nthis footnote is of minimal interest↩︎"
-  },
-  {
-    "objectID": "lectures/02_computing.html#basic-computer-operations",
-    "href": "lectures/02_computing.html#basic-computer-operations",
-    "title": "Lecture 2: Computing Basics",
-    "section": "Basic Computer Operations",
-    "text": "Basic Computer Operations\n\n\n\n\n\n\nflowchart LR\n subgraph B[\"Process\"]\n        RAM[\"RAM\"]\n        CPU[\"CPU\"]\n        HDD[\"HDD\"]\n  end\n    CPU &lt;--&gt; RAM & HDD\n    A[\"Inputs\"] --&gt; B\n    B --&gt; C[\"Outputs\"]\n    \n\n\n\nFigure 1: A very simplified diagram of a computer.\n\n\n\n\n\nWhat’s the difference between Random Access Memory (RAM) and a hard disk drive (HDD)?"
-  },
-  {
-    "objectID": "lectures/02_computing.html#file-structure",
-    "href": "lectures/02_computing.html#file-structure",
-    "title": "Lecture 2: Computing Basics",
-    "section": "File Structure",
-    "text": "File Structure\n\nHierarchical databases"
-  },
-  {
-    "objectID": "lectures/02_computing.html#operating-systems",
-    "href": "lectures/02_computing.html#operating-systems",
-    "title": "Lecture 2: Computing Basics",
-    "section": "Operating Systems",
-    "text": "Operating Systems\nWhat does an operating system do?\nWhat are some example operating systems?"
-  },
-  {
-    "objectID": "lectures/02_computing.html#operating-systems-1",
-    "href": "lectures/02_computing.html#operating-systems-1",
-    "title": "Lecture 2: Computing Basics",
-    "section": "Operating Systems",
-    "text": "Operating Systems\n\nWindows\nUnix-like\n\nmacOS\n(iOS)\nLinux\n(Android)"
-  },
-  {
-    "objectID": "lectures/02_computing.html#operating-systems-2",
-    "href": "lectures/02_computing.html#operating-systems-2",
-    "title": "Lecture 2: Computing Basics",
-    "section": "Operating Systems",
-    "text": "Operating Systems\n\n\n\n\nWindows\nUnix\n\n\n\n\nCLI\ncmd.exe\nbash\n\n\nDirectory separator\n\\\n/\n\n\nRoot directory\nC:\\\n~/"
-  },
-  {
-    "objectID": "lectures/02_computing.html#file-structure-1",
-    "href": "lectures/02_computing.html#file-structure-1",
-    "title": "Lecture 2: Computing Basics",
-    "section": "File structure",
-    "text": "File structure\n\nAbsolute vs. relative paths\n\nWhat’s the difference between an absolute and relative path?\nWhen should you use each one?"
-  },
-  {
-    "objectID": "lectures/02_computing.html#file-structure-2",
-    "href": "lectures/02_computing.html#file-structure-2",
-    "title": "Lecture 2: Computing Basics",
-    "section": "File structure",
-    "text": "File structure\nAbsolute path:\nC:/Users/bsmith/Teaching/UI 2026-01 Spring/BCB5200/BCB5200_Website/lectures/01_intro.qmd\nRelative path:\n./lectures/01_intro.qmd"
-  },
-  {
-    "objectID": "lectures/02_computing.html#file-structure-3",
-    "href": "lectures/02_computing.html#file-structure-3",
-    "title": "Lecture 2: Computing Basics",
-    "section": "File structure",
-    "text": "File structure\nRelative paths\n. points to the current directory\n.. points to the parent directory"
-  },
-  {
-    "objectID": "lectures/02_computing.html#file-structure-4",
-    "href": "lectures/02_computing.html#file-structure-4",
-    "title": "Lecture 2: Computing Basics",
-    "section": "File structure",
-    "text": "File structure\n|---C:/\n|---|---Users/\n|---|---|---bsmith/\n|---|---|---|---Documents/\n|---|---|---|---|---Website/\n|---|---|---|---|---|---index.html\n|---|---|---|---|---|---img/\n|---|---|---|---|---|---|---img1.png\n|---|---|---|---|---|---|---img2.png\n|---|---|---|---Pictures/\n|---|---|---|---|---img3.png\nFrom index.html:\n\n\nHow do I get to img1?\n\nC:/Users/bsmith/Documents/Website/img/img1.png\nimg/img1.png\n./img/img1.png"
-  },
-  {
-    "objectID": "lectures/02_computing.html#file-structure-5",
-    "href": "lectures/02_computing.html#file-structure-5",
-    "title": "Lecture 2: Computing Basics",
-    "section": "File structure",
-    "text": "File structure\n|---C:/\n|---|---Users/\n|---|---|---bsmith/\n|---|---|---|---Documents/\n|---|---|---|---|---Website/\n|---|---|---|---|---|---index.html\n|---|---|---|---|---|---img/\n|---|---|---|---|---|---|---img1.png\n|---|---|---|---|---|---|---img2.png\n|---|---|---|---Pictures/\n|---|---|---|---|---img3.png\nFrom index.html:\n\n\nHow do I get to img2?\n\nimg/img2.png"
-  },
-  {
-    "objectID": "lectures/02_computing.html#file-structure-6",
-    "href": "lectures/02_computing.html#file-structure-6",
-    "title": "Lecture 2: Computing Basics",
-    "section": "File structure",
-    "text": "File structure\n|---C:/\n|---|---Users/\n|---|---|---bsmith/\n|---|---|---|---Documents/\n|---|---|---|---|---Website/\n|---|---|---|---|---|---index.html\n|---|---|---|---|---|---img/\n|---|---|---|---|---|---|---img1.png\n|---|---|---|---|---|---|---img2.png\n|---|---|---|---Pictures/\n|---|---|---|---|---img3.png\nFrom index.html:\n\n\nHow do I get to img3?\n\n../../Pictures/img3.png\nC:/Users/bsmith/Pictures/img3.png"
-  },
-  {
-    "objectID": "lectures/02_computing.html#rstudio-projects",
-    "href": "lectures/02_computing.html#rstudio-projects",
-    "title": "Lecture 2: Computing Basics",
-    "section": "RStudio Projects",
-    "text": "RStudio Projects"
-  },
-  {
-    "objectID": "lectures/02_computing.html#git-and-github",
-    "href": "lectures/02_computing.html#git-and-github",
-    "title": "Lecture 2: Computing Basics",
-    "section": "git and GitHub",
-    "text": "git and GitHub\n\ngit is version control software"
-  },
-  {
-    "objectID": "lectures/02_computing.html#git-and-github-1",
-    "href": "lectures/02_computing.html#git-and-github-1",
-    "title": "Lecture 2: Computing Basics",
-    "section": "git and GitHub",
-    "text": "git and GitHub\n\nGitHub is a platform for git repositories"
-  },
-  {
-    "objectID": "lectures/02_computing.html#installing-software",
-    "href": "lectures/02_computing.html#installing-software",
-    "title": "Lecture 2: Computing Basics",
-    "section": "Installing software",
-    "text": "Installing software\n\nR\nRStudio\ngit"
-  },
-  {
-    "objectID": "lectures/02_computing.html#rstudio-setup",
-    "href": "lectures/02_computing.html#rstudio-setup",
-    "title": "Lecture 2: Computing Basics",
-    "section": "RStudio Setup",
-    "text": "RStudio Setup"
-  },
-  {
-    "objectID": "lectures/02_computing.html#git-setup",
-    "href": "lectures/02_computing.html#git-setup",
-    "title": "Lecture 2: Computing Basics",
-    "section": "git Setup",
-    "text": "git Setup\nReproducible Data Science\nDr. Simona Picardi, CNR, University of Idaho\nhttps://ecorepsci.github.io/reproducible-science/version-control-git.html#configuring-git"
-  },
-  {
-    "objectID": "lectures/02_computing.html#rstudio-setup-1",
-    "href": "lectures/02_computing.html#rstudio-setup-1",
-    "title": "Lecture 2: Computing Basics",
-    "section": "RStudio Setup",
-    "text": "RStudio Setup"
-  },
-  {
-    "objectID": "lectures/02_computing.html#rstudio-setup-2",
-    "href": "lectures/02_computing.html#rstudio-setup-2",
-    "title": "Lecture 2: Computing Basics",
-    "section": "RStudio Setup",
-    "text": "RStudio Setup\n\n\nI highly recommend that you setup your workspace so that it does not automatically save/restore."
-  },
-  {
-    "objectID": "lectures/03_literate.html",
-    "href": "lectures/03_literate.html",
-    "title": "Lecture 3: Literate Programming",
-    "section": "",
-    "text": "In class, I live-coded in Quarto to demonstrate Literate Programming. The homepage.qmd document and the lecture recording are available on Canvas.\n\n\nHere are some useful resources that I referred to during the lecture or would like to make you aware of now.\n\nQuarto Website\n\nQuarto Cheatsheet\n\nQuarto HTML Basics (for a bunch of good ideas!)\nQuarto HTML Format Options\nTinyTeX (if you want to render to PDF)\nMarkdown Wikipedia Page (in case you’re interested in the history)\nLaTeX Wikipedia Page (in case you’re interested in the history)\nQuarto LaTeX Equations (in case you want math in your document; see below)\nMathJax Quick Reference (for help writing equations)\n\n\n\n\nI forgot to mention this during the lecture, but easily including Greek letters, math symbols, or equations is also very easy in a Quarto document. By default, HTML pages render the math using MathJax.\n\n\nYou can include equations, like \\(y = mx + b\\), inline in your documents. You create an inline equation by wrapping the expression in $.\n\n\n\nYou can also write math in chunks on their own line(s). You begin a chunk with $$, write the chunk, and end it with $$.\n\\[\n\\mu = \\beta_0 + \\beta_1 x  \n\\] \\[\ny \\sim Normal(\\mu, \\sigma^2 )\n\\]"
-  },
-  {
-    "objectID": "lectures/03_literate.html#resources",
-    "href": "lectures/03_literate.html#resources",
-    "title": "Lecture 3: Literate Programming",
-    "section": "",
-    "text": "Here are some useful resources that I referred to during the lecture or would like to make you aware of now.\n\nQuarto Website\n\nQuarto Cheatsheet\n\nQuarto HTML Basics (for a bunch of good ideas!)\nQuarto HTML Format Options\nTinyTeX (if you want to render to PDF)\nMarkdown Wikipedia Page (in case you’re interested in the history)\nLaTeX Wikipedia Page (in case you’re interested in the history)\nQuarto LaTeX Equations (in case you want math in your document; see below)\nMathJax Quick Reference (for help writing equations)"
-  },
-  {
-    "objectID": "lectures/03_literate.html#math",
-    "href": "lectures/03_literate.html#math",
-    "title": "Lecture 3: Literate Programming",
-    "section": "",
-    "text": "I forgot to mention this during the lecture, but easily including Greek letters, math symbols, or equations is also very easy in a Quarto document. By default, HTML pages render the math using MathJax.\n\n\nYou can include equations, like \\(y = mx + b\\), inline in your documents. You create an inline equation by wrapping the expression in $.\n\n\n\nYou can also write math in chunks on their own line(s). You begin a chunk with $$, write the chunk, and end it with $$.\n\\[\n\\mu = \\beta_0 + \\beta_1 x  \n\\] \\[\ny \\sim Normal(\\mu, \\sigma^2 )\n\\]"
-  },
-  {
-    "objectID": "lectures/04_what_why.html#data-vis-what-and-why",
-    "href": "lectures/04_what_why.html#data-vis-what-and-why",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Data Vis: What and Why?",
-    "text": "Data Vis: What and Why?\n\n\nThis lecture is based on Chapter 2 of Visualization Analysis & Design.\n\n“What’s Vis, and Why Do It?”"
-  },
-  {
-    "objectID": "lectures/04_what_why.html#the-big-picture",
-    "href": "lectures/04_what_why.html#the-big-picture",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "The Big Picture",
-    "text": "The Big Picture\nThe definition of visualization structuring this book\n(and thus, this course):\n\n\nComputer-based visualization systems provide visual representations of datasets designed to help people carry out tasks more effectively."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop",
-    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why have a human in the loop?",
-    "text": "Why have a human in the loop?\nSome tasks are so well understood that we can automate solutions.\nFor example, stock brokers have algorithms that can automatically (and nearly instantaneously) trade stocks based on predetermine criteria.\nFor these tasks, you wouldn’t design a tool that helps humans make decisions faster, because the algorithms are already thousands of times faster than even a human armed with great tools."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-have-a-computer-in-the-loop",
-    "href": "lectures/04_what_why.html#why-have-a-computer-in-the-loop",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why have a computer in the loop?",
-    "text": "Why have a computer in the loop?\nComputers can:\n\nDraw and present large datasets that would be completely infeasible to draw by hand.\nRecreate visualizations “on the fly” when datasets are updated.\n\nImportant for reproducibility."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-use-an-external-representation",
-    "href": "lectures/04_what_why.html#why-use-an-external-representation",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why use an external representation?",
-    "text": "Why use an external representation?\nExternal representations augment human capacity.\nWe have limits to our internal cognition and memory.\nVisualizations replace cognition with perception."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-depend-on-vision",
-    "href": "lectures/04_what_why.html#why-depend-on-vision",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why depend on vision?",
-    "text": "Why depend on vision?\nThe human visual system provides a very high-bandwidth channel to our brains.\nA significant amount of visual information processing occurs in parallel at the preconscious level.\n\nFor example, visual popout is what allows you to immediately recognize the red object in a sea of gray ones."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-show-the-data-in-detail",
-    "href": "lectures/04_what_why.html#why-show-the-data-in-detail",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why show the data in detail?",
-    "text": "Why show the data in detail?\nNumerical summaries lose information. The “famous” example is Anscombe’s quartet.\nAll four datasets have the same mean, variance, correlation coefficient, and linear regression lines."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-use-interactivity",
-    "href": "lectures/04_what_why.html#why-use-interactivity",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why use interactivity?",
-    "text": "Why use interactivity?\nInteractivity is where user actions cause the view to change.\nFor large datasets, limitations of humans and of displays cause visualizations to mask complexity.\nInteractively changing visualizations can allow a user to investigate many possible queries."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge",
-    "href": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why is the vis idiom design space huge?",
-    "text": "Why is the vis idiom design space huge?\nA visualization idiom is a distinct approach to creating and manipulating visual representations."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-focus-on-tasks",
-    "href": "lectures/04_what_why.html#why-focus-on-tasks",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why focus on tasks?",
-    "text": "Why focus on tasks?\nTools are designed to be task-specific.\nReframing a user’s task from domain-specific to an abstract form can highlight similarities and differences between visualizations in different fields.\nFor example, visualization can be used to generate new hypotheses when exploring a completely new dataset, or it can be used to test existing hypotheses in a system already better understood."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-focus-on-effectiveness",
-    "href": "lectures/04_what_why.html#why-focus-on-effectiveness",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why focus on effectiveness?",
-    "text": "Why focus on effectiveness?\nI think this is somewhat self-evident.\nFrom the book:\n\nThe focus on effectiveness is a corollary of defining vis to have the goal of supporting user tasks."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-are-most-designs-ineffective",
-    "href": "lectures/04_what_why.html#why-are-most-designs-ineffective",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why are most designs ineffective?",
-    "text": "Why are most designs ineffective?\nThe possible design space is much larger than the optimal design space."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-is-validation-difficult",
-    "href": "lectures/04_what_why.html#why-is-validation-difficult",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why is validation difficult?",
-    "text": "Why is validation difficult?\nThe problem of validation is identifying whether the visualization tool meets your design goals.\n\nHow do you know if it works?\nWhat does better mean?\nWhat does effectively mean?\nCan you measure insight or engagement?\nWho is the user?"
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-are-there-resource-limitations",
-    "href": "lectures/04_what_why.html#why-are-there-resource-limitations",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why are there resource limitations?",
-    "text": "Why are there resource limitations?\nAgain, I argue this is self-evident\nSome limitations:\n\nScalability (to bigger datasets)\nData acquisition\nData processing\nComputer memory\nHuman memory and attention"
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-analyze",
-    "href": "lectures/04_what_why.html#why-analyze",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why analyze?",
-    "text": "Why analyze?\nAnalyzing existing visualizations is a good stepping stone to designing new ones.\nMunzner relates this analysis to three questions:\n\nWhat data does the user see?\nWhy does the user intend to use this visualization tool?\nHow are the visual encoding and interaction idioms constructed (design choices)?"
-  },
-  {
-    "objectID": "lectures/04_what_why.html#some-take-home-points-from-me",
-    "href": "lectures/04_what_why.html#some-take-home-points-from-me",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Some take-home points from me",
-    "text": "Some take-home points from me"
-  },
-  {
-    "objectID": "lectures/04_what_why.html#the-big-picture-1",
-    "href": "lectures/04_what_why.html#the-big-picture-1",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "The Big Picture",
-    "text": "The Big Picture\nMunzner continues on, building out a framework for the book (1/3):\n\n\nVisualization is suitable when there is a need to augment human capabilities rather than replace people with computational decision-making methods. The design space of possible vis idioms is huge, and includes the considerations of both how to create and how to interact with visual representations."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#the-big-picture-2",
-    "href": "lectures/04_what_why.html#the-big-picture-2",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "The Big Picture",
-    "text": "The Big Picture\nMunzner continues on, building out a framework for the book (2/3):\n\n\nVis design is full of trade-offs, and most possibilities in the design space are ineffective for a particular task, so validating the effectiveness of a design is both necessary and difficult."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#the-big-picture-3",
-    "href": "lectures/04_what_why.html#the-big-picture-3",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "The Big Picture",
-    "text": "The Big Picture\nMunzner continues on, building out a framework for the book (3/3):\n\n\nVis designers must take into account three very different kinds of resource limitations: those of computers, of humans, and of displays. Vis usage can be analyzed in terms of why the user needs it, what data is shown, and how the idiom is designed."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#the-big-picture-4",
-    "href": "lectures/04_what_why.html#the-big-picture-4",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "The Big Picture",
-    "text": "The Big Picture\nThis definition raises a series of questions that help describe the rationale for this definition and the scope of the book (and, again, this course)."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-1",
-    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-1",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why have a human in the loop?",
-    "text": "Why have a human in the loop?\nBut other tasks are not clearly understood or clearly specified.\nIn these cases, an analysis process with a human in the loop is preferable."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-2",
-    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-2",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why have a human in the loop?",
-    "text": "Why have a human in the loop?\nWe have powerful pattern detection abilities that are still better than what an unsupervised computer can accomplish.\nVisualization systems are thus used when the goal is to augment human capabilities, rather than replace the human."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-3",
-    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-3",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why have a human in the loop?",
-    "text": "Why have a human in the loop?\nIt makes sense to create visualization tools to:\n\nGain a clearer understanding of a system you wish to eventually automate.\nEvaluate automation success in the middle of a transition.\nMonitor whether the automated system is performing well according to human judgement."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-4",
-    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-4",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why have a human in the loop?",
-    "text": "Why have a human in the loop?\nIt makes sense to create visualization tools to:\n\nAugment humans indefinitely, for example, exploratory analysis tools for generating hypotheses.\nPresent or explain knowledge to others.\n\nI have a feeling most of us are here for this one."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-depend-on-vision-1",
-    "href": "lectures/04_what_why.html#why-depend-on-vision-1",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why depend on vision?",
-    "text": "Why depend on vision?\nSound is a poor choice for convey a large amount of information.\nWe can separate an enormous amount of visual information and process it in parallel, but we experience sound in a sequential stream."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-depend-on-vision-2",
-    "href": "lectures/04_what_why.html#why-depend-on-vision-2",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why depend on vision?",
-    "text": "Why depend on vision?\nOur other senses are mostly unused because of technological limitations:\n\nWe can’t reliable record and reproduce taste or smell.\nWe have some haptic input and feedback devices, but they cover only a small part of our perceptual range for touch and kinesthetic senses.\n\nApparently active research in this field."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-show-the-data-in-detail-1",
-    "href": "lectures/04_what_why.html#why-show-the-data-in-detail-1",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why show the data in detail?",
-    "text": "Why show the data in detail?\nAnscombe’s quartet shows that a single summary is often an oversimplification of the true structure in a dataset.\nThis applies even more strongly to large and complex datasets."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-1",
-    "href": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-1",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why is the vis idiom design space huge?",
-    "text": "Why is the vis idiom design space huge?\nFrom the Merriam-Webster Dictionary:\nIdiom: a style or form of artistic expression that is characteristic of an individual, a period or movement, or a medium or instrument."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-2",
-    "href": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-2",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why is the vis idiom design space huge?",
-    "text": "Why is the vis idiom design space huge?\nUnfortunately, Munzner doesn’t directly answer this question. But she goes on to say:\n\nThis book provides a framework for thinking about the space of vis design idioms systematically by considering a set of design choices…\n\nSo I guess we’ll find out the answer together!"
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-are-there-resource-limitations-1",
-    "href": "lectures/04_what_why.html#why-are-there-resource-limitations-1",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why are there resource limitations?",
-    "text": "Why are there resource limitations?\nChange blindness occurs when even very large changes are not noticed if we are paying attention to something else in our view.\nInformation density is a measure of the amount of information encoded versus the amount of unused space."
-  },
-  {
-    "objectID": "lectures/04_what_why.html#why-is-validation-difficult-1",
-    "href": "lectures/04_what_why.html#why-is-validation-difficult-1",
-    "title": "Lecture 4: Data Visualization: What and Why?",
-    "section": "Why is validation difficult?",
-    "text": "Why is validation difficult?\n\nEven a concept like faster is tricky:\n\nAre users limited by computer speed?\nOr by the speed of their own cognition?\n\nHow can you collect benchmark data?"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#digital-image-formats-1",
-    "href": "lectures/05_image_formats.html#digital-image-formats-1",
-    "title": "Lecture 5: Image Formats",
-    "section": "Digital Image Formats",
-    "text": "Digital Image Formats\n\n\n\n\n\n\nRaster\n\nBy far, the most common digital image format\nComposed of picture elements (“pixels”)\nDiscrete grid of pixels contains color or intensity information\nFixed resolution, determined by pixel size\nAKA bitmap, referring to a spatial arrangement of bits\n\n\n\n \n\n\nVector\n\nFar less common format\nComposed of mathematical geometry\nContinuous space\nScales well to any resolution thanks to mathematical definitions unrelated to pixels"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#digital-image-formats-2",
-    "href": "lectures/05_image_formats.html#digital-image-formats-2",
-    "title": "Lecture 5: Image Formats",
-    "section": "Digital Image Formats",
-    "text": "Digital Image Formats\n\n\n\n\n\n\nRaster\n\nJPEG\nGIF\nPNG\nTIFF\netc.\n\n\n\n \n\n\nVector\n\nSVG\nPDF\nEPS\netc."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#compression",
-    "href": "lectures/05_image_formats.html#compression",
-    "title": "Lecture 5: Image Formats",
-    "section": "Compression",
-    "text": "Compression\nhttps://en.wikipedia.org/wiki/Image_compression"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#r-graphical-devices",
-    "href": "lectures/05_image_formats.html#r-graphical-devices",
-    "title": "Lecture 5: Image Formats",
-    "section": "R Graphical Devices",
-    "text": "R Graphical Devices\n\nYou can read about graphical devices in R on the help page.\n\n?Devices\n\n# OR\n\nhelp(\"Devices\")\n\n\nYou can also find the help page rendered on the web here."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#file-size",
-    "href": "lectures/05_image_formats.html#file-size",
-    "title": "Lecture 5: Image Formats",
-    "section": "File Size",
-    "text": "File Size\nVector image file sizes are determined by the number of vectors.\n\nUncompressed, raster image file sizes are related to the image’s resolution and color depth.\n\nColor depth is the number of bits used to indicate the color of a single pixel and is measured in bits per pixel (bpp)."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#color-depth",
-    "href": "lectures/05_image_formats.html#color-depth",
-    "title": "Lecture 5: Image Formats",
-    "section": "Color Depth",
-    "text": "Color Depth\nThe number of possible colors for \\(n\\)-bit color depth is \\(2^n\\).\n\n\n\n\n\n\n\n\nBit Depth\nBits per pixel\nExamples\n\n\n\n\n1-bit\n\\(2^1=2\\)\nUsually black-and-white\n\n\n2-bit\n\\(2^2=4\\)\nMany early computer systems; original Game Boy\n\n\n3-bit\n\\(2^3=8\\)\nRGB; early home computers with TV displays\n\n\n8-bit\n\\(2^8=256\\)\n1980s PCs; modern smartwatches; Mars Exploration Rovers1\n\n\n15-bit\n\\(2^{15}=32,768\\)\nSuper Nintendo, Game Boy Color\n\n\n24-bit\n\\(2^{24}\\approx16M\\)\n“True color”2; modern computer and phone displays\n\n\n\ngrayscale for navigation imaging; limits data transmission sizethe human eye can discriminate \\(\\approx\\) 10M colors"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#image-compression",
-    "href": "lectures/05_image_formats.html#image-compression",
-    "title": "Lecture 5: Image Formats",
-    "section": "Image Compression",
-    "text": "Image Compression\n Data compression is the process of encoding information using fewer bits that the original representation.\n Image compression is data compression optimized for image data by taking advantage of visual perception or statistical properties of the data. \n\nIf you’re interested in image compression, the Wikipedia page Image compression has a lot of detail."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#file-size-1",
-    "href": "lectures/05_image_formats.html#file-size-1",
-    "title": "Lecture 5: Image Formats",
-    "section": "File Size",
-    "text": "File Size\nIf that image had 24-bit color (web standard), its file size would be:\n\\[1920 \\times 1080 \\times 24 = 49,766,400\\,\\mathrm{bits} \\times \\frac{1\\,\\mathrm{bit}}{8\\,\\mathrm{bytes}} = 6,220,800\\,\\mathrm{bytes}\\approx5.9\\,\\mathrm{MiB}\\]"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#file-size-2",
-    "href": "lectures/05_image_formats.html#file-size-2",
-    "title": "Lecture 5: Image Formats",
-    "section": "File Size",
-    "text": "File Size\nIf that image had 24-bit color (web standard), it’s file size would be:\n\\[1920 \\times 1080 \\times 24 = 49,766,400\\,\\mathrm{bits} \\times \\frac{1\\,\\mathrm{bit}}{8\\,\\mathrm{bytes}} = 6,220,800\\,\\mathrm{bytes}\\approx5.9\\,\\mathrm{MiB}\\]"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#image-compression-1",
-    "href": "lectures/05_image_formats.html#image-compression-1",
-    "title": "Lecture 5: Image Formats",
-    "section": "Image Compression",
-    "text": "Image Compression\n Image compression can be lossless or lossy.\n Lossy compression usually (but not always) results in smaller file sizes, but it can introduce noticeable artifacts."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#image-compression-2",
-    "href": "lectures/05_image_formats.html#image-compression-2",
-    "title": "Lecture 5: Image Formats",
-    "section": "Image Compression",
-    "text": "Image Compression\nPhoto taken by Brian on a Nikon ZIII Mirrorless Camera\n2048 x 1365 pixels (2.8 Megapixels)\n(Note most web browsers (except Safari) don’t display TIFFs.)\n\n\n\n\n\n\n\n\nCompression\nImage\nFile Size\n\n\n\n\nJPEG, 100 Quality\n\n0.99 MiB\n\n\nJPEG, 10 Quality\n\n88.2 KiB\n\n\nTIFF, No compression\n\n8.03 MiB\n\n\nTIFF, LZW compression\n\n2.88 MiB"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#r-graphical-devices-1",
-    "href": "lectures/05_image_formats.html#r-graphical-devices-1",
-    "title": "Lecture 5: Image Formats",
-    "section": "R Graphical Devices",
-    "text": "R Graphical Devices\n\nYou can read about graphical devices in R on the help page.\n\n?Devices\n\n# OR\n\nhelp(\"Devices\")\n\n\nYou can also find the help page rendered on the web here."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#r-graphical-devices-2",
-    "href": "lectures/05_image_formats.html#r-graphical-devices-2",
-    "title": "Lecture 5: Image Formats",
-    "section": "R Graphical Devices",
-    "text": "R Graphical Devices\nYou will notice that the help file indicates that many of the devices are platform-specific. You can check what devices are available on your current system 1:\n\ncapabilities()\n\n       jpeg         png        tiff       tcltk         X11        aqua \n       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE \n   http/ftp     sockets      libxml        fifo      cledit       iconv \n       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE \n        NLS       Rprof     profmem       cairo         ICU long.double \n       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE \n    libcurl \n       TRUE \n\n\nNote that RStudio has its own graphics device"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#image-resolution",
-    "href": "lectures/05_image_formats.html#image-resolution",
-    "title": "Lecture 5: Image Formats",
-    "section": "Image Resolution",
-    "text": "Image Resolution\n\nA raster image’s resolution describes how much detail it has.\n\nWe often express resolution using pixel count, expressed either as a single value (e.g., 2.1 megapixels) or as a pair of numbers showing width and height (e.g., 1920 x 1080)."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#image-resolution-1",
-    "href": "lectures/05_image_formats.html#image-resolution-1",
-    "title": "Lecture 5: Image Formats",
-    "section": "Image Resolution",
-    "text": "Image Resolution\n\nFor example a “full HD” image has dimensions 1920 x 1080.\nIf you are familiar with megapixels, that’s:\n\\[1920 \\times 1080 = 2,073,600 \\approx 2.1\\,\\mathrm{Megapixels}\\]"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#r-graphical-devices-3",
-    "href": "lectures/05_image_formats.html#r-graphical-devices-3",
-    "title": "Lecture 5: Image Formats",
-    "section": "R Graphical Devices",
-    "text": "R Graphical Devices\nAdditional graphical devices can be accessed through packages. I often use the AGG library through the package ragg (https://ragg.r-lib.org/).\n\nragg claims to be faster (I haven’t tried) and higher quality (I can confirm) than base R graphics (grDevices).\n\nIt is also system-independent, so you should get the same output from Windows, Mac, or Linux."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#image-resolution-2",
-    "href": "lectures/05_image_formats.html#image-resolution-2",
-    "title": "Lecture 5: Image Formats",
-    "section": "Image Resolution",
-    "text": "Image Resolution\nWhile pixels ultimately describe the resolution of an image, whether or not the image appears to be high-quality depends on how large it is displayed. If you display an image at a certain physical size, you can refer to the resolution in:\n\nDPI (dots per inch; a term related to dots of ink in a printed image)\nPPI (pixels per inch; technically more correct on screen).\n\nYou will often see DPI/PPI used interchangeably."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#image-resolution-3",
-    "href": "lectures/05_image_formats.html#image-resolution-3",
-    "title": "Lecture 5: Image Formats",
-    "section": "Image Resolution",
-    "text": "Image Resolution\nSome common DPI values:\n\n\n\nDPI\nUse\n\n\n\n\n72\nStandard Mac display\n\n\n96\nStandard Windows display\n\n\n300-400\nModern Apple Retina HD display\n\n\n300-720\nInkjet printer\n\n\n600-2400\nLaser printer"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#scientific-publishing",
-    "href": "lectures/05_image_formats.html#scientific-publishing",
-    "title": "Lecture 5: Image Formats",
-    "section": "Scientific Publishing",
-    "text": "Scientific Publishing\n\nMost journals have explicit figure guidelines in their “Instructions for Authors” material.\n\nFor example, Science has an entire figure guideline PDF.\n\nThey require images to be at least 300 PPI, they prefer vector over raster graphics, and they give exact measurements for one-column and two-column figures."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html",
-    "href": "lectures/05_image_formats.html",
-    "title": "Lecture 5: Image Formats",
-    "section": "",
-    "text": "By far, the most common digital image format\nComposed of picture elements (“pixels”)\nDiscrete grid of pixels contains color or intensity information\nFixed resolution, determined by pixel size\nAKA bitmap, referring to a spatial arrangement of bits\n\n\n\n\n \n\n\n\n\n\nFar less common format\nComposed of mathematical geometry\nContinuous space\nScales well to any resolution thanks to mathematical definitions unrelated to pixels\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJPEG\nGIF\nPNG\nTIFF\netc.\n\n\n\n\n \n\n\n\n\n\nSVG\nPDF\nEPS\netc.\n\n\n\n\n\n\n\n\n\nA raster image’s resolution describes how much detail it has.\n\nWe often express resolution using pixel count, expressed either as a single value (e.g., 2.1 megapixels) or as a pair of numbers showing width and height (e.g., 1920 x 1080).\n\n\n\n\nFor example a “full HD” image has dimensions 1920 x 1080.\nIf you are familiar with megapixels, that’s:\n\\[1920 \\times 1080 = 2,073,600 \\approx 2.1\\,\\mathrm{Megapixels}\\]\n\n\n\nWhile pixels ultimately describe the resolution of an image, whether or not the image appears to be high-quality depends on how large it is displayed. If you display an image at a certain physical size, you can refer to the resolution in:\n\nDPI (dots per inch; a term related to dots of ink in a printed image)\nPPI (pixels per inch; technically more correct on screen).\n\nYou will often see DPI/PPI used interchangeably.\n\n\n\nSome common DPI values:\n\n\n\nDPI\nUse\n\n\n\n\n72\nStandard Mac display\n\n\n96\nStandard Windows display\n\n\n300-400\nModern Apple Retina HD display\n\n\n300-720\nInkjet printer\n\n\n600-2400\nLaser printer\n\n\n\n\n\n\nVector image file sizes are determined by the number of vectors.\n\nUncompressed, raster image file sizes are related to the image’s resolution and color depth.\n\nColor depth is the number of bits used to indicate the color of a single pixel and is measured in bits per pixel (bpp).\n\n\n\nIf that image had 24-bit color (web standard), it’s file size would be:\n\\[1920 \\times 1080 \\times 24 = 49,766,400\\,\\mathrm{bits} \\times \\frac{1\\,\\mathrm{bit}}{8\\,\\mathrm{bytes}} = 6,220,800\\,\\mathrm{bytes}\\approx5.9\\,\\mathrm{MiB}\\]\n\n\n\nThe number of possible colors for \\(n\\)-bit color depth is \\(2^n\\).\n\n\n\n\n\n\n\n\nBit Depth\nBits per pixel\nExamples\n\n\n\n\n1-bit\n\\(2^1=2\\)\nUsually black-and-white\n\n\n2-bit\n\\(2^2=4\\)\nMany early computer systems; original Game Boy\n\n\n3-bit\n\\(2^3=8\\)\nRGB; early home computers with TV displays\n\n\n8-bit\n\\(2^8=256\\)\n1980s PCs; modern smartwatches; Mars Exploration Rovers1\n\n\n15-bit\n\\(2^{15}=32,768\\)\nSuper Nintendo, Game Boy Color\n\n\n24-bit\n\\(2^{24}\\approx16M\\)\n“True color”2; modern computer and phone displays\n\n\n\n\n\n\n Data compression is the process of encoding information using fewer bits that the original representation.\n Image compression is data compression optimized for image data by taking advantage of visual perception or statistical properties of the data. \n\nIf you’re interested in image compression, the Wikipedia page Image compression has a lot of detail.\n\n\n\n\n Image compression can be lossless or lossy.\n Lossy compression usually (but not always) results in smaller file sizes, but it can introduce noticeable artifacts.\n\n\n\nPhoto taken by Brian on a Nikon ZIII Mirrorless Camera\n2048 x 1365 pixels (2.8 Megapixels)\n(Note most web browsers (except Safari) don’t display TIFFs.)\n\n\n\n\n\n\n\n\nCompression\nImage\nFile Size\n\n\n\n\nJPEG, 100 Quality\n\n0.99 MiB\n\n\nJPEG, 10 Quality\n\n88.2 KiB\n\n\nTIFF, No compression\n\n8.03 MiB\n\n\nTIFF, LZW compression\n\n2.88 MiB\n\n\n\n\n\n\n\nMost journals have explicit figure guidelines in their “Instructions for Authors” material.\n\nFor example, Science has an entire figure guideline PDF.\n\nThey require images to be at least 300 PPI, they prefer vector over raster graphics, and they give exact measurements for one-column and two-column figures."
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#footnotes",
-    "href": "lectures/05_image_formats.html#footnotes",
-    "title": "Lecture 5: Image Formats",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\ngrayscale for navigation imaging; limits data transmission size↩︎\nthe human eye can discriminate \\(\\approx\\) 10M colors↩︎\nNote that RStudio has it’s own graphics device↩︎"
-  },
-  {
-    "objectID": "lectures/05_image_formats.html#my-first-big-first-author-paper",
-    "href": "lectures/05_image_formats.html#my-first-big-first-author-paper",
-    "title": "Lecture 5: Image Formats",
-    "section": "My first big first-author paper",
-    "text": "My first big first-author paper\nSmith et al. (2016) Biological Invasions\n\nI assumed that after the paper was accepted, the production team would let me know if they thought the size or the aspect ratios of my figures were awkward.\n\nThey didn’t."
-  },
-  {
-    "objectID": "assign/01_literate.html",
-    "href": "assign/01_literate.html",
-    "title": "Assignment 1: Literate Programming",
-    "section": "",
-    "text": "For this assignment, you will be creating an HTML page using Quarto. You can refer to the homepage.qmd document document we created in class for some ideas.\nYour document should have:\n\nA YAML header with:\n\nA title\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nA narrative explaining the figure you’re going to show us (this can be really trivial or something you find really interesting)\n\nwith at least two headings (H1 or H2)\nwith at least one short paragraph\n\nA code chunk that loads data and creates a figure\nThe figure\n\nDecide whether you want the figure to be centered/left-justified/right-justified\nDecide what you want the width and height to be\n\n\nFeel free to play with the options in the YAML header to see what cool features are available. There’s a list of options for the Quarto HTML format here: https://quarto.org/docs/reference/formats/html.html.\nWe haven’t even dipped our toes into creating data visualizations yet, so the figure doesn’t have to be any good. If you want to use base R’s\n\nplot(x = dat$x, y = dat$y) \n\nthat’s totally fine. If you want to make something a little nicer, feel free!\nI also don’t want you to spend a ton of time on the narrative. The point is to demonstrate how to combine the narrative with the code and the figure. I’d rather have you spend your time playing with YAML options and code than writing an interesting narrative.\nWhen you’re done, render the HTML document, and upload the HTML file here.\nLet me know if you have any questions!"
-  },
-  {
-    "objectID": "code/homepage.html",
-    "href": "code/homepage.html",
-    "title": "Literate Programming",
-    "section": "",
-    "text": "Writing some information, include some text that is bold.\n\n\nSome more information, including some that is italicized.\n\n\n\nAgain"
-  },
-  {
-    "objectID": "code/homepage.html#heading-2",
-    "href": "code/homepage.html#heading-2",
-    "title": "Literate Programming",
-    "section": "",
-    "text": "Some more information, including some that is italicized."
-  },
-  {
-    "objectID": "code/homepage.html#heading-2-1",
-    "href": "code/homepage.html#heading-2-1",
-    "title": "Literate Programming",
-    "section": "",
-    "text": "Again"
-  },
-  {
-    "objectID": "code/homepage.html#example-1",
-    "href": "code/homepage.html#example-1",
-    "title": "Literate Programming",
-    "section": "Example 1",
-    "text": "Example 1\nFirst, we can include code-formatted font in our narrative. So for example, if we wanted to say we were using the package ggplot2 in our Methods, we can enclose it in “backticks” (`)."
-  },
-  {
-    "objectID": "code/homepage.html#example-2",
-    "href": "code/homepage.html#example-2",
-    "title": "Literate Programming",
-    "section": "Example 2",
-    "text": "Example 2\nSecond, we can actually execute some code inline. For example, we might want to know what 1 + 1 equals: 2."
-  },
-  {
-    "objectID": "code/homepage.html#example-3",
-    "href": "code/homepage.html#example-3",
-    "title": "Literate Programming",
-    "section": "Example 3",
-    "text": "Example 3\nThird, you might want a whole section of code (a “code chunk”).\n\n\nCode\n# A bunch of R code to execute\n# Attach sample data\ndata(\"mtcars\")\n# Print out the first 6 rows\nhead(mtcars)\n\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
-  },
-  {
-    "objectID": "code/homepage.html#example-4",
-    "href": "code/homepage.html#example-4",
-    "title": "Literate Programming",
-    "section": "Example 4",
-    "text": "Example 4\nFourth, you might want to display the output without displaying the whole chunk of code.\n\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
-  },
-  {
-    "objectID": "code/homepage.html#example-5",
-    "href": "code/homepage.html#example-5",
-    "title": "Literate Programming",
-    "section": "Example 5",
-    "text": "Example 5\nSince our output here was a table, we might want some formatting.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1"
-  },
-  {
-    "objectID": "code/homepage.html#example-6",
-    "href": "code/homepage.html#example-6",
-    "title": "Literate Programming",
-    "section": "Example 6",
-    "text": "Example 6\nWe can include a figure in our output\n\n\n\n\n\nRelationship between number of cylinders and gas mileage."
-  },
-  {
-    "objectID": "assign/02_formats.html",
-    "href": "assign/02_formats.html",
-    "title": "Assignment 2: Image Formats",
-    "section": "",
-    "text": "For this assignment, I’m asking you to create a single Word document (or similar non-Microsoft *.doc or *.docx file) to demonstrate different image qualities. Note I’m not having you render a document with Quarto because the point is to access the exported images rather than to create them in the document.\nYou can approximately follow the script we created in class [link will be posted after class]. Create a figure using ggplot2 or base R. Save it 5 ways:\n\nUsing RStudio “Export” button (choose any options you want or use all the defaults)\nUsing agg_jpeg with quality = 100 (no compression)\nUsing agg_jpeg with quality = 10 (high compression)\nUsing agg_tiff with compression = \"none\"\nUsing agg_tiff with compression = \"lzw\"\n\nFor each file, follow the Science figure guidelines, and choose whether you’ll create a one-column or two-column figure. Make sure your figure meets the size and resolution criteria.\nThen, in your Word doc:\n\nCreate a table showing the properties of each of the 5 images: device, compression, and file size.\nInsert the high compression JPEG and the LZW compression TIFF. Write a short paragraph describing the differences you notice.\nInsert the RStudio Export image. Write a short paragraph describing how you sized the image for the Science guidelines and whether it was easier or harder than using the scripted graphics devices.\n\nUpload the completed Word doc on Canvas.\nLet me know if you have any questions!"
   },
   {
     "objectID": "lectures/06_abstract.html#data-vis-what-and-why",
@@ -830,7 +67,7 @@
     "href": "lectures/06_abstract.html#data-abstraction-1",
     "title": "Lecture 6: Data Abstraction",
     "section": "Data Abstraction",
-    "text": "Data Abstraction\n\n# Semantics and Types"
+    "text": "Data Abstraction"
   },
   {
     "objectID": "lectures/06_abstract.html#why-do-data-semantics-and-types-matter",
@@ -840,29 +77,29 @@
     "text": "Why do data semantics and types matter?\n\nSemantics of the data is its real-world meaning.\nType of the data is its structural or mathematical interpretation.\n\nFor example, numbers might represent a count of items. In this case, it makes sense to add them together to get a total count.\nAlternatively, a number might represent a postal code. In this case, it is really a name for a category that happens to be represented with numbers rather than alphabetical characters. It doesn’t make any sense to add them together."
   },
   {
-    "objectID": "lectures/06_abstract.html#semantics-and-types",
-    "href": "lectures/06_abstract.html#semantics-and-types",
-    "title": "Lecture 6: Data Abstraction",
-    "section": "Semantics and Types",
-    "text": "Semantics and Types\n\nImagine the following data:\nBasil, 7, S, Pear\nWhat do these data mean?"
-  },
-  {
     "objectID": "lectures/06_abstract.html#semantics-and-types-1",
     "href": "lectures/06_abstract.html#semantics-and-types-1",
     "title": "Lecture 6: Data Abstraction",
     "section": "Semantics and Types",
-    "text": "Semantics and Types\nBasil, 7, S, Pear\n\nMaybe a food shipment of produce arrived in satsifactory condition on the 7th day of the month, containing basil and pears?\nMaybe the Basil Point neighborhood had 7 inches of snow cleared by the Pear Creek Limited snow removal service?\nMaybe the lab rat named Basil has made 7 attempts to navigate the south section of the maze and was given a pear as a reward?"
+    "text": "Semantics and Types\n\nImagine the following data:\nBasil, 7, S, Pear\nWhat do these data mean?"
   },
   {
     "objectID": "lectures/06_abstract.html#semantics-and-types-2",
     "href": "lectures/06_abstract.html#semantics-and-types-2",
     "title": "Lecture 6: Data Abstraction",
     "section": "Semantics and Types",
-    "text": "Semantics and Types\nHere’s the full table, including column titles that provide the intended semantics.\n\n\n\n\n\n\nID\nName\nAge\nShirt.Size\nFavorite.Fruit\n\n\n\n\n1\nAmy\n8\nS\nApple\n\n\n2\nBasil\n7\nS\nPear\n\n\n3\nClara\n9\nM\nDurian\n\n\n4\nDesmond\n13\nL\nElderberry\n\n\n5\nErnest\n12\nL\nPeach\n\n\n6\nFanny\n10\nS\nLychee\n\n\n7\nGeorge\n9\nM\nOrange\n\n\n8\nHector\n8\nL\nLoquat\n\n\n9\nIda\n10\nM\nPear\n\n\n10\nAmy\n12\nM\nOrange"
+    "text": "Semantics and Types\nBasil, 7, S, Pear\n\nMaybe a food shipment of produce arrived in satsifactory condition on the 7th day of the month, containing basil and pears?\nMaybe the Basil Point neighborhood had 7 inches of snow cleared by the Pear Creek Limited snow removal service?\nMaybe the lab rat named Basil has made 7 attempts to navigate the south section of the maze and was given a pear as a reward?"
   },
   {
     "objectID": "lectures/06_abstract.html#semantics-and-types-3",
     "href": "lectures/06_abstract.html#semantics-and-types-3",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Semantics and Types",
+    "text": "Semantics and Types\nHere’s the full table, including column titles that provide the intended semantics.\n\n\n\n\n\n\nID\nName\nAge\nShirt.Size\nFavorite.Fruit\n\n\n\n\n1\nAmy\n8\nS\nApple\n\n\n2\nBasil\n7\nS\nPear\n\n\n3\nClara\n9\nM\nDurian\n\n\n4\nDesmond\n13\nL\nElderberry\n\n\n5\nErnest\n12\nL\nPeach\n\n\n6\nFanny\n10\nS\nLychee\n\n\n7\nGeorge\n9\nM\nOrange\n\n\n8\nHector\n8\nL\nLoquat\n\n\n9\nIda\n10\nM\nPear\n\n\n10\nAmy\n12\nM\nOrange"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#semantics-and-types-4",
+    "href": "lectures/06_abstract.html#semantics-and-types-4",
     "title": "Lecture 6: Data Abstraction",
     "section": "Semantics and Types",
     "text": "Semantics and Types\n\nSometimes, types and semantics can be correctly inferred from the syntax of a data file or from names of variables.\n\nOften, this additional information must be provided along with the dataset in an additional format. This additional information is called metadata."
@@ -1062,5 +299,670 @@
     "title": "Lecture 6: Data Abstraction",
     "section": "Key vs. Value Semantics",
     "text": "Key vs. Value Semantics\nFor a multidimensional table, multiple keys are required to identify a unique item."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#data-vis-what-and-why",
+    "href": "lectures/04_what_why.html#data-vis-what-and-why",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Data Vis: What and Why?",
+    "text": "Data Vis: What and Why?\n\n\nThis lecture is based on Chapter 2 of Visualization Analysis & Design.\n\n“What’s Vis, and Why Do It?”"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#the-big-picture",
+    "href": "lectures/04_what_why.html#the-big-picture",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nThe definition of visualization structuring this book\n(and thus, this course):\n\n\nComputer-based visualization systems provide visual representations of datasets designed to help people carry out tasks more effectively."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#the-big-picture-1",
+    "href": "lectures/04_what_why.html#the-big-picture-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nMunzner continues on, building out a framework for the book (1/3):\n\n\nVisualization is suitable when there is a need to augment human capabilities rather than replace people with computational decision-making methods. The design space of possible vis idioms is huge, and includes the considerations of both how to create and how to interact with visual representations."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#the-big-picture-2",
+    "href": "lectures/04_what_why.html#the-big-picture-2",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nMunzner continues on, building out a framework for the book (2/3):\n\n\nVis design is full of trade-offs, and most possibilities in the design space are ineffective for a particular task, so validating the effectiveness of a design is both necessary and difficult."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#the-big-picture-3",
+    "href": "lectures/04_what_why.html#the-big-picture-3",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nMunzner continues on, building out a framework for the book (3/3):\n\n\nVis designers must take into account three very different kinds of resource limitations: those of computers, of humans, and of displays. Vis usage can be analyzed in terms of why the user needs it, what data is shown, and how the idiom is designed."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#the-big-picture-4",
+    "href": "lectures/04_what_why.html#the-big-picture-4",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nThis definition raises a series of questions that help describe the rationale for this definition and the scope of the book (and, again, this course)."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop",
+    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a human in the loop?",
+    "text": "Why have a human in the loop?\nSome tasks are so well understood that we can automate solutions.\nFor example, stock brokers have algorithms that can automatically (and nearly instantaneously) trade stocks based on predetermine criteria.\nFor these tasks, you wouldn’t design a tool that helps humans make decisions faster, because the algorithms are already thousands of times faster than even a human armed with great tools."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-1",
+    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a human in the loop?",
+    "text": "Why have a human in the loop?\nBut other tasks are not clearly understood or clearly specified.\nIn these cases, an analysis process with a human in the loop is preferable."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-2",
+    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-2",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a human in the loop?",
+    "text": "Why have a human in the loop?\nWe have powerful pattern detection abilities that are still better than what an unsupervised computer can accomplish.\nVisualization systems are thus used when the goal is to augment human capabilities, rather than replace the human."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-3",
+    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-3",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a human in the loop?",
+    "text": "Why have a human in the loop?\nIt makes sense to create visualization tools to:\n\nGain a clearer understanding of a system you wish to eventually automate.\nEvaluate automation success in the middle of a transition.\nMonitor whether the automated system is performing well according to human judgement."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-human-in-the-loop-4",
+    "href": "lectures/04_what_why.html#why-have-a-human-in-the-loop-4",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a human in the loop?",
+    "text": "Why have a human in the loop?\nIt makes sense to create visualization tools to:\n\nAugment humans indefinitely, for example, exploratory analysis tools for generating hypotheses.\nPresent or explain knowledge to others.\n\nI have a feeling most of us are here for this one."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-have-a-computer-in-the-loop",
+    "href": "lectures/04_what_why.html#why-have-a-computer-in-the-loop",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why have a computer in the loop?",
+    "text": "Why have a computer in the loop?\nComputers can:\n\nDraw and present large datasets that would be completely infeasible to draw by hand.\nRecreate visualizations “on the fly” when datasets are updated.\n\nImportant for reproducibility."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-use-an-external-representation",
+    "href": "lectures/04_what_why.html#why-use-an-external-representation",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why use an external representation?",
+    "text": "Why use an external representation?\nExternal representations augment human capacity.\nWe have limits to our internal cognition and memory.\nVisualizations replace cognition with perception."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-depend-on-vision",
+    "href": "lectures/04_what_why.html#why-depend-on-vision",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why depend on vision?",
+    "text": "Why depend on vision?\nThe human visual system provides a very high-bandwidth channel to our brains.\nA significant amount of visual information processing occurs in parallel at the preconscious level.\n\nFor example, visual popout is what allows you to immediately recognize the red object in a sea of gray ones."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-depend-on-vision-1",
+    "href": "lectures/04_what_why.html#why-depend-on-vision-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why depend on vision?",
+    "text": "Why depend on vision?\nSound is a poor choice for convey a large amount of information.\nWe can separate an enormous amount of visual information and process it in parallel, but we experience sound in a sequential stream."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-depend-on-vision-2",
+    "href": "lectures/04_what_why.html#why-depend-on-vision-2",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why depend on vision?",
+    "text": "Why depend on vision?\nOur other senses are mostly unused because of technological limitations:\n\nWe can’t reliable record and reproduce taste or smell.\nWe have some haptic input and feedback devices, but they cover only a small part of our perceptual range for touch and kinesthetic senses.\n\nApparently active research in this field."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-show-the-data-in-detail",
+    "href": "lectures/04_what_why.html#why-show-the-data-in-detail",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why show the data in detail?",
+    "text": "Why show the data in detail?\nNumerical summaries lose information. The “famous” example is Anscombe’s quartet.\nAll four datasets have the same mean, variance, correlation coefficient, and linear regression lines."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-show-the-data-in-detail-1",
+    "href": "lectures/04_what_why.html#why-show-the-data-in-detail-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why show the data in detail?",
+    "text": "Why show the data in detail?\nAnscombe’s quartet shows that a single summary is often an oversimplification of the true structure in a dataset.\nThis applies even more strongly to large and complex datasets."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-use-interactivity",
+    "href": "lectures/04_what_why.html#why-use-interactivity",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why use interactivity?",
+    "text": "Why use interactivity?\nInteractivity is where user actions cause the view to change.\nFor large datasets, limitations of humans and of displays cause visualizations to mask complexity.\nInteractively changing visualizations can allow a user to investigate many possible queries."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge",
+    "href": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why is the vis idiom design space huge?",
+    "text": "Why is the vis idiom design space huge?\nA visualization idiom is a distinct approach to creating and manipulating visual representations."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-1",
+    "href": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why is the vis idiom design space huge?",
+    "text": "Why is the vis idiom design space huge?\nFrom the Merriam-Webster Dictionary:\nIdiom: a style or form of artistic expression that is characteristic of an individual, a period or movement, or a medium or instrument."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-2",
+    "href": "lectures/04_what_why.html#why-is-the-vis-idiom-design-space-huge-2",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why is the vis idiom design space huge?",
+    "text": "Why is the vis idiom design space huge?\nUnfortunately, Munzner doesn’t directly answer this question. But she goes on to say:\n\nThis book provides a framework for thinking about the space of vis design idioms systematically by considering a set of design choices…\n\nSo I guess we’ll find out the answer together!"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-focus-on-tasks",
+    "href": "lectures/04_what_why.html#why-focus-on-tasks",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why focus on tasks?",
+    "text": "Why focus on tasks?\nTools are designed to be task-specific.\nReframing a user’s task from domain-specific to an abstract form can highlight similarities and differences between visualizations in different fields.\nFor example, visualization can be used to generate new hypotheses when exploring a completely new dataset, or it can be used to test existing hypotheses in a system already better understood."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-focus-on-effectiveness",
+    "href": "lectures/04_what_why.html#why-focus-on-effectiveness",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why focus on effectiveness?",
+    "text": "Why focus on effectiveness?\nI think this is somewhat self-evident.\nFrom the book:\n\nThe focus on effectiveness is a corollary of defining vis to have the goal of supporting user tasks."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-are-most-designs-ineffective",
+    "href": "lectures/04_what_why.html#why-are-most-designs-ineffective",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why are most designs ineffective?",
+    "text": "Why are most designs ineffective?\nThe possible design space is much larger than the optimal design space."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-is-validation-difficult",
+    "href": "lectures/04_what_why.html#why-is-validation-difficult",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why is validation difficult?",
+    "text": "Why is validation difficult?\nThe problem of validation is identifying whether the visualization tool meets your design goals.\n\nHow do you know if it works?\nWhat does better mean?\nWhat does effectively mean?\nCan you measure insight or engagement?\nWho is the user?"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-is-validation-difficult-1",
+    "href": "lectures/04_what_why.html#why-is-validation-difficult-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why is validation difficult?",
+    "text": "Why is validation difficult?\n\nEven a concept like faster is tricky:\n\nAre users limited by computer speed?\nOr by the speed of their own cognition?\n\nHow can you collect benchmark data?"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-are-there-resource-limitations",
+    "href": "lectures/04_what_why.html#why-are-there-resource-limitations",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why are there resource limitations?",
+    "text": "Why are there resource limitations?\nAgain, I argue this is self-evident\nSome limitations:\n\nScalability (to bigger datasets)\nData acquisition\nData processing\nComputer memory\nHuman memory and attention"
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-are-there-resource-limitations-1",
+    "href": "lectures/04_what_why.html#why-are-there-resource-limitations-1",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why are there resource limitations?",
+    "text": "Why are there resource limitations?\nChange blindness occurs when even very large changes are not noticed if we are paying attention to something else in our view.\nInformation density is a measure of the amount of information encoded versus the amount of unused space."
+  },
+  {
+    "objectID": "lectures/04_what_why.html#why-analyze",
+    "href": "lectures/04_what_why.html#why-analyze",
+    "title": "Lecture 4: Data Visualization: What and Why?",
+    "section": "Why analyze?",
+    "text": "Why analyze?\nAnalyzing existing visualizations is a good stepping stone to designing new ones.\nMunzner relates this analysis to three questions:\n\nWhat data does the user see?\nWhy does the user intend to use this visualization tool?\nHow are the visual encoding and interaction idioms constructed (design choices)?"
+  },
+  {
+    "objectID": "lectures/02_computing.html#basic-computer-operations",
+    "href": "lectures/02_computing.html#basic-computer-operations",
+    "title": "Lecture 2: Computing Basics",
+    "section": "Basic Computer Operations",
+    "text": "Basic Computer Operations\n\n\n\n\n\n\nflowchart LR\n subgraph B[\"Process\"]\n        RAM[\"RAM\"]\n        CPU[\"CPU\"]\n        HDD[\"HDD\"]\n  end\n    CPU &lt;--&gt; RAM & HDD\n    A[\"Inputs\"] --&gt; B\n    B --&gt; C[\"Outputs\"]\n    \n\n\n\nFigure 1: A very simplified diagram of a computer.\n\n\n\n\n\nWhat’s the difference between Random Access Memory (RAM) and a hard disk drive (HDD)?"
+  },
+  {
+    "objectID": "lectures/02_computing.html#operating-systems",
+    "href": "lectures/02_computing.html#operating-systems",
+    "title": "Lecture 2: Computing Basics",
+    "section": "Operating Systems",
+    "text": "Operating Systems\nWhat does an operating system do?\nWhat are some example operating systems?"
+  },
+  {
+    "objectID": "lectures/02_computing.html#operating-systems-1",
+    "href": "lectures/02_computing.html#operating-systems-1",
+    "title": "Lecture 2: Computing Basics",
+    "section": "Operating Systems",
+    "text": "Operating Systems\n\nWindows\nUnix-like\n\nmacOS\n(iOS)\nLinux\n(Android)"
+  },
+  {
+    "objectID": "lectures/02_computing.html#operating-systems-2",
+    "href": "lectures/02_computing.html#operating-systems-2",
+    "title": "Lecture 2: Computing Basics",
+    "section": "Operating Systems",
+    "text": "Operating Systems\n\n\n\n\nWindows\nUnix\n\n\n\n\nCLI\ncmd.exe\nbash\n\n\nDirectory separator\n\\\n/\n\n\nRoot directory\nC:\\\n~/"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure",
+    "href": "lectures/02_computing.html#file-structure",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File Structure",
+    "text": "File Structure\n\nHierarchical databases"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-1",
+    "href": "lectures/02_computing.html#file-structure-1",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\n\nAbsolute vs. relative paths\n\nWhat’s the difference between an absolute and relative path?\nWhen should you use each one?"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-2",
+    "href": "lectures/02_computing.html#file-structure-2",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\nAbsolute path:\nC:/Users/bsmith/Teaching/UI 2026-01 Spring/BCB5200/BCB5200_Website/lectures/01_intro.qmd\nRelative path:\n./lectures/01_intro.qmd"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-3",
+    "href": "lectures/02_computing.html#file-structure-3",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\nRelative paths\n. points to the current directory\n.. points to the parent directory"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-4",
+    "href": "lectures/02_computing.html#file-structure-4",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\n|---C:/\n|---|---Users/\n|---|---|---bsmith/\n|---|---|---|---Documents/\n|---|---|---|---|---Website/\n|---|---|---|---|---|---index.html\n|---|---|---|---|---|---img/\n|---|---|---|---|---|---|---img1.png\n|---|---|---|---|---|---|---img2.png\n|---|---|---|---Pictures/\n|---|---|---|---|---img3.png\nFrom index.html:\n\nHow do I get to img1?\n\nC:/Users/bsmith/Documents/Website/img/img1.png\nimg/img1.png\n./img/img1.png"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-5",
+    "href": "lectures/02_computing.html#file-structure-5",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\n|---C:/\n|---|---Users/\n|---|---|---bsmith/\n|---|---|---|---Documents/\n|---|---|---|---|---Website/\n|---|---|---|---|---|---index.html\n|---|---|---|---|---|---img/\n|---|---|---|---|---|---|---img1.png\n|---|---|---|---|---|---|---img2.png\n|---|---|---|---Pictures/\n|---|---|---|---|---img3.png\nFrom index.html:\n\nHow do I get to img2?\n\nimg/img2.png"
+  },
+  {
+    "objectID": "lectures/02_computing.html#file-structure-6",
+    "href": "lectures/02_computing.html#file-structure-6",
+    "title": "Lecture 2: Computing Basics",
+    "section": "File structure",
+    "text": "File structure\n|---C:/\n|---|---Users/\n|---|---|---bsmith/\n|---|---|---|---Documents/\n|---|---|---|---|---Website/\n|---|---|---|---|---|---index.html\n|---|---|---|---|---|---img/\n|---|---|---|---|---|---|---img1.png\n|---|---|---|---|---|---|---img2.png\n|---|---|---|---Pictures/\n|---|---|---|---|---img3.png\nFrom index.html:\n\nHow do I get to img3?\n\n../../Pictures/img3.png\nC:/Users/bsmith/Pictures/img3.png"
+  },
+  {
+    "objectID": "lectures/02_computing.html#rstudio-projects",
+    "href": "lectures/02_computing.html#rstudio-projects",
+    "title": "Lecture 2: Computing Basics",
+    "section": "RStudio Projects",
+    "text": "RStudio Projects"
+  },
+  {
+    "objectID": "lectures/02_computing.html#git-and-github",
+    "href": "lectures/02_computing.html#git-and-github",
+    "title": "Lecture 2: Computing Basics",
+    "section": "git and GitHub",
+    "text": "git and GitHub\n\ngit is version control software"
+  },
+  {
+    "objectID": "lectures/02_computing.html#git-and-github-1",
+    "href": "lectures/02_computing.html#git-and-github-1",
+    "title": "Lecture 2: Computing Basics",
+    "section": "git and GitHub",
+    "text": "git and GitHub\n\nGitHub is a platform for git repositories"
+  },
+  {
+    "objectID": "lectures/02_computing.html#installing-software",
+    "href": "lectures/02_computing.html#installing-software",
+    "title": "Lecture 2: Computing Basics",
+    "section": "Installing software",
+    "text": "Installing software\n\nR\nRStudio\ngit"
+  },
+  {
+    "objectID": "lectures/02_computing.html#rstudio-setup",
+    "href": "lectures/02_computing.html#rstudio-setup",
+    "title": "Lecture 2: Computing Basics",
+    "section": "RStudio Setup",
+    "text": "RStudio Setup"
+  },
+  {
+    "objectID": "lectures/02_computing.html#rstudio-setup-1",
+    "href": "lectures/02_computing.html#rstudio-setup-1",
+    "title": "Lecture 2: Computing Basics",
+    "section": "RStudio Setup",
+    "text": "RStudio Setup"
+  },
+  {
+    "objectID": "lectures/02_computing.html#rstudio-setup-2",
+    "href": "lectures/02_computing.html#rstudio-setup-2",
+    "title": "Lecture 2: Computing Basics",
+    "section": "RStudio Setup",
+    "text": "RStudio Setup\n\n\nI highly recommend that you setup your workspace so that it does not automatically save/restore."
+  },
+  {
+    "objectID": "lectures/02_computing.html#git-setup",
+    "href": "lectures/02_computing.html#git-setup",
+    "title": "Lecture 2: Computing Basics",
+    "section": "git Setup",
+    "text": "git Setup\nReproducible Data Science\nDr. Simona Picardi, CNR, University of Idaho\nhttps://ecorepsci.github.io/reproducible-science/version-control-git.html#configuring-git"
+  },
+  {
+    "objectID": "lectures/00_test.html#slide-1",
+    "href": "lectures/00_test.html#slide-1",
+    "title": "Lecture 1: Introduction",
+    "section": "Slide 1",
+    "text": "Slide 1\nText here\n\nBullet 1\nBullet 2\n\n\n\nSome additional commentary of more peripheral interest."
+  },
+  {
+    "objectID": "lectures/00_test.html#slide-2",
+    "href": "lectures/00_test.html#slide-2",
+    "title": "Lecture 1: Introduction",
+    "section": "Slide 2",
+    "text": "Slide 2\nHeading 3\nText here\n\nBlockquote here"
+  },
+  {
+    "objectID": "lectures/00_test.html#slide-3",
+    "href": "lectures/00_test.html#slide-3",
+    "title": "Lecture 1: Introduction",
+    "section": "Slide 3",
+    "text": "Slide 3\nSome commentary here with a footnote 1\nthis footnote is of minimal interest"
+  },
+  {
+    "objectID": "lectures/00_test.html#references",
+    "href": "lectures/00_test.html#references",
+    "title": "Lecture 1: Introduction",
+    "section": "References",
+    "text": "References\nMunzner, T. (2014NA). Visualization Analysis & Design. A K Peters Visualization Series. Boca Raton, FL: CRC Press."
+  },
+  {
+    "objectID": "code.html",
+    "href": "code.html",
+    "title": "Code",
+    "section": "",
+    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nImage Formats\nimage_formats.R"
+  },
+  {
+    "objectID": "code/00_dummy.html",
+    "href": "code/00_dummy.html",
+    "title": "Code Walkthrough 00",
+    "section": "",
+    "text": "Some text will go here.\n\n# Some code will go here\n\ndd &lt;- data.frame(x = seq(0, 2*pi, length.out = 100))\ndd$y &lt;- sin(dd$x)\nplot(dd$x, dd$y, type = \"b\")"
+  },
+  {
+    "objectID": "assign/02_formats.html",
+    "href": "assign/02_formats.html",
+    "title": "Assignment 2: Image Formats",
+    "section": "",
+    "text": "For this assignment, I’m asking you to create a single Word document (or similar non-Microsoft *.doc or *.docx file) to demonstrate different image qualities. Note I’m not having you render a document with Quarto because the point is to access the exported images rather than to create them in the document.\nYou can approximately follow the script we created in class [link will be posted after class]. Create a figure using ggplot2 or base R. Save it 5 ways:\n\nUsing RStudio “Export” button (choose any options you want or use all the defaults)\nUsing agg_jpeg with quality = 100 (no compression)\nUsing agg_jpeg with quality = 10 (high compression)\nUsing agg_tiff with compression = \"none\"\nUsing agg_tiff with compression = \"lzw\"\n\nFor each file, follow the Science figure guidelines, and choose whether you’ll create a one-column or two-column figure. Make sure your figure meets the size and resolution criteria.\nThen, in your Word doc:\n\nCreate a table showing the properties of each of the 5 images: device, compression, and file size.\nInsert the high compression JPEG and the LZW compression TIFF. Write a short paragraph describing the differences you notice.\nInsert the RStudio Export image. Write a short paragraph describing how you sized the image for the Science guidelines and whether it was easier or harder than using the scripted graphics devices.\n\nUpload the completed Word doc on Canvas.\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "assign/01_literate.html",
+    "href": "assign/01_literate.html",
+    "title": "Assignment 1: Literate Programming",
+    "section": "",
+    "text": "For this assignment, you will be creating an HTML page using Quarto. You can refer to the homepage.qmd document document we created in class for some ideas.\nYour document should have:\n\nA YAML header with:\n\nA title\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nA narrative explaining the figure you’re going to show us (this can be really trivial or something you find really interesting)\n\nwith at least two headings (H1 or H2)\nwith at least one short paragraph\n\nA code chunk that loads data and creates a figure\nThe figure\n\nDecide whether you want the figure to be centered/left-justified/right-justified\nDecide what you want the width and height to be\n\n\nFeel free to play with the options in the YAML header to see what cool features are available. There’s a list of options for the Quarto HTML format here: https://quarto.org/docs/reference/formats/html.html.\nWe haven’t even dipped our toes into creating data visualizations yet, so the figure doesn’t have to be any good. If you want to use base R’s\n\nplot(x = dat$x, y = dat$y) \n\nthat’s totally fine. If you want to make something a little nicer, feel free!\nI also don’t want you to spend a ton of time on the narrative. The point is to demonstrate how to combine the narrative with the code and the figure. I’d rather have you spend your time playing with YAML options and code than writing an interesting narrative.\nWhen you’re done, render the HTML document, and upload the HTML file here.\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2"
+  },
+  {
+    "objectID": "code/homepage.html",
+    "href": "code/homepage.html",
+    "title": "Literate Programming",
+    "section": "",
+    "text": "Writing some information, include some text that is bold.\n\n\nSome more information, including some that is italicized.\n\n\n\nAgain"
+  },
+  {
+    "objectID": "code/homepage.html#heading-2",
+    "href": "code/homepage.html#heading-2",
+    "title": "Literate Programming",
+    "section": "",
+    "text": "Some more information, including some that is italicized."
+  },
+  {
+    "objectID": "code/homepage.html#heading-2-1",
+    "href": "code/homepage.html#heading-2-1",
+    "title": "Literate Programming",
+    "section": "",
+    "text": "Again"
+  },
+  {
+    "objectID": "code/homepage.html#example-1",
+    "href": "code/homepage.html#example-1",
+    "title": "Literate Programming",
+    "section": "Example 1",
+    "text": "Example 1\nFirst, we can include code-formatted font in our narrative. So for example, if we wanted to say we were using the package ggplot2 in our Methods, we can enclose it in “backticks” (`)."
+  },
+  {
+    "objectID": "code/homepage.html#example-2",
+    "href": "code/homepage.html#example-2",
+    "title": "Literate Programming",
+    "section": "Example 2",
+    "text": "Example 2\nSecond, we can actually execute some code inline. For example, we might want to know what 1 + 1 equals: 2."
+  },
+  {
+    "objectID": "code/homepage.html#example-3",
+    "href": "code/homepage.html#example-3",
+    "title": "Literate Programming",
+    "section": "Example 3",
+    "text": "Example 3\nThird, you might want a whole section of code (a “code chunk”).\n\n\nCode\n# A bunch of R code to execute\n# Attach sample data\ndata(\"mtcars\")\n# Print out the first 6 rows\nhead(mtcars)\n\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
+  },
+  {
+    "objectID": "code/homepage.html#example-4",
+    "href": "code/homepage.html#example-4",
+    "title": "Literate Programming",
+    "section": "Example 4",
+    "text": "Example 4\nFourth, you might want to display the output without displaying the whole chunk of code.\n\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
+  },
+  {
+    "objectID": "code/homepage.html#example-5",
+    "href": "code/homepage.html#example-5",
+    "title": "Literate Programming",
+    "section": "Example 5",
+    "text": "Example 5\nSince our output here was a table, we might want some formatting.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1"
+  },
+  {
+    "objectID": "code/homepage.html#example-6",
+    "href": "code/homepage.html#example-6",
+    "title": "Literate Programming",
+    "section": "Example 6",
+    "text": "Example 6\nWe can include a figure in our output\n\n\n\n\n\nRelationship between number of cylinders and gas mileage."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BCB 5200: Foundations of Data Visualization",
+    "section": "",
+    "text": "This website houses all the materials for BCB 4200/5200 at the University of Idaho for Spring 2026. Current students please note that we are still using Canvas for submitting assignments and grading.\nThis course material was adapted and developed by Brian J. Smith. The course was originally designed and taught by Barrie Robison, and his version of the material is a valuable resource, available here: https://professorpolymorphic.github.io/BCB520/\nOn this website, you will find an abbreviated syllabus, lectures, code walkthroughs, and assignments.\n\nThis is a Quarto website, written using RStudio. To learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "lectures/01_intro.html#dr.-brian-j.-smith",
+    "href": "lectures/01_intro.html#dr.-brian-j.-smith",
+    "title": "Lecture 1: Introduction",
+    "section": "Dr. Brian J. Smith",
+    "text": "Dr. Brian J. Smith\n\n\n\n\n\n\nB.S. in Wildlife Ecology & Conservation from University of Florida\nM.S. in Wildlife Ecology & Conservation from University of Florida\nPh.D. in Ecology from Utah State University"
+  },
+  {
+    "objectID": "lectures/01_intro.html#introduce-yourself",
+    "href": "lectures/01_intro.html#introduce-yourself",
+    "title": "Lecture 1: Introduction",
+    "section": "Introduce Yourself",
+    "text": "Introduce Yourself\n\nName (nickname?)\nWhere you’re from\nYour degree program\nYour area of interest\nWhy you’re interested in data visualization\nYour background and comfort with:\n\nStatistics (particularly regression models)\nR\nAny other programming languages\nSpatial data (GIS)\nNetwork data"
+  },
+  {
+    "objectID": "lectures/01_intro.html#canvas-page",
+    "href": "lectures/01_intro.html#canvas-page",
+    "title": "Lecture 1: Introduction",
+    "section": "Canvas Page",
+    "text": "Canvas Page"
+  },
+  {
+    "objectID": "lectures/01_intro.html#course-website",
+    "href": "lectures/01_intro.html#course-website",
+    "title": "Lecture 1: Introduction",
+    "section": "Course Website",
+    "text": "Course Website"
+  },
+  {
+    "objectID": "lectures/03_literate.html",
+    "href": "lectures/03_literate.html",
+    "title": "Lecture 3: Literate Programming",
+    "section": "",
+    "text": "In class, I live-coded in Quarto to demonstrate Literate Programming. The homepage.qmd document and the lecture recording are available on Canvas.\n\n\nHere are some useful resources that I referred to during the lecture or would like to make you aware of now.\n\nQuarto Website\n\nQuarto Cheatsheet\n\nQuarto HTML Basics (for a bunch of good ideas!)\nQuarto HTML Format Options\nTinyTeX (if you want to render to PDF)\nMarkdown Wikipedia Page (in case you’re interested in the history)\nLaTeX Wikipedia Page (in case you’re interested in the history)\nQuarto LaTeX Equations (in case you want math in your document; see below)\nMathJax Quick Reference (for help writing equations)\n\n\n\n\nI forgot to mention this during the lecture, but easily including Greek letters, math symbols, or equations is also very easy in a Quarto document. By default, HTML pages render the math using MathJax.\n\n\nYou can include equations, like \\(y = mx + b\\), inline in your documents. You create an inline equation by wrapping the expression in $.\n\n\n\nYou can also write math in chunks on their own line(s). You begin a chunk with $$, write the chunk, and end it with $$.\n\\[\n\\mu = \\beta_0 + \\beta_1 x  \n\\] \\[\ny \\sim Normal(\\mu, \\sigma^2 )\n\\]"
+  },
+  {
+    "objectID": "lectures/03_literate.html#resources",
+    "href": "lectures/03_literate.html#resources",
+    "title": "Lecture 3: Literate Programming",
+    "section": "",
+    "text": "Here are some useful resources that I referred to during the lecture or would like to make you aware of now.\n\nQuarto Website\n\nQuarto Cheatsheet\n\nQuarto HTML Basics (for a bunch of good ideas!)\nQuarto HTML Format Options\nTinyTeX (if you want to render to PDF)\nMarkdown Wikipedia Page (in case you’re interested in the history)\nLaTeX Wikipedia Page (in case you’re interested in the history)\nQuarto LaTeX Equations (in case you want math in your document; see below)\nMathJax Quick Reference (for help writing equations)"
+  },
+  {
+    "objectID": "lectures/03_literate.html#math",
+    "href": "lectures/03_literate.html#math",
+    "title": "Lecture 3: Literate Programming",
+    "section": "",
+    "text": "I forgot to mention this during the lecture, but easily including Greek letters, math symbols, or equations is also very easy in a Quarto document. By default, HTML pages render the math using MathJax.\n\n\nYou can include equations, like \\(y = mx + b\\), inline in your documents. You create an inline equation by wrapping the expression in $.\n\n\n\nYou can also write math in chunks on their own line(s). You begin a chunk with $$, write the chunk, and end it with $$.\n\\[\n\\mu = \\beta_0 + \\beta_1 x  \n\\] \\[\ny \\sim Normal(\\mu, \\sigma^2 )\n\\]"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#my-first-big-first-author-paper",
+    "href": "lectures/05_image_formats.html#my-first-big-first-author-paper",
+    "title": "Lecture 5: Image Formats",
+    "section": "My first big first-author paper",
+    "text": "My first big first-author paper\nSmith et al. (2016) Biological Invasions\n\nI assumed that after the paper was accepted, the production team would let me know if they thought the size or the aspect ratios of my figures were awkward.\n\nThey didn’t."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#digital-image-formats-1",
+    "href": "lectures/05_image_formats.html#digital-image-formats-1",
+    "title": "Lecture 5: Image Formats",
+    "section": "Digital Image Formats",
+    "text": "Digital Image Formats\n\n\n\nRaster\n\nBy far, the most common digital image format\nComposed of picture elements (“pixels”)\nDiscrete grid of pixels contains color or intensity information\nFixed resolution, determined by pixel size\nAKA bitmap, referring to a spatial arrangement of bits\n\n\n\n \n\n\nVector\n\nFar less common format\nComposed of mathematical geometry\nContinuous space\nScales well to any resolution thanks to mathematical definitions unrelated to pixels"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#digital-image-formats-2",
+    "href": "lectures/05_image_formats.html#digital-image-formats-2",
+    "title": "Lecture 5: Image Formats",
+    "section": "Digital Image Formats",
+    "text": "Digital Image Formats\n\n\n\nRaster\n\nJPEG\nGIF\nPNG\nTIFF\netc.\n\n\n\n \n\n\nVector\n\nSVG\nPDF\nEPS\netc."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-resolution",
+    "href": "lectures/05_image_formats.html#image-resolution",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Resolution",
+    "text": "Image Resolution\n\nA raster image’s resolution describes how much detail it has.\n\nWe often express resolution using pixel count, expressed either as a single value (e.g., 2.1 megapixels) or as a pair of numbers showing width and height (e.g., 1920 x 1080)."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-resolution-1",
+    "href": "lectures/05_image_formats.html#image-resolution-1",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Resolution",
+    "text": "Image Resolution\n\nFor example a “full HD” image has dimensions 1920 x 1080.\nIf you are familiar with megapixels, that’s:\n\\[1920 \\times 1080 = 2,073,600 \\approx 2.1\\,\\mathrm{Megapixels}\\]"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-resolution-2",
+    "href": "lectures/05_image_formats.html#image-resolution-2",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Resolution",
+    "text": "Image Resolution\nWhile pixels ultimately describe the resolution of an image, whether or not the image appears to be high-quality depends on how large it is displayed. If you display an image at a certain physical size, you can refer to the resolution in:\n\nDPI (dots per inch; a term related to dots of ink in a printed image)\nPPI (pixels per inch; technically more correct on screen).\n\nYou will often see DPI/PPI used interchangeably."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-resolution-3",
+    "href": "lectures/05_image_formats.html#image-resolution-3",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Resolution",
+    "text": "Image Resolution\nSome common DPI values:\n\n\n\nDPI\nUse\n\n\n\n\n72\nStandard Mac display\n\n\n96\nStandard Windows display\n\n\n300-400\nModern Apple Retina HD display\n\n\n300-720\nInkjet printer\n\n\n600-2400\nLaser printer"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#file-size",
+    "href": "lectures/05_image_formats.html#file-size",
+    "title": "Lecture 5: Image Formats",
+    "section": "File Size",
+    "text": "File Size\nVector image file sizes are determined by the number of vectors.\n\nUncompressed, raster image file sizes are related to the image’s resolution and color depth.\n\nColor depth is the number of bits used to indicate the color of a single pixel and is measured in bits per pixel (bpp)."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#file-size-1",
+    "href": "lectures/05_image_formats.html#file-size-1",
+    "title": "Lecture 5: Image Formats",
+    "section": "File Size",
+    "text": "File Size\nIf that image had 24-bit color (web standard), its file size would be:\n\\[1920 \\times 1080 \\times 24 = 49,766,400\\,\\mathrm{bits} \\times \\frac{1\\,\\mathrm{bit}}{8\\,\\mathrm{bytes}} = 6,220,800\\,\\mathrm{bytes}\\approx5.9\\,\\mathrm{MiB}\\]"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#color-depth",
+    "href": "lectures/05_image_formats.html#color-depth",
+    "title": "Lecture 5: Image Formats",
+    "section": "Color Depth",
+    "text": "Color Depth\nThe number of possible colors for \\(n\\)-bit color depth is \\(2^n\\).\n\n\n\n\n\n\n\n\nBit Depth\nBits per pixel\nExamples\n\n\n\n\n1-bit\n\\(2^1=2\\)\nUsually black-and-white\n\n\n2-bit\n\\(2^2=4\\)\nMany early computer systems; original Game Boy\n\n\n3-bit\n\\(2^3=8\\)\nRGB; early home computers with TV displays\n\n\n8-bit\n\\(2^8=256\\)\n1980s PCs; modern smartwatches; Mars Exploration Rovers1\n\n\n15-bit\n\\(2^{15}=32,768\\)\nSuper Nintendo, Game Boy Color\n\n\n24-bit\n\\(2^{24}\\approx16M\\)\n“True color”2; modern computer and phone displays\n\n\n\ngrayscale for navigation imaging; limits data transmission sizethe human eye can discriminate \\(\\approx\\) 10M colors"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-compression",
+    "href": "lectures/05_image_formats.html#image-compression",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Compression",
+    "text": "Image Compression\n Data compression is the process of encoding information using fewer bits that the original representation.\n Image compression is data compression optimized for image data by taking advantage of visual perception or statistical properties of the data. \n\nIf you’re interested in image compression, the Wikipedia page Image compression has a lot of detail."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-compression-1",
+    "href": "lectures/05_image_formats.html#image-compression-1",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Compression",
+    "text": "Image Compression\n Image compression can be lossless or lossy.\n Lossy compression usually (but not always) results in smaller file sizes, but it can introduce noticeable artifacts."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#image-compression-2",
+    "href": "lectures/05_image_formats.html#image-compression-2",
+    "title": "Lecture 5: Image Formats",
+    "section": "Image Compression",
+    "text": "Image Compression\nPhoto taken by Brian on a Nikon ZIII Mirrorless Camera\n2048 x 1365 pixels (2.8 Megapixels)\n(Note most web browsers (except Safari) don’t display TIFFs.)\n\n\n\n\n\n\n\n\nCompression\nImage\nFile Size\n\n\n\n\nJPEG, 100 Quality\n\n0.99 MiB\n\n\nJPEG, 10 Quality\n\n88.2 KiB\n\n\nTIFF, No compression\n\n8.03 MiB\n\n\nTIFF, LZW compression\n\n2.88 MiB"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#scientific-publishing",
+    "href": "lectures/05_image_formats.html#scientific-publishing",
+    "title": "Lecture 5: Image Formats",
+    "section": "Scientific Publishing",
+    "text": "Scientific Publishing\n\nMost journals have explicit figure guidelines in their “Instructions for Authors” material.\n\nFor example, Science has an entire figure guideline PDF.\n\nThey require images to be at least 300 PPI, they prefer vector over raster graphics, and they give exact measurements for one-column and two-column figures."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#r-graphical-devices-1",
+    "href": "lectures/05_image_formats.html#r-graphical-devices-1",
+    "title": "Lecture 5: Image Formats",
+    "section": "R Graphical Devices",
+    "text": "R Graphical Devices\n\nYou can read about graphical devices in R on the help page.\n\n?Devices\n\n# OR\n\nhelp(\"Devices\")\n\n\nYou can also find the help page rendered on the web here."
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#r-graphical-devices-2",
+    "href": "lectures/05_image_formats.html#r-graphical-devices-2",
+    "title": "Lecture 5: Image Formats",
+    "section": "R Graphical Devices",
+    "text": "R Graphical Devices\nYou will notice that the help file indicates that many of the devices are platform-specific. You can check what devices are available on your current system 1:\n\ncapabilities()\n\n       jpeg         png        tiff       tcltk         X11        aqua \n       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE \n   http/ftp     sockets      libxml        fifo      cledit       iconv \n       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE \n        NLS       Rprof     profmem       cairo         ICU long.double \n       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE \n    libcurl \n       TRUE \n\n\nNote that RStudio has its own graphics device"
+  },
+  {
+    "objectID": "lectures/05_image_formats.html#r-graphical-devices-3",
+    "href": "lectures/05_image_formats.html#r-graphical-devices-3",
+    "title": "Lecture 5: Image Formats",
+    "section": "R Graphical Devices",
+    "text": "R Graphical Devices\nAdditional graphical devices can be accessed through packages. I often use the AGG library through the package ragg (https://ragg.r-lib.org/).\n\nragg claims to be faster (I haven’t tried) and higher quality (I can confirm) than base R graphics (grDevices).\n\nIt is also system-independent, so you should get the same output from Windows, Mac, or Linux."
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#data-wrangling",
+    "href": "lectures/07_wrangling.html#data-wrangling",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "Data Wrangling",
+    "text": "Data Wrangling"
+  },
+  {
+    "objectID": "readme.html",
+    "href": "readme.html",
+    "title": "BCB5200",
+    "section": "",
+    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
+  },
+  {
+    "objectID": "readme.html#bcb-42005200",
+    "href": "readme.html#bcb-42005200",
+    "title": "BCB5200",
+    "section": "",
+    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
   }
 ]
