@@ -9,6 +9,8 @@ author: "Brian J. Smith"
 |1/20/2026 |[Lecture 2: Computing Basics](lectures/02_computing.qmd)           |
 |1/22/2026 |[Lecture 3: Literate Programming](lectures/03_literate.qmd)        |
 |1/27/2026 |[Lecture 4: Data Visualization: What and Why](lectures/04_what_why.qmd) | 
-|1/27/2026 |[Lecture 5: Image Formats](lectures/05_image_formats.qmd)          |  
+|1/29/2026 |[Lecture 5: Image Formats](lectures/05_image_formats.qmd)          | 
+|2/3/2026  |[Lecture 6: Data Abstraction](lectures/06_abstract.qmd)            | 
+|2/5/2026  |[Lecture 7: Data Wrangling](lectures/07_wrangling.qmd)             | 
 
 

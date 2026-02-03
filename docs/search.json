@@ -810,5 +810,257 @@
     "title": "Assignment 2: Image Formats",
     "section": "",
     "text": "For this assignment, I’m asking you to create a single Word document (or similar non-Microsoft *.doc or *.docx file) to demonstrate different image qualities. Note I’m not having you render a document with Quarto because the point is to access the exported images rather than to create them in the document.\nYou can approximately follow the script we created in class [link will be posted after class]. Create a figure using ggplot2 or base R. Save it 5 ways:\n\nUsing RStudio “Export” button (choose any options you want or use all the defaults)\nUsing agg_jpeg with quality = 100 (no compression)\nUsing agg_jpeg with quality = 10 (high compression)\nUsing agg_tiff with compression = \"none\"\nUsing agg_tiff with compression = \"lzw\"\n\nFor each file, follow the Science figure guidelines, and choose whether you’ll create a one-column or two-column figure. Make sure your figure meets the size and resolution criteria.\nThen, in your Word doc:\n\nCreate a table showing the properties of each of the 5 images: device, compression, and file size.\nInsert the high compression JPEG and the LZW compression TIFF. Write a short paragraph describing the differences you notice.\nInsert the RStudio Export image. Write a short paragraph describing how you sized the image for the Science guidelines and whether it was easier or harder than using the scripted graphics devices.\n\nUpload the completed Word doc on Canvas.\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#data-vis-what-and-why",
+    "href": "lectures/06_abstract.html#data-vis-what-and-why",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Data Vis: What and Why?",
+    "text": "Data Vis: What and Why?\n\n\nThis lecture is based on Chapter 2 of Visualization Analysis & Design.\n\n“Data Abstraction”"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#data-abstraction",
+    "href": "lectures/06_abstract.html#data-abstraction",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Data Abstraction",
+    "text": "Data Abstraction\n\nThe goal of this chapter is to understand what can be visualized.\n\nFigure 2.1 (next slide) summarizes the topic."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#data-abstraction-1",
+    "href": "lectures/06_abstract.html#data-abstraction-1",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Data Abstraction",
+    "text": "Data Abstraction\n\n# Semantics and Types"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#why-do-data-semantics-and-types-matter",
+    "href": "lectures/06_abstract.html#why-do-data-semantics-and-types-matter",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Why do data semantics and types matter?",
+    "text": "Why do data semantics and types matter?\n\nSemantics of the data is its real-world meaning.\nType of the data is its structural or mathematical interpretation.\n\nFor example, numbers might represent a count of items. In this case, it makes sense to add them together to get a total count.\nAlternatively, a number might represent a postal code. In this case, it is really a name for a category that happens to be represented with numbers rather than alphabetical characters. It doesn’t make any sense to add them together."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#semantics-and-types",
+    "href": "lectures/06_abstract.html#semantics-and-types",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Semantics and Types",
+    "text": "Semantics and Types\n\nImagine the following data:\nBasil, 7, S, Pear\nWhat do these data mean?"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#semantics-and-types-1",
+    "href": "lectures/06_abstract.html#semantics-and-types-1",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Semantics and Types",
+    "text": "Semantics and Types\nBasil, 7, S, Pear\n\nMaybe a food shipment of produce arrived in satsifactory condition on the 7th day of the month, containing basil and pears?\nMaybe the Basil Point neighborhood had 7 inches of snow cleared by the Pear Creek Limited snow removal service?\nMaybe the lab rat named Basil has made 7 attempts to navigate the south section of the maze and was given a pear as a reward?"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#semantics-and-types-2",
+    "href": "lectures/06_abstract.html#semantics-and-types-2",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Semantics and Types",
+    "text": "Semantics and Types\nHere’s the full table, including column titles that provide the intended semantics.\n\n\n\n\n\n\nID\nName\nAge\nShirt.Size\nFavorite.Fruit\n\n\n\n\n1\nAmy\n8\nS\nApple\n\n\n2\nBasil\n7\nS\nPear\n\n\n3\nClara\n9\nM\nDurian\n\n\n4\nDesmond\n13\nL\nElderberry\n\n\n5\nErnest\n12\nL\nPeach\n\n\n6\nFanny\n10\nS\nLychee\n\n\n7\nGeorge\n9\nM\nOrange\n\n\n8\nHector\n8\nL\nLoquat\n\n\n9\nIda\n10\nM\nPear\n\n\n10\nAmy\n12\nM\nOrange"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#semantics-and-types-3",
+    "href": "lectures/06_abstract.html#semantics-and-types-3",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Semantics and Types",
+    "text": "Semantics and Types\n\nSometimes, types and semantics can be correctly inferred from the syntax of a data file or from names of variables.\n\nOften, this additional information must be provided along with the dataset in an additional format. This additional information is called metadata."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#data-types-1",
+    "href": "lectures/06_abstract.html#data-types-1",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Data Types",
+    "text": "Data Types\n\nEarlier, Munzner used the terminology type to refer to the structural interpretation of the data.\nNow, she uses data type to mean something different.\nThe 5 basic data types discussed in this book are:"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#data-types-2",
+    "href": "lectures/06_abstract.html#data-types-2",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Data Types",
+    "text": "Data Types\n\n\n\nAn item is a discrete individual entity, such as a row in a table or a node in a network."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#data-types-3",
+    "href": "lectures/06_abstract.html#data-types-3",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Data Types",
+    "text": "Data Types\n\n\n\nAn attribute is some specific property that can be measured, observed, or logged."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#data-types-4",
+    "href": "lectures/06_abstract.html#data-types-4",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Data Types",
+    "text": "Data Types\n\n\n\nA link is a relationship between items, typically within a network."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#data-types-5",
+    "href": "lectures/06_abstract.html#data-types-5",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Data Types",
+    "text": "Data Types\n\n\n\nA position is spatial data in 2D or 3D space."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#data-types-6",
+    "href": "lectures/06_abstract.html#data-types-6",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Data Types",
+    "text": "Data Types\n\n\n\nA grid is a sampling of continuous data in terms of both geometric and topological relationships between its cells."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-1",
+    "href": "lectures/06_abstract.html#dataset-types-1",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n\nA dataset is any collection of information that is the target of analysis.\nThe 4 basic dataset types discussed in this book are:\n\n\n\n(Apparently, clusters, sets, and lists are other groupings of items)."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-2",
+    "href": "lectures/06_abstract.html#dataset-types-2",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n \n\nTables are the familiar arrangement of rows and columns, like a spreadsheet.\nFor a simple flat table:\n\nEach row represents an item.\nEach column is an attribute of that item.\nEach cell is fully specified by row and column and contains a value."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-3",
+    "href": "lectures/06_abstract.html#dataset-types-3",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n \n\nA multidimensional table has a more complex structure for indexing into a cell, with multiple keys.\nA key serves as an index to lookup values."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-4",
+    "href": "lectures/06_abstract.html#dataset-types-4",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n \n\nA network is used to specify relationships between two or more items.\nAn item in a network is referred to as a node.\n\nNodes can have associated attributes.\n\nA link is a relation between two items.\n\nLinks can also have associated attributes."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-5",
+    "href": "lectures/06_abstract.html#dataset-types-5",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n \n\nA network with hierarchical structure is called a tree.\nTrees cannot have cycles; each child node has only one parent node pointing to it."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-6",
+    "href": "lectures/06_abstract.html#dataset-types-6",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n \n\nA field contains attribute values associated with cells.\nEach cell contains measurements from a continuous domain.\n\nBy contrast, tables and networks contain discrete items."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-7",
+    "href": "lectures/06_abstract.html#dataset-types-7",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n \n\nContinuous data require careful treatment of sampling to acheive the desired resolution.\n\nInterpolation can be used to show values in between sampled points in a way that does not mislead.\nProper interpolation can be used to reconstruct a new view."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-8",
+    "href": "lectures/06_abstract.html#dataset-types-8",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n \n\nSpatial fields are based on sampling at spatial positions.\nActual spatial positions constrain decisions about spatial arrangement of visualizations.\n\nMany spatial arrangement choices for nonspatial data are unavailable for spatial fields."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-9",
+    "href": "lectures/06_abstract.html#dataset-types-9",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n \n\nGeometry specifies information about the shape of items with explicit spatial positions.\nLike spatial fields, geometry datasets are intrinsically spatial.\nGeometry datasets do not necessarily have attributes."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-10",
+    "href": "lectures/06_abstract.html#dataset-types-10",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n \n\nOther combinations of items include sets, lists, and clusters.\n\nA set is an unordered group of items.\nA list is an ordered group of items.\nA cluster is a grouping based on attribute similarity."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-types-11",
+    "href": "lectures/06_abstract.html#dataset-types-11",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Types",
+    "text": "Dataset Types\n \n\nThere are also more complex structures built on networks.\n\nA path through a network is an ordered set of links connecting nodes.\nA compound network is a network with an associated tree."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#dataset-availability",
+    "href": "lectures/06_abstract.html#dataset-availability",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Dataset Availability",
+    "text": "Dataset Availability\n\nIn addition to dataset types, datasets may have different dataset availability.\n\nIn a static file, all the data are available at once.\n\nSynonym: offline\n\nIn dynamic streams, the dataset information trickles (really?) in during the course of the session.\n\nSynonym: online"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#attribute-types-1",
+    "href": "lectures/06_abstract.html#attribute-types-1",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Attribute Types",
+    "text": "Attribute Types\n\n\n\n\n\nAttributes may be:\n\nCategorical\nOrdered\n\nOrdinal\nQuantitative"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#attribute-types-2",
+    "href": "lectures/06_abstract.html#attribute-types-2",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Attribute Types",
+    "text": "Attribute Types\n\n\n\n\n\n\nCategorical data does not have an implicit ordering, but it often has hierarchical structure.\nFor example, favorite fruits.\n\nTwo items can only be the same (apples) or different (apples vs. oranges)."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#attribute-types-3",
+    "href": "lectures/06_abstract.html#attribute-types-3",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Attribute Types",
+    "text": "Attribute Types\n\n\n\n\n\n\nOrdered data does have an implicit ordering.\n\nOrdinal data does not allow arithmetic, but the order is well-defined.\n\nE.g., t-shirt size (S &lt; M &lt; L)\n\nQuantitative data is a measurement of magnitude that supports arithmetic."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#attribute-types-4",
+    "href": "lectures/06_abstract.html#attribute-types-4",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Attribute Types",
+    "text": "Attribute Types\n\n\n\n\n\n\nOrdered data can be sequential, diverging, or cyclic.\n\nSequential data have a homogeneous range from minimum to maximum value.\n\nE.g., mountain height (above sea level) or bathymetry (below sea level).\n\nDiverging data can be deconstructed into two sequences pointing in opposite directions (often meeting at 0).\n\nE.g., elevation (either above or below sea level)."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#attribute-types-5",
+    "href": "lectures/06_abstract.html#attribute-types-5",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Attribute Types",
+    "text": "Attribute Types\n\n\n\n\n\n\nOrdered data can be sequential, diverging, or cyclic.\n\nCyclic data have values that wrap around back to the start.\n\nE.g., hour of the day/day of the week/week of the year."
+  },
+  {
+    "objectID": "lectures/06_abstract.html#key-vs.-value-semantics",
+    "href": "lectures/06_abstract.html#key-vs.-value-semantics",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Key vs. Value Semantics",
+    "text": "Key vs. Value Semantics\n\nA key attribute acts as an index to lookup value attributes"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#key-vs.-value-semantics-1",
+    "href": "lectures/06_abstract.html#key-vs.-value-semantics-1",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Key vs. Value Semantics",
+    "text": "Key vs. Value Semantics\nA flat table has only one key. In this case, the ID column.\n\n\n\n\n\n\n\nID\nName\nAge\nShirt.Size\nFavorite.Fruit\n\n\n\n\n1\nAmy\n8\nS\nApple\n\n\n2\nBasil\n7\nS\nPear\n\n\n3\nClara\n9\nM\nDurian\n\n\n4\nDesmond\n13\nL\nElderberry\n\n\n5\nErnest\n12\nL\nPeach\n\n\n6\nFanny\n10\nS\nLychee\n\n\n7\nGeorge\n9\nM\nOrange\n\n\n8\nHector\n8\nL\nLoquat\n\n\n9\nIda\n10\nM\nPear\n\n\n10\nAmy\n12\nM\nOrange"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#key-vs.-value-semantics-2",
+    "href": "lectures/06_abstract.html#key-vs.-value-semantics-2",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Key vs. Value Semantics",
+    "text": "Key vs. Value Semantics\nIn this case, Name might look like an acceptable key, but the name Amy is not unique.\n\n\n\n\n\n\n\nID\nName\nAge\nShirt.Size\nFavorite.Fruit\n\n\n\n\n1\nAmy\n8\nS\nApple\n\n\n2\nBasil\n7\nS\nPear\n\n\n3\nClara\n9\nM\nDurian\n\n\n4\nDesmond\n13\nL\nElderberry\n\n\n5\nErnest\n12\nL\nPeach\n\n\n6\nFanny\n10\nS\nLychee\n\n\n7\nGeorge\n9\nM\nOrange\n\n\n8\nHector\n8\nL\nLoquat\n\n\n9\nIda\n10\nM\nPear\n\n\n10\nAmy\n12\nM\nOrange"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#key-vs.-value-semantics-3",
+    "href": "lectures/06_abstract.html#key-vs.-value-semantics-3",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Key vs. Value Semantics",
+    "text": "Key vs. Value Semantics\nSometimes, just the row number is sufficient for as a key. There might not be a column used as a key.\n\n\n\n\n\n\n\nName\nAge\nShirt.Size\nFavorite.Fruit\n\n\n\n\nAmy\n8\nS\nApple\n\n\nBasil\n7\nS\nPear\n\n\nClara\n9\nM\nDurian\n\n\nDesmond\n13\nL\nElderberry\n\n\nErnest\n12\nL\nPeach\n\n\nFanny\n10\nS\nLychee\n\n\nGeorge\n9\nM\nOrange\n\n\nHector\n8\nL\nLoquat\n\n\nIda\n10\nM\nPear\n\n\nAmy\n12\nM\nOrange"
+  },
+  {
+    "objectID": "lectures/06_abstract.html#key-vs.-value-semantics-4",
+    "href": "lectures/06_abstract.html#key-vs.-value-semantics-4",
+    "title": "Lecture 6: Data Abstraction",
+    "section": "Key vs. Value Semantics",
+    "text": "Key vs. Value Semantics\nFor a multidimensional table, multiple keys are required to identify a unique item."
   }
 ]

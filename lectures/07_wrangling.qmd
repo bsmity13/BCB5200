@@ -1,0 +1,27 @@
+---
+title: "Lecture 7: Data Wrangling"
+author: "Brian J. Smith"
+date: "5 February 2026"
+format: 
+  revealjs:
+    theme: simple
+    mermaid: 
+      theme: forest
+editor: source
+---
+
+# Tidyverse (pic)
+
+## Data Wrangling
+
+
+# Questions?
+
+</br>
+
+</br>
+
+
+:::{style="font-size: 50%"}
+[BCB5200 Home](https://bsmity13.github.io/BCB5200/)
+:::

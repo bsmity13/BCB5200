@@ -1,0 +1,431 @@
+---
+title: "Lecture 6: Data Abstraction"
+author: "Brian J. Smith"
+date: "3 February 2026"
+format: 
+  revealjs:
+    theme: simple
+    mermaid: 
+      theme: forest
+editor: source
+---
+
+## Data Vis: What and Why?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+This lecture is based on Chapter 2 of *Visualization Analysis & Design*.
+
+</br>
+
+"Data Abstraction"
+
+:::
+
+::: {.column width="50%"}  
+
+![Visualization Analysis & Design Cover](img/munzner_book_cover.png){width=75% fig-align=right .lightbox}\
+ 
+:::
+
+::::
+
+## Data Abstraction
+
+</br>
+
+The goal of this chapter is to understand *what* can be visualized.  
+
+</br>
+
+Figure 2.1 (next slide) summarizes the topic.
+
+## Data Abstraction
+
+![Figure 2.1](fig/fig2_1.png){width=30% fig-align=center .lightbox}\
+# Semantics and Types
+
+## Why do data semantics and types matter? {.smaller}
+
+- **Semantics** of the data is its real-world meaning.
+- **Type** of the data is its structural or mathematical interpretation.
+  - For example, numbers might represent a count of items. In this case, it makes sense to add them together to get a total count.
+  - Alternatively, a number might represent a postal code. In this case, it is really a name for a *category* that happens to be represented with numbers rather than alphabetical characters. It doesn't make any sense to add them together.
+
+## Semantics and Types
+
+</br>
+
+Imagine the following data:
+
+`Basil, 7, S, Pear`
+
+What do these data mean?
+
+## Semantics and Types
+
+`Basil, 7, S, Pear`
+
+::: {.incremental}
+
+- Maybe a food shipment of produce arrived in satsifactory condition on the 7th day of the month, containing basil and pears?
+- Maybe the Basil Point neighborhood had 7 inches of snow cleared by the Pear Creek Limited snow removal service?
+- Maybe the lab rat named Basil has made 7 attempts to navigate the south section of the maze and was given a pear as a reward?
+
+:::
+
+## Semantics and Types
+
+Here's the full table, including column titles that provide the intended **semantics**.
+
+::: {style="font-size:50%"}
+```{r}
+#| echo: false
+
+semantic <- data.frame(ID = 1:10,
+                       Name = c("Amy", "Basil", "Clara", "Desmond", "Ernest",
+                                "Fanny", "George", "Hector", "Ida", "Amy"),
+                       Age = c(8, 7, 9, 13, 12, 10, 9, 8, 10, 12),
+                       `Shirt Size` = c("S", "S", "M", "L", "L", "S", "M", "L", "M", "M"),
+                       `Favorite Fruit` = c("Apple", "Pear", "Durian", "Elderberry",
+                                            "Peach", "Lychee", "Orange", "Loquat",
+                                            "Pear", "Orange"))
+
+knitr::kable(semantic)
+```
+:::
+
+
+## Semantics and Types
+
+</br> 
+
+Sometimes, types and semantics can be correctly inferred from the syntax of a data file or from names of variables.
+
+</br> 
+
+Often, this additional information must be provided along with the dataset in an additional format. This additional information is called **metadata**.
+
+# Data Types
+
+## Data Types
+
+- Earlier, Munzner used the terminology **type** to refer to the structural interpretation of the data.
+- Now, she uses **data type** to mean something different.
+- The 5 basic **data types** discussed in this book are:
+
+![The 5 data types: items, attributes, links, positions, and grids](fig/fig2_1a.png)\
+
+## Data Types
+
+![The 5 data types: items, attributes, links, positions, and grids](fig/fig2_1a.png)\
+
+</br>
+
+An **item** is a discrete individual entity, such as a row in a table or a node in a network.
+
+## Data Types
+
+![The 5 data types: items, attributes, links, positions, and grids](fig/fig2_1a.png)\
+
+</br>
+
+An **attribute** is some specific property that can be measured, observed, or logged.
+
+## Data Types
+
+![The 5 data types: items, attributes, links, positions, and grids](fig/fig2_1a.png)\
+
+</br>
+
+A **link** is a relationship between items, typically within a network.
+
+## Data Types
+
+![The 5 data types: items, attributes, links, positions, and grids](fig/fig2_1a.png)\
+
+</br>
+
+A **position** is spatial data in 2D or 3D space.
+
+## Data Types
+
+![The 5 data types: items, attributes, links, positions, and grids](fig/fig2_1a.png)\
+
+</br>
+
+A **grid** is a sampling of continuous data in terms of both geometric and topological relationships between its cells.
+
+# Dataset Types
+
+## Dataset Types {.smaller}
+
+- A **dataset** is any collection of information that is the target of analysis.
+- The 4 basic **dataset types** discussed in this book are:
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\
+
+(Apparently, clusters, sets, and lists are other groupings of items).
+
+
+## Dataset Types {.smaller}
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\  
+
+- **Tables** are the familiar arrangement of rows and columns, like a spreadsheet.
+- For a simple **flat table**:
+  - Each row represents an **item**.
+  - Each column is an **attribute** of that item.
+  - Each **cell** is fully specified by row and column and contains a **value**.
+  
+## Dataset Types {.smaller}
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\  
+
+- A **multidimensional table** has a more complex structure for indexing into a cell, with multiple **keys**.
+- A **key** serves as an index to lookup values.
+
+## Dataset Types {.smaller}
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\  
+
+- A **network** is used to specify relationships between two or more items.
+- An **item** in a network is referred to as a **node**.
+  - **Nodes** can have associated **attributes**.
+- A **link** is a relation between two items.
+  - **Links** can also have associated **attributes**.
+  
+## Dataset Types {.smaller}
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\  
+
+- A **network** with hierarchical structure is called a **tree**.
+- **Trees** cannot have cycles; each child node has only one parent node pointing to it.
+
+## Dataset Types {.smaller}
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\  
+
+- A **field** contains attribute values associated with cells.
+- Each **cell** contains measurements from a *continuous* domain.
+  - By contrast, **tables** and **networks** contain *discrete* items.
+
+## Dataset Types {.smaller}
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\  
+
+- Continuous data require careful treatment of **sampling** to acheive the desired resolution.
+  - **Interpolation** can be used to show values in between sampled points in a way that does not mislead.
+  - Proper interpolation can be used to **reconstruct** a new view.
+  
+## Dataset Types {.smaller}
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\  
+
+- **Spatial fields** are based on sampling at spatial positions.
+- Actual spatial positions constrain decisions about spatial arrangement of visualizations.
+  - Many spatial arrangement choices for **nonspatial data** are unavailable for **spatial fields**.
+  
+## Dataset Types {.smaller}
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\  
+
+- **Geometry** specifies information about the shape of items with explicit spatial positions.
+- Like spatial fields, **geometry** datasets are intrinsically spatial.
+- Geometry datasets do not necessarily have **attributes**.
+  
+## Dataset Types {.smaller}
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\  
+
+- Other combinations of **items** include **sets**, **lists**, and **clusters**.
+  - A **set** is an unordered group of items.
+  - A **list** is an ordered group of items.
+  - A **cluster** is a grouping based on attribute similarity.
+  
+## Dataset Types {.smaller}
+
+![The 4 dataset types: tables, networks, fields, geometry](fig/fig2_1b.png)\  
+
+- There are also more complex structures built on **networks**.
+  - A **path** through a network is an ordered set of **links** connecting **nodes**.
+  - A **compound network** is a network with an associated **tree**.
+  
+## Dataset Availability {.smaller}
+
+- In addition to dataset types, datasets may have different **dataset availability**.
+  - In a **static file**, all the data are available at once.
+    - Synonym: **offline**
+  - In **dynamic streams**, the dataset information trickles (*really?*) in during the course of the session.
+    - Synonym: **online**
+    
+![Static vs. dynamic dataset availability](fig/fig2_1d.png)\
+    
+# Attribute Types
+  
+## Attribute Types {.smaller}
+
+:::: {.columns}
+
+::: {.column width=50%}
+![Attributes may be categorical or ordered; Ordered can be ordinal or quantiative](fig/fig2_1e.png)\
+:::
+
+::: {.column width=50%}
+
+Attributes may be:
+
+- **Categorical**
+- **Ordered**
+  - **Ordinal**
+  - **Quantitative**
+  
+:::
+::::
+
+## Attribute Types {.smaller}
+
+:::: {.columns}
+
+::: {.column width=50%}
+![Attributes may be categorical or ordered; Ordered can be ordinal or quantiative](fig/fig2_1e.png)\
+:::
+
+::: {.column width=50%}
+
+- **Categorical** data does not have an implicit ordering, but it often has hierarchical structure.
+- For example, favorite fruits.
+  - Two items can only be the same (apples) or different (apples vs. oranges).
+  
+:::
+::::
+
+## Attribute Types {.smaller}
+
+:::: {.columns}
+
+::: {.column width=50%}
+![Attributes may be categorical or ordered; Ordered can be ordinal or quantiative](fig/fig2_1e.png)\
+:::
+
+::: {.column width=50%}
+
+- **Ordered** data does have an implicit ordering.
+  - **Ordinal** data does not allow arithmetic, but the order is well-defined.
+    - *E.g.*, t-shirt size (S < M < L)
+  - **Quantitative** data is a measurement of magnitude that supports arithmetic.
+  
+  
+:::
+::::
+
+
+## Attribute Types {.smaller}
+
+:::: {.columns}
+
+::: {.column width=50%}
+![Ordered data may be sequential, diverging, or cyclic](fig/fig2_1f.png)\
+:::
+
+::: {.column width=50%}
+
+- **Ordered** data can be sequential, diverging, or cyclic.
+  - **Sequential** data have a homogeneous range from minimum to maximum value.
+    - *E.g.*, mountain height (above sea level) or bathymetry (below sea level).
+  - **Diverging** data can be deconstructed into two sequences pointing in opposite directions (often meeting at 0).
+    - *E.g.*, elevation (either above or below sea level).
+
+:::
+::::
+    
+## Attribute Types {.smaller}
+
+:::: {.columns}
+
+::: {.column width=50%}
+![Ordered data may be sequential, diverging, or cyclic](fig/fig2_1f.png)\
+:::
+
+::: {.column width=50%}
+
+- **Ordered** data can be sequential, diverging, or cyclic.
+  - **Cyclic** data have values that wrap around back to the start.
+    - *E.g.*, hour of the day/day of the week/week of the year.
+  
+:::
+::::
+
+# Semantics
+
+## Key vs. Value Semantics
+
+</br>
+
+A **key** attribute acts as an index to lookup **value** attributes
+
+## Key vs. Value Semantics
+
+
+A **flat table** has only one key. In this case, the `ID` column.
+
+</br>
+
+::: {style="font-size:50%"}
+```{r}
+#| echo: false
+
+knitr::kable(semantic)
+```
+:::
+
+## Key vs. Value Semantics
+
+
+In this case, `Name` might look like an acceptable **key**, but the name `Amy` is not unique.
+
+</br>
+
+::: {style="font-size:50%"}
+```{r}
+#| echo: false
+
+knitr::kable(semantic)
+```
+:::
+
+## Key vs. Value Semantics
+
+
+Sometimes, just the row number is sufficient for as a key. There might not be a column used as a key.
+
+</br>
+
+::: {style="font-size:50%"}
+```{r}
+#| echo: false
+
+knitr::kable(semantic[, 2:ncol(semantic)])
+```
+:::
+
+## Key vs. Value Semantics
+
+
+For a **multidimensional table**, multiple keys are required to identify a unique item.
+
+
+![Tables vs. multidimensional tables](fig/fig2_1c_tables.png){width=30%}\
+
+# Questions?
+
+</br>
+
+</br>
+
+
+:::{style="font-size: 50%"}
+[BCB5200 Home](https://bsmity13.github.io/BCB5200/)
+:::
