@@ -949,7 +949,7 @@
     "href": "lectures/07_wrangling.html#data-wrangling",
     "title": "Lecture 7: Data Wrangling",
     "section": "Data Wrangling",
-    "text": "Data Wrangling"
+    "text": "Data Wrangling\n\nData wrangling, sometimes referred to as data munging, is the process of transforming and mapping data from one “raw” data form into another format with the intent of making it more appropriate and valuable for a variety of downstream purposes such as analytics… Data analysts typically spend the majority of their time in the process of data wrangling compared to the actual analysis of the data.\n\n\n— Wikipedia"
   },
   {
     "objectID": "readme.html",
@@ -964,5 +964,75 @@
     "title": "BCB5200",
     "section": "",
     "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#tidyverse",
+    "href": "lectures/07_wrangling.html#tidyverse",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\n\n\n\n\nThe tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#tidyverse-1",
+    "href": "lectures/07_wrangling.html#tidyverse-1",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "Tidyverse",
+    "text": "Tidyverse\nThe core tidyverse contains these packages:\n\nggplot2, for data visualisation.\ndplyr, for data manipulation.\ntidyr, for data tidying.\nreadr, for data import.\npurrr, for functional programming.\ntibble, for tibbles, a modern re-imagining of data frames.\nstringr, for strings.\nforcats, for factors.\nlubridate, for date/times."
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#dplyr",
+    "href": "lectures/07_wrangling.html#dplyr",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "dplyr",
+    "text": "dplyr\n\n\n\ndplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges."
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#dplyr-1",
+    "href": "lectures/07_wrangling.html#dplyr-1",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "dplyr",
+    "text": "dplyr\nSome core dplyr functions:\n\nmutate() creates new columns\nselect() subsets existing columns\nfilter() subsets rows by a logical condition\nsummarize() creates summary stats for one or more columns\ngroup_by() creates grouping variables that are respected by the other functions"
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#tidyr",
+    "href": "lectures/07_wrangling.html#tidyr",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "tidyr",
+    "text": "tidyr\n\n\n\ntidyr The goal of tidyr is to help you create tidy data. Tidy data is data where:\n\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value."
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#tidyr-1",
+    "href": "lectures/07_wrangling.html#tidyr-1",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "tidyr",
+    "text": "tidyr\nWe will primarily use tidyr to reshape data:\n\npivot_longer() reshapes wide data to long data\npivot_wider() reshapes long data to wide data"
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#wide-vs.-long-data",
+    "href": "lectures/07_wrangling.html#wide-vs.-long-data",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "Wide vs. Long Data",
+    "text": "Wide vs. Long Data\n\n\nWide\n\n\n\nDataset\nMean\nSD\nVar\n\n\n\n\nA\n10\n3\n9\n\n\nB\n7\n4\n16\n\n\n\n\nLong\n\n\n\nDataset\nStat\nValue\n\n\n\n\nA\nMean\n10\n\n\nA\nSD\n3\n\n\nA\nVar\n9\n\n\nB\nMean\n7\n\n\nB\nSD\n4\n\n\nB\nVar\n16"
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#data-wrangling-1",
+    "href": "lectures/07_wrangling.html#data-wrangling-1",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "Data Wrangling",
+    "text": "Data Wrangling\n\nData wrangling, sometimes referred to as data munging, is the process of transforming and mapping data from one “raw” data form into another format with the intent of making it more appropriate and valuable for a variety of downstream purposes such as analytics… Data analysts typically spend the majority of their time in the process of data wrangling compared to the actual analysis of the data.\n\n\n— Wikipedia"
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#data-wrangling-2",
+    "href": "lectures/07_wrangling.html#data-wrangling-2",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "Data Wrangling",
+    "text": "Data Wrangling\n\n\n\n\n\nFor a view through the tidyverse lens of data wrangling, see Chapters 9-16 of R for Data Science."
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#data-wrangling-3",
+    "href": "lectures/07_wrangling.html#data-wrangling-3",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "Data Wrangling",
+    "text": "Data Wrangling\nIn our context, we want to use data wrangling to get our data in a format conducive to visualization.\nFor example, to create visualizations with ggplot2, we typically want our data in long rather than wide format.\nConversely, calculating derived attributes (columns) is typically easier in wide rather than long format."
   }
 ]

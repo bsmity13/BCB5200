@@ -10,9 +10,146 @@ format:
 editor: source
 ---
 
-# Tidyverse (pic)
+
+:::{style="float: center"}
+
+![Tidyverse Logo](img/tidyverse.png){width=50%}\
+:::
+
+## Tidyverse
+
+:::: {.columns}
+
+::: {.column}
+
+![Tidyverse Package Hex Stickers](img/tidy_pkgs.png)\
+
+:::
+
+::: {.column style="justify-content: space-between"}
+
+The [tidyverse](https://tidyverse.org/) is an **opinionated** collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
+
+:::
+
+::::
+
+## Tidyverse {.smaller}
+
+The core tidyverse contains these packages:
+
+- `ggplot2`, for data visualisation.
+- `dplyr`, for data manipulation.
+- `tidyr`, for data tidying.
+- `readr`, for data import.
+- `purrr`, for functional programming.
+- `tibble`, for tibbles, a modern re-imagining of data frames.
+- `stringr`, for strings.
+- `forcats`, for factors.
+- `lubridate`, for date/times.
+
+## `dplyr`
+
+![dplyr](img/dplyr.png)\
+
+> [`dplyr`](https://dplyr.tidyverse.org/){target=blank} is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges.
+
+## `dplyr`
+
+Some core `dplyr` functions:
+
+- `mutate()` creates new columns
+- `select()` subsets existing columns
+- `filter()` subsets rows by a logical condition
+- `summarize()` creates summary stats for one or more columns
+- `group_by()` creates grouping variables that are respected by the other functions
+
+## `tidyr` {.smaller}
+
+![tidyr](img/tidyr.png)\
+
+> [`tidyr`](https://tidyr.tidyverse.org/){target=blank} The goal of tidyr is to help you create tidy data. Tidy data is data where:
+
+  - Each variable is a column; each column is a variable.
+  - Each observation is a row; each row is an observation.
+  - Each value is a cell; each cell is a single value.
+  
+## `tidyr`
+
+We will primarily use `tidyr` to *reshape* data:
+
+- `pivot_longer()` reshapes wide data to long data
+- `pivot_wider()` reshapes long data to wide data
+
+## Wide vs. Long Data
+
+:::: {.columns}
+
+::: {.column}
+
+### Wide
+
+| Dataset | Mean | SD  | Var  |
+|---------|------|-----|------|
+| A       | 10   | 3   | 9    |
+| B       | 7    | 4   | 16   |
+
+:::
+
+::: {.column}
+
+### Long
+
+| Dataset | Stat | Value |
+|---------|------|-------|
+| A       | Mean | 10    |
+| A       | SD   | 3     |
+| A       | Var  | 9     |
+| B       | Mean | 7     |
+| B       | SD   | 4     |
+| B       | Var  | 16    |
+
+:::
+
+::::
+
+# Data Wrangling
 
 ## Data Wrangling
+
+> **Data wrangling**, sometimes referred to as data munging, is the process of transforming and mapping data from one "raw" data form into another format with the intent of making it more appropriate and valuable for a variety of downstream purposes such as analytics... Data analysts typically spend the majority of their time in the process of data wrangling compared to the actual analysis of the data.
+
+:::{style="float: right"}
+
+— [Wikipedia](https://en.wikipedia.org/wiki/Data_wrangling)
+
+:::
+
+## Data Wrangling
+
+:::: {.columns}
+
+::: {.column}
+
+![*R for Data Science* Cover](img/r4ds.png){width=75%}\
+
+:::
+
+::: {.column}
+
+For a view through the `tidyverse` lens of data wrangling, see [Chapters 9-16](https://r4ds.had.co.nz/wrangle-intro.html) of *R for Data Science*.
+
+:::
+
+::::
+
+## Data Wrangling
+
+In our context, we want to use **data wrangling** to get our data in a format conducive to visualization.
+
+For example, to create visualizations with `ggplot2`, we typically want our data in **long** rather than **wide** format.
+
+Conversely, calculating derived **attributes** (columns) is typically easier in **wide** rather than **long** format.
 
 
 # Questions?

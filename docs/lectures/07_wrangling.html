@@ -140,13 +140,181 @@ Brian J. Smith
 
   <p class="date">2026-02-05</p>
 </section>
+<section class="slide level2">
+
+<div style="float: center">
+<p><img data-src="img/tidyverse.png" style="width:50.0%" alt="Tidyverse Logo"><br>
+</p>
+</div>
+</section>
+<section id="tidyverse" class="slide level2">
+<h2>Tidyverse</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="img/tidy_pkgs.png" alt="Tidyverse Package Hex Stickers"><br>
+</p>
+</div><div class="column" style="justify-content: space-between">
+<p>The <a href="https://tidyverse.org/">tidyverse</a> is an <strong>opinionated</strong> collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.</p>
+</div></div>
+</section>
+<section id="tidyverse-1" class="slide level2 smaller">
+<h2>Tidyverse</h2>
+<p>The core tidyverse contains these packages:</p>
+<ul>
+<li><code>ggplot2</code>, for data visualisation.</li>
+<li><code>dplyr</code>, for data manipulation.</li>
+<li><code>tidyr</code>, for data tidying.</li>
+<li><code>readr</code>, for data import.</li>
+<li><code>purrr</code>, for functional programming.</li>
+<li><code>tibble</code>, for tibbles, a modern re-imagining of data frames.</li>
+<li><code>stringr</code>, for strings.</li>
+<li><code>forcats</code>, for factors.</li>
+<li><code>lubridate</code>, for date/times.</li>
+</ul>
+</section>
+<section id="dplyr" class="slide level2">
+<h2><code>dplyr</code></h2>
+<p><img data-src="img/dplyr.png" alt="dplyr"><br>
+</p>
+<blockquote>
+<p><a href="https://dplyr.tidyverse.org/" target="blank"><code>dplyr</code></a> is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges.</p>
+</blockquote>
+</section>
+<section id="dplyr-1" class="slide level2">
+<h2><code>dplyr</code></h2>
+<p>Some core <code>dplyr</code> functions:</p>
+<ul>
+<li><code>mutate()</code> creates new columns</li>
+<li><code>select()</code> subsets existing columns</li>
+<li><code>filter()</code> subsets rows by a logical condition</li>
+<li><code>summarize()</code> creates summary stats for one or more columns</li>
+<li><code>group_by()</code> creates grouping variables that are respected by the other functions</li>
+</ul>
+</section>
+<section id="tidyr" class="slide level2 smaller">
+<h2><code>tidyr</code></h2>
+<p><img data-src="img/tidyr.png" alt="tidyr"><br>
+</p>
+<blockquote>
+<p><a href="https://tidyr.tidyverse.org/" target="blank"><code>tidyr</code></a> The goal of tidyr is to help you create tidy data. Tidy data is data where:</p>
+</blockquote>
+<ul>
+<li>Each variable is a column; each column is a variable.</li>
+<li>Each observation is a row; each row is an observation.</li>
+<li>Each value is a cell; each cell is a single value.</li>
+</ul>
+</section>
+<section id="tidyr-1" class="slide level2">
+<h2><code>tidyr</code></h2>
+<p>We will primarily use <code>tidyr</code> to <em>reshape</em> data:</p>
+<ul>
+<li><code>pivot_longer()</code> reshapes wide data to long data</li>
+<li><code>pivot_wider()</code> reshapes long data to wide data</li>
+</ul>
+</section>
+<section id="wide-vs.-long-data" class="slide level2">
+<h2>Wide vs.&nbsp;Long Data</h2>
+<div class="columns">
+<div class="column">
+<h3 id="wide">Wide</h3>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Dataset</th>
+<th>Mean</th>
+<th>SD</th>
+<th>Var</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>10</td>
+<td>3</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>7</td>
+<td>4</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column">
+<h3 id="long">Long</h3>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Dataset</th>
+<th>Stat</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>Mean</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>SD</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>Var</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>Mean</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>SD</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>Var</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
 <section>
-<section id="tidyverse-pic" class="title-slide slide level1 center">
-<h1>Tidyverse (pic)</h1>
+<section id="data-wrangling" class="title-slide slide level1 center">
+<h1>Data Wrangling</h1>
 
 </section>
-<section id="data-wrangling" class="slide level2">
+<section id="data-wrangling-1" class="slide level2">
 <h2>Data Wrangling</h2>
+<blockquote>
+<p><strong>Data wrangling</strong>, sometimes referred to as data munging, is the process of transforming and mapping data from one “raw” data form into another format with the intent of making it more appropriate and valuable for a variety of downstream purposes such as analytics… Data analysts typically spend the majority of their time in the process of data wrangling compared to the actual analysis of the data.</p>
+</blockquote>
+<div style="float: right">
+<p>— <a href="https://en.wikipedia.org/wiki/Data_wrangling">Wikipedia</a></p>
+</div>
+</section>
+<section id="data-wrangling-2" class="slide level2">
+<h2>Data Wrangling</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="img/r4ds.png" style="width:75.0%" alt="R for Data Science Cover"><br>
+</p>
+</div><div class="column">
+<p>For a view through the <code>tidyverse</code> lens of data wrangling, see <a href="https://r4ds.had.co.nz/wrangle-intro.html">Chapters 9-16</a> of <em>R for Data Science</em>.</p>
+</div></div>
+</section>
+<section id="data-wrangling-3" class="slide level2">
+<h2>Data Wrangling</h2>
+<p>In our context, we want to use <strong>data wrangling</strong> to get our data in a format conducive to visualization.</p>
+<p>For example, to create visualizations with <code>ggplot2</code>, we typically want our data in <strong>long</strong> rather than <strong>wide</strong> format.</p>
+<p>Conversely, calculating derived <strong>attributes</strong> (columns) is typically easier in <strong>wide</strong> rather than <strong>long</strong> format.</p>
 </section></section>
 <section id="questions" class="title-slide slide level1 center">
 <h1>Questions?</h1>
