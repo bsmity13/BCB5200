@@ -676,7 +676,7 @@
     "href": "code.html",
     "title": "Code",
     "section": "",
-    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nImage Formats\nimage_formats.R"
+    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nImage Formats\nimage_formats.R\n\n\n2/5/2026\nData Wrangling\ndata_wrangling.R\n\n\n2/5/2026\nData Wrangling Extras\ndata_wrangling_extra.R"
   },
   {
     "objectID": "code/00_dummy.html",
@@ -945,27 +945,6 @@
     "text": "R Graphical Devices\nAdditional graphical devices can be accessed through packages. I often use the AGG library through the package ragg (https://ragg.r-lib.org/).\n\nragg claims to be faster (I haven’t tried) and higher quality (I can confirm) than base R graphics (grDevices).\n\nIt is also system-independent, so you should get the same output from Windows, Mac, or Linux."
   },
   {
-    "objectID": "lectures/07_wrangling.html#data-wrangling",
-    "href": "lectures/07_wrangling.html#data-wrangling",
-    "title": "Lecture 7: Data Wrangling",
-    "section": "Data Wrangling",
-    "text": "Data Wrangling\n\nData wrangling, sometimes referred to as data munging, is the process of transforming and mapping data from one “raw” data form into another format with the intent of making it more appropriate and valuable for a variety of downstream purposes such as analytics… Data analysts typically spend the majority of their time in the process of data wrangling compared to the actual analysis of the data.\n\n\n— Wikipedia"
-  },
-  {
-    "objectID": "readme.html",
-    "href": "readme.html",
-    "title": "BCB5200",
-    "section": "",
-    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
-  },
-  {
-    "objectID": "readme.html#bcb-42005200",
-    "href": "readme.html#bcb-42005200",
-    "title": "BCB5200",
-    "section": "",
-    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
-  },
-  {
     "objectID": "lectures/07_wrangling.html#tidyverse",
     "href": "lectures/07_wrangling.html#tidyverse",
     "title": "Lecture 7: Data Wrangling",
@@ -1041,5 +1020,19 @@
     "title": "Lecture 7: Data Wrangling",
     "section": "Data Wrangling",
     "text": "Data Wrangling\n\nWe are going to do some data wrangling in the code walkthrough (next).\n\nBut for even more details, see:\n\nvignette(\"pivot\", package = \"tidyr\")"
+  },
+  {
+    "objectID": "readme.html",
+    "href": "readme.html",
+    "title": "BCB5200",
+    "section": "",
+    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
+  },
+  {
+    "objectID": "readme.html#bcb-42005200",
+    "href": "readme.html#bcb-42005200",
+    "title": "BCB5200",
+    "section": "",
+    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
   }
 ]
