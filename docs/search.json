@@ -1034,5 +1034,12 @@
     "title": "Lecture 7: Data Wrangling",
     "section": "Data Wrangling",
     "text": "Data Wrangling\nIn our context, we want to use data wrangling to get our data in a format conducive to visualization.\nFor example, to create visualizations with ggplot2, we typically want our data in long rather than wide format.\nConversely, calculating derived attributes (columns) is typically easier in wide rather than long format."
+  },
+  {
+    "objectID": "lectures/07_wrangling.html#data-wrangling-4",
+    "href": "lectures/07_wrangling.html#data-wrangling-4",
+    "title": "Lecture 7: Data Wrangling",
+    "section": "Data Wrangling",
+    "text": "Data Wrangling\n\nWe are going to do some data wrangling in the code walkthrough (next).\n\nBut for even more details, see:\n\nvignette(\"pivot\", package = \"tidyr\")"
   }
 ]

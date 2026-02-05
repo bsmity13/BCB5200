@@ -151,6 +151,23 @@ For example, to create visualizations with `ggplot2`, we typically want our data
 
 Conversely, calculating derived **attributes** (columns) is typically easier in **wide** rather than **long** format.
 
+## Data Wrangling
+
+</br>
+
+We are going to do some data wrangling in the code walkthrough (next).
+
+</br>
+
+But for even more details, see:
+
+```{r}
+#| eval: false
+#| echo: true
+vignette("pivot", package = "tidyr")
+
+```
+
 
 # Questions?
 
