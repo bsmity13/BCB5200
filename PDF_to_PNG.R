@@ -20,3 +20,31 @@ cmds_2.1 <- paste0("magick -density 300 -quality 95 ",
 
 # Execute
 lapply(cmds_2.1, function(x) shell(x))
+
+###########################################################################X
+# After completing Fig. 2.1, I downloaded a single ZIP file of all
+# figures from the VAD book (https://www.cs.ubc.ca/~tmm/vadbook/#figures).
+# I moved the PDF directory to outside the git repo, and will copy figures
+# from there to here as I convert them.
+###########################################################################X
+
+# Convert for Chapter 5 ----
+# PDF directory
+pdf_dir <- "../alldiagrams/"
+
+# Chapter 5 figures
+ch5_base <- list.files(pdf_dir, pattern = glob2rx("fig5.*"))
+
+# Chapter 5 PDF paths
+ch5_pdf <- paste0(pdf_dir, ch5_base)
+
+# PNG output
+ch5_png <- paste0("lectures/fig/", gsub(".pdf", ".png", ch5_base))
+
+# Create commands
+ch5_cmds <- paste0("magick -density 300 -quality 95 ",
+                   ch5_pdf, " ",
+                   ch5_png)
+
+# Execute
+lapply(ch5_cmds, function(x) shell(x))

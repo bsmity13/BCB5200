@@ -1,0 +1,56 @@
+---
+title: "Lecture 8: Marks and Channels"
+author: "Brian J. Smith"
+date: "3 February 2026"
+format: 
+  revealjs:
+    theme: simple
+    mermaid: 
+      theme: forest
+editor: source
+---
+
+## Marks and Channels
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+This lecture is based on Chapter 5 of *Visualization Analysis & Design*.
+
+</br>
+
+"Marks and Channels"
+
+:::
+
+::: {.column width="50%"}  
+
+![Visualization Analysis & Design Cover](img/munzner_book_cover.png){width=75% fig-align=right .lightbox}\
+ 
+:::
+
+::::
+
+## Marks and Channels
+
+</br>
+
+The goal of this chapter is to understand the basic geometric elements that depict items or links (**marks**) and control their appearance (**channels**).  
+
+</br>
+
+Figure 5.1 (next slide) summarizes the topic.
+
+
+
+# Questions?
+
+</br>
+
+</br>
+
+
+:::{style="font-size: 50%"}
+[BCB5200 Home](https://bsmity13.github.io/BCB5200/)
+:::
