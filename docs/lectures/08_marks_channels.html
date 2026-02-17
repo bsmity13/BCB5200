@@ -13,8 +13,8 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Brian J. Smith">
-  <meta name="dcterms.date" content="2026-01-28">
-  <title>BCB5200 – Lecture 5: Image Formats</title>
+  <meta name="dcterms.date" content="2026-02-03">
+  <title>BCB5200 – Lecture 8: Marks and Channels</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,72 +32,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -197,7 +131,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 5: Image Formats</h1>
+  <h1 class="title">Lecture 8: Marks and Channels</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -207,312 +141,486 @@ Brian J. Smith
 </div>
 </div>
 
-  <p class="date">2026-01-28</p>
+  <p class="date">2026-02-03</p>
 </section>
-<section id="my-first-big-first-author-paper" class="slide level2">
-<h2>My first big first-author paper</h2>
-<p><a href="https://doi.org/10.1007/s10530-016-1211-5" target="_blank">Smith et al.&nbsp;(2016) <em>Biological Invasions</em></a></p>
+<section id="marks-and-channels" class="slide level2">
+<h2>Marks and Channels</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>This lecture is based on Chapter 5 of <em>Visualization Analysis &amp; Design</em>.</p>
 <p><br></p>
-<p>I assumed that after the paper was accepted, the production team would let me know if they thought the size or the aspect ratios of my figures were awkward.</p>
+<p>“Marks and Channels”</p>
+</div><div class="column" style="width:50%;">
+<p><a href="img/munzner_book_cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Visualization Analysis &amp; Design Cover"><img data-src="img/munzner_book_cover.png" class="quarto-figure quarto-figure-right" style="width:75.0%" alt="Visualization Analysis &amp; Design Cover"></a><br>
+</p>
+</div></div>
+</section>
+<section id="marks-and-channels-1" class="slide level2">
+<h2>Marks and Channels</h2>
 <p><br></p>
-<p>They didn’t.</p>
+<p>The goal of this chapter is to understand the basic geometric elements that depict items or links (<strong>marks</strong>) and control their appearance (<strong>channels</strong>).</p>
+<center>
+<p><a href="fig/fig5.1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure 5.1"><img data-src="fig/fig5.1.png" style="width:60.0%" alt="Figure 5.1"></a><br>
+</p>
+</center>
 </section>
-<section>
-<section id="digital-image-formats" class="title-slide slide level1 center">
-<h1>Digital Image Formats</h1>
-
-</section>
-<section id="digital-image-formats-1" class="slide level2">
-<h2>Digital Image Formats</h2>
-<div class="quarto-layout-panel" style="font-size: 75%" data-layout="[ 0.48, -0.04, 0.48 ]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 48.0%;justify-content: flex-start;">
-<h3 id="raster">Raster</h3>
+<section id="marks" class="slide level2">
+<h2>Marks</h2>
 <ul>
-<li>By far, the most common digital image format</li>
-<li>Composed of picture elements (“pixels”)</li>
-<li>Discrete grid of pixels contains color or intensity information</li>
-<li>Fixed resolution, determined by pixel size</li>
-<li>AKA bitmap, referring to a spatial arrangement of bits</li>
-</ul>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 4.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div id="second-column" class="quarto-layout-cell" style="flex-basis: 48.0%;justify-content: flex-start;">
-<h3 id="vector">Vector</h3>
+<li>A <strong>mark</strong> is a basic graphical element in an image.
 <ul>
-<li>Far less common format</li>
-<li>Composed of mathematical geometry</li>
-<li>Continuous space</li>
-<li>Scales well to any resolution thanks to mathematical definitions unrelated to pixels</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="digital-image-formats-2" class="slide level2">
-<h2>Digital Image Formats</h2>
-<div class="quarto-layout-panel" style="font-size: 75%" data-layout="[ 0.48, -0.04, 0.48 ]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 48.0%;justify-content: flex-start;">
-<h3 id="raster-1">Raster</h3>
+<li>They are classified according to their spatial dimensions.
 <ul>
-<li>JPEG</li>
-<li>GIF</li>
-<li>PNG</li>
-<li>TIFF</li>
-<li><em>etc.</em></li>
+<li>0D: Point</li>
+<li>1D: Line</li>
+<li>2D: Area</li>
+<li>3D: Volume (uncommon)</li>
+</ul></li>
+</ul></li>
 </ul>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 4.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div id="second-column" class="quarto-layout-cell" style="flex-basis: 48.0%;justify-content: flex-start;">
-<h3 id="vector-1">Vector</h3>
+<center>
+<p><a href="fig/fig5.2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure 5.2"><img data-src="fig/fig5.2.png" style="width:60.0%" alt="Figure 5.2"></a><br>
+</p>
+</center>
+</section>
+<section id="channels" class="slide level2">
+<h2>Channels</h2>
 <ul>
-<li>SVG</li>
-<li>PDF</li>
-<li>EPS</li>
-<li><em>etc.</em></li>
+<li>A visual <strong>channel</strong> is a way to control the appearance of a mark, independent of its dimensionality.</li>
 </ul>
-</div>
-</div>
-</div>
+<center>
+<p><a href="fig/fig5.3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure 5.3"><img data-src="fig/fig5.3.png" style="width:60.0%" alt="Figure 5.3"></a><br>
+</p>
+</center>
 </section>
-<section id="image-resolution" class="slide level2">
-<h2>Image Resolution</h2>
-<p><br></p>
-<p>A raster image’s <strong>resolution</strong> describes how much detail it has.</p>
-<p><br></p>
-<p>We often express resolution using pixel count, expressed either as a single value (<em>e.g.</em>, 2.1 megapixels) or as a pair of numbers showing width and height (<em>e.g.</em>, 1920 x 1080).</p>
-</section>
-<section id="image-resolution-1" class="slide level2">
-<h2>Image Resolution</h2>
-<p><br></p>
-<p>For example a “full HD” image has dimensions 1920 x 1080.</p>
-<p>If you are familiar with megapixels, that’s:</p>
-<p><span class="math display">\[1920 \times 1080 = 2,073,600 \approx 2.1\,\mathrm{Megapixels}\]</span></p>
-</section>
-<section id="image-resolution-2" class="slide level2">
-<h2>Image Resolution</h2>
-<p>While pixels ultimately describe the resolution of an image, whether or not the image appears to be high-quality depends on how large it is displayed. If you display an image at a certain physical size, you can refer to the resolution in:</p>
+<section id="channels-1" class="slide level2">
+<h2>Channels</h2>
+<p>This figure shows a progression of chart types, with each panel showing one more quantitative data attribute by adding one more visual channel. Each panel uses one mark (line or point).</p>
 <ul>
-<li>DPI (dots per inch; a term related to dots of ink in a printed image)</li>
-<li>PPI (pixels per inch; technically more correct on screen).</li>
+<li><strong>Bar chart</strong>: two attributes (vertical position quantitative, horizontal position categorical)</li>
+<li><strong>Scatterplot</strong>: two quantitative attributes (vertical position, horizontal position)</li>
+<li><strong>Scatterplot with color</strong>: three quantitative attributes (color is categorical)</li>
+<li><strong>Scatterplot with color and size</strong>: four quantitative attributes (shape is quantitative)</li>
 </ul>
-<p>You will often see DPI/PPI used interchangeably.</p>
+<center>
+<p><a href="fig/fig5.4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure 5.4"><img data-src="fig/fig5.4.png" style="width:60.0%" alt="Figure 5.4"></a><br>
+</p>
+</center>
 </section>
-<section id="image-resolution-3" class="slide level2">
-<h2>Image Resolution</h2>
-<p>Some common DPI values:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>DPI</th>
-<th>Use</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>72</td>
-<td>Standard Mac display</td>
-</tr>
-<tr class="even">
-<td>96</td>
-<td>Standard Windows display</td>
-</tr>
-<tr class="odd">
-<td>300-400</td>
-<td>Modern Apple Retina HD display</td>
-</tr>
-<tr class="even">
-<td>300-720</td>
-<td>Inkjet printer</td>
-</tr>
-<tr class="odd">
-<td>600-2400</td>
-<td>Laser printer</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="file-size" class="slide level2">
-<h2>File Size</h2>
-<p>Vector image file sizes are determined by the number of vectors.</p>
+<section id="channels-2" class="slide level2">
+<h2>Channels</h2>
 <p><br></p>
-<p>Uncompressed, raster image file sizes are related to the image’s <strong>resolution</strong> and <strong>color depth</strong>.</p>
+<center>
+<p><a href="fig/fig5.4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure 5.4"><img data-src="fig/fig5.4.png" style="width:60.0%" alt="Figure 5.4"></a><br>
+</p>
+</center>
 <p><br></p>
-<p><strong>Color depth</strong> is the number of bits used to indicate the color of a single pixel and is measured in bits per pixel (bpp).</p>
+<ul>
+<li>In this figure, each channel shows one attribute.</li>
+<li>Multiple channels can be used to redundantly encode the same attribute.
+<ul>
+<li>This makes that attribute very easily perceived.</li>
+<li>But it also “uses up” one of your channels.</li>
+</ul></li>
+</ul>
 </section>
-<section id="file-size-1" class="slide level2 smaller">
-<h2>File Size</h2>
-<p>If that image had 24-bit color (web standard), its file size would be:</p>
-<p><span class="math display">\[1920 \times 1080 \times 24 = 49,766,400\,\mathrm{bits} \times \frac{1\,\mathrm{bit}}{8\,\mathrm{bytes}} = 6,220,800\,\mathrm{bytes}\approx5.9\,\mathrm{MiB}\]</span></p>
+<section id="channels-3" class="slide level2">
+<h2>Channels</h2>
+<ul>
+<li>Size and shape channels cannot be used on all types of marks.
+<ul>
+<li>Higher dimensional marks usually have intrinsic size/shape.
+<ul>
+<li>One notable exception is the <a href="https://en.wikipedia.org/wiki/Cartogram" target="blank">cartogram</a>.</li>
+</ul></li>
+<li>Points and lines can be easily size coded.</li>
+</ul></li>
+</ul>
+<center>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/9/90/Global_population_cartogram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Mosaic cartogram showing distribution of world population (Wikipedia)"><img data-src="https://upload.wikimedia.org/wikipedia/commons/9/90/Global_population_cartogram.png" style="width:90.0%" alt="Mosaic cartogram showing distribution of world population (Wikipedia)"></a><br>
+</p>
+</center>
 </section>
-<section id="color-depth" class="slide level2 smaller">
-<h2>Color Depth</h2>
-<p>The number of possible colors for <span class="math inline">\(n\)</span>-bit color depth is <span class="math inline">\(2^n\)</span>.</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 22%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit Depth</th>
-<th>Bits per pixel</th>
-<th>Examples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1-bit</td>
-<td><span class="math inline">\(2^1=2\)</span></td>
-<td>Usually black-and-white</td>
-</tr>
-<tr class="even">
-<td>2-bit</td>
-<td><span class="math inline">\(2^2=4\)</span></td>
-<td>Many early computer systems; original Game Boy</td>
-</tr>
-<tr class="odd">
-<td>3-bit</td>
-<td><span class="math inline">\(2^3=8\)</span></td>
-<td>RGB; early home computers with TV displays</td>
-</tr>
-<tr class="even">
-<td>8-bit</td>
-<td><span class="math inline">\(2^8=256\)</span></td>
-<td>1980s PCs; modern smartwatches; Mars Exploration Rovers<sup>1</sup></td>
-</tr>
-<tr class="odd">
-<td>15-bit</td>
-<td><span class="math inline">\(2^{15}=32,768\)</span></td>
-<td>Super Nintendo, Game Boy Color</td>
-</tr>
-<tr class="even">
-<td>24-bit</td>
-<td><span class="math inline">\(2^{24}\approx16M\)</span></td>
-<td>“True color”<sup>2</sup>; modern computer and phone displays</td>
-</tr>
-</tbody>
-</table>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>grayscale for navigation imaging; limits data transmission size</p></li><li id="fn2"><p>the human eye can discriminate <span class="math inline">\(\approx\)</span> 10M colors</p></li></ol></aside></section>
-<section id="image-compression" class="slide level2">
-<h2>Image Compression</h2>
-<p><br> <strong>Data compression</strong> is the process of encoding information using fewer bits that the original representation.</p>
-<p><br> <strong>Image compression</strong> is data compression optimized for image data by taking advantage of visual perception or statistical properties of the data. <br></p>
-<div style="font-size: 50%">
-<p>If you’re interested in image compression, the Wikipedia page <a href="https://en.wikipedia.org/wiki/Image_compression" target="_blank">Image compression</a> has a lot of detail.</p>
-</div>
+<section id="channel-types" class="slide level2">
+<h2>Channel Types</h2>
+<ul>
+<li>The human perceptual system has two fundamentally different kinds of sensory modalities.
+<ul>
+<li>The <strong>identity</strong> channels tell us information about <em>what</em> or <em>where</em> something is.
+<ul>
+<li>Referred to as “metathetic” or “what-where” in the psychophysics literature.</li>
+</ul></li>
+<li>The <strong>magnitude</strong> channels tell us <em>how much</em> of something there is.
+<ul>
+<li>Referred to as “prothetic” or “how much” in the psychophysics literature.</li>
+</ul></li>
+</ul></li>
+</ul>
 </section>
-<section id="image-compression-1" class="slide level2">
-<h2>Image Compression</h2>
-<p><br> Image compression can be <strong>lossless</strong> or <strong>lossy</strong>.</p>
-<p><br> Lossy compression usually (but not always) results in smaller file sizes, but it can introduce noticeable artifacts.</p>
+<section id="mark-types" class="slide level2">
+<h2>Mark Types</h2>
+<ul>
+<li>Marks reprensent different things depending on the datatype.
+<ul>
+<li>For table datasets, a mark always represents an <strong>item</strong>.</li>
+<li>For network datasets, a mark might represent either an <strong>item</strong> (node) or a <strong>link</strong>.
+<ul>
+<li>A <strong>connection</strong> mark shows a pairwise relationship between two items.</li>
+<li>A <strong>containment</strong> mark shows hierarchical relationships using areas.</li>
+</ul></li>
+</ul></li>
+</ul>
+<center>
+<p><a href="fig/fig5.5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure 5.5"><img data-src="fig/fig5.5.png" style="width:60.0%" alt="Figure 5.5"></a><br>
+</p>
+</center>
 </section>
-<section id="image-compression-2" class="slide level2 smaller scrollable">
-<h2>Image Compression</h2>
-<p>Photo taken by Brian on a Nikon ZIII Mirrorless Camera</p>
-<p>2048 x 1365 pixels (2.8 Megapixels)</p>
-<p>(<em>Note most web browsers (except Safari) don’t display TIFFs.</em>)</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 42%">
-<col style="width: 33%">
-<col style="width: 24%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Compression</th>
-<th>Image</th>
-<th>File Size</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>JPEG, 100 Quality</td>
-<td><a href="img/JPEG_100.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="JPEG, full quality"><img data-src="img/JPEG_100.jpg" alt="JPEG, full quality"></a></td>
-<td>0.99 MiB</td>
-</tr>
-<tr class="even">
-<td>JPEG, 10 Quality</td>
-<td><a href="img/JPEG_10.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="JPEG, high compression"><img data-src="img/JPEG_10.jpg" alt="JPEG, high compression"></a></td>
-<td>88.2 KiB</td>
-</tr>
-<tr class="odd">
-<td>TIFF, No compression</td>
-<td><a href="img/TIFF_full.tif" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="TIFF, no compression"><img data-src="img/TIFF_full.tif" alt="TIFF, no compression"></a></td>
-<td>8.03 MiB</td>
-</tr>
-<tr class="even">
-<td>TIFF, LZW compression</td>
-<td><a href="img/TIFF_LZW.tif" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="TIFF, LZW compression"><img data-src="img/TIFF_LZW.tif" alt="TIFF, LZW compression"></a></td>
-<td>2.88 MiB</td>
-</tr>
-</tbody>
-</table>
+<section id="using-marks-and-channels" class="slide level2">
+<h2>Using Marks and Channels</h2>
+<ul>
+<li>All channels are not equal!</li>
+<li>Encoding the same attribute with different visual channels will result in different information content in our heads after perception and processing.</li>
+<li>Use of marks and channels in idiom design should be guided by the principles of <strong>expresiveness</strong> and <strong>effectiveness</strong>.</li>
+<li>These principles can be combined to rank channels.</li>
+</ul>
 </section>
-<section id="scientific-publishing" class="slide level2">
-<h2>Scientific Publishing</h2>
+<section id="expressiveness-and-effectiveness" class="slide level2">
+<h2>Expressiveness and Effectiveness</h2>
+<ul>
+<li>The <strong>expressiveness principle</strong> dictates that the visual encoding should express all of, and only, the inofrmation in the dataset attributes.
+<ul>
+<li>Ordered data should be shown in a way that we perceive as ordered.</li>
+<li>Unordered data should <em>not</em> be shown in a way that perceptually implies ordering.</li>
+</ul></li>
+<li>The <strong>effectiveness principle</strong> dictates that the importance of the attribute should match the <strong>salience</strong> of the channel.
+<ul>
+<li>The most important attributes should be encoded with the most effective channels.</li>
+</ul></li>
+</ul>
+</section>
+<section id="channel-rankings" class="slide level2">
+<h2>Channel Rankings</h2>
+<center>
+<p><a href="fig/fig5.6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure 5.6"><img data-src="fig/fig5.6.png" style="width:80.0%" alt="Figure 5.6"></a><br>
+</p>
+</center>
+</section>
+<section id="channel-rankings-1" class="slide level2">
+<h2>Channel Rankings</h2>
 <p><br></p>
-<p>Most journals have explicit figure guidelines in their “Instructions for Authors” material.</p>
-<p><br></p>
-<p>For example, <em>Science</em> has an entire <a href="https://www.science.org/cms/asset/62583409-a188-466e-8cc0-6fb5f083bbff/author_prep_guide_2025.pdf" target="_blank">figure guideline PDF</a>.</p>
-<p><br></p>
-<p>They require images to be at least 300 PPI, they prefer vector over raster graphics, and they give exact measurements for one-column and two-column figures.</p>
-</section></section>
-<section>
-<section id="r-graphical-devices" class="title-slide slide level1 center">
-<h1>R Graphical Devices</h1>
-
+<ul>
+<li><em>Note that</em>, while it is possible to use magnitude channels for categorical attributes or identity channels for ordered attributes, this is a violation of the <strong>expressiveness principle</strong>.</li>
+</ul>
 </section>
-<section id="r-graphical-devices-1" class="slide level2">
-<h2>R Graphical Devices</h2>
-<p><br></p>
-<p>You can read about graphical devices in R on the help page.</p>
+<section id="channel-rankings-2" class="slide level2">
+<h2>Channel Rankings</h2>
+<ul>
+<li>Both magnitude and identity channels have channels related to spatial position as the most effective.
+<ul>
+<li>Spatial position is the only channel on both lists.</li>
+<li>This only applies to 2D position; 3D position (depth) is ranked much lower.</li>
+</ul></li>
+<li>The choice of which attributes to encode with spatial position is the most central choice in visualization encoding.
+<ul>
+<li>The attributes encoded with position will dominate the user’s <strong>mental model</strong> compared with any other channel.</li>
+</ul></li>
+</ul>
+</section>
+<section id="channel-effectiveness" class="slide level2">
+<h2>Channel Effectiveness</h2>
+<ul>
+<li>In analyzing the effectiveness of a visualization, you can ask many questions about the use of visual channels:
+<ul>
+<li>How are these channel rankings justified?</li>
+<li>Why did the designer choose particular channels?</li>
+<li>How many more visual channels are there?</li>
+<li>What kinds of information and how much information can a channel encode?</li>
+<li>Why are some channels better than others?</li>
+<li>Can all channels be used independently, or do they interfere with each other?</li>
+</ul></li>
+</ul>
+</section>
+<section id="accuracy" class="slide level2">
+<h2>Accuracy</h2>
+<ul>
+<li>An important part of effectiveness is <strong>accuracy</strong>, how close the human perceptual judgement is to some objective measure of the stimulus.</li>
+<li><strong>Psychophysics</strong> is the subfield of psychology concerned with the measurement of human perception.</li>
+<li>Stevens<sup>1</sup> presented the psychophysical power law relating the apparent magnitude of a sensory channel <span class="math inline">\((S)\)</span> to the stimulus intensity <span class="math inline">\((I)\)</span>.</li>
+</ul>
+<p><span class="math display">\[S = I^n\]</span></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://doi.org/10.4324/9781315127675" target="blank">Stevens (1975)</a> is a textbook you can find a <a href="https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&amp;identifierValue=10.4324/9781315127675&amp;type=googlepdf" target="blank">free PDF of online</a>.</p></li></ol></aside></section>
+<section id="accuracy-1" class="slide level2 smaller">
+<h2>Accuracy</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li>The exponent for perception of length is <span class="math inline">\(n=1\)</span>.
+<ul>
+<li>Perception matches objective measurement.</li>
+</ul></li>
+<li>The exponent for color saturation is <span class="math inline">\(n&gt;1\)</span>.
+<ul>
+<li>Perception is exaggerated above objective measurement.</li>
+</ul></li>
+<li>The exponent for area is <span class="math inline">\(n&lt;1\)</span>.
+<ul>
+<li>Perception is dampened below objective measurement.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:70%;">
+<center>
+<p><a href="fig/fig5.7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure 5.7"><img data-src="fig/fig5.7.png" style="width:100.0%" alt="Figure 5.7"></a><br>
+</p>
+</center>
+</div></div>
+</section>
+<section id="accuracy-2" class="slide level2 smaller">
+<h2>Accuracy</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li>Experimental work by Cleveland and McGill<sup>1</sup> rannked channel accuracy:
+<ul>
+<li>Aligned position against a common scale</li>
+<li>Unaligned position</li>
+<li>Line length</li>
+<li>Angle</li>
+</ul></li>
+<li>Crowdsourced results by Heer and Bostock<sup>2</sup> supported and extended these results.</li>
+</ul>
+</div><div class="column" style="width:70%;">
+<center>
+<p><a href="fig/fig5.8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure 5.8"><img data-src="fig/fig5.8.png" style="width:100.0%" alt="Figure 5.8"></a><br>
+</p>
+</center>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p><a href="https://doi.org/10.1080/01621459.1984.10478080" target="blank">Cleveland and McGill (1984)</a></p></li><li id="fn3"><p><a href="https://doi.org/10.1145/1753326.1753357" target="blank">Heer and Bostock (2010)</a></p></li></ol></aside></section>
+<section id="discriminability" class="slide level2 smaller">
+<h2>Discriminability</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><strong>Discriminability</strong> is the ability of a user to perceive the differences in a channel as intended.
+<ul>
+<li>This determines the number of <strong>bins</strong> that are available for a channel.</li>
+<li><em>E.g.</em>, linewidth has a limited number of discriminable bins.
+<ul>
+<li>Lines that are too thick effectively become polygons.</li>
+<li>It is hard to perceive more than 3 or 4 linewidths.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:60%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>?Devices</span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="co"># OR</span></span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a><span class="fu">help</span>(<span class="st">"Devices"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><a href="08_marks_channels_files/figure-revealjs/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img data-src="08_marks_channels_files/figure-revealjs/unnamed-chunk-1-1.png" width="768"></a></p>
+</figure>
 </div>
-<p><br></p>
-<p>You can also find the help page rendered on the web <a href="https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html" target="_blank">here</a>.</p>
+</div>
+</div>
+</div></div>
 </section>
-<section id="r-graphical-devices-2" class="slide level2">
-<h2>R Graphical Devices</h2>
-<p>You will notice that the help file indicates that many of the devices are platform-specific. You can check what devices are available on your current system <sup>1</sup>:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">capabilities</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       jpeg         png        tiff       tcltk         X11        aqua 
-       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
-   http/ftp     sockets      libxml        fifo      cledit       iconv 
-       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
-        NLS       Rprof     profmem       cairo         ICU long.double 
-       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
-    libcurl 
-       TRUE </code></pre>
-</div>
-</div>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>Note that RStudio has its own graphics device</p></li></ol></aside></section>
-<section id="r-graphical-devices-3" class="slide level2">
-<h2>R Graphical Devices</h2>
-<p>Additional graphical devices can be accessed through packages. I often use the AGG library through the package <code>ragg</code> (<a href="https://ragg.r-lib.org/" target="_blank">https://ragg.r-lib.org/</a>).</p>
-<p><br></p>
-<p><code>ragg</code> claims to be faster (<em>I haven’t tried</em>) and higher quality (<em>I can confirm</em>) than <code>base</code> R graphics (<code>grDevices</code>).</p>
-<p><br></p>
-<p>It is also system-independent, so you should get the same output from Windows, Mac, or Linux.</p>
-</section></section>
-<section id="code-demo" class="title-slide slide level1 center">
-<h1>Code Demo</h1>
-
+<section id="separability" class="slide level2">
+<h2>Separability</h2>
+<ul>
+<li>Some channels interact with each other.</li>
+<li>There is a continuum from <strong>separable</strong> channels to <strong>integral</strong> channels.
+<ul>
+<li><strong>Separable</strong> channels are completely independent from each other.
+<ul>
+<li>Straightfoward to use.</li>
+</ul></li>
+<li><strong>Integral</strong> channels are inextricably combined.
+<ul>
+<li>Visualizations can fail if these channels convey different attributes.</li>
+</ul></li>
+</ul></li>
+</ul>
+<center>
+<p><a href="fig/fig5.10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figure 5.10"><img data-src="fig/fig5.10.png" style="width:80.0%" alt="Figure 5.10"></a><br>
+</p>
+</center>
 </section>
-
+<section id="separability-1" class="slide level2 smaller">
+<h2>Separability</h2>
+<center>
+<p><a href="fig/fig5.10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figure 5.10"><img data-src="fig/fig5.10.png" style="width:80.0%" alt="Figure 5.10"></a><br>
+</p>
+</center>
+<ul>
+<li>Position + hue are fully separable.
+<ul>
+<li>Clearly see 2 categories for both.</li>
+</ul></li>
+<li>Size + hue have some interference.
+<ul>
+<li>More difficult to tell the color on smaller objects.</li>
+</ul></li>
+<li>Width + height have significant interference.
+<ul>
+<li>You might see 3 groups (based on size) when there should be 4.</li>
+</ul></li>
+<li>Red + green have major interference.
+<ul>
+<li>The two colors combine to show us 4 different hues.</li>
+</ul></li>
+</ul>
+</section>
+<section id="popout" class="slide level2">
+<h2>Popout</h2>
+<ul>
+<li>Many channels can provide <strong>popout</strong>, where a distinct item stands out immediately.</li>
+</ul>
+<center>
+<p><a href="fig/fig5.11_3x2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figure 5.11"><img data-src="fig/fig5.11_3x2.png" style="width:70.0%" alt="Figure 5.11"></a><br>
+</p>
+</center>
+</section>
+<section id="popout-1" class="slide level2">
+<h2>Popout</h2>
+<center>
+<div class="columns">
+<div class="column">
+<p><a href="fig/fig5.11a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figure 5.11a"><img data-src="fig/fig5.11a.png" style="width:70.0%" alt="Figure 5.11a"></a><br>
+</p>
+</div><div class="column">
+<p><a href="fig/fig5.11b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figure 5.11b"><img data-src="fig/fig5.11b.png" style="width:70.0%" alt="Figure 5.11b"></a><br>
+</p>
+</div></div>
+</center>
+<ul>
+<li>The time it takes us to spot the red circle is roughly the same for 15 blue circles or 50 blue circles.
+<ul>
+<li>Our low-level visual system does “massively parallel processing” on color channels.</li>
+</ul></li>
+</ul>
+</section>
+<section id="popout-2" class="slide level2">
+<h2>Popout</h2>
+<center>
+<div class="columns">
+<div class="column">
+<p><a href="fig/fig5.11c.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Figure 5.11c"><img data-src="fig/fig5.11c.png" style="width:70.0%" alt="Figure 5.11c"></a><br>
+</p>
+</div><div class="column">
+<p><a href="fig/fig5.11d.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figure 5.11d"><img data-src="fig/fig5.11d.png" style="width:70.0%" alt="Figure 5.11d"></a><br>
+</p>
+</div></div>
+</center>
+<ul>
+<li>The time it takes us to spot the red circle is roughly the same for 15 red circles or 50 red circles, but it is much slower than it was with the color difference.</li>
+</ul>
+</section>
+<section id="popout-3" class="slide level2">
+<h2>Popout</h2>
+<center>
+<div class="columns">
+<div class="column">
+<p><a href="fig/fig5.11e.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Figure 5.11e"><img data-src="fig/fig5.11e.png" style="width:70.0%" alt="Figure 5.11e"></a><br>
+</p>
+</div><div class="column">
+<p><a href="fig/fig5.11f.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Figure 5.11f"><img data-src="fig/fig5.11f.png" style="width:70.0%" alt="Figure 5.11f"></a><br>
+</p>
+</div></div>
+</center>
+<ul>
+<li>Popout between channels can’t necessarily be combined.
+<ul>
+<li>The red circle doesn’t pop out when there are both shape and color differences.</li>
+<li>It can only be detected by <strong>serial search</strong>, looking at each object one at a time.
+<ul>
+<li>Search time increases linearly with number of distractor objects.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="popout-4" class="slide level2">
+<h2>Popout</h2>
+<ul>
+<li>Generally, you should only count on using popout for one channel at a time.</li>
+<li>Popout can occur for many channels.
+<ul>
+<li>Tilt (a), size (b), shape (c), proximity (d), shadow direction (e).</li>
+<li>Note that parallel lines do not popout (f).</li>
+</ul></li>
+</ul>
+<center>
+<p><a href="fig/fig5.12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Figure 5.12"><img data-src="fig/fig5.12.png" style="width:60.0%" alt="Figure 5.12"></a><br>
+</p>
+</center>
+</section>
+<section id="grouping" class="slide level2">
+<h2>Grouping</h2>
+<ul>
+<li>You can convey information about grouping using:
+<ul>
+<li>Link marks</li>
+<li>Identity channels
+<ul>
+<li>Proximity</li>
+<li>Similarity</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="grouping-1" class="slide level2">
+<h2>Grouping</h2>
+<ul>
+<li>You can convey information about grouping using link marks.
+<ul>
+<li>Areas of containment are the strongest cue.</li>
+<li>Connection marks are the second best.</li>
+</ul></li>
+</ul>
+<center>
+<p><a href="fig/fig5.5b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Figure 5.5b"><img data-src="fig/fig5.5b.png" style="width:60.0%" alt="Figure 5.5b"></a><br>
+</p>
+</center>
+</section>
+<section id="grouping-2" class="slide level2">
+<h2>Grouping</h2>
+<ul>
+<li>You can convey information about grouping using identity channels.
+<ul>
+<li>Proximity is the third strongest cue.</li>
+<li>Similarity (in hue or motion) is the last cue.</li>
+</ul></li>
+</ul>
+</section>
+<section id="relative-vs.-absolute-judgements" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Judgements</h2>
+<ul>
+<li><strong>Weber’s Law</strong> tells us that the human perceptual system is based on relative judgements, not absolute judgements.</li>
+<li>This holds true for all sensory modalities.</li>
+</ul>
+<center>
+<p><a href="fig/fig5.13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Figure 5.13"><img data-src="fig/fig5.13.png" style="width:80.0%" alt="Figure 5.13"></a><br>
+</p>
+</center>
+</section>
+<section id="relative-vs.-absolute-judgements-1" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Judgements</h2>
+<center>
+<p><a href="fig/fig5.13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Figure 5.13"><img data-src="fig/fig5.13.png" style="width:80.0%" alt="Figure 5.13"></a><br>
+</p>
+</center>
+<ul>
+<li>The lengths of unframed, unaligned rectangles of slightly different sizes are hard to compare.</li>
+<li>Adding a frame helps.</li>
+<li>Aligning the bars makes judgement easy.</li>
+</ul>
+</section>
+<section id="relative-vs.-absolute-judgements-2" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Judgements</h2>
+<p>This optical illusion by <a href="https://persci.mit.edu/people/adelson" target="blank">Edward H. Adelson</a> demonstrates that our perception of color and luminance is context-dependent.</p>
+<center>
+<p><a href="img/checkershadow_double_med.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Optical illusion by Edward H. Adelson"><img data-src="img/checkershadow_double_med.jpg" style="width:80.0%" alt="Optical illusion by Edward H. Adelson"></a><br>
+</p>
+<p><span style="font-size: 70%;"><a href="https://persci.mit.edu/gallery/checkershadow/download/">Perceptual Science Group @ MIT</a></span></p>
+</center>
+</section>
 <section id="questions" class="title-slide slide level1 center">
 <h1>Questions?</h1>
 <p><br></p>
@@ -706,9 +814,9 @@ Brian J. Smith
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1400,
 
-        height: 700,
+        height: 900,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,

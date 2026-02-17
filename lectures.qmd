@@ -12,5 +12,10 @@ author: "Brian J. Smith"
 |1/29/2026 |[Lecture 5: Image Formats](lectures/05_image_formats.qmd)          | 
 |2/3/2026  |[Lecture 6: Data Abstraction](lectures/06_abstract.qmd)            | 
 |2/5/2026  |[Lecture 7: Data Wrangling](lectures/07_wrangling.qmd)             | 
+|2/10/2026 | No class                                                          | 
+|2/12/2026 | No class                                                          | 
+|2/17/2026 |[Lecture 8: Marks and Channels](lectures/08_marks_channels.qmd)    | 
+|2/19/2026 |[Lecture 9: `ggplot2`](lectures/09_ggplot2.qmd)                    | 
+
 
 
