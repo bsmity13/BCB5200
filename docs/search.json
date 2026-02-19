@@ -1258,5 +1258,110 @@
     "title": "BCB5200",
     "section": "",
     "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2",
+    "href": "lectures/09_ggplot2.html#ggplot2",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2",
+    "text": "ggplot2\n\n\n\nCreate elegant data visualizations using the Grammar of Graphics\n\n\nhttps://ggplot2.tidyverse.org/"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-cheatsheet",
+    "href": "lectures/09_ggplot2.html#ggplot2-cheatsheet",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Cheatsheet",
+    "text": "ggplot2 Cheatsheet"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-1",
+    "href": "lectures/09_ggplot2.html#ggplot2-1",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2",
+    "text": "ggplot2\n\nggplot2 is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.\n\n\nWhat is a declarative programming language?\nWhat is The Grammar of Graphics?"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#imperative-vs.-declarative",
+    "href": "lectures/09_ggplot2.html#imperative-vs.-declarative",
+    "title": "Lecture 9: ggplot2",
+    "section": "Imperative vs. Declarative",
+    "text": "Imperative vs. Declarative"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#the-grammar-of-graphics",
+    "href": "lectures/09_ggplot2.html#the-grammar-of-graphics",
+    "title": "Lecture 9: ggplot2",
+    "section": "The Grammar of Graphics",
+    "text": "The Grammar of Graphics\n\nThe Grammar of Graphics (2005)"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nIt’s hard to succinctly describe how ggplot2 works because it embodies a deep philosophy of visualisation. However, in most cases you start with ggplot(), supply a dataset and aesthetic mapping (with aes()). You then add on layers (like geom_point() or geom_histogram()), scales (like scale_colour_brewer()), faceting specifications (like facet_wrap()) and coordinate systems (like coord_flip())."
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-1",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics-1",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nBegin with ggplot()\nThe first argument is data, so you can (but don’t have to) specify that.\nYou can also easily pipe to ggplot().\n\n\n\nCode\nlibrary(ggplot2)\nlibrary(dplyr)\n\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot()"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-2",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics-2",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nThe next argument is mapping, which you use to define the aesthetics of your plot using the function aes().\n\nThis is where you define which channels to use for which attributes.\n\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color))"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-3",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics-3",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nNow you can add a geom, i.e., a mark.\nYou can add more than one geom in layers.\nAfter calling ggplot(), all layers and options are added to the plot using the + operator.\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color)) +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-4",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics-4",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nOnce you have all the layers, you can start tweaking the appearance of layers, marks, or channels.\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color)) +\n  geom_point() +\n  xlab(\"Height (cm)\") +\n  ylab(\"Mass (kg)\") +\n  ggtitle(\"Mass by Height and Hair Color\",\n          subtitle = \"in the Star Wars universe\") +\n  scale_color_manual(name = \"Hair Color\", \n                     breaks = c(\"blond\", \"brown\", \"black\", \"none\"),\n                     values = c(\"gold\", \"brown\", \"black\", \"gray\"))"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-5",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics-5",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nOther tweaks might include:\n\nadding facets to change the view.\nchanging the overall appearance with themes.\n\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color)) +\n  geom_point() +\n  xlab(\"Height (cm)\") +\n  ylab(\"Mass (kg)\") +\n  ggtitle(\"Mass by Height and Hair Color\",\n          subtitle = \"in the Star Wars universe\") +\n  scale_color_manual(name = \"Hair Color\", \n                     breaks = c(\"blond\", \"brown\", \"black\", \"none\"),\n                     values = c(\"gold\", \"brown\", \"black\", \"gray\")) +\n  facet_wrap(~ hair_color) +\n  theme_bw() +\n  theme(text = element_text(size = 16))"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming",
+    "href": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming",
+    "title": "Lecture 9: ggplot2",
+    "section": "Imperative vs. Declarative Programming",
+    "text": "Imperative vs. Declarative Programming\n\n\n\nImperative\n\nFocus on how in addition to what.\nProvide step-by-step commands.\nProvides more control and transparency.\n\n\nDeclarative\n\nFocus on what not how.\nProvide a definition of what the final product should look like.\nMore concise and abstract."
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#declarative",
+    "href": "lectures/09_ggplot2.html#declarative",
+    "title": "Lecture 9: ggplot2",
+    "section": "Declarative",
+    "text": "Declarative\n\nFocus on what not how.\nProvide a definition of what the final product should look like.\nMore concise and abstract."
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming-1",
+    "href": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming-1",
+    "title": "Lecture 9: ggplot2",
+    "section": "Imperative vs. Declarative Programming",
+    "text": "Imperative vs. Declarative Programming\n\nExamples\n\n\n\nImperative\n\nR\n\n(including base R plotting)\n\nPython\nC++\n\n\nDeclarative\n\nHTML\nSQL\nJAGS/Stan/NIMBLE\nggplot2"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#the-grammar-of-graphics-1",
+    "href": "lectures/09_ggplot2.html#the-grammar-of-graphics-1",
+    "title": "Lecture 9: ggplot2",
+    "section": "The Grammar of Graphics",
+    "text": "The Grammar of Graphics\n\n\n\nggplot2 (3rd Ed)\n\n\nWilkinson (2005) created the grammar of graphics to describe the fundamental features that underlie all statistical graphics. The grammar of graphics is an answer to the question of what is a statistical graphic? ggplot2 (Wickham 2009) builds on Wilkinson’s grammar by focussing on the primacy of layers and adapting it for use in R. In brief, the grammar tells us that a graphic maps the data to the aesthetic attributes (colour, shape, size) of geometric objects (points, lines, bars). The plot may also include statistical transformations of the data and information about the plot’s coordinate system. Facetting can be used to plot for different subsets of the data. The combination of these independent components are what make up a graphic.\n\n— https://ggplot2-book.org/introduction.html"
   }
 ]

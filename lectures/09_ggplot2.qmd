@@ -1,0 +1,258 @@
+---
+title: "Lecture 9: `ggplot2`"
+author: "Brian J. Smith"
+date: "19 February 2026"
+format: 
+  revealjs:
+    width: 1600
+    height: 1000
+    margin: 0.1
+    theme: simple
+    mermaid: 
+      theme: forest
+editor: source
+---
+
+## `ggplot2`
+
+![`ggplot2` Hex Sticker](img/ggplot2.png)\
+
+> Create elegant data visualizations using the Grammar of Graphics
+
+<center>
+[https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
+</center>
+
+## `ggplot2`
+
+> `ggplot2` is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.
+
+- What is a declarative programming language?
+- What is *The Grammar of Graphics*?
+
+## Imperative vs. Declarative Programming
+
+</br>
+
+:::: {.columns}
+
+::: {.column}
+
+### Imperative
+
+- Focus on *how* in addition to *what*.
+- Provide step-by-step commands.
+- Provides more control and transparency.
+
+:::
+
+::: {.column}
+
+### Declarative
+
+- Focus on *what* not *how*.
+- Provide a definition of what the final product should look like.
+- More concise and abstract.
+
+:::
+
+::::
+
+## Imperative vs. Declarative Programming
+
+</br>
+
+Examples
+<hr>
+
+:::: {.columns}
+
+::: {.column}
+
+### Imperative
+
+- R
+  - (including base R plotting)
+- Python
+- C++
+
+:::
+
+::: {.column}
+
+### Declarative
+
+- HTML
+- SQL
+- JAGS/Stan/NIMBLE
+- `ggplot2`
+
+:::
+
+::::
+
+
+## The Grammar of Graphics
+
+
+![The Grammar of Graphics](https://media.springernature.com/full/springer-static/cover-hires/book/978-0-387-28695-2?as=png){width="30%"}\
+[The Grammar of Graphics (2005)](https://link.springer.com/book/10.1007/0-387-28695-0){target="_blank"}
+
+
+## The Grammar of Graphics {.smaller}
+
+:::: {.columns}
+
+::: {.column}
+
+![ggplot2](https://ggplot2-book.org/cover.jpg){width="50%"}\
+[ggplot2 (3rd Ed)](https://ggplot2-book.org/){target="_blank"}
+
+:::
+
+::: {.column}
+
+>Wilkinson (2005) created the grammar of graphics to describe the fundamental features that underlie all statistical graphics. The grammar of graphics is an answer to the question of what is a statistical graphic? ggplot2 (Wickham 2009) builds on Wilkinson’s grammar by focussing on the primacy of layers and adapting it for use in R. In brief, the grammar tells us that a graphic maps the data to the aesthetic attributes (colour, shape, size) of geometric objects (points, lines, bars). The plot may also include statistical transformations of the data and information about the plot’s coordinate system. Facetting can be used to plot for different subsets of the data. The combination of these independent components are what make up a graphic.
+
+— [https://ggplot2-book.org/introduction.html](https://ggplot2-book.org/introduction.html){target="_blank"}
+
+:::
+
+::::
+
+
+## `ggplot2` Basics
+
+> It’s hard to succinctly describe how `ggplot2` works because it embodies a deep philosophy of visualisation. However, in most cases you start with `ggplot()`, supply a dataset and aesthetic mapping (with `aes()`). You then add on layers (like `geom_point()` or `geom_histogram()`), scales (like `scale_colour_brewer()`), faceting specifications (like `facet_wrap()`) and coordinate systems (like `coord_flip()`).
+
+## `ggplot2` Basics
+
+- Begin with `ggplot()`
+- The first argument is `data`, so you can (but don't have to) specify that.
+- You can also easily pipe to `ggplot()`.
+
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+library(ggplot2)
+library(dplyr)
+
+data("starwars")
+
+starwars %>% 
+  filter(hair_color %in% c("blond", "brown", "black", "none"),
+         !is.na(mass)) %>% 
+  ggplot()
+
+```
+
+## `ggplot2` Basics
+
+- The next argument is `mapping`, which you use to define the aesthetics of your plot using the function `aes()`.
+  - This is where you define which **channels** to use for which **attributes**.
+
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+starwars %>% 
+  filter(hair_color %in% c("blond", "brown", "black", "none"),
+         !is.na(mass)) %>% 
+  ggplot(aes(x = height, y = mass, color = hair_color))
+
+```
+
+## `ggplot2` Basics
+
+- Now you can add a **geom**, i.e., a mark.
+- You can add more than one **geom** in **layers**.
+- After calling `ggplot()`, all layers and options are added to the plot using the `+` operator.
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| lightbox: true
+
+starwars %>% 
+  filter(hair_color %in% c("blond", "brown", "black", "none"),
+         !is.na(mass)) %>% 
+  ggplot(aes(x = height, y = mass, color = hair_color)) +
+  geom_point()
+
+```
+
+## `ggplot2` Basics
+
+- Once you have all the layers, you can start tweaking the appearance of layers, marks, or channels.
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| lightbox: true
+
+starwars %>% 
+  filter(hair_color %in% c("blond", "brown", "black", "none"),
+         !is.na(mass)) %>% 
+  ggplot(aes(x = height, y = mass, color = hair_color)) +
+  geom_point() +
+  xlab("Height (cm)") +
+  ylab("Mass (kg)") +
+  ggtitle("Mass by Height and Hair Color",
+          subtitle = "in the Star Wars universe") +
+  scale_color_manual(name = "Hair Color", 
+                     breaks = c("blond", "brown", "black", "none"),
+                     values = c("gold", "brown", "black", "gray"))
+
+```
+
+## `ggplot2` Basics
+
+- Other tweaks might include: 
+  - adding facets to change the view.
+  - changing the overall appearance with themes.
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| lightbox: true
+
+starwars %>% 
+  filter(hair_color %in% c("blond", "brown", "black", "none"),
+         !is.na(mass)) %>% 
+  ggplot(aes(x = height, y = mass, color = hair_color)) +
+  geom_point() +
+  xlab("Height (cm)") +
+  ylab("Mass (kg)") +
+  ggtitle("Mass by Height and Hair Color",
+          subtitle = "in the Star Wars universe") +
+  scale_color_manual(name = "Hair Color", 
+                     breaks = c("blond", "brown", "black", "none"),
+                     values = c("gold", "brown", "black", "gray")) +
+  facet_wrap(~ hair_color) +
+  theme_bw() +
+  theme(text = element_text(size = 16))
+
+```
+
+## `ggplot2` Cheatsheet
+
+</br>
+
+<center>
+[![`ggplot2` Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/data-visualization-cheatsheet-thumbs.png)](https://github.com/rstudio/cheatsheets/blob/master/data-visualization.pdf){target="_blank"}\
+</center>
+
+
+# Questions?
+
+</br>
+
+</br>
+
+
+:::{style="font-size: 50%"}
+[BCB5200 Home](https://bsmity13.github.io/BCB5200/)
+:::
