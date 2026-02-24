@@ -1103,14 +1103,14 @@
     "href": "lectures/08_marks_channels.html#channel-rankings",
     "title": "Lecture 8: Marks and Channels",
     "section": "Channel Rankings",
-    "text": "Channel Rankings"
+    "text": "Channel Rankings\n\n\nNote that, while it is possible to use magnitude channels for categorical attributes or identity channels for ordered attributes, this is a violation of the expressiveness principle."
   },
   {
     "objectID": "lectures/08_marks_channels.html#channel-rankings-1",
     "href": "lectures/08_marks_channels.html#channel-rankings-1",
     "title": "Lecture 8: Marks and Channels",
     "section": "Channel Rankings",
-    "text": "Channel Rankings\n\n\nNote that, while it is possible to use magnitude channels for categorical attributes or identity channels for ordered attributes, this is a violation of the expressiveness principle."
+    "text": "Channel Rankings\n\nBoth magnitude and identity channels have channels related to spatial position as the most effective.\n\nSpatial position is the only channel on both lists.\nThis only applies to 2D position; 3D position (depth) is ranked much lower.\n\nThe choice of which attributes to encode with spatial position is the most central choice in visualization encoding.\n\nThe attributes encoded with position will dominate the user’s mental model compared with any other channel."
   },
   {
     "objectID": "lectures/08_marks_channels.html#channel-rankings-2",
@@ -1363,5 +1363,397 @@
     "title": "Lecture 9: ggplot2",
     "section": "The Grammar of Graphics",
     "text": "The Grammar of Graphics\n\n\n\nggplot2 (3rd Ed)\n\n\nWilkinson (2005) created the grammar of graphics to describe the fundamental features that underlie all statistical graphics. The grammar of graphics is an answer to the question of what is a statistical graphic? ggplot2 (Wickham 2009) builds on Wilkinson’s grammar by focussing on the primacy of layers and adapting it for use in R. In brief, the grammar tells us that a graphic maps the data to the aesthetic attributes (colour, shape, size) of geometric objects (points, lines, bars). The plot may also include statistical transformations of the data and information about the plot’s coordinate system. Facetting can be used to plot for different subsets of the data. The combination of these independent components are what make up a graphic.\n\n— https://ggplot2-book.org/introduction.html"
+  },
+  {
+    "objectID": "lectures/10_tables.html#arranging-tables",
+    "href": "lectures/10_tables.html#arranging-tables",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Arranging Tables",
+    "text": "Arranging Tables\n\n\nThis lecture is based on Chapter 7 of Visualization Analysis & Design.\n\n“Arrange Tables”"
+  },
+  {
+    "objectID": "lectures/10_tables.html#marks-and-channels",
+    "href": "lectures/10_tables.html#marks-and-channels",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Marks and Channels",
+    "text": "Marks and Channels\n\nThe goal of this chapter is to understand the visual encoding design choices for how to arrange tabular data spatially."
+  },
+  {
+    "objectID": "lectures/10_tables.html#arranging-tables-1",
+    "href": "lectures/10_tables.html#arranging-tables-1",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Arranging Tables",
+    "text": "Arranging Tables\n\nThe goal of this chapter is to understand the visual encoding design choices for how to arrange tabular data spatially."
+  },
+  {
+    "objectID": "lectures/08_marks_channels.html#ch-rankings",
+    "href": "lectures/08_marks_channels.html#ch-rankings",
+    "title": "Lecture 8: Marks and Channels",
+    "section": "Channel Rankings",
+    "text": "Channel Rankings"
+  },
+  {
+    "objectID": "lectures/10_tables.html#why-arrange",
+    "href": "lectures/10_tables.html#why-arrange",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Why Arrange?",
+    "text": "Why Arrange?\n\nThe arrange design choice covers all aspects of the use of spatial channels for visual encoding.\n\nUse of space dominates the user’s mental model, so it is the most important choice.\nThe three highest ranked effectiveness channels for quantitative and ordered attributes are all related to spatial position:\n\nPlanar position against a common scale\nPlanar position along an unaligned scale\nLength\n\nThe highest ranked effectiveness channel for categorical data relates to spatial position.\n\nThere are no non-spatial channels effective for all attribute types"
+  },
+  {
+    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values",
+    "href": "lectures/10_tables.html#arrange-by-keys-and-values",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Arrange by Keys and Values",
+    "text": "Arrange by Keys and Values\n\nAttributes can be categorized as key or value attributes:\n\nKey attributes are independent attributes that can be used as a unique index to lookup items.\n\nCan be categorical or ordinal.\n\nValue attributes are dependent attributes giving the value of a cell.\n\nCan be any type.\nUnique values of categorical or ordinal attributes are known as levels.\n\nAvoid overloading the word value.\nSame term used for factor variables in R."
+  },
+  {
+    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-1",
+    "href": "lectures/10_tables.html#arrange-by-keys-and-values-1",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Arrange by Keys and Values",
+    "text": "Arrange by Keys and Values\n\nDesign choices relate directly to the semantics of the table attributes, the number of keys and the number of values.\nAn idiom can show:\n\nonly values with no keys:\n\nScatter plot\n\none key and one value:\n\nBar chart\n\ntwo keys and one value:\n\nHeat map\n\nmany keys and many values:\n\nScatter plot matrix\nFaceted scatter plot"
+  },
+  {
+    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-2",
+    "href": "lectures/10_tables.html#arrange-by-keys-and-values-2",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Arrange by Keys and Values",
+    "text": "Arrange by Keys and Values\nScatter Plot\nTwo values, no keys\n\n\nCode\nlibrary(dplyr)\nlibrary(ggplot2)\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point() +\n  ggtitle(\"Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_classic()"
+  },
+  {
+    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-3",
+    "href": "lectures/10_tables.html#arrange-by-keys-and-values-3",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Arrange by Keys and Values",
+    "text": "Arrange by Keys and Values\nBar Chart\nOne key, one value\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender)) %&gt;% \n  group_by(gender) %&gt;% \n  summarize(mass = mean(mass)) %&gt;% \n  ggplot(aes(x = gender, y = mass)) +\n  geom_col(width = 0.2) +\n  coord_cartesian(expand = c(bottom = FALSE)) +\n  ggtitle(\"Bar Chart\", subtitle = \"Star Wars data\") +\n  theme_classic()"
+  },
+  {
+    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-4",
+    "href": "lectures/10_tables.html#arrange-by-keys-and-values-4",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Arrange by Keys and Values",
+    "text": "Arrange by Keys and Values\nHeat Map\nTwo keys, one value\n\n\nCode\nhm &lt;- starwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  group_by(gender, hair_color, .drop = FALSE) %&gt;% \n  summarize(n = n()) %&gt;% \n  ggplot(aes(x = gender, y = hair_color, fill = n)) +\n  geom_tile() +\n  coord_cartesian(expand = FALSE) +\n  scale_fill_viridis_b() +\n  ggtitle(\"Heat Map\", subtitle = \"Star Wars data\") +\n  theme_classic()\n\nprint(hm)"
+  },
+  {
+    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-5",
+    "href": "lectures/10_tables.html#arrange-by-keys-and-values-5",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Arrange by Keys and Values",
+    "text": "Arrange by Keys and Values\nScatter Plot Matrix\nMany keys, many values\n\n\nCode\nxx &lt;- starwars %&gt;% \n  filter(mass &lt; 500,\n         birth_year &lt; 200) %&gt;% \n  select(height, mass, birth_year)\n\nplot(xx, main = \"Scatter Plot Matrix\", sub = \"Star Wars data\",\n     pch = 16)"
+  },
+  {
+    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-6",
+    "href": "lectures/10_tables.html#arrange-by-keys-and-values-6",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Arrange by Keys and Values",
+    "text": "Arrange by Keys and Values\nFaceted Scatter Plot\nMany keys, many values\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  facet_grid(gender ~ hair_color) +\n  geom_point() +\n  coord_cartesian(expand = FALSE) +\n  ggtitle(\"Faceted Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/10_tables.html#express-quantitative-values",
+    "href": "lectures/10_tables.html#express-quantitative-values",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Express Quantitative Values",
+    "text": "Express Quantitative Values\nScatter Plot\nTwo values, no keys\n\n\nCode\nlibrary(dplyr)\nlibrary(ggplot2)\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point() +\n  ggtitle(\"Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_classic()"
+  },
+  {
+    "objectID": "lectures/10_tables.html#express-quantitative-values-1",
+    "href": "lectures/10_tables.html#express-quantitative-values-1",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Express Quantitative Values",
+    "text": "Express Quantitative Values\nScatter Plots\n\n\n\n\n\n\n\n\n\n\nIdiom\nScatterplots\n\n\n\n\nWhat: Data\nTable: two quantitative value attributes\n\n\nHow: Encode\nExpress values with horizontal and vertical spatial position and point marks\n\n\nWhy: Task\nFind trends, outliers, distribution, correlation, locate clusters\n\n\nScale\nItems: hundreds"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-and-align",
+    "href": "lectures/10_tables.html#separate-order-and-align",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, and Align",
+    "text": "Separate, Order, and Align\nCategorical Regions\n\nThe principle of expressiveness would be violated if we encoded categorical attributes with spatial position.\nInstead, we can use spatial region.\n\nRegions are continuous, bounded areas that are distinct from each other.\nDrawing items with the same level uses spatial proximity to encode their similarity.\n\nAdheres to the expressiveness principle.\n\nStill leaves flexibility for how to encoded information within a region."
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-and-align-1",
+    "href": "lectures/10_tables.html#separate-order-and-align-1",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, and Align",
+    "text": "Separate, Order, and Align\nCategorical Regions\n\nDistributing regions involves three operations:\n\nSeparating into regions.\nAligning the regions.\nOrdering the regions.\n\nSeparating and ordering always happen.\nAlignment is optional.\nSeparating should be done by the categorical attribute.\nOrdering and alignment should be done by an ordered attribute."
+  },
+  {
+    "objectID": "lectures/10_tables.html#list-alignment",
+    "href": "lectures/10_tables.html#list-alignment",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "List Alignment",
+    "text": "List Alignment\n\nWith one key, use list alignment.\nResults in one region per item.\nArrangement can be horizontal or vertical."
+  },
+  {
+    "objectID": "lectures/10_tables.html#list-alignment-1",
+    "href": "lectures/10_tables.html#list-alignment-1",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "List Alignment",
+    "text": "List Alignment\nBar Charts\n\nUse a line mark, aligned in a common frame.\nEncode a quantitative attribute with spatial position.\nEncode a categorical attribute with spatial region.\nOrdering can default to alphabetical or be data-driven.\n\n\n\n\n\nFig. 7.4. Marks are ordered (a) alphabetically or (b) by weight."
+  },
+  {
+    "objectID": "lectures/10_tables.html#list-alignment-2",
+    "href": "lectures/10_tables.html#list-alignment-2",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "List Alignment",
+    "text": "List Alignment\nBar Charts\n\n\n\n\n\n\n\n\n\n\nIdiom\nBar Charts\n\n\n\n\nWhat: Data\nTable: one quantitative value attribute, one categorical key attribute\n\n\nHow: Encode\nLine marks, express values with aligned position, separate values with region\n\n\nWhy: Task\nLookup and compare values\n\n\nScale\nKey attribute: dozens to hundreds of levels"
+  },
+  {
+    "objectID": "lectures/10_tables.html#list-alignment-3",
+    "href": "lectures/10_tables.html#list-alignment-3",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "List Alignment",
+    "text": "List Alignment\nStacked Bar Charts\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  group_by(gender, hair_color) %&gt;% \n  summarize(mass = sum(mass)) %&gt;% \n  ggplot(aes(x = gender, y = mass, fill = hair_color)) +\n  geom_col() +\n  xlab(\"Gender\") +\n  ylab(\"Total Mass\") +\n  scale_fill_discrete(name = \"Hair Color\") +\n  coord_cartesian(expand = c(bottom = FALSE)) +\n  ggtitle(\"Stacked Bar Chart\", subtitle = \"Star Wars data\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/10_tables.html#list-alignment-4",
+    "href": "lectures/10_tables.html#list-alignment-4",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "List Alignment",
+    "text": "List Alignment\nStacked Bar Charts\n\n\n\n\n\n\n\n\n\n\nIdiom\nStacked Bar Charts\n\n\n\n\nWhat: Data\nMultidimensional table: one quantitative value attribute, two categorical key attributes\n\n\nHow: Encode\nBar glyph with length-coded subcomponents of value attribute for each category of secondary key attribute; separate bars by category of primary key attribute\n\n\nWhy: Task\nPart-to-whole relationship, lookup values, find trends\n\n\nScale\nKey attribute (main axis): dozens to hundreds of levels, Key attribute (stacked glyph axis): several to one dozen"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align",
+    "href": "lectures/10_tables.html#separate-order-align",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\n\nWith one key, use list alignment.\nResults in one region per item.\nArrangement can be horizontal or vertical."
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-1",
+    "href": "lectures/10_tables.html#separate-order-align-1",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nBar Chart\nOne key, one value\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender)) %&gt;% \n  group_by(gender) %&gt;% \n  summarize(mass = mean(mass)) %&gt;% \n  ggplot(aes(x = gender, y = mass)) +\n  geom_col(width = 0.2) +\n  coord_cartesian(expand = c(bottom = FALSE)) +\n  ggtitle(\"Bar Chart\", subtitle = \"Star Wars data\") +\n  theme_classic()"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-2",
+    "href": "lectures/10_tables.html#separate-order-align-2",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nBar Charts\n\nUse a line mark, aligned in a common frame.\nEncode a quantitative attribute with spatial position.\nEncode a categorical attribute with spatial region.\nOrdering can default to alphabetical or be data-driven.\n\n\n\n\n\nFig. 7.4. Marks are ordered (a) alphabetically or (b) by weight."
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-3",
+    "href": "lectures/10_tables.html#separate-order-align-3",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nBar Charts\n\n\n\n\n\n\n\n\n\n\nIdiom\nBar Charts\n\n\n\n\nWhat: Data\nTable: one quantitative value attribute, one categorical key attribute\n\n\nHow: Encode\nLine marks, express values with aligned position, separate values with region\n\n\nWhy: Task\nLookup and compare values\n\n\nScale\nKey attribute: dozens to hundreds of levels"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-4",
+    "href": "lectures/10_tables.html#separate-order-align-4",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nStacked Bar Charts\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  group_by(gender, hair_color) %&gt;% \n  summarize(mass = sum(mass)) %&gt;% \n  ggplot(aes(x = gender, y = mass, fill = hair_color)) +\n  geom_col() +\n  xlab(\"Gender\") +\n  ylab(\"Total Mass\") +\n  scale_fill_discrete(name = \"Hair Color\") +\n  coord_cartesian(expand = c(bottom = FALSE)) +\n  ggtitle(\"Stacked Bar Chart\", subtitle = \"Star Wars data\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-5",
+    "href": "lectures/10_tables.html#separate-order-align-5",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nStacked Bar Charts\n\n\n\n\n\n\n\n\n\n\nIdiom\nStacked Bar Charts\n\n\n\n\nWhat: Data\nMultidimensional table: one quantitative value attribute, two categorical key attributes\n\n\nHow: Encode\nBar glyph with length-coded subcomponents of value attribute for each category of secondary key attribute; separate bars by category of primary key attribute\n\n\nWhy: Task\nPart-to-whole relationship, lookup values, find trends\n\n\nScale\nKey attribute (main axis): dozens to hundreds of levels, Key attribute (stacked glyph axis): several to one dozen"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-6",
+    "href": "lectures/10_tables.html#separate-order-align-6",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nDot and Line Charts\n\nDot Chart\n\nLike a bar chart, but uses point marks (standard use); or, like a scatter plot, but one axis is ordered categories.\nOne quantitative attribute using spatial position, one ordered attribute using spatial region.\n\nLine Chart\n\nA dot chart with lines connecting the dots to show trend."
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-7",
+    "href": "lectures/10_tables.html#separate-order-align-7",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nDot and Line Charts\n\n\n\n\n\n\n\n\n\nIdiom\nDot Charts\n\n\n\n\nWhat: Data\nTable: one quantitative value attribute, one ordered key attribute\n\n\nHow: Encode\nExpress value attribute with aligned vertical position and point marks; separate/order into horizontal regions by key attribute"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-8",
+    "href": "lectures/10_tables.html#separate-order-align-8",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nDot and Line Charts\n\n\n\n\n\n\n\n\n\nIdiom\nLine Charts\n\n\n\n\nWhat: Data\nTable: one quantitative value attribute, one ordered key attribute\n\n\nHow: Encode\nDot chart with connection marks between dots\n\n\nWhy: Task\nShow trend\n\n\nScale\nKey attribute: hundreds of levels"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-9",
+    "href": "lectures/10_tables.html#separate-order-align-9",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nBar vs. Line Charts\n\nBar charts encourage discrete comparisons.\nLine charts encourage trend assessment.\n\nShould not be used for categorical (unordered) attributes (top right)"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-10",
+    "href": "lectures/10_tables.html#separate-order-align-10",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nMatrix Alignment\n\nDistribute one key along rows and another along columns.\nHeat maps are the simplest example.\nScatter Plot Matrices (SPLOMs) show all possible pairwise combinations."
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-11",
+    "href": "lectures/10_tables.html#separate-order-align-11",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nHeat Map\nTwo keys, one value\n\n\nCode\nhm &lt;- starwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  group_by(gender, hair_color, .drop = FALSE) %&gt;% \n  summarize(n = n()) %&gt;% \n  ggplot(aes(x = gender, y = hair_color, fill = n)) +\n  geom_tile() +\n  coord_cartesian(expand = FALSE) +\n  scale_fill_viridis_b() +\n  ggtitle(\"Heat Map\", subtitle = \"Star Wars data\") +\n  theme_classic()\n\nprint(hm)"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-12",
+    "href": "lectures/10_tables.html#separate-order-align-12",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nHeat Maps\n\n\n\n\n\n\n\n\n\nIdiom\nHeat Maps\n\n\n\n\nWhat: Data\nTable: two categorical key attributes, one quantitative value attribute\n\n\nHow: Encode\n2D matrix alignment of area marks, diverging color map\n\n\nWhy: Task\nFind clusters, outliers; summarize\n\n\nScale\nItems: one million; categorical attribute levels: hundreds; quantitative attribute levels: 3 - 11"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-13",
+    "href": "lectures/10_tables.html#separate-order-align-13",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nHeat Maps"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation",
+    "href": "lectures/10_tables.html#spatial-axis-orientation",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\n\nSpatial axes can be oriented three ways:\n\nRectilinear\nParallel\nRadial"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-1",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-1",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nRectilinear Layouts\n\nThe most common layouts in data viz.\nAll the previous examples.\nLimited to two perpendicular axes.\n\nOr at most, three, although depth is a low-precision channel."
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-2",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-2",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nParallel Layouts\n\nAllow more than three attributes to be encoded with spatial position channel.\nParallel coordinates plots are used to show many attributes.\nUse jagged lines that cross each axis exactly once.\n\n\n\n\n\nFig. 7.12"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-3",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-3",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nParallel Layouts\n\nUse two spatial dimensions:\n\none to show a quantitative value,\nthe other to lay out the multiple axes.\n\n\n\n\n\n\nFig. 7.12"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-4",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-4",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nParallel Layouts\n\nPatterns are easily seen between neighboring axes, but not easily for distant axes.\n\nOrdering axes is a critical decision.\n\nThese layouts have a long training time.\n\nMost users are not familiar with these plots and don’t have intuition about the patterns.\nOften used in conjunction with more familiar idioms, such as scatter plots (i.e., multiple views)."
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-5",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-5",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nRadial Layouts\n\nItems are distributed around a circle using the angle channel.\nAlso uses one ore more linear spatial channels.\nMight imply one attribute is more important than another.\n\n\n\n\n\nFig. 7.15a"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-6",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-6",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nRadial Layouts\n\nNatural coordinate system is polar coordinates.\n\nOne dimension is an angle.\nThe other dimension is a spatial position.\nMathematically completely equivalent to Cartesian coordinates.\n\n\n\n\n\n\nFig. 7.15a"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-7",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-7",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nRadial Layouts\n\nWhile, mathematically, radial layout are equivalent to Cartesian coordinates, perceptually, they are not.\n\nThe angle channel is less accurately perceived than the rectilinear spatial position.\nThe angle channel is inherently cyclic.\n\nRadial layouts may be more effective for showing periodic patterns."
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-8",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-8",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nRadial Layouts\n\n\nCode\nlibrary(patchwork)\n\ncyclic &lt;- data.frame(x = seq(0, 2*pi, length.out = 300)) %&gt;% \n  mutate(y = sin(4*x))\n\na &lt;- ggplot(cyclic, aes(x = x, y = y)) +\n  geom_line() +\n  ggtitle(\"Rectilinear\") +\n  theme_bw()\n\nb &lt;- a +\n  coord_polar() +\n  scale_x_continuous(breaks = c(0, pi/2, pi, 3*pi/2, 2*pi),\n                     labels = c(\"0\", \"π/2\", \"π\", \"3π/2\", \"2π\")) +\n  ggtitle(\"Radial\")\n\na + b\n\n\n\n\nSide note, the polar transformation is a key idea behind the Fast Fourier Transform"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-9",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-9",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nRadial Bar Charts\n\n\n\n\n\n\n\n\n\nIdiom\nRadial Bar Charts\n\n\n\n\nWhat: Data\nTable: one quantitative attribute, one categorical attribute\n\n\nHow: Encode\nLength coding of line marks; radial layout"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-10",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-10",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nRectilinear vs. Radial Layouts\n\n\n\n\nFig. 7.16"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-11",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-11",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nPie Charts\n\n\nCode\npie &lt;- starwars %&gt;% \n  filter(hair_color  %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  group_by(hair_color) %&gt;% \n  summarize(n = n()) %&gt;% \n  ggplot(aes(x = \"\", y = n, fill = hair_color)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  coord_polar(\"y\", start = 0) +\n  xlab(NULL) + \n  ylab(NULL) +\n  ggtitle(\"Pie Chart\", subtitle = \"Star Wars data\") +\n  theme_classic() +\n  theme(axis.text.x = element_blank())\nprint(pie)"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-12",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-12",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nPie Charts\n\n\n\n\n\n\n\n\n\nIdiom\nPie Charts\n\n\n\n\nWhat: Data\nTable: one quantitative attribute, one categorical attribute\n\n\nWhy: Task\nPart-whole relationship\n\n\nHow: Encode\nArea marks (wedges) with angle channel; radial layout\n\n\nScale\nOne dozen categories"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-13",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-13",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nPolar Area Charts\n\n\nCode\npa &lt;- starwars %&gt;% \n  filter(hair_color  %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  group_by(hair_color) %&gt;% \n  summarize(n = n()) %&gt;% \n  ggplot(aes(x = hair_color, y = n, fill = hair_color)) +\n  geom_col(width = 1) +\n  coord_polar() +\n  xlab(NULL) + \n  ylab(NULL) +\n  ggtitle(\"Polar Area Chart\", subtitle = \"Star Wars data\") +\n  theme_classic() +\n  theme(axis.text.x = element_blank())\nprint(pa)"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-14",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-14",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nPolar Area Charts\n\n\n\n\n\n\n\n\n\nIdiom\nPolar Area Charts\n\n\n\n\nWhat: Data\nTable: one quantitative attribute, one categorical attribute\n\n\nWhy: Task\nPart-whole relationship\n\n\nHow: Encode\nArea marks (wedges) with angle channel; radial layout\n\n\nScale\nOne dozen categories"
+  },
+  {
+    "objectID": "lectures/10_tables.html#spatial-axis-orientation-15",
+    "href": "lectures/10_tables.html#spatial-axis-orientation-15",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Spatial Axis Orientation",
+    "text": "Spatial Axis Orientation\nPolar Area Charts\n\nPie charts require angle and area judgements.\nPolar area charts are a more direct equivalent of bar charts."
+  },
+  {
+    "objectID": "lectures/10_tables.html#express-quantitative-values-2",
+    "href": "lectures/10_tables.html#express-quantitative-values-2",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Express Quantitative Values",
+    "text": "Express Quantitative Values\nScatter Plots\n\nGood for finding trends.\n\nSometimes a trendline is superimposed.\n\nColor coding can show an additional attribute.\nSize coding can show yet another attribute.\n\nSometimes called a bubble plot."
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-14",
+    "href": "lectures/10_tables.html#separate-order-align-14",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nScatter Plot Matrix\nMany keys, many values\n\n\nCode\nxx &lt;- starwars %&gt;% \n  filter(mass &lt; 500,\n         birth_year &lt; 200) %&gt;% \n  select(height, mass, birth_year)\n\nplot(xx, main = \"Scatter Plot Matrix\", sub = \"Star Wars data\",\n     pch = 16)"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-15",
+    "href": "lectures/10_tables.html#separate-order-align-15",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nScatter Plot Matrix\n\n\n\n\n\nIdiom\nSPLOMs\n\n\n\n\nWhat: Data\nTable\n\n\nWhat: Derived\nOrdered key attribute; list of original attributes\n\n\nHow: Encode\nScatter Plots in 2D matrix alignment\n\n\nWhy: Task\nFind correlations, trends, outliers\n\n\nScale\nAttributes: one dozen; items: dozens to hundreds"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-16",
+    "href": "lectures/10_tables.html#separate-order-align-16",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nScatter Plot Matrix"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-17",
+    "href": "lectures/10_tables.html#separate-order-align-17",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nFaceted Scatter Plot\nMany keys, many values\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  facet_grid(gender ~ hair_color) +\n  geom_point() +\n  coord_cartesian(expand = FALSE) +\n  ggtitle(\"Faceted Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_bw()"
   }
 ]

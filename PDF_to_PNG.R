@@ -48,3 +48,24 @@ ch5_cmds <- paste0("magick -density 300 -quality 95 ",
 
 # Execute
 lapply(ch5_cmds, function(x) shell(x))
+
+# Convert for Chapter 7 ----
+# PDF directory
+pdf_dir <- "../alldiagrams/"
+
+# Chapter 7 figures
+ch7_base <- list.files(pdf_dir, pattern = glob2rx("fig7.*"))
+
+# Chapter 7 PDF paths
+ch7_pdf <- paste0(pdf_dir, ch7_base)
+
+# PNG output
+ch7_png <- paste0("lectures/fig/", gsub(".pdf", ".png", ch7_base))
+
+# Create commands
+ch7_cmds <- paste0("magick -density 300 -quality 95 ",
+                   ch7_pdf, " ",
+                   ch7_png)
+
+# Execute
+lapply(ch7_cmds, function(x) shell(x))

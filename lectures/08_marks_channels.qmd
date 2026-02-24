@@ -155,7 +155,7 @@ This figure shows a progression of chart types, with each panel showing one more
 - The **effectiveness principle** dictates that the importance of the attribute should match the **salience** of the channel.
   - The most important attributes should be encoded with the most effective channels.
 
-## Channel Rankings
+## Channel Rankings {#ch-rankings}
 
 <center>
 
