@@ -46,7 +46,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables"
   },
   {
     "objectID": "lectures/07_wrangling.html#tidyverse",
@@ -1453,7 +1453,7 @@
     "href": "lectures/10_tables.html#express-quantitative-values",
     "title": "Lecture 10: Arranging Tables",
     "section": "Express Quantitative Values",
-    "text": "Express Quantitative Values\nScatter Plot\nTwo values, no keys\n\n\nCode\nlibrary(dplyr)\nlibrary(ggplot2)\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point() +\n  ggtitle(\"Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_classic()"
+    "text": "Express Quantitative Values\nScatter Plot\nTwo values, no keys\n\n\nCode\nlibrary(dplyr)\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nCode\nlibrary(ggplot2)\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point() +\n  ggtitle(\"Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_classic()"
   },
   {
     "objectID": "lectures/10_tables.html#express-quantitative-values-1",
@@ -1607,7 +1607,7 @@
     "href": "lectures/10_tables.html#separate-order-align-13",
     "title": "Lecture 10: Arranging Tables",
     "section": "Separate, Order, Align",
-    "text": "Separate, Order, Align\nHeat Maps"
+    "text": "Separate, Order, Align\nScatter Plot Matrix\nMany keys, many values\n\n\nCode\nxx &lt;- starwars %&gt;% \n  filter(mass &lt; 500,\n         birth_year &lt; 200) %&gt;% \n  select(height, mass, birth_year)\n\nplot(xx, main = \"Scatter Plot Matrix\", sub = \"Star Wars data\",\n     pch = 16)"
   },
   {
     "objectID": "lectures/10_tables.html#spatial-axis-orientation",
@@ -1733,14 +1733,14 @@
     "href": "lectures/10_tables.html#separate-order-align-14",
     "title": "Lecture 10: Arranging Tables",
     "section": "Separate, Order, Align",
-    "text": "Separate, Order, Align\nScatter Plot Matrix\nMany keys, many values\n\n\nCode\nxx &lt;- starwars %&gt;% \n  filter(mass &lt; 500,\n         birth_year &lt; 200) %&gt;% \n  select(height, mass, birth_year)\n\nplot(xx, main = \"Scatter Plot Matrix\", sub = \"Star Wars data\",\n     pch = 16)"
+    "text": "Separate, Order, Align\nScatter Plot Matrix\n\n\n\n\n\nIdiom\nSPLOMs\n\n\n\n\nWhat: Data\nTable\n\n\nWhat: Derived\nOrdered key attribute; list of original attributes\n\n\nHow: Encode\nScatter Plots in 2D matrix alignment\n\n\nWhy: Task\nFind correlations, trends, outliers\n\n\nScale\nAttributes: one dozen; items: dozens to hundreds"
   },
   {
     "objectID": "lectures/10_tables.html#separate-order-align-15",
     "href": "lectures/10_tables.html#separate-order-align-15",
     "title": "Lecture 10: Arranging Tables",
     "section": "Separate, Order, Align",
-    "text": "Separate, Order, Align\nScatter Plot Matrix\n\n\n\n\n\nIdiom\nSPLOMs\n\n\n\n\nWhat: Data\nTable\n\n\nWhat: Derived\nOrdered key attribute; list of original attributes\n\n\nHow: Encode\nScatter Plots in 2D matrix alignment\n\n\nWhy: Task\nFind correlations, trends, outliers\n\n\nScale\nAttributes: one dozen; items: dozens to hundreds"
+    "text": "Separate, Order, Align\nFaceted Scatter Plot\nMany keys, many values\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  facet_grid(gender ~ hair_color) +\n  geom_point() +\n  coord_cartesian(expand = FALSE) +\n  ggtitle(\"Faceted Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_bw()"
   },
   {
     "objectID": "lectures/10_tables.html#separate-order-align-16",
@@ -1755,5 +1755,19 @@
     "title": "Lecture 10: Arranging Tables",
     "section": "Separate, Order, Align",
     "text": "Separate, Order, Align\nFaceted Scatter Plot\nMany keys, many values\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  facet_grid(gender ~ hair_color) +\n  geom_point() +\n  coord_cartesian(expand = FALSE) +\n  ggtitle(\"Faceted Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/10_tables.html",
+    "href": "lectures/10_tables.html",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "",
+    "text": "This lecture is based on Chapter 7 of Visualization Analysis & Design.\n\n“Arrange Tables”"
+  },
+  {
+    "objectID": "assign/03_ggplot2.html",
+    "href": "assign/03_ggplot2.html",
+    "title": "Assignment 3: ggplot2",
+    "section": "",
+    "text": "For this assignment, create an HTML page using Quarto. You can refer to the homepage.qmd document document we created in class for some ideas.\n\nMake sure your YAML header has:\n\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nI want to see the code chunks that create your figure, so make sure you use #| echo: true in your R code chunk.\n\nYou may use code folding (#| code-fold: true) if you’d like.\n\n\nThe purpose of this assignment is gain some familiarity creating data visualizations using ggplot2. You can refer to the script we wrote in class for some ideas.\nLet me know if you have any questions!"
   }
 ]
