@@ -6,7 +6,8 @@ author: "Brian J. Smith"
 Links to assignments.
 
 
-| Date     | Topic        |  Code                                       |
-|:---------|:-------------|:--------------------------------------------|
-|1/22/2026 | Literate Programming  |[Assignment 1](assign/01_literate.qmd)     |
-|1/29/2026 | Image Formats  |[Assignment 2](assign/02_formats.qmd)     |
+| Date     | Topic          |  Code                                       |
+|:---------|:---------------|:--------------------------------------------|
+|1/22/2026 | Literate Programming |[Assignment 1](assign/01_literate.qmd) |
+|1/29/2026 | Image Formats  |[Assignment 2](assign/02_formats.qmd)        |
+|2/24/2026 | `ggplot2`      |[Assignment 3](assign/03_ggplot2.qmd)        |

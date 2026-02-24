@@ -1768,6 +1768,13 @@
     "href": "assign/03_ggplot2.html",
     "title": "Assignment 3: ggplot2",
     "section": "",
-    "text": "For this assignment, create an HTML page using Quarto. You can refer to the homepage.qmd document document we created in class for some ideas.\n\nMake sure your YAML header has:\n\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nI want to see the code chunks that create your figure, so make sure you use #| echo: true in your R code chunk.\n\nYou may use code folding (#| code-fold: true) if you’d like.\n\n\nThe purpose of this assignment is gain some familiarity creating data visualizations using ggplot2. You can refer to the script we wrote in class for some ideas.\nLet me know if you have any questions!"
+    "text": "For this assignment, create an HTML page using Quarto. You can refer to the homepage.qmd document document we created in class for some ideas.\nThe purpose of this assignment is gain some familiarity creating data visualizations using ggplot2. You can refer to the script we wrote in class for some ideas."
+  },
+  {
+    "objectID": "assign/03_ggplot2.html#instructions",
+    "href": "assign/03_ggplot2.html#instructions",
+    "title": "Assignment 3: ggplot2",
+    "section": "Instructions",
+    "text": "Instructions\n\nFind a dataset.\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nCreate at least two figures. For at least one of them, pipe (%&gt;% or |&gt;) the data to ggplot() after manipulating the data.frame. Each figure should use at least 3 channels (e.g., x-axis, y-axis, color/shape/size). Make sure the figure has a legend!\n\nLet me know if you have any questions!"
   }
 ]
