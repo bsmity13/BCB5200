@@ -94,6 +94,8 @@ The goal of this chapter is to understand the visual encoding design choices for
 #| fig-width: 6
 #| fig-height: 4.5
 #| fig-align: center
+#| warning: false
+#| message: false
 
 library(dplyr)
 library(ggplot2)

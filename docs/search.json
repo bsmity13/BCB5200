@@ -1453,7 +1453,7 @@
     "href": "lectures/10_tables.html#express-quantitative-values",
     "title": "Lecture 10: Arranging Tables",
     "section": "Express Quantitative Values",
-    "text": "Express Quantitative Values\nScatter Plot\nTwo values, no keys\n\n\nCode\nlibrary(dplyr)\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nCode\nlibrary(ggplot2)\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point() +\n  ggtitle(\"Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_classic()"
+    "text": "Express Quantitative Values\nScatter Plot\nTwo values, no keys\n\n\nCode\nlibrary(dplyr)\nlibrary(ggplot2)\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point() +\n  ggtitle(\"Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_classic()"
   },
   {
     "objectID": "lectures/10_tables.html#express-quantitative-values-1",
