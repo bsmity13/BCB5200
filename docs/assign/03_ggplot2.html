@@ -128,7 +128,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
+  <li><a href="#document-setup" id="toc-document-setup" class="nav-link" data-scroll-target="#document-setup">Document Setup</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
   </ul>
 </nav>
     </div>
@@ -166,8 +168,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
 <p>This is a double assignment, replacing the two assignments I had scheduled for February 19 and February 26. It is due March 5.</p>
-<p>For this assignment, create an HTML document using Quarto. You can refer to the <a href="https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd">homepage.qmd</a> document document we created in class for some ideas.</p>
+</section>
+<section id="document-setup" class="level2">
+<h2 class="anchored" data-anchor-id="document-setup">Document Setup</h2>
+<p>For this assignment, create an HTML document using Quarto. You can refer to the <a href="https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd">homepage.qmd</a> document we created in class for some ideas.</p>
 <ul>
 <li>Make sure your YAML header has:
 <ul>
@@ -183,14 +190,15 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 <p>The purpose of this assignment is gain some familiarity creating data visualizations using <code>ggplot2</code>. You can refer to the script we wrote in class for some ideas, which will be posted on the <a href="../code.html">Code</a> page.</p>
+</section>
 <section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
 <ol type="1">
 <li>Find a dataset.</li>
 <li>Write a <em>small</em> amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. <em>Don’t spend a lot of time on the narrative.</em></li>
-<li>Create at least two figures.</li>
+<li>Create at least two figures:</li>
 </ol>
-<ol type="a">
+<ol type="i">
 <li>For at least one of them, pipe (<code>%&gt;%</code> or <code>|&gt;</code>) the data to <code>ggplot()</code> after manipulating the <code>data.frame</code>.</li>
 <li>Use two different idioms for the two figures. For example, a scatter plot and a bar chart. You can refer to <a href="../lectures/10_tables.html">Lecture 10</a> for ideas on which idioms to use. <em>Explain in the narrative <strong>why</strong> you chose that idiom for this visualization.</em></li>
 <li>Each figure should use at least 3 channels (<em>e.g.</em>, x-axis, y-axis, color/shape/size). Make sure the figure has a legend!</li>

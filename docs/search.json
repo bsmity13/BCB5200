@@ -49,6 +49,97 @@
     "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables"
   },
   {
+    "objectID": "lectures/09_ggplot2.html#ggplot2",
+    "href": "lectures/09_ggplot2.html#ggplot2",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2",
+    "text": "ggplot2\n\n\n\nCreate elegant data visualizations using the Grammar of Graphics\n\n\nhttps://ggplot2.tidyverse.org/"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-1",
+    "href": "lectures/09_ggplot2.html#ggplot2-1",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2",
+    "text": "ggplot2\n\nggplot2 is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.\n\n\nWhat is a declarative programming language?\nWhat is The Grammar of Graphics?"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming",
+    "href": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming",
+    "title": "Lecture 9: ggplot2",
+    "section": "Imperative vs. Declarative Programming",
+    "text": "Imperative vs. Declarative Programming\n\n\n\nImperative\n\nFocus on how in addition to what.\nProvide step-by-step commands.\nProvides more control and transparency.\n\n\nDeclarative\n\nFocus on what not how.\nProvide a definition of what the final product should look like.\nMore concise and abstract."
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming-1",
+    "href": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming-1",
+    "title": "Lecture 9: ggplot2",
+    "section": "Imperative vs. Declarative Programming",
+    "text": "Imperative vs. Declarative Programming\n\nExamples\n\n\n\nImperative\n\nR\n\n(including base R plotting)\n\nPython\nC++\n\n\nDeclarative\n\nHTML\nSQL\nJAGS/Stan/NIMBLE\nggplot2"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#the-grammar-of-graphics",
+    "href": "lectures/09_ggplot2.html#the-grammar-of-graphics",
+    "title": "Lecture 9: ggplot2",
+    "section": "The Grammar of Graphics",
+    "text": "The Grammar of Graphics\n\nThe Grammar of Graphics (2005)"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#the-grammar-of-graphics-1",
+    "href": "lectures/09_ggplot2.html#the-grammar-of-graphics-1",
+    "title": "Lecture 9: ggplot2",
+    "section": "The Grammar of Graphics",
+    "text": "The Grammar of Graphics\n\n\n\nggplot2 (3rd Ed)\n\n\nWilkinson (2005) created the grammar of graphics to describe the fundamental features that underlie all statistical graphics. The grammar of graphics is an answer to the question of what is a statistical graphic? ggplot2 (Wickham 2009) builds on Wilkinson’s grammar by focussing on the primacy of layers and adapting it for use in R. In brief, the grammar tells us that a graphic maps the data to the aesthetic attributes (colour, shape, size) of geometric objects (points, lines, bars). The plot may also include statistical transformations of the data and information about the plot’s coordinate system. Facetting can be used to plot for different subsets of the data. The combination of these independent components are what make up a graphic.\n\n— https://ggplot2-book.org/introduction.html"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nIt’s hard to succinctly describe how ggplot2 works because it embodies a deep philosophy of visualisation. However, in most cases you start with ggplot(), supply a dataset and aesthetic mapping (with aes()). You then add on layers (like geom_point() or geom_histogram()), scales (like scale_colour_brewer()), faceting specifications (like facet_wrap()) and coordinate systems (like coord_flip())."
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-1",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics-1",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nBegin with ggplot()\nThe first argument is data, so you can (but don’t have to) specify that.\nYou can also easily pipe to ggplot().\n\n\n\nCode\nlibrary(ggplot2)\nlibrary(dplyr)\n\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot()"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-2",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics-2",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nThe next argument is mapping, which you use to define the aesthetics of your plot using the function aes().\n\nThis is where you define which channels to use for which attributes.\n\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color))"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-3",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics-3",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nNow you can add a geom, i.e., a mark.\nYou can add more than one geom in layers.\nAfter calling ggplot(), all layers and options are added to the plot using the + operator.\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color)) +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-4",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics-4",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nOnce you have all the layers, you can start tweaking the appearance of layers, marks, or channels.\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color)) +\n  geom_point() +\n  xlab(\"Height (cm)\") +\n  ylab(\"Mass (kg)\") +\n  ggtitle(\"Mass by Height and Hair Color\",\n          subtitle = \"in the Star Wars universe\") +\n  scale_color_manual(name = \"Hair Color\", \n                     breaks = c(\"blond\", \"brown\", \"black\", \"none\"),\n                     values = c(\"gold\", \"brown\", \"black\", \"gray\"))"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-5",
+    "href": "lectures/09_ggplot2.html#ggplot2-basics-5",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nOther tweaks might include:\n\nadding facets to change the view.\nchanging the overall appearance with themes.\n\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color)) +\n  geom_point() +\n  xlab(\"Height (cm)\") +\n  ylab(\"Mass (kg)\") +\n  ggtitle(\"Mass by Height and Hair Color\",\n          subtitle = \"in the Star Wars universe\") +\n  scale_color_manual(name = \"Hair Color\", \n                     breaks = c(\"blond\", \"brown\", \"black\", \"none\"),\n                     values = c(\"gold\", \"brown\", \"black\", \"gray\")) +\n  facet_wrap(~ hair_color) +\n  theme_bw() +\n  theme(text = element_text(size = 16))"
+  },
+  {
+    "objectID": "lectures/09_ggplot2.html#ggplot2-cheatsheet",
+    "href": "lectures/09_ggplot2.html#ggplot2-cheatsheet",
+    "title": "Lecture 9: ggplot2",
+    "section": "ggplot2 Cheatsheet",
+    "text": "ggplot2 Cheatsheet"
+  },
+  {
     "objectID": "lectures/07_wrangling.html#tidyverse",
     "href": "lectures/07_wrangling.html#tidyverse",
     "title": "Lecture 7: Data Wrangling",
@@ -298,7 +389,7 @@
     "href": "index.html",
     "title": "BCB 5200: Foundations of Data Visualization",
     "section": "",
-    "text": "This website houses all the materials for BCB 4200/5200 at the University of Idaho for Spring 2026. Current students please note that we are still using Canvas for submitting assignments and grading.\nThis course material was adapted and developed by Brian J. Smith. The course was originally designed and taught by Barrie Robison, and his version of the material is a valuable resource, available here: https://professorpolymorphic.github.io/BCB520/\nOn this website, you will find an abbreviated syllabus, lectures, code walkthroughs, and assignments.\n\nThis is a Quarto website, written using RStudio. To learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This website houses all the materials for BCB 4200/5200 at the University of Idaho for Spring 2026. Current students please note that we are still using Canvas for submitting assignments and grading.\nThis course material was adapted and developed by Brian J. Smith. The course was originally designed and taught by Barrie Robison, and his version of the material is a valuable resource, available here.\nOn this website, you will find an abbreviated syllabus, lectures, code walkthroughs, and assignments. You can find the source material for this website on this GitHub repo.\n\nThis is a Quarto website, written using RStudio. To learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "code/homepage.html",
@@ -368,7 +459,14 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2"
+    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2\n\n\n2/26/2026\nggplot2\nAssignment 3/4"
+  },
+  {
+    "objectID": "assign/02_formats.html",
+    "href": "assign/02_formats.html",
+    "title": "Assignment 2: Image Formats",
+    "section": "",
+    "text": "For this assignment, I’m asking you to create a single Word document (or similar non-Microsoft *.doc or *.docx file) to demonstrate different image qualities. Note I’m not having you render a document with Quarto because the point is to access the exported images rather than to create them in the document.\nYou can approximately follow the script we created in class [link will be posted after class]. Create a figure using ggplot2 or base R. Save it 5 ways:\n\nUsing RStudio “Export” button (choose any options you want or use all the defaults)\nUsing agg_jpeg with quality = 100 (no compression)\nUsing agg_jpeg with quality = 10 (high compression)\nUsing agg_tiff with compression = \"none\"\nUsing agg_tiff with compression = \"lzw\"\n\nFor each file, follow the Science figure guidelines, and choose whether you’ll create a one-column or two-column figure. Make sure your figure meets the size and resolution criteria.\nThen, in your Word doc:\n\nCreate a table showing the properties of each of the 5 images: device, compression, and file size.\nInsert the high compression JPEG and the LZW compression TIFF. Write a short paragraph describing the differences you notice.\nInsert the RStudio Export image. Write a short paragraph describing how you sized the image for the Science guidelines and whether it was easier or harder than using the scripted graphics devices.\n\nUpload the completed Word doc on Canvas.\nLet me know if you have any questions!"
   },
   {
     "objectID": "assign/01_literate.html",
@@ -378,11 +476,18 @@
     "text": "For this assignment, you will be creating an HTML page using Quarto. You can refer to the homepage.qmd document document we created in class for some ideas.\nYour document should have:\n\nA YAML header with:\n\nA title\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nA narrative explaining the figure you’re going to show us (this can be really trivial or something you find really interesting)\n\nwith at least two headings (H1 or H2)\nwith at least one short paragraph\n\nA code chunk that loads data and creates a figure\nThe figure\n\nDecide whether you want the figure to be centered/left-justified/right-justified\nDecide what you want the width and height to be\n\n\nFeel free to play with the options in the YAML header to see what cool features are available. There’s a list of options for the Quarto HTML format here: https://quarto.org/docs/reference/formats/html.html.\nWe haven’t even dipped our toes into creating data visualizations yet, so the figure doesn’t have to be any good. If you want to use base R’s\n\nplot(x = dat$x, y = dat$y) \n\nthat’s totally fine. If you want to make something a little nicer, feel free!\nI also don’t want you to spend a ton of time on the narrative. The point is to demonstrate how to combine the narrative with the code and the figure. I’d rather have you spend your time playing with YAML options and code than writing an interesting narrative.\nWhen you’re done, render the HTML document, and upload the HTML file here.\nLet me know if you have any questions!"
   },
   {
-    "objectID": "assign/02_formats.html",
-    "href": "assign/02_formats.html",
-    "title": "Assignment 2: Image Formats",
+    "objectID": "assign/03_ggplot2.html",
+    "href": "assign/03_ggplot2.html",
+    "title": "Assignment 3/4: ggplot2",
     "section": "",
-    "text": "For this assignment, I’m asking you to create a single Word document (or similar non-Microsoft *.doc or *.docx file) to demonstrate different image qualities. Note I’m not having you render a document with Quarto because the point is to access the exported images rather than to create them in the document.\nYou can approximately follow the script we created in class [link will be posted after class]. Create a figure using ggplot2 or base R. Save it 5 ways:\n\nUsing RStudio “Export” button (choose any options you want or use all the defaults)\nUsing agg_jpeg with quality = 100 (no compression)\nUsing agg_jpeg with quality = 10 (high compression)\nUsing agg_tiff with compression = \"none\"\nUsing agg_tiff with compression = \"lzw\"\n\nFor each file, follow the Science figure guidelines, and choose whether you’ll create a one-column or two-column figure. Make sure your figure meets the size and resolution criteria.\nThen, in your Word doc:\n\nCreate a table showing the properties of each of the 5 images: device, compression, and file size.\nInsert the high compression JPEG and the LZW compression TIFF. Write a short paragraph describing the differences you notice.\nInsert the RStudio Export image. Write a short paragraph describing how you sized the image for the Science guidelines and whether it was easier or harder than using the scripted graphics devices.\n\nUpload the completed Word doc on Canvas.\nLet me know if you have any questions!"
+    "text": "This is a double assignment, replacing the two assignments I had scheduled for February 19 and February 26. It is due March 5."
+  },
+  {
+    "objectID": "assign/03_ggplot2.html#instructions",
+    "href": "assign/03_ggplot2.html#instructions",
+    "title": "Assignment 3/4: ggplot2",
+    "section": "Instructions",
+    "text": "Instructions\n\nFind a dataset.\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nCreate at least two figures:\n\n\nFor at least one of them, pipe (%&gt;% or |&gt;) the data to ggplot() after manipulating the data.frame.\nUse two different idioms for the two figures. For example, a scatter plot and a bar chart. You can refer to Lecture 10 for ideas on which idioms to use. Explain in the narrative why you chose that idiom for this visualization.\nEach figure should use at least 3 channels (e.g., x-axis, y-axis, color/shape/size). Make sure the figure has a legend!\n\nLet me know if you have any questions!"
   },
   {
     "objectID": "code/00_dummy.html",
@@ -396,7 +501,7 @@
     "href": "code.html",
     "title": "Code",
     "section": "",
-    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nImage Formats\nimage_formats.R\n\n\n2/5/2026\nData Wrangling\ndata_wrangling.R\n\n\n2/5/2026\nData Wrangling Extras\ndata_wrangling_extra.R"
+    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nImage Formats\nimage_formats.R\n\n\n2/5/2026\nData Wrangling\ndata_wrangling.R\n\n\n2/5/2026\nData Wrangling Extras\ndata_wrangling_extra.R\n\n\n2/19/2026\nggplot2, Part 1\nggplot2_pt1.R\n\n\n2/26/2026\nggplot2, Part 2\nggplot2_pt2.R"
   },
   {
     "objectID": "lectures/00_test.html#slide-1",
@@ -1099,6 +1204,13 @@
     "text": "Expressiveness and Effectiveness\n\nThe expressiveness principle dictates that the visual encoding should express all of, and only, the inofrmation in the dataset attributes.\n\nOrdered data should be shown in a way that we perceive as ordered.\nUnordered data should not be shown in a way that perceptually implies ordering.\n\nThe effectiveness principle dictates that the importance of the attribute should match the salience of the channel.\n\nThe most important attributes should be encoded with the most effective channels."
   },
   {
+    "objectID": "lectures/08_marks_channels.html#ch-rankings",
+    "href": "lectures/08_marks_channels.html#ch-rankings",
+    "title": "Lecture 8: Marks and Channels",
+    "section": "Channel Rankings",
+    "text": "Channel Rankings"
+  },
+  {
     "objectID": "lectures/08_marks_channels.html#channel-rankings",
     "href": "lectures/08_marks_channels.html#channel-rankings",
     "title": "Lecture 8: Marks and Channels",
@@ -1108,13 +1220,6 @@
   {
     "objectID": "lectures/08_marks_channels.html#channel-rankings-1",
     "href": "lectures/08_marks_channels.html#channel-rankings-1",
-    "title": "Lecture 8: Marks and Channels",
-    "section": "Channel Rankings",
-    "text": "Channel Rankings\n\nBoth magnitude and identity channels have channels related to spatial position as the most effective.\n\nSpatial position is the only channel on both lists.\nThis only applies to 2D position; 3D position (depth) is ranked much lower.\n\nThe choice of which attributes to encode with spatial position is the most central choice in visualization encoding.\n\nThe attributes encoded with position will dominate the user’s mental model compared with any other channel."
-  },
-  {
-    "objectID": "lectures/08_marks_channels.html#channel-rankings-2",
-    "href": "lectures/08_marks_channels.html#channel-rankings-2",
     "title": "Lecture 8: Marks and Channels",
     "section": "Channel Rankings",
     "text": "Channel Rankings\n\nBoth magnitude and identity channels have channels related to spatial position as the most effective.\n\nSpatial position is the only channel on both lists.\nThis only applies to 2D position; 3D position (depth) is ranked much lower.\n\nThe choice of which attributes to encode with spatial position is the most central choice in visualization encoding.\n\nThe attributes encoded with position will dominate the user’s mental model compared with any other channel."
@@ -1246,125 +1351,6 @@
     "text": "Relative vs. Absolute Judgements\nThis optical illusion by Edward H. Adelson demonstrates that our perception of color and luminance is context-dependent.\n\n\n\nPerceptual Science Group @ MIT"
   },
   {
-    "objectID": "readme.html",
-    "href": "readme.html",
-    "title": "BCB5200",
-    "section": "",
-    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
-  },
-  {
-    "objectID": "readme.html#bcb-42005200",
-    "href": "readme.html#bcb-42005200",
-    "title": "BCB5200",
-    "section": "",
-    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#ggplot2",
-    "href": "lectures/09_ggplot2.html#ggplot2",
-    "title": "Lecture 9: ggplot2",
-    "section": "ggplot2",
-    "text": "ggplot2\n\n\n\nCreate elegant data visualizations using the Grammar of Graphics\n\n\nhttps://ggplot2.tidyverse.org/"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#ggplot2-cheatsheet",
-    "href": "lectures/09_ggplot2.html#ggplot2-cheatsheet",
-    "title": "Lecture 9: ggplot2",
-    "section": "ggplot2 Cheatsheet",
-    "text": "ggplot2 Cheatsheet"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#ggplot2-1",
-    "href": "lectures/09_ggplot2.html#ggplot2-1",
-    "title": "Lecture 9: ggplot2",
-    "section": "ggplot2",
-    "text": "ggplot2\n\nggplot2 is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.\n\n\nWhat is a declarative programming language?\nWhat is The Grammar of Graphics?"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#imperative-vs.-declarative",
-    "href": "lectures/09_ggplot2.html#imperative-vs.-declarative",
-    "title": "Lecture 9: ggplot2",
-    "section": "Imperative vs. Declarative",
-    "text": "Imperative vs. Declarative"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#the-grammar-of-graphics",
-    "href": "lectures/09_ggplot2.html#the-grammar-of-graphics",
-    "title": "Lecture 9: ggplot2",
-    "section": "The Grammar of Graphics",
-    "text": "The Grammar of Graphics\n\nThe Grammar of Graphics (2005)"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#ggplot2-basics",
-    "href": "lectures/09_ggplot2.html#ggplot2-basics",
-    "title": "Lecture 9: ggplot2",
-    "section": "ggplot2 Basics",
-    "text": "ggplot2 Basics\n\nIt’s hard to succinctly describe how ggplot2 works because it embodies a deep philosophy of visualisation. However, in most cases you start with ggplot(), supply a dataset and aesthetic mapping (with aes()). You then add on layers (like geom_point() or geom_histogram()), scales (like scale_colour_brewer()), faceting specifications (like facet_wrap()) and coordinate systems (like coord_flip())."
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-1",
-    "href": "lectures/09_ggplot2.html#ggplot2-basics-1",
-    "title": "Lecture 9: ggplot2",
-    "section": "ggplot2 Basics",
-    "text": "ggplot2 Basics\n\nBegin with ggplot()\nThe first argument is data, so you can (but don’t have to) specify that.\nYou can also easily pipe to ggplot().\n\n\n\nCode\nlibrary(ggplot2)\nlibrary(dplyr)\n\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot()"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-2",
-    "href": "lectures/09_ggplot2.html#ggplot2-basics-2",
-    "title": "Lecture 9: ggplot2",
-    "section": "ggplot2 Basics",
-    "text": "ggplot2 Basics\n\nThe next argument is mapping, which you use to define the aesthetics of your plot using the function aes().\n\nThis is where you define which channels to use for which attributes.\n\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color))"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-3",
-    "href": "lectures/09_ggplot2.html#ggplot2-basics-3",
-    "title": "Lecture 9: ggplot2",
-    "section": "ggplot2 Basics",
-    "text": "ggplot2 Basics\n\nNow you can add a geom, i.e., a mark.\nYou can add more than one geom in layers.\nAfter calling ggplot(), all layers and options are added to the plot using the + operator.\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color)) +\n  geom_point()"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-4",
-    "href": "lectures/09_ggplot2.html#ggplot2-basics-4",
-    "title": "Lecture 9: ggplot2",
-    "section": "ggplot2 Basics",
-    "text": "ggplot2 Basics\n\nOnce you have all the layers, you can start tweaking the appearance of layers, marks, or channels.\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color)) +\n  geom_point() +\n  xlab(\"Height (cm)\") +\n  ylab(\"Mass (kg)\") +\n  ggtitle(\"Mass by Height and Hair Color\",\n          subtitle = \"in the Star Wars universe\") +\n  scale_color_manual(name = \"Hair Color\", \n                     breaks = c(\"blond\", \"brown\", \"black\", \"none\"),\n                     values = c(\"gold\", \"brown\", \"black\", \"gray\"))"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#ggplot2-basics-5",
-    "href": "lectures/09_ggplot2.html#ggplot2-basics-5",
-    "title": "Lecture 9: ggplot2",
-    "section": "ggplot2 Basics",
-    "text": "ggplot2 Basics\n\nOther tweaks might include:\n\nadding facets to change the view.\nchanging the overall appearance with themes.\n\n\n\n\nCode\nstarwars %&gt;% \n  filter(hair_color %in% c(\"blond\", \"brown\", \"black\", \"none\"),\n         !is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass, color = hair_color)) +\n  geom_point() +\n  xlab(\"Height (cm)\") +\n  ylab(\"Mass (kg)\") +\n  ggtitle(\"Mass by Height and Hair Color\",\n          subtitle = \"in the Star Wars universe\") +\n  scale_color_manual(name = \"Hair Color\", \n                     breaks = c(\"blond\", \"brown\", \"black\", \"none\"),\n                     values = c(\"gold\", \"brown\", \"black\", \"gray\")) +\n  facet_wrap(~ hair_color) +\n  theme_bw() +\n  theme(text = element_text(size = 16))"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming",
-    "href": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming",
-    "title": "Lecture 9: ggplot2",
-    "section": "Imperative vs. Declarative Programming",
-    "text": "Imperative vs. Declarative Programming\n\n\n\nImperative\n\nFocus on how in addition to what.\nProvide step-by-step commands.\nProvides more control and transparency.\n\n\nDeclarative\n\nFocus on what not how.\nProvide a definition of what the final product should look like.\nMore concise and abstract."
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#declarative",
-    "href": "lectures/09_ggplot2.html#declarative",
-    "title": "Lecture 9: ggplot2",
-    "section": "Declarative",
-    "text": "Declarative\n\nFocus on what not how.\nProvide a definition of what the final product should look like.\nMore concise and abstract."
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming-1",
-    "href": "lectures/09_ggplot2.html#imperative-vs.-declarative-programming-1",
-    "title": "Lecture 9: ggplot2",
-    "section": "Imperative vs. Declarative Programming",
-    "text": "Imperative vs. Declarative Programming\n\nExamples\n\n\n\nImperative\n\nR\n\n(including base R plotting)\n\nPython\nC++\n\n\nDeclarative\n\nHTML\nSQL\nJAGS/Stan/NIMBLE\nggplot2"
-  },
-  {
-    "objectID": "lectures/09_ggplot2.html#the-grammar-of-graphics-1",
-    "href": "lectures/09_ggplot2.html#the-grammar-of-graphics-1",
-    "title": "Lecture 9: ggplot2",
-    "section": "The Grammar of Graphics",
-    "text": "The Grammar of Graphics\n\n\n\nggplot2 (3rd Ed)\n\n\nWilkinson (2005) created the grammar of graphics to describe the fundamental features that underlie all statistical graphics. The grammar of graphics is an answer to the question of what is a statistical graphic? ggplot2 (Wickham 2009) builds on Wilkinson’s grammar by focussing on the primacy of layers and adapting it for use in R. In brief, the grammar tells us that a graphic maps the data to the aesthetic attributes (colour, shape, size) of geometric objects (points, lines, bars). The plot may also include statistical transformations of the data and information about the plot’s coordinate system. Facetting can be used to plot for different subsets of the data. The combination of these independent components are what make up a graphic.\n\n— https://ggplot2-book.org/introduction.html"
-  },
-  {
     "objectID": "lectures/10_tables.html#arranging-tables",
     "href": "lectures/10_tables.html#arranging-tables",
     "title": "Lecture 10: Arranging Tables",
@@ -1372,25 +1358,11 @@
     "text": "Arranging Tables\n\n\nThis lecture is based on Chapter 7 of Visualization Analysis & Design.\n\n“Arrange Tables”"
   },
   {
-    "objectID": "lectures/10_tables.html#marks-and-channels",
-    "href": "lectures/10_tables.html#marks-and-channels",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Marks and Channels",
-    "text": "Marks and Channels\n\nThe goal of this chapter is to understand the visual encoding design choices for how to arrange tabular data spatially."
-  },
-  {
     "objectID": "lectures/10_tables.html#arranging-tables-1",
     "href": "lectures/10_tables.html#arranging-tables-1",
     "title": "Lecture 10: Arranging Tables",
     "section": "Arranging Tables",
     "text": "Arranging Tables\n\nThe goal of this chapter is to understand the visual encoding design choices for how to arrange tabular data spatially."
-  },
-  {
-    "objectID": "lectures/08_marks_channels.html#ch-rankings",
-    "href": "lectures/08_marks_channels.html#ch-rankings",
-    "title": "Lecture 8: Marks and Channels",
-    "section": "Channel Rankings",
-    "text": "Channel Rankings"
   },
   {
     "objectID": "lectures/10_tables.html#why-arrange",
@@ -1414,41 +1386,6 @@
     "text": "Arrange by Keys and Values\n\nDesign choices relate directly to the semantics of the table attributes, the number of keys and the number of values.\nAn idiom can show:\n\nonly values with no keys:\n\nScatter plot\n\none key and one value:\n\nBar chart\n\ntwo keys and one value:\n\nHeat map\n\nmany keys and many values:\n\nScatter plot matrix\nFaceted scatter plot"
   },
   {
-    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-2",
-    "href": "lectures/10_tables.html#arrange-by-keys-and-values-2",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Arrange by Keys and Values",
-    "text": "Arrange by Keys and Values\nScatter Plot\nTwo values, no keys\n\n\nCode\nlibrary(dplyr)\nlibrary(ggplot2)\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point() +\n  ggtitle(\"Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_classic()"
-  },
-  {
-    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-3",
-    "href": "lectures/10_tables.html#arrange-by-keys-and-values-3",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Arrange by Keys and Values",
-    "text": "Arrange by Keys and Values\nBar Chart\nOne key, one value\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender)) %&gt;% \n  group_by(gender) %&gt;% \n  summarize(mass = mean(mass)) %&gt;% \n  ggplot(aes(x = gender, y = mass)) +\n  geom_col(width = 0.2) +\n  coord_cartesian(expand = c(bottom = FALSE)) +\n  ggtitle(\"Bar Chart\", subtitle = \"Star Wars data\") +\n  theme_classic()"
-  },
-  {
-    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-4",
-    "href": "lectures/10_tables.html#arrange-by-keys-and-values-4",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Arrange by Keys and Values",
-    "text": "Arrange by Keys and Values\nHeat Map\nTwo keys, one value\n\n\nCode\nhm &lt;- starwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  group_by(gender, hair_color, .drop = FALSE) %&gt;% \n  summarize(n = n()) %&gt;% \n  ggplot(aes(x = gender, y = hair_color, fill = n)) +\n  geom_tile() +\n  coord_cartesian(expand = FALSE) +\n  scale_fill_viridis_b() +\n  ggtitle(\"Heat Map\", subtitle = \"Star Wars data\") +\n  theme_classic()\n\nprint(hm)"
-  },
-  {
-    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-5",
-    "href": "lectures/10_tables.html#arrange-by-keys-and-values-5",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Arrange by Keys and Values",
-    "text": "Arrange by Keys and Values\nScatter Plot Matrix\nMany keys, many values\n\n\nCode\nxx &lt;- starwars %&gt;% \n  filter(mass &lt; 500,\n         birth_year &lt; 200) %&gt;% \n  select(height, mass, birth_year)\n\nplot(xx, main = \"Scatter Plot Matrix\", sub = \"Star Wars data\",\n     pch = 16)"
-  },
-  {
-    "objectID": "lectures/10_tables.html#arrange-by-keys-and-values-6",
-    "href": "lectures/10_tables.html#arrange-by-keys-and-values-6",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Arrange by Keys and Values",
-    "text": "Arrange by Keys and Values\nFaceted Scatter Plot\nMany keys, many values\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  facet_grid(gender ~ hair_color) +\n  geom_point() +\n  coord_cartesian(expand = FALSE) +\n  ggtitle(\"Faceted Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_bw()"
-  },
-  {
     "objectID": "lectures/10_tables.html#express-quantitative-values",
     "href": "lectures/10_tables.html#express-quantitative-values",
     "title": "Lecture 10: Arranging Tables",
@@ -1463,6 +1400,13 @@
     "text": "Express Quantitative Values\nScatter Plots\n\n\n\n\n\n\n\n\n\n\nIdiom\nScatterplots\n\n\n\n\nWhat: Data\nTable: two quantitative value attributes\n\n\nHow: Encode\nExpress values with horizontal and vertical spatial position and point marks\n\n\nWhy: Task\nFind trends, outliers, distribution, correlation, locate clusters\n\n\nScale\nItems: hundreds"
   },
   {
+    "objectID": "lectures/10_tables.html#express-quantitative-values-2",
+    "href": "lectures/10_tables.html#express-quantitative-values-2",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Express Quantitative Values",
+    "text": "Express Quantitative Values\nScatter Plots\n\nGood for finding trends.\n\nSometimes a trendline is superimposed.\n\nColor coding can show an additional attribute.\nSize coding can show yet another attribute.\n\nSometimes called a bubble plot."
+  },
+  {
     "objectID": "lectures/10_tables.html#separate-order-and-align",
     "href": "lectures/10_tables.html#separate-order-and-align",
     "title": "Lecture 10: Arranging Tables",
@@ -1475,41 +1419,6 @@
     "title": "Lecture 10: Arranging Tables",
     "section": "Separate, Order, and Align",
     "text": "Separate, Order, and Align\nCategorical Regions\n\nDistributing regions involves three operations:\n\nSeparating into regions.\nAligning the regions.\nOrdering the regions.\n\nSeparating and ordering always happen.\nAlignment is optional.\nSeparating should be done by the categorical attribute.\nOrdering and alignment should be done by an ordered attribute."
-  },
-  {
-    "objectID": "lectures/10_tables.html#list-alignment",
-    "href": "lectures/10_tables.html#list-alignment",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "List Alignment",
-    "text": "List Alignment\n\nWith one key, use list alignment.\nResults in one region per item.\nArrangement can be horizontal or vertical."
-  },
-  {
-    "objectID": "lectures/10_tables.html#list-alignment-1",
-    "href": "lectures/10_tables.html#list-alignment-1",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "List Alignment",
-    "text": "List Alignment\nBar Charts\n\nUse a line mark, aligned in a common frame.\nEncode a quantitative attribute with spatial position.\nEncode a categorical attribute with spatial region.\nOrdering can default to alphabetical or be data-driven.\n\n\n\n\n\nFig. 7.4. Marks are ordered (a) alphabetically or (b) by weight."
-  },
-  {
-    "objectID": "lectures/10_tables.html#list-alignment-2",
-    "href": "lectures/10_tables.html#list-alignment-2",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "List Alignment",
-    "text": "List Alignment\nBar Charts\n\n\n\n\n\n\n\n\n\n\nIdiom\nBar Charts\n\n\n\n\nWhat: Data\nTable: one quantitative value attribute, one categorical key attribute\n\n\nHow: Encode\nLine marks, express values with aligned position, separate values with region\n\n\nWhy: Task\nLookup and compare values\n\n\nScale\nKey attribute: dozens to hundreds of levels"
-  },
-  {
-    "objectID": "lectures/10_tables.html#list-alignment-3",
-    "href": "lectures/10_tables.html#list-alignment-3",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "List Alignment",
-    "text": "List Alignment\nStacked Bar Charts\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  group_by(gender, hair_color) %&gt;% \n  summarize(mass = sum(mass)) %&gt;% \n  ggplot(aes(x = gender, y = mass, fill = hair_color)) +\n  geom_col() +\n  xlab(\"Gender\") +\n  ylab(\"Total Mass\") +\n  scale_fill_discrete(name = \"Hair Color\") +\n  coord_cartesian(expand = c(bottom = FALSE)) +\n  ggtitle(\"Stacked Bar Chart\", subtitle = \"Star Wars data\") +\n  theme_bw()"
-  },
-  {
-    "objectID": "lectures/10_tables.html#list-alignment-4",
-    "href": "lectures/10_tables.html#list-alignment-4",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "List Alignment",
-    "text": "List Alignment\nStacked Bar Charts\n\n\n\n\n\n\n\n\n\n\nIdiom\nStacked Bar Charts\n\n\n\n\nWhat: Data\nMultidimensional table: one quantitative value attribute, two categorical key attributes\n\n\nHow: Encode\nBar glyph with length-coded subcomponents of value attribute for each category of secondary key attribute; separate bars by category of primary key attribute\n\n\nWhy: Task\nPart-to-whole relationship, lookup values, find trends\n\n\nScale\nKey attribute (main axis): dozens to hundreds of levels, Key attribute (stacked glyph axis): several to one dozen"
   },
   {
     "objectID": "lectures/10_tables.html#separate-order-align",
@@ -1608,6 +1517,20 @@
     "title": "Lecture 10: Arranging Tables",
     "section": "Separate, Order, Align",
     "text": "Separate, Order, Align\nScatter Plot Matrix\nMany keys, many values\n\n\nCode\nxx &lt;- starwars %&gt;% \n  filter(mass &lt; 500,\n         birth_year &lt; 200) %&gt;% \n  select(height, mass, birth_year)\n\nplot(xx, main = \"Scatter Plot Matrix\", sub = \"Star Wars data\",\n     pch = 16)"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-14",
+    "href": "lectures/10_tables.html#separate-order-align-14",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nScatter Plot Matrix\n\n\n\n\n\nIdiom\nSPLOMs\n\n\n\n\nWhat: Data\nTable\n\n\nWhat: Derived\nOrdered key attribute; list of original attributes\n\n\nHow: Encode\nScatter Plots in 2D matrix alignment\n\n\nWhy: Task\nFind correlations, trends, outliers\n\n\nScale\nAttributes: one dozen; items: dozens to hundreds"
+  },
+  {
+    "objectID": "lectures/10_tables.html#separate-order-align-15",
+    "href": "lectures/10_tables.html#separate-order-align-15",
+    "title": "Lecture 10: Arranging Tables",
+    "section": "Separate, Order, Align",
+    "text": "Separate, Order, Align\nFaceted Scatter Plot\nMany keys, many values\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  facet_grid(gender ~ hair_color) +\n  geom_point() +\n  coord_cartesian(expand = FALSE) +\n  ggtitle(\"Faceted Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_bw()"
   },
   {
     "objectID": "lectures/10_tables.html#spatial-axis-orientation",
@@ -1722,59 +1645,31 @@
     "text": "Spatial Axis Orientation\nPolar Area Charts\n\nPie charts require angle and area judgements.\nPolar area charts are a more direct equivalent of bar charts."
   },
   {
-    "objectID": "lectures/10_tables.html#express-quantitative-values-2",
-    "href": "lectures/10_tables.html#express-quantitative-values-2",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Express Quantitative Values",
-    "text": "Express Quantitative Values\nScatter Plots\n\nGood for finding trends.\n\nSometimes a trendline is superimposed.\n\nColor coding can show an additional attribute.\nSize coding can show yet another attribute.\n\nSometimes called a bubble plot."
-  },
-  {
-    "objectID": "lectures/10_tables.html#separate-order-align-14",
-    "href": "lectures/10_tables.html#separate-order-align-14",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Separate, Order, Align",
-    "text": "Separate, Order, Align\nScatter Plot Matrix\n\n\n\n\n\nIdiom\nSPLOMs\n\n\n\n\nWhat: Data\nTable\n\n\nWhat: Derived\nOrdered key attribute; list of original attributes\n\n\nHow: Encode\nScatter Plots in 2D matrix alignment\n\n\nWhy: Task\nFind correlations, trends, outliers\n\n\nScale\nAttributes: one dozen; items: dozens to hundreds"
-  },
-  {
-    "objectID": "lectures/10_tables.html#separate-order-align-15",
-    "href": "lectures/10_tables.html#separate-order-align-15",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Separate, Order, Align",
-    "text": "Separate, Order, Align\nFaceted Scatter Plot\nMany keys, many values\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  facet_grid(gender ~ hair_color) +\n  geom_point() +\n  coord_cartesian(expand = FALSE) +\n  ggtitle(\"Faceted Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_bw()"
-  },
-  {
-    "objectID": "lectures/10_tables.html#separate-order-align-16",
-    "href": "lectures/10_tables.html#separate-order-align-16",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Separate, Order, Align",
-    "text": "Separate, Order, Align\nScatter Plot Matrix"
-  },
-  {
-    "objectID": "lectures/10_tables.html#separate-order-align-17",
-    "href": "lectures/10_tables.html#separate-order-align-17",
-    "title": "Lecture 10: Arranging Tables",
-    "section": "Separate, Order, Align",
-    "text": "Separate, Order, Align\nFaceted Scatter Plot\nMany keys, many values\n\n\nCode\nstarwars %&gt;% \n  filter(mass &lt; 500,\n         !is.na(gender),\n         hair_color %in% c(\"black\", \"blond\", \"brown\")) %&gt;% \n  mutate(gender = factor(gender),\n         hair_color = factor(hair_color)) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  facet_grid(gender ~ hair_color) +\n  geom_point() +\n  coord_cartesian(expand = FALSE) +\n  ggtitle(\"Faceted Scatter Plot\", subtitle = \"Star Wars data\") +\n  theme_bw()"
-  },
-  {
-    "objectID": "lectures/10_tables.html",
-    "href": "lectures/10_tables.html",
-    "title": "Lecture 10: Arranging Tables",
+    "objectID": "readme.html",
+    "href": "readme.html",
+    "title": "BCB5200",
     "section": "",
-    "text": "This lecture is based on Chapter 7 of Visualization Analysis & Design.\n\n“Arrange Tables”"
+    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
   },
   {
-    "objectID": "assign/03_ggplot2.html",
-    "href": "assign/03_ggplot2.html",
-    "title": "Assignment 3: ggplot2",
+    "objectID": "readme.html#bcb-42005200",
+    "href": "readme.html#bcb-42005200",
+    "title": "BCB5200",
     "section": "",
-    "text": "For this assignment, create an HTML page using Quarto. You can refer to the homepage.qmd document document we created in class for some ideas.\nThe purpose of this assignment is gain some familiarity creating data visualizations using ggplot2. You can refer to the script we wrote in class for some ideas."
+    "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
   },
   {
-    "objectID": "assign/03_ggplot2.html#instructions",
-    "href": "assign/03_ggplot2.html#instructions",
-    "title": "Assignment 3: ggplot2",
-    "section": "Instructions",
-    "text": "Instructions\n\nFind a dataset.\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nCreate at least two figures. For at least one of them, pipe (%&gt;% or |&gt;) the data to ggplot() after manipulating the data.frame. Each figure should use at least 3 channels (e.g., x-axis, y-axis, color/shape/size). Make sure the figure has a legend!\n\nLet me know if you have any questions!"
+    "objectID": "assign/03_ggplot2.html#description",
+    "href": "assign/03_ggplot2.html#description",
+    "title": "Assignment 3/4: ggplot2",
+    "section": "",
+    "text": "This is a double assignment, replacing the two assignments I had scheduled for February 19 and February 26. It is due March 5."
+  },
+  {
+    "objectID": "assign/03_ggplot2.html#document-setup",
+    "href": "assign/03_ggplot2.html#document-setup",
+    "title": "Assignment 3/4: ggplot2",
+    "section": "Document Setup",
+    "text": "Document Setup\nFor this assignment, create an HTML document using Quarto. You can refer to the homepage.qmd document we created in class for some ideas.\n\nMake sure your YAML header has:\n\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nI want to see the code chunks that create your figure, so make sure you use #| echo: true in your R code chunk.\n\nYou may use code folding (#| code-fold: true) if you’d like.\n\n\nThe purpose of this assignment is gain some familiarity creating data visualizations using ggplot2. You can refer to the script we wrote in class for some ideas, which will be posted on the Code page."
   }
 ]

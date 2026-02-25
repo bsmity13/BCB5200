@@ -8,9 +8,13 @@ format:
     link-external-newwindow: true
 ---
 
+## Description
+
 This is a double assignment, replacing the two assignments I had scheduled for February 19 and February 26. It is due March 5.
 
-For this assignment, create an HTML document using Quarto. You can refer to the [homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd) document document we created in class for some ideas.
+## Document Setup
+
+For this assignment, create an HTML document using Quarto. You can refer to the [homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd) document we created in class for some ideas.
 
 - Make sure your YAML header has:
   - The option `embed-resources: true`
@@ -25,9 +29,9 @@ The purpose of this assignment is gain some familiarity creating data visualizat
 
 1. Find a dataset.
 2. Write a *small* amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. *Don't spend a lot of time on the narrative.*
-3. Create at least two figures. 
-  a. For at least one of them, pipe (`%>%` or `|>`) the data to `ggplot()` after manipulating the `data.frame`. 
-  b. Use two different idioms for the two figures. For example, a scatter plot and a bar chart. You can refer to [Lecture 10](../lectures/10_tables.qmd) for ideas on which idioms to use. *Explain in the narrative **why** you chose that idiom for this visualization.*
-  c. Each figure should use at least 3 channels (*e.g.*, x-axis, y-axis, color/shape/size). Make sure the figure has a legend!
+3. Create at least two figures: 
+  i. For at least one of them, pipe (`%>%` or `|>`) the data to `ggplot()` after manipulating the `data.frame`. 
+  ii. Use two different idioms for the two figures. For example, a scatter plot and a bar chart. You can refer to [Lecture 10](../lectures/10_tables.qmd) for ideas on which idioms to use. *Explain in the narrative **why** you chose that idiom for this visualization.*
+  iii. Each figure should use at least 3 channels (*e.g.*, x-axis, y-axis, color/shape/size). Make sure the figure has a legend!
 
 Let me know if you have any questions!
