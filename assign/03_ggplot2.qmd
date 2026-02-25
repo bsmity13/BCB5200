@@ -1,14 +1,16 @@
 ---
-title: "Assignment 3: `ggplot2`"
+title: "Assignment 3/4: `ggplot2`"
 author: "Brian J. Smith"
-date: "24 February 2026"
+date: "26 February 2026"
 format: 
   html:    
     link-external-icon: true
     link-external-newwindow: true
 ---
 
-For this assignment, create an HTML page using Quarto. You can refer to the [homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd) document document we created in class for some ideas.
+This is a double assignment, replacing the two assignments I had scheduled for February 19 and February 26. It is due March 5.
+
+For this assignment, create an HTML document using Quarto. You can refer to the [homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd) document document we created in class for some ideas.
 
 - Make sure your YAML header has:
   - The option `embed-resources: true`
@@ -17,12 +19,15 @@ For this assignment, create an HTML page using Quarto. You can refer to the [hom
 - I want to see the code chunks that create your figure, so make sure you use `#| echo: true` in your R code chunk.
   - You may use code folding (`#| code-fold: true`) if you'd like.
     
-The purpose of this assignment is gain some familiarity creating data visualizations using `ggplot2`. You can refer to the script we wrote in class for some ideas.
+The purpose of this assignment is gain some familiarity creating data visualizations using `ggplot2`. You can refer to the script we wrote in class for some ideas, which will be posted on the [Code](../code.qmd) page.
 
 ## Instructions
 
 1. Find a dataset.
 2. Write a *small* amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. *Don't spend a lot of time on the narrative.*
-3. Create at least two figures. For at least one of them, pipe (`%>%` or `|>`) the data to `ggplot()` after manipulating the `data.frame`. Each figure should use at least 3 channels (*e.g.*, x-axis, y-axis, color/shape/size). Make sure the figure has a legend!
+3. Create at least two figures. 
+  a. For at least one of them, pipe (`%>%` or `|>`) the data to `ggplot()` after manipulating the `data.frame`. 
+  b. Use two different idioms for the two figures. For example, a scatter plot and a bar chart. You can refer to [Lecture 10](../lectures/10_tables.qmd) for ideas on which idioms to use. *Explain in the narrative **why** you chose that idiom for this visualization.*
+  c. Each figure should use at least 3 channels (*e.g.*, x-axis, y-axis, color/shape/size). Make sure the figure has a legend!
 
 Let me know if you have any questions!
