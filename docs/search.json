@@ -46,7 +46,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb"
   },
   {
     "objectID": "lectures/09_ggplot2.html#ggplot2",
@@ -1671,5 +1671,278 @@
     "title": "Assignment 3/4: ggplot2",
     "section": "Document Setup",
     "text": "Document Setup\nFor this assignment, create an HTML document using Quarto. You can refer to the homepage.qmd document we created in class for some ideas.\n\nMake sure your YAML header has:\n\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nI want to see the code chunks that create your figure, so make sure you use #| echo: true in your R code chunk.\n\nYou may use code folding (#| code-fold: true) if you’d like.\n\n\nThe purpose of this assignment is gain some familiarity creating data visualizations using ggplot2. You can refer to the script we wrote in class for some ideas, which will be posted on the Code page."
+  },
+  {
+    "objectID": "lectures/11_rules.html#rules-of-thumb",
+    "href": "lectures/11_rules.html#rules-of-thumb",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Rules of Thumb",
+    "text": "Rules of Thumb\n\n\nThis lecture is based on Chapter 6 of Visualization Analysis & Design.\n\n“Rules of Thumb”"
+  },
+  {
+    "objectID": "lectures/11_rules.html#rules-of-thumb-1",
+    "href": "lectures/11_rules.html#rules-of-thumb-1",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Rules of Thumb",
+    "text": "Rules of Thumb\n\nThis chapter contains advice and guidelines. Dr. Munzner says:\n\n\n“Each of them has a catchy title in hopes that you’ll remember it as a slogan.”"
+  },
+  {
+    "objectID": "lectures/11_rules.html#rules-of-thumb-2",
+    "href": "lectures/11_rules.html#rules-of-thumb-2",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Rules of Thumb",
+    "text": "Rules of Thumb\nThe 8 Rules of Thumb:\n\n\n\nNo Unjustified 3D\n\nThe Power of the Plane\nThe Disparity of Depth\nOcclusion Hides Information\nPerspective Distortion Dangers\nTilted Text Isn’t Legible\n\nNo Unjustified 2D\n\n\n\nEyes Beat Memory\nResolution over Immersion\nOverview First, Zoom and Filter, Detail on Demand\nResponsiveness is Required\nGet it Right in Black and White\nFunction First, Form Next"
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d",
+    "href": "lectures/11_rules.html#no-unjustified-3d",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\n\n\n“If two dimensions are good, three dimensions must be better,” is a common misconception.\n\nDepth has important differences from the first two spatial dimensions."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-1",
+    "href": "lectures/11_rules.html#no-unjustified-3d-1",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\n\n3D viz is easy to justify if the goal involves understanding the shape of inherently 3D structures (e.g., spatial data).\n\n\n\nCode\ndata(\"volcano\")\n\n# Exaggerate relief\nz &lt;- volcano * 3\n\n# Plot\nfilled.contour(x = 1:nrow(z), y = 1:ncol(z), z = z, \n               main = \"Maunga Whau Volcano\", asp = 1)\n\n\n\n\nSee ?filled.contour (base R)."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-2",
+    "href": "lectures/11_rules.html#no-unjustified-3d-2",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\n\n3D viz is easy to justify if the goal involves understanding the shape of inherently 3D structures (e.g., spatial data).\n\n\n\nCode\nx &lt;- 10 * (1:nrow(z))   # 10 meter spacing (S to N)\ny &lt;- 10 * (1:ncol(z))   # 10 meter spacing (E to W)\n## Don't draw the grid lines :  border = NA\npar(bg = \"slategray3\",\n    mar = c(0, 0, 3, 0))\npersp(x, y, z, theta = 135, phi = 30, col = \"green3\", scale = FALSE,\n      ltheta = -120, shade = 0.75, border = NA, box = TRUE,\n       main = \"Maunga Whau Volcano\")\n\n\n\n\nSee ?persp (base R)."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-3",
+    "href": "lectures/11_rules.html#no-unjustified-3d-3",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\n\n3D viz is easy to justify if the goal involves understanding the shape of inherently 3D structures (e.g., spatial data).\n\n\n\nCode\nlibrary(rgl)\n\nz &lt;- 3 * volcano        # Exaggerate the relief\n\nx &lt;- 10 * (1:nrow(z))   # 10 meter spacing (S to N)\ny &lt;- 10 * (1:ncol(z))   # 10 meter spacing (E to W)\n\nzlim &lt;- range(z)\nzlen &lt;- zlim[2] - zlim[1] + 1\n\ncolorlut &lt;- terrain.colors(zlen) # height color lookup table\n\ncol &lt;- colorlut[ z - zlim[1] + 1 ] # assign colors to heights for each point\n\npar3d(windowRect = c(34, 57, 727, 707))\nsurface3d(x, y, z, color = col, back = \"lines\")\n\n\n\n\n\nSee ?surface3d (package rgl)."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-4",
+    "href": "lectures/11_rules.html#no-unjustified-3d-4",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\n\n\nIn all other cases, the use of 3D needs to be carefully justified.\nMostly, a better choice will be to use only 2 spatial dimensions following some data abstraction."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-5",
+    "href": "lectures/11_rules.html#no-unjustified-3d-5",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\n\n\nWe judge depth based on cues:\n\nOcclusion\nPerspective distortion\nShadows and lighting\nFamiliar size\nStereoscopic disparity\nOthers"
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-6",
+    "href": "lectures/11_rules.html#no-unjustified-3d-6",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nThe Power of the Plane\n\nVertical and horizontal spatial position are categorized as planar because the differences between up-down and left-right are subtle.\n\nWe do actualy perceive height as more important than horizontal position.\nBut aspect ratio of most displays give more horizontal space, overcoming this.\nLeft-right ordering is probably prioritized based on culture, with most Western languages being read left-to-right."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-7",
+    "href": "lectures/11_rules.html#no-unjustified-3d-7",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nThe Disparity of Depth\n\nWe judge depth less accurately than the planar spatial positions.\n\n\n\n\n\nFigure 5.7"
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-8",
+    "href": "lectures/11_rules.html#no-unjustified-3d-8",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nThe Disparity of Depth\n\nLines that extend into scenes are scaled non-linearly, while the other two are perfectly linear.\n\n\n\n\n\nFigure 6.2a"
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-9",
+    "href": "lectures/11_rules.html#no-unjustified-3d-9",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nThe Disparity of Depth\n\nAccording to Colin Ware (Ware 2008), we see in 2.05D, since the majority of the information is in the image plane and we see very little depth.\n\nThe 0.05 is an arbitrary small number.\n\n\n\n\n\n\nFigure 6.2b"
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-10",
+    "href": "lectures/11_rules.html#no-unjustified-3d-10",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nThe Disparity of Depth\n\nWe can see millions (?) of rays along the planar axes by simply moving our eyes.\nWe only get information about depth at one point along each ray.\n\nThis is known as line-of-sight ambiguity.\n\n\n\n\n\n\nFigure 6.2b"
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-11",
+    "href": "lectures/11_rules.html#no-unjustified-3d-11",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nOcclusion Hides Information\n\nOcclusion is the most powerful depth cue, where some objects are hidden behind others.\nOcclusion relationships between objects change as we move, known as motion parallax.\n\nThis allows us to build an understanding of relative distances between each other."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-12",
+    "href": "lectures/11_rules.html#no-unjustified-3d-12",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nOcclusion Hides Information\n\nOcclusion is less effective in static 2D scenes.\n\nInteractive navigation lets us use motion parallax to understand depth."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-13",
+    "href": "lectures/11_rules.html#no-unjustified-3d-13",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nOcclusion Hides Information\n\nOcclusion in realistic scenes (like volcano) is rarely a problem.\n\nOften unnecessary to view every angle.\n\nBut in data viz, an occluded detail might be critical."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-14",
+    "href": "lectures/11_rules.html#no-unjustified-3d-14",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nOcclusion Hides Information\n\nIf objects have unpredictable and unfamiliar shapes, it can be very challenging to understand the 3D-structure of the scene.\n\n\n\n\n\n\nhttps://jevansbio.wordpress.com/2019/05/29/plotting-networks-in-blender/"
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-15",
+    "href": "lectures/11_rules.html#no-unjustified-3d-15",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nPerspective Distortion Dangers\n\nPerspective distortion is that distant objects appear smaller and change their planar position on the image plane.\n\nImportant discovery in Western art by Renaissance mathematicians and painters.\nSo, many people think of perspective as a good thing.\n\nBut for visually encoding data, perspective distortion is a bad thing.\n\nE.g., bars on a 3D bar chart are harder to judge."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-16",
+    "href": "lectures/11_rules.html#no-unjustified-3d-16",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nOther Depth Cues\n\nFamiliar objects\n\nE.g., we roughly know the size of a car, so when we see a car far away, it helps us judge the size of other objects.\nFor abstract information (i.e., data), we don’t have these cues."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-17",
+    "href": "lectures/11_rules.html#no-unjustified-3d-17",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nOther Depth Cues\n\nShadows and surface shading\n\nConvey information about depth and shape.\nAlso create visual clutter, distracting from the meaningful data.\nCan occlude true marks.\nCan interfere with color channels."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-18",
+    "href": "lectures/11_rules.html#no-unjustified-3d-18",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nOther Depth Cues\n\nStereoscopic depth is a cue that comes from the disparities between two images made from camera viewpoints slightly separated in space.\n\nLike the separation of our eyes.\nStereo vision is actually a relatively weak cue, useful for manipulating objects within arm’s reach.\nStereo displays exist, but do not resolve problems with perspective."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-19",
+    "href": "lectures/11_rules.html#no-unjustified-3d-19",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nOther Depth Cues\n\nAtmospheric perspective is where distant objects are shifted slightly towards blue.\n\nRelatively subtle cue.\nInterferes with color channels."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-3d-20",
+    "href": "lectures/11_rules.html#no-unjustified-3d-20",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 3D",
+    "text": "No Unjustified 3D\nTilted Text Isn’t Legible\n\nText fonts are designed for maximum legibility on the 2D grid of screen pixels.\nTilted labels can become blocky and jagged.\nHigh-resoultion displays help with this."
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-2d",
+    "href": "lectures/11_rules.html#no-unjustified-2d",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 2D",
+    "text": "No Unjustified 2D\n\n\nSimilarly, laying out data in 2D should be justified.\nWhy use 2D when a list layout works well?"
+  },
+  {
+    "objectID": "lectures/11_rules.html#no-unjustified-2d-1",
+    "href": "lectures/11_rules.html#no-unjustified-2d-1",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "No Unjustified 2D",
+    "text": "No Unjustified 2D\n\nLists have strengths:\n\nThey can show the maximal amount of information in the minimal amount of space.\nWhen used in a way that takes up space, they can have notably lower information density.\nExcellent for lookup tasks, where labels can be ordered appropriately.\n\nE.g., alphabetically."
+  },
+  {
+    "objectID": "lectures/11_rules.html#eyes-beat-memory",
+    "href": "lectures/11_rules.html#eyes-beat-memory",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Eyes Beat Memory",
+    "text": "Eyes Beat Memory\n\nUsing our eyes to switch between views (e.g., panels) has a much lower cognitive load than consulting our memory to compare a current view to what was seen below.\nInteractive displays usually implicitly rely on memory.\n\nA small overview window can help keep track of navigation."
+  },
+  {
+    "objectID": "lectures/11_rules.html#eyes-beat-memory-1",
+    "href": "lectures/11_rules.html#eyes-beat-memory-1",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Eyes Beat Memory",
+    "text": "Eyes Beat Memory\nMemory and attention\n\nBroadly speaking, we have two categories of memory:\n\nLong-term memory\n\nCan last up to a lifetime\nNo strict upper limit\n\nWorking memory\n\nLasts several seconds\nVery limited resource\nWhen we experience cognitive load, we will fail to absorb further information"
+  },
+  {
+    "objectID": "lectures/11_rules.html#eyes-beat-memory-2",
+    "href": "lectures/11_rules.html#eyes-beat-memory-2",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Eyes Beat Memory",
+    "text": "Eyes Beat Memory\nMemory and attention\n\nOur attention also has “severe” limits.\n\nConscious search for items grows more difficult with the number of items to be checked.\nVigilance also degrades with time, meaning we’re worse at searching after a couple of hours than we are at the start of a task."
+  },
+  {
+    "objectID": "lectures/11_rules.html#eyes-beat-memory-3",
+    "href": "lectures/11_rules.html#eyes-beat-memory-3",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Eyes Beat Memory",
+    "text": "Eyes Beat Memory\nAnimation vs. Side-by-Side\n\nSome animation idioms impose significant cognitive load because of implicit memory demands.\nAnimation can work well in narrative story telling (e.g., movies).\n\nSuccessfully storytelling deliberately controls the action and directs attention.\nData views often have multiple changes at once.\n\nAnimation is extremely powerful when used for transitions between two dataset configurations.\n\nHelps the user maintain context.\nMore effective than jump cuts.\n\n\n\nWe will talk specifically about animation later in the semester."
+  },
+  {
+    "objectID": "lectures/11_rules.html#eyes-beat-memory-4",
+    "href": "lectures/11_rules.html#eyes-beat-memory-4",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Eyes Beat Memory",
+    "text": "Eyes Beat Memory\nChange Blindness\n\n\n“Our visual system works so well that most people have the intuition that we have detailed internal memory of our visual field. However, we do not.”"
+  },
+  {
+    "objectID": "lectures/11_rules.html#eyes-beat-memory-5",
+    "href": "lectures/11_rules.html#eyes-beat-memory-5",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Eyes Beat Memory",
+    "text": "Eyes Beat Memory\nChange Blindness\n\nChange blindness occurs when we fail to detect even quite drastic changes to a scene if our attention is directed elsewhere.\n\n\n“For example, experimenters set up a real-world interactoin where somebody was engaged by a stranger who asked directions, only to be interrupted by people carrying a door who barged in between them. The experimenters orchestrated a switch during this visual interruption, replacing the questioner with another person. Remarkably, most people did not notice, even when the new questioner was dressed completely differently — or was a different gender tahn the old one!”"
+  },
+  {
+    "objectID": "lectures/11_rules.html#resolution-over-immersion",
+    "href": "lectures/11_rules.html#resolution-over-immersion",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Resolution over Immersion",
+    "text": "Resolution over Immersion\n\n“Pixels are precious”\n\nResolution is far more important than immersion.\n\nImmersive environments emphasize realism and perception.\nDisplays focused on immersion (e.g., virtual reality devices) often have low resolution.\n\nTechnology might have advanced now, but this doesn’t seem relevant to us."
+  },
+  {
+    "objectID": "lectures/11_rules.html#overview-first-zoom-and-filter-details-on-demand",
+    "href": "lectures/11_rules.html#overview-first-zoom-and-filter-details-on-demand",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Overview First, Zoom and Filter, Details on Demand",
+    "text": "Overview First, Zoom and Filter, Details on Demand\n\nMantra of Ben Shneiderman (Shneiderman 1996)\nAn overview gives the user broad awareness of the entire information space.\n\nGoal is to summarize.\nUseful at the beginning of exploration.\n\nZooming and filtering can make it easier to display all the information at once."
+  },
+  {
+    "objectID": "lectures/11_rules.html#overview-first-zoom-and-filter-details-on-demand-1",
+    "href": "lectures/11_rules.html#overview-first-zoom-and-filter-details-on-demand-1",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Overview First, Zoom and Filter, Details on Demand",
+    "text": "Overview First, Zoom and Filter, Details on Demand\n\n\nCode\nlibrary(leaflet)\nlibrary(amt) # animal movement tools\n\n# Data on the mesocarnivore \"fisher\"\ndata(\"amt_fisher\")\n\n# Creates a leaflet map\ninspect(amt_fisher)"
+  },
+  {
+    "objectID": "lectures/11_rules.html#overview-first-zoom-and-filter-details-on-demand-2",
+    "href": "lectures/11_rules.html#overview-first-zoom-and-filter-details-on-demand-2",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Overview First, Zoom and Filter, Details on Demand",
+    "text": "Overview First, Zoom and Filter, Details on Demand\n\nThis mantra is useful for moderately-sized datasets.\nFor larger datasets, an alternative is “Search, Show Context,”Expand on Demand”.\n\nSearch results provide the starting point.\nVan Ham and Perer 2009"
+  },
+  {
+    "objectID": "lectures/11_rules.html#responsiveness-is-required",
+    "href": "lectures/11_rules.html#responsiveness-is-required",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Responsiveness is Required",
+    "text": "Responsiveness is Required\n\nThe latency of interaction is how much time it takes for the system to respond to user action.\nMatters immensely for interaction design.\nLargely irrelevant to us in this class."
+  },
+  {
+    "objectID": "lectures/11_rules.html#get-it-right-in-black-and-white",
+    "href": "lectures/11_rules.html#get-it-right-in-black-and-white",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Get it Right in Black and White",
+    "text": "Get it Right in Black and White\n\nAdvocated by Maureen Stone (Stone 2010, but see also this blog).\nEnsure most crucial aspects of visual representation are legible even if the image is transformed to B&W.\n\nUse luminance first.\nUse hue/saturation as secondary channels."
+  },
+  {
+    "objectID": "lectures/11_rules.html#function-first-form-next",
+    "href": "lectures/11_rules.html#function-first-form-next",
+    "title": "Lecture 11: Rules of Thumb",
+    "section": "Function First, Form Next",
+    "text": "Function First, Form Next\n\nWe want our visualizations to shine in both form (beauty) and function (effectiveness).\nNevertheless, focus on function first.\nEasier to improve an ugly design than maintain form while changing function.\n\nOften beautiful but ineffective designs need to be started over from scratch."
   }
 ]
