@@ -201,7 +201,7 @@ See `?surface3d` (package `rgl`).
 ### The Power of the Plane
 
 - Vertical and horizontal spatial position are categorized as *planar* because the differences between up-down and left-right are subtle.
-  - We do actualy perceive height as more important than horizontal position.
+  - We do actually perceive height as more important than horizontal position.
   - But aspect ratio of most displays give more horizontal space, overcoming this.
   - Left-right ordering is probably prioritized based on culture, with most Western languages being read left-to-right.
   
@@ -353,7 +353,7 @@ surface3d(x, y, z, color = col, back = "lines")
 
 - Text fonts are designed for maximum legibility on the 2D grid of screen pixels.
 - Tilted labels can become blocky and jagged.
-- High-resoultion displays help with this.
+- High-resolution displays help with this.
 
 ## No Unjustified 2D
 

@@ -1747,7 +1747,7 @@
     "href": "lectures/11_rules.html#no-unjustified-3d-6",
     "title": "Lecture 11: Rules of Thumb",
     "section": "No Unjustified 3D",
-    "text": "No Unjustified 3D\nThe Power of the Plane\n\nVertical and horizontal spatial position are categorized as planar because the differences between up-down and left-right are subtle.\n\nWe do actualy perceive height as more important than horizontal position.\nBut aspect ratio of most displays give more horizontal space, overcoming this.\nLeft-right ordering is probably prioritized based on culture, with most Western languages being read left-to-right."
+    "text": "No Unjustified 3D\nThe Power of the Plane\n\nVertical and horizontal spatial position are categorized as planar because the differences between up-down and left-right are subtle.\n\nWe do actually perceive height as more important than horizontal position.\nBut aspect ratio of most displays give more horizontal space, overcoming this.\nLeft-right ordering is probably prioritized based on culture, with most Western languages being read left-to-right."
   },
   {
     "objectID": "lectures/11_rules.html#no-unjustified-3d-7",
@@ -1845,7 +1845,7 @@
     "href": "lectures/11_rules.html#no-unjustified-3d-20",
     "title": "Lecture 11: Rules of Thumb",
     "section": "No Unjustified 3D",
-    "text": "No Unjustified 3D\nTilted Text Isn’t Legible\n\nText fonts are designed for maximum legibility on the 2D grid of screen pixels.\nTilted labels can become blocky and jagged.\nHigh-resoultion displays help with this."
+    "text": "No Unjustified 3D\nTilted Text Isn’t Legible\n\nText fonts are designed for maximum legibility on the 2D grid of screen pixels.\nTilted labels can become blocky and jagged.\nHigh-resolution displays help with this."
   },
   {
     "objectID": "lectures/11_rules.html#no-unjustified-2d",
