@@ -1271,7 +1271,7 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2\n\n\n2/26/2026\nggplot2\nAssignment 3/4"
+    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2\n\n\n2/26/2026\nggplot2\nAssignment 3/4\n\n\n3/5/2026\nMulti-panel Figures\nAssignment 5"
   },
   {
     "objectID": "code/homepage.html",
@@ -1979,5 +1979,33 @@
     "title": "Resources",
     "section": "R Packages",
     "text": "R Packages\n\nggplot2\npatchwork\nggraph\nsf"
+  },
+  {
+    "objectID": "assign/05_panels.html",
+    "href": "assign/05_panels.html",
+    "title": "Assignment 5: Multi-panel Figures",
+    "section": "",
+    "text": "This assignment is to gain practice creating multi-panel figures. It is due March 12."
+  },
+  {
+    "objectID": "assign/05_panels.html#description",
+    "href": "assign/05_panels.html#description",
+    "title": "Assignment 5: Multi-panel Figures",
+    "section": "",
+    "text": "This assignment is to gain practice creating multi-panel figures. It is due March 12."
+  },
+  {
+    "objectID": "assign/05_panels.html#document-setup",
+    "href": "assign/05_panels.html#document-setup",
+    "title": "Assignment 5: Multi-panel Figures",
+    "section": "Document Setup",
+    "text": "Document Setup\nFor this assignment, create an HTML document using Quarto. You can refer to the homepage.qmd document we created in class for some ideas.\n\nMake sure your YAML header has:\n\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nI want to see the code chunks that create your figure, so make sure you use #| echo: true in your R code chunk.\n\nYou may use code folding (#| code-fold: true) if you’d like."
+  },
+  {
+    "objectID": "assign/05_panels.html#instructions",
+    "href": "assign/05_panels.html#instructions",
+    "title": "Assignment 5: Multi-panel Figures",
+    "section": "Instructions",
+    "text": "Instructions\n\nFind a dataset.\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nCreate a multi-panel figure either by:\n\n\nUsing base R par() or layout() to arrange the panels, or\nUsing patchwork to arrange ggplot2 panels.\n\nI.e., don’t just use ggplot2::facet_*() to create panels.\nLet me know if you have any questions!"
   }
 ]
