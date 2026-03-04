@@ -16,12 +16,16 @@ website:
         text: Code
       - href: assignments.qmd
         text: Assignments
+      - href: resources.qmd
+        text: Resources
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+    link-external-icon: true
+    link-external-newwindow: true
 
 
 

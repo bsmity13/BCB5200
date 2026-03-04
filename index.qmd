@@ -14,7 +14,7 @@ This website houses all the materials for BCB 4200/5200 at the University of Ida
 
 This course material was adapted and developed by [Brian J. Smith](https://github.com/bsmity13). The course was originally designed and taught by [Barrie Robison](https://professorpolymorphic.github.io/RobisonWebSite), and his version of the material is a valuable resource, available [here](https://professorpolymorphic.github.io/BCB520/). 
 
-On this website, you will find an [abbreviated syllabus](syllabus.qmd), [lectures](lectures.qmd), [code walkthroughs](code.qmd), and [assignments](assignments.qmd). You can find the source material for this website on this [GitHub repo](https://github.com/bsmity13/BCB5200).
+On this website, you will find an [abbreviated syllabus](syllabus.qmd), [lectures](lectures.qmd), [code walkthroughs](code.qmd), and [assignments](assignments.qmd). I have recently started drafting a list of useful [resources](resources.qmd). You can find the source material for this website on this [GitHub repo](https://github.com/bsmity13/BCB5200).
 
 
 :::{style="font-size: 50%"}

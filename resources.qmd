@@ -1,0 +1,18 @@
+---
+title: "Resources"
+author: "Brian J. Smith"
+---
+
+For now, this page is just an information dump of potential data viz resources. I'd imagine this page having more structure in the future.
+
+## Texts
+
+- [`ggplot2`](https://ggplot2-book.org/), the book, by Hadley Wickham
+- [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/), by Claus O. Wilke
+
+## R Packages
+
+- [`ggplot2`](https://ggplot2.tidyverse.org/)
+- [`patchwork`](https://patchwork.data-imaginist.com/)
+- [`ggraph`](https://ggraph.data-imaginist.com/)
+- [`sf`](https://r-spatial.github.io/sf/)

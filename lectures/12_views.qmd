@@ -1,0 +1,66 @@
+---
+title: "Lecture 12: Manipulating Views"
+author: "Brian J. Smith"
+date: "5 March 2026"
+format: 
+  revealjs:
+    width: 1400
+    height: 900
+    margin: 0.1
+    theme: simple
+    mermaid: 
+      theme: forest
+editor: source
+---
+
+## Manipulating Views
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+This lecture is based on Chapter XX of *Visualization Analysis & Design*.
+
+</br>
+
+"Manipulating Views"
+
+</br>
+
+For this lecture, I'm going to start with some principles from the *VAD* Text, then transition over to creating multi-panel figures in R.
+
+:::
+
+::: {.column width="50%"}  
+
+![Visualization Analysis & Design Cover](img/munzner_book_cover.png){width=75% fig-align=right .lightbox}\
+ 
+:::
+
+::::
+
+# Multi-panel Figures in R
+
+## Multi-panel Figures in R
+
+- There are *many* ways to compose multi-panel figures in R, including methods using base R graphics, `ggplot2`, accessory packages for `ggplot2` objects, and other packages.
+
+- We're just scratching the surface here, but I want to give you three different tools to get started with:
+  - base R multi-panel plots,
+  - faceting with `ggplot2`,
+  - composing multi-panel plots with `patchwork`.
+- Some other packages you might want to look into:
+  - [`gtable`](https://gtable.r-lib.org/){target="_blank"}
+  - [`cowplot`](https://github.com/wilkelab/cowplot){target="_blank"}
+  - [`gridExtra`](https://github.com/baptiste/gridextra/wiki){target="_blank"}
+
+# Questions?
+
+</br>
+
+</br>
+
+
+:::{style="font-size: 50%"}
+[BCB5200 Home](https://bsmity13.github.io/BCB5200/)
+:::

@@ -13,8 +13,8 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Brian J. Smith">
-  <meta name="dcterms.date" content="2026-01-28">
-  <title>BCB5200 – Lecture 5: Image Formats</title>
+  <meta name="dcterms.date" content="2026-03-05">
+  <title>BCB5200 – Lecture 12: Manipulating Views</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,72 +32,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -197,7 +131,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 5: Image Formats</h1>
+  <h1 class="title">Lecture 12: Manipulating Views</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -207,312 +141,45 @@ Brian J. Smith
 </div>
 </div>
 
-  <p class="date">2026-01-28</p>
+  <p class="date">2026-03-05</p>
 </section>
-<section id="my-first-big-first-author-paper" class="slide level2">
-<h2>My first big first-author paper</h2>
-<p><a href="https://doi.org/10.1007/s10530-016-1211-5" target="_blank">Smith et al.&nbsp;(2016) <em>Biological Invasions</em></a></p>
+<section id="manipulating-views" class="slide level2">
+<h2>Manipulating Views</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>This lecture is based on Chapter XX of <em>Visualization Analysis &amp; Design</em>.</p>
 <p><br></p>
-<p>I assumed that after the paper was accepted, the production team would let me know if they thought the size or the aspect ratios of my figures were awkward.</p>
+<p>“Manipulating Views”</p>
 <p><br></p>
-<p>They didn’t.</p>
+<p>For this lecture, I’m going to start with some principles from the <em>VAD</em> Text, then transition over to creating multi-panel figures in R.</p>
+</div><div class="column" style="width:50%;">
+<p><a href="img/munzner_book_cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Visualization Analysis &amp; Design Cover"><img data-src="img/munzner_book_cover.png" class="quarto-figure quarto-figure-right" style="width:75.0%" alt="Visualization Analysis &amp; Design Cover"></a><br>
+</p>
+</div></div>
 </section>
 <section>
-<section id="digital-image-formats" class="title-slide slide level1 center">
-<h1>Digital Image Formats</h1>
+<section id="multi-panel-figures-in-r" class="title-slide slide level1 center">
+<h1>Multi-panel Figures in R</h1>
 
 </section>
-<section id="digital-image-formats-1" class="slide level2">
-<h2>Digital Image Formats</h2>
-<div class="quarto-layout-panel" style="font-size: 75%" data-layout="[ 0.48, -0.04, 0.48 ]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 48.0%;justify-content: flex-start;">
-<h3 id="raster">Raster</h3>
+<section id="multi-panel-figures-in-r-1" class="slide level2">
+<h2>Multi-panel Figures in R</h2>
 <ul>
-<li>By far, the most common digital image format</li>
-<li>Composed of picture elements (“pixels”)</li>
-<li>Discrete grid of pixels contains color or intensity information</li>
-<li>Fixed resolution, determined by pixel size</li>
-<li>AKA bitmap, referring to a spatial arrangement of bits</li>
-</ul>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 4.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div id="second-column" class="quarto-layout-cell" style="flex-basis: 48.0%;justify-content: flex-start;">
-<h3 id="vector">Vector</h3>
+<li><p>There are <em>many</em> ways to compose multi-panel figures in R, including methods using base R graphics, <code>ggplot2</code>, accessory packages for <code>ggplot2</code> objects, and other packages.</p></li>
+<li><p>We’re just scratching the surface here, but I want to give you three different tools to get started with:</p>
 <ul>
-<li>Far less common format</li>
-<li>Composed of mathematical geometry</li>
-<li>Continuous space</li>
-<li>Scales well to any resolution thanks to mathematical definitions unrelated to pixels</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="digital-image-formats-2" class="slide level2">
-<h2>Digital Image Formats</h2>
-<div class="quarto-layout-panel" style="font-size: 75%" data-layout="[ 0.48, -0.04, 0.48 ]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 48.0%;justify-content: flex-start;">
-<h3 id="raster-1">Raster</h3>
+<li>base R multi-panel plots,</li>
+<li>faceting with <code>ggplot2</code>,</li>
+<li>composing multi-panel plots with <code>patchwork</code>.</li>
+</ul></li>
+<li><p>Some other packages you might want to look into:</p>
 <ul>
-<li>JPEG</li>
-<li>GIF</li>
-<li>PNG</li>
-<li>TIFF</li>
-<li><em>etc.</em></li>
+<li><a href="https://gtable.r-lib.org/" target="_blank"><code>gtable</code></a></li>
+<li><a href="https://github.com/wilkelab/cowplot" target="_blank"><code>cowplot</code></a></li>
+<li><a href="https://github.com/baptiste/gridextra/wiki" target="_blank"><code>gridExtra</code></a></li>
+</ul></li>
 </ul>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 4.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div id="second-column" class="quarto-layout-cell" style="flex-basis: 48.0%;justify-content: flex-start;">
-<h3 id="vector-1">Vector</h3>
-<ul>
-<li>SVG</li>
-<li>PDF</li>
-<li>EPS</li>
-<li><em>etc.</em></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="image-resolution" class="slide level2">
-<h2>Image Resolution</h2>
-<p><br></p>
-<p>A raster image’s <strong>resolution</strong> describes how much detail it has.</p>
-<p><br></p>
-<p>We often express resolution using pixel count, expressed either as a single value (<em>e.g.</em>, 2.1 megapixels) or as a pair of numbers showing width and height (<em>e.g.</em>, 1920 x 1080).</p>
-</section>
-<section id="image-resolution-1" class="slide level2">
-<h2>Image Resolution</h2>
-<p><br></p>
-<p>For example a “full HD” image has dimensions 1920 x 1080.</p>
-<p>If you are familiar with megapixels, that’s:</p>
-<p><span class="math display">\[1920 \times 1080 = 2,073,600 \approx 2.1\,\mathrm{Megapixels}\]</span></p>
-</section>
-<section id="image-resolution-2" class="slide level2">
-<h2>Image Resolution</h2>
-<p>While pixels ultimately describe the resolution of an image, whether or not the image appears to be high-quality depends on how large it is displayed. If you display an image at a certain physical size, you can refer to the resolution in:</p>
-<ul>
-<li>DPI (dots per inch; a term related to dots of ink in a printed image)</li>
-<li>PPI (pixels per inch; technically more correct on screen).</li>
-</ul>
-<p>You will often see DPI/PPI used interchangeably.</p>
-</section>
-<section id="image-resolution-3" class="slide level2">
-<h2>Image Resolution</h2>
-<p>Some common DPI values:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>DPI</th>
-<th>Use</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>72</td>
-<td>Standard Mac display</td>
-</tr>
-<tr class="even">
-<td>96</td>
-<td>Standard Windows display</td>
-</tr>
-<tr class="odd">
-<td>300-400</td>
-<td>Modern Apple Retina HD display</td>
-</tr>
-<tr class="even">
-<td>300-720</td>
-<td>Inkjet printer</td>
-</tr>
-<tr class="odd">
-<td>600-2400</td>
-<td>Laser printer</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="file-size" class="slide level2">
-<h2>File Size</h2>
-<p>Vector image file sizes are determined by the number of vectors.</p>
-<p><br></p>
-<p>Uncompressed, raster image file sizes are related to the image’s <strong>resolution</strong> and <strong>color depth</strong>.</p>
-<p><br></p>
-<p><strong>Color depth</strong> is the number of bits used to indicate the color of a single pixel and is measured in bits per pixel (bpp).</p>
-</section>
-<section id="file-size-1" class="slide level2 smaller">
-<h2>File Size</h2>
-<p>If that image had 24-bit color (web standard), its file size would be:</p>
-<p><span class="math display">\[1920 \times 1080 \times 24 = 49,766,400\,\mathrm{bits} \times \frac{1\,\mathrm{bit}}{8\,\mathrm{bytes}} = 6,220,800\,\mathrm{bytes}\approx5.9\,\mathrm{MiB}\]</span></p>
-</section>
-<section id="color-depth" class="slide level2 smaller">
-<h2>Color Depth</h2>
-<p>The number of possible colors for <span class="math inline">\(n\)</span>-bit color depth is <span class="math inline">\(2^n\)</span>.</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 22%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit Depth</th>
-<th>Bits per pixel</th>
-<th>Examples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1-bit</td>
-<td><span class="math inline">\(2^1=2\)</span></td>
-<td>Usually black-and-white</td>
-</tr>
-<tr class="even">
-<td>2-bit</td>
-<td><span class="math inline">\(2^2=4\)</span></td>
-<td>Many early computer systems; original Game Boy</td>
-</tr>
-<tr class="odd">
-<td>3-bit</td>
-<td><span class="math inline">\(2^3=8\)</span></td>
-<td>RGB; early home computers with TV displays</td>
-</tr>
-<tr class="even">
-<td>8-bit</td>
-<td><span class="math inline">\(2^8=256\)</span></td>
-<td>1980s PCs; modern smartwatches; Mars Exploration Rovers<sup>1</sup></td>
-</tr>
-<tr class="odd">
-<td>15-bit</td>
-<td><span class="math inline">\(2^{15}=32,768\)</span></td>
-<td>Super Nintendo, Game Boy Color</td>
-</tr>
-<tr class="even">
-<td>24-bit</td>
-<td><span class="math inline">\(2^{24}\approx16M\)</span></td>
-<td>“True color”<sup>2</sup>; modern computer and phone displays</td>
-</tr>
-</tbody>
-</table>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>grayscale for navigation imaging; limits data transmission size</p></li><li id="fn2"><p>the human eye can discriminate <span class="math inline">\(\approx\)</span> 10M colors</p></li></ol></aside></section>
-<section id="image-compression" class="slide level2">
-<h2>Image Compression</h2>
-<p><br> <strong>Data compression</strong> is the process of encoding information using fewer bits that the original representation.</p>
-<p><br> <strong>Image compression</strong> is data compression optimized for image data by taking advantage of visual perception or statistical properties of the data. <br></p>
-<div style="font-size: 50%">
-<p>If you’re interested in image compression, the Wikipedia page <a href="https://en.wikipedia.org/wiki/Image_compression" target="_blank">Image compression</a> has a lot of detail.</p>
-</div>
-</section>
-<section id="image-compression-1" class="slide level2">
-<h2>Image Compression</h2>
-<p><br> Image compression can be <strong>lossless</strong> or <strong>lossy</strong>.</p>
-<p><br> Lossy compression usually (but not always) results in smaller file sizes, but it can introduce noticeable artifacts.</p>
-</section>
-<section id="image-compression-2" class="slide level2 smaller scrollable">
-<h2>Image Compression</h2>
-<p>Photo taken by Brian on a Nikon ZIII Mirrorless Camera</p>
-<p>2048 x 1365 pixels (2.8 Megapixels)</p>
-<p>(<em>Note most web browsers (except Safari) don’t display TIFFs.</em>)</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 42%">
-<col style="width: 33%">
-<col style="width: 24%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Compression</th>
-<th>Image</th>
-<th>File Size</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>JPEG, 100 Quality</td>
-<td><a href="img/JPEG_100.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="JPEG, full quality"><img data-src="img/JPEG_100.jpg" alt="JPEG, full quality"></a></td>
-<td>0.99 MiB</td>
-</tr>
-<tr class="even">
-<td>JPEG, 10 Quality</td>
-<td><a href="img/JPEG_10.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="JPEG, high compression"><img data-src="img/JPEG_10.jpg" alt="JPEG, high compression"></a></td>
-<td>88.2 KiB</td>
-</tr>
-<tr class="odd">
-<td>TIFF, No compression</td>
-<td><a href="img/TIFF_full.tif" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="TIFF, no compression"><img data-src="img/TIFF_full.tif" alt="TIFF, no compression"></a></td>
-<td>8.03 MiB</td>
-</tr>
-<tr class="even">
-<td>TIFF, LZW compression</td>
-<td><a href="img/TIFF_LZW.tif" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="TIFF, LZW compression"><img data-src="img/TIFF_LZW.tif" alt="TIFF, LZW compression"></a></td>
-<td>2.88 MiB</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="scientific-publishing" class="slide level2">
-<h2>Scientific Publishing</h2>
-<p><br></p>
-<p>Most journals have explicit figure guidelines in their “Instructions for Authors” material.</p>
-<p><br></p>
-<p>For example, <em>Science</em> has an entire <a href="https://www.science.org/cms/asset/62583409-a188-466e-8cc0-6fb5f083bbff/author_prep_guide_2025.pdf" target="_blank">figure guideline PDF</a>.</p>
-<p><br></p>
-<p>They require images to be at least 300 PPI, they prefer vector over raster graphics, and they give exact measurements for one-column and two-column figures.</p>
 </section></section>
-<section>
-<section id="r-graphical-devices" class="title-slide slide level1 center">
-<h1>R Graphical Devices</h1>
-
-</section>
-<section id="r-graphical-devices-1" class="slide level2">
-<h2>R Graphical Devices</h2>
-<p><br></p>
-<p>You can read about graphical devices in R on the help page.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>?Devices</span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="co"># OR</span></span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a><span class="fu">help</span>(<span class="st">"Devices"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><br></p>
-<p>You can also find the help page rendered on the web <a href="https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html" target="_blank">here</a>.</p>
-</section>
-<section id="r-graphical-devices-2" class="slide level2">
-<h2>R Graphical Devices</h2>
-<p>You will notice that the help file indicates that many of the devices are platform-specific. You can check what devices are available on your current system <sup>1</sup>:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">capabilities</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       jpeg         png        tiff       tcltk         X11        aqua 
-       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
-   http/ftp     sockets      libxml        fifo      cledit       iconv 
-       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
-        NLS       Rprof     profmem       cairo         ICU long.double 
-       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
-    libcurl 
-       TRUE </code></pre>
-</div>
-</div>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>Note that RStudio has its own graphics device</p></li></ol></aside></section>
-<section id="r-graphical-devices-3" class="slide level2">
-<h2>R Graphical Devices</h2>
-<p>Additional graphical devices can be accessed through packages. I often use the AGG library through the package <code>ragg</code> (<a href="https://ragg.r-lib.org/" target="_blank">https://ragg.r-lib.org/</a>).</p>
-<p><br></p>
-<p><code>ragg</code> claims to be faster (<em>I haven’t tried</em>) and higher quality (<em>I can confirm</em>) than <code>base</code> R graphics (<code>grDevices</code>).</p>
-<p><br></p>
-<p>It is also system-independent, so you should get the same output from Windows, Mac, or Linux.</p>
-</section></section>
-<section id="code-demo" class="title-slide slide level1 center">
-<h1>Code Demo</h1>
-
-</section>
-
 <section id="questions" class="title-slide slide level1 center">
 <h1>Questions?</h1>
 <p><br></p>
@@ -523,8 +190,6 @@ Brian J. Smith
 
 
 </section>
-
-
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -706,9 +371,9 @@ Brian J. Smith
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1400,
 
-        height: 700,
+        height: 900,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
@@ -740,82 +405,6 @@ Brian J. Smith
         ]
       });
     </script>
-    
-
-    <script>
-
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
-      // slide changes (different for each slide format).
-
-      (function () {
-
-        // dispatch for htmlwidgets
-
-        function fireSlideEnter() {
-
-          const event = window.document.createEvent("Event");
-
-          event.initEvent("slideenter", true, true);
-
-          window.document.dispatchEvent(event);
-
-        }
-
-    
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          fireSlideEnter();
-
-    
-
-          // dispatch for shiny
-
-          if (window.jQuery) {
-
-            if (previousSlide) {
-
-              window.jQuery(previousSlide).trigger("hidden");
-
-            }
-
-            if (currentSlide) {
-
-              window.jQuery(currentSlide).trigger("shown");
-
-            }
-
-          }
-
-        }
-
-    
-
-        // hookup for slidy
-
-        if (window.w3c_slidy) {
-
-          window.w3c_slidy.add_observer(function (slide_num) {
-
-            // slide_num starts at position 1
-
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
-          });
-
-        }
-
-    
-
-      })();
-
-    </script>
-
-    
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

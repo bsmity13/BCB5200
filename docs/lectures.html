@@ -111,6 +111,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./assignments.html"> 
 <span class="menu-text">Assignments</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -213,6 +217,10 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">3/3/2026</td>
 <td style="text-align: left;"><a href="./lectures/11_rules.html">Lecture 11: Rules of Thumb</a></td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">3/5/2026</td>
+<td style="text-align: left;"><a href="./lectures/12_views.html">Lecture 12: Manipulating Views</a></td>
+</tr>
 </tbody>
 </table>
 
@@ -306,6 +314,13 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
