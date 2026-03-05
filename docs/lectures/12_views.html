@@ -14,7 +14,7 @@
 
   <meta name="author" content="Brian J. Smith">
   <meta name="dcterms.date" content="2026-03-05">
-  <title>BCB5200 – Lecture 12: Manipulating Views</title>
+  <title>BCB5200 – Lecture 12: Multiple Views</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,8 +32,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-7fa51a03d2289eb9f8a6e0d482096f58.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -131,7 +197,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 12: Manipulating Views</h1>
+  <h1 class="title">Lecture 12: Multiple Views</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -143,19 +209,159 @@ Brian J. Smith
 
   <p class="date">2026-03-05</p>
 </section>
-<section id="manipulating-views" class="slide level2">
-<h2>Manipulating Views</h2>
+<section id="multiple-views" class="slide level2">
+<h2>Multiple Views</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>This lecture is based on Chapter XX of <em>Visualization Analysis &amp; Design</em>.</p>
+<p>The beginning of this lecture is based on Chapter 12 of <em>Visualization Analysis &amp; Design</em>.</p>
 <p><br></p>
-<p>“Manipulating Views”</p>
+<p>“Facet into Multiple Views”</p>
 <p><br></p>
 <p>For this lecture, I’m going to start with some principles from the <em>VAD</em> Text, then transition over to creating multi-panel figures in R.</p>
 </div><div class="column" style="width:50%;">
 <p><a href="img/munzner_book_cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Visualization Analysis &amp; Design Cover"><img data-src="img/munzner_book_cover.png" class="quarto-figure quarto-figure-right" style="width:75.0%" alt="Visualization Analysis &amp; Design Cover"></a><br>
 </p>
 </div></div>
+</section>
+<section id="facet-into-multiple-views" class="slide level2">
+<h2>Facet into Multiple Views</h2>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="fig/fig12.1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Fig. 12.1"><img data-src="fig/fig12.1.png" style="width:35.0%" alt="Fig. 12.1"></a></p>
+<figcaption>Fig. 12.1</figcaption>
+</figure>
+</div>
+</center>
+</section>
+<section id="facet-into-multiple-views-1" class="slide level2">
+<h2>Facet into Multiple Views</h2>
+<h3 id="decisions-to-make">Decisions to Make</h3>
+<ul>
+<li>Juxtapose or superimpose?</li>
+<li>Share encoding or use different encoding?
+<ul>
+<li>Use linked highlighting?</li>
+</ul></li>
+<li>Share data or show different data?
+<ul>
+<li>All</li>
+<li>Some</li>
+<li>None</li>
+</ul></li>
+<li><del>Share navigation?</del></li>
+</ul>
+</section>
+<section id="juxtapose-or-superimpose" class="slide level2">
+<h2>Juxtapose or Superimpose?</h2>
+
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="juxtapose-or-superimpose-1" class="slide level2">
+<h2>Juxtapose or Superimpose?</h2>
+
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="juxtapose-or-superimpose-2" class="slide level2">
+<h2>Juxtapose or Superimpose?</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<h3 id="juxtapose">Juxtapose</h3>
+<ul>
+<li>Easy to compare (“Eyes beat Memory”).</li>
+<li>Can use a different encoding for each one.
+<ul>
+<li>Can support multiple tasks.</li>
+</ul></li>
+<li>Each facet gets a fraction of the space.
+<ul>
+<li>Two facets get only half the display area each.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<h3 id="superimpose">Superimpose</h3>
+<ul>
+<li>Easy to compare (“Eyes beat Memory”).</li>
+<li>Constrains choices for visual encoding.
+<ul>
+<li>The two facets must be visually distinguishable layers.</li>
+<li>Usually limited to 2 or 3 layers.</li>
+</ul></li>
+<li>Does not require more display area.</li>
+</ul>
+</div></div>
+</section>
+<section id="share-encoding" class="slide level2">
+<h2>Share Encoding?</h2>
+
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="share-encoding-1" class="slide level2">
+<h2>Share Encoding?</h2>
+
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="share-encoding-2" class="slide level2">
+<h2>Share Encoding?</h2>
+
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="share-encoding-3" class="slide level2">
+<h2>Share Encoding?</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<h3 id="shared-encoding">Shared Encoding</h3>
+<ul>
+<li>All channels have an identical visual encoding.
+<ul>
+<li>Simple to understand each panel.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<h3 id="multiform">Multiform</h3>
+<ul>
+<li>Some, but not all channels are shared.
+<ul>
+<li>Could share one spatial dimension but not another.</li>
+<li>Could use different marks or channels.</li>
+</ul></li>
+<li>Linked highlighting can be useful to show corresponding data in both views.
+<ul>
+<li>Particularly useful in an interactive setting.</li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section id="share-data" class="slide level2">
+<h2>Share Data?</h2>
+<ul>
+<li><strong>Shared data</strong> (all): both views show all the data.</li>
+</ul>
+
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="share-data-1" class="slide level2">
+<h2>Share Data?</h2>
+<ul>
+<li><strong>Overview-detail</strong> (some): one view shows all the data, the other shows detail.</li>
+</ul>
+
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="share-data-2" class="slide level2">
+<h2>Share Data?</h2>
+<ul>
+<li><strong>Small multiples</strong> (none): one view shows one subset, the other shows a different subset.</li>
+</ul>
+
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="share-encodingdata" class="slide level2">
+<h2>Share Encoding/Data?</h2>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="fig/fig12.6.png"></p>
+<figcaption>Fig. 12.6</figcaption>
+</figure>
+</div>
+</center>
 </section>
 <section>
 <section id="multi-panel-figures-in-r" class="title-slide slide level1 center">
@@ -178,6 +384,682 @@ Brian J. Smith
 <li><a href="https://github.com/wilkelab/cowplot" target="_blank"><code>cowplot</code></a></li>
 <li><a href="https://github.com/baptiste/gridextra/wiki" target="_blank"><code>gridExtra</code></a></li>
 </ul></li>
+</ul>
+</section></section>
+<section>
+<section id="multi-panel-base-r" class="title-slide slide level1 center">
+<h1>Multi-panel: base R</h1>
+
+</section>
+<section id="multi-panel-base-r-1" class="slide level2">
+<h2>Multi-panel: base R</h2>
+<ul>
+<li>Two methods for creating multi-panel figures using base R:
+<ul>
+<li>Set graphical parameters using <code>par()</code>,</li>
+<li>Use <code>layout()</code>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="multi-panel-base-r-par" class="slide level2">
+<h2>Multi-panel: base R <code>par()</code></h2>
+<ul>
+<li>Graphics devices in R have default graphical parameters.</li>
+<li>You can print those parameters with <code>par()</code> (no arguments).</li>
+<li>You can also change those parameters with <code>par()</code> (by adding arguments).</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">par</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$xlog
+[1] FALSE
+
+$ylog
+[1] FALSE
+
+$adj
+[1] 0.5
+
+$ann
+[1] TRUE
+
+$ask
+[1] FALSE
+
+$bg
+[1] "white"
+
+$bty
+[1] "o"
+
+$cex
+[1] 1
+
+$cex.axis
+[1] 1
+
+$cex.lab
+[1] 1
+
+$cex.main
+[1] 1.2
+
+$cex.sub
+[1] 1
+
+$cin
+[1] 0.15 0.20
+
+$col
+[1] "black"
+
+$col.axis
+[1] "black"
+
+$col.lab
+[1] "black"
+
+$col.main
+[1] "black"
+
+$col.sub
+[1] "black"
+
+$cra
+[1] 28.8 38.4
+
+$crt
+[1] 0
+
+$csi
+[1] 0.2
+
+$cxy
+[1] 0.01712329 0.06329115
+
+$din
+[1] 9.999999 4.999999
+
+$err
+[1] 0
+
+$family
+[1] ""
+
+$fg
+[1] "black"
+
+$fig
+[1] 0 1 0 1
+
+$fin
+[1] 9.999999 4.999999
+
+$font
+[1] 1
+
+$font.axis
+[1] 1
+
+$font.lab
+[1] 1
+
+$font.main
+[1] 2
+
+$font.sub
+[1] 1
+
+$lab
+[1] 5 5 7
+
+$las
+[1] 0
+
+$lend
+[1] "round"
+
+$lheight
+[1] 1
+
+$ljoin
+[1] "round"
+
+$lmitre
+[1] 10
+
+$lty
+[1] "solid"
+
+$lwd
+[1] 1
+
+$mai
+[1] 1.02 0.82 0.82 0.42
+
+$mar
+[1] 5.1 4.1 4.1 2.1
+
+$mex
+[1] 1
+
+$mfcol
+[1] 1 1
+
+$mfg
+[1] 1 1 1 1
+
+$mfrow
+[1] 1 1
+
+$mgp
+[1] 3 1 0
+
+$mkh
+[1] 0.001
+
+$new
+[1] FALSE
+
+$oma
+[1] 0 0 0 0
+
+$omd
+[1] 0 1 0 1
+
+$omi
+[1] 0 0 0 0
+
+$page
+[1] TRUE
+
+$pch
+[1] 1
+
+$pin
+[1] 8.759999 3.159999
+
+$plt
+[1] 0.082 0.958 0.204 0.836
+
+$ps
+[1] 12
+
+$pty
+[1] "m"
+
+$smo
+[1] 1
+
+$srt
+[1] 0
+
+$tck
+[1] NA
+
+$tcl
+[1] -0.5
+
+$usr
+[1] 0 1 0 1
+
+$xaxp
+[1] 0 1 5
+
+$xaxs
+[1] "r"
+
+$xaxt
+[1] "s"
+
+$xpd
+[1] FALSE
+
+$yaxp
+[1] 0 1 5
+
+$yaxs
+[1] "r"
+
+$yaxt
+[1] "s"
+
+$ylbias
+[1] 0.2</code></pre>
+</div>
+</div>
+</section>
+<section id="multi-panel-base-r-par-1" class="slide level2">
+<h2>Multi-panel: base R <code>par()</code></h2>
+<ul>
+<li>If you’re going to change the parameters inside a function, it is best practice to store and restore the defaults.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>my_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(...) {</span>
+<span id="cb3-2"><a></a>  opar <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-3"><a></a>  </span>
+<span id="cb3-4"><a></a>  <span class="co"># Do the things for the function here</span></span>
+<span id="cb3-5"><a></a>  </span>
+<span id="cb3-6"><a></a>  <span class="co"># When you're done, reset parameters:</span></span>
+<span id="cb3-7"><a></a>  <span class="fu">par</span>(opar)</span>
+<span id="cb3-8"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="multi-panel-base-r-par-2" class="slide level2">
+<h2>Multi-panel: base R <code>par()</code></h2>
+<ul>
+<li>To create a multi-panel figure, change the graphical parameters <code>mfrow</code> or <code>mfcol</code>.
+<ul>
+<li>Specifies the number of rows and columns in the display: <code>c(nr, nc)</code></li>
+<li>Multiple calls to <code>plot()</code> are drawn in subsequent rows/columns
+<ul>
+<li><code>mfrow</code> causes the plots to be drawn by rows</li>
+<li><code>mfcol</code> causes the plots to be drawn by columns</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb4-2"><a></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>))</span>
+<span id="cb4-3"><a></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="multi-panel-base-r-par-3" class="slide level2">
+<h2>Multi-panel: base R <code>par()</code></h2>
+<ul>
+<li>Use of <code>mfrow</code></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>))</span>
+<span id="cb5-2"><a></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 1"</span>)</span>
+<span id="cb5-3"><a></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 2"</span>)</span>
+<span id="cb5-4"><a></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 3"</span>)</span>
+<span id="cb5-5"><a></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 4"</span>)</span>
+<span id="cb5-6"><a></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 5"</span>)</span>
+<span id="cb5-7"><a></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 6"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="multi-panel-base-r-par-4" class="slide level2">
+<h2>Multi-panel: base R <code>par()</code></h2>
+<ul>
+<li>Use of <code>mfcol</code></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">par</span>(<span class="at">mfcol =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>))</span>
+<span id="cb6-2"><a></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 1"</span>)</span>
+<span id="cb6-3"><a></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 2"</span>)</span>
+<span id="cb6-4"><a></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 3"</span>)</span>
+<span id="cb6-5"><a></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 4"</span>)</span>
+<span id="cb6-6"><a></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 5"</span>)</span>
+<span id="cb6-7"><a></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 6"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="multi-panel-base-r-layout" class="slide level2">
+<h2>Multi-panel: base R <code>layout()</code></h2>
+<ul>
+<li>Using <code>layout()</code> allows finer control over the layout using a matrix.
+<ul>
+<li>For example, you can allow a single plot to take up multiple slots.</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-2"><a></a><span class="fu">layout</span>(mat)</span>
+<span id="cb7-3"><a></a></span>
+<span id="cb7-4"><a></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 1"</span>)</span>
+<span id="cb7-5"><a></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 2"</span>)</span>
+<span id="cb7-6"><a></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">"Plot 3"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="multi-panel-base-r-layout-1" class="slide level2">
+<h2>Multi-panel: base R <code>layout()</code></h2>
+<ul>
+<li>There is also function <code>layout.show()</code> which will show the current layout for planning something complex.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-2"><a></a><span class="fu">layout</span>(mat)</span>
+<span id="cb8-3"><a></a></span>
+<span id="cb8-4"><a></a><span class="co"># Can be useful to show how paging will occur if n &gt; max(mat)</span></span>
+<span id="cb8-5"><a></a><span class="fu">layout.show</span>(<span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
+<section>
+<section id="faceting-with-ggplot2" class="title-slide slide level1 center">
+<h1>Faceting with <code>ggplot2</code></h1>
+
+</section>
+<section id="faceting-with-ggplot2-1" class="slide level2">
+<h2>Faceting with <code>ggplot2</code></h2>
+<ul>
+<li>We’ve already seen some examples of using the <code>facet_*()</code> functions in <code>ggplot2</code>.</li>
+<li>Let’s make sure we make the different options clear here.
+<ul>
+<li><code>facet_wrap()</code></li>
+<li><code>facet_grid()</code></li>
+<li><code>facet_null()</code> (for the sake of completeness)</li>
+</ul></li>
+</ul>
+</section>
+<section id="faceting-with-ggplot2-2" class="slide level2">
+<h2>Faceting with <code>ggplot2</code></h2>
+<ul>
+<li><code>facet_wrap()</code> wraps a 1D sequence of panels to fit in the window.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">expand.grid</span>(<span class="at">n =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">label =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a></a>  <span class="fu">mutate</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="fu">nrow</span>(.))) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb9-4"><a></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"lavender"</span>) <span class="sc">+</span></span>
+<span id="cb9-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> label)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="faceting-with-ggplot2-3" class="slide level2">
+<h2>Faceting with <code>ggplot2</code></h2>
+<ul>
+<li><code>facet_grid()</code> forms a matrix of panels defined by rows and columns.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">expand.grid</span>(<span class="at">n =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">row =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">col =</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a></a>  <span class="fu">mutate</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="fu">nrow</span>(.))) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb10-4"><a></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"lavender"</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a></a>  <span class="fu">facet_grid</span>(row <span class="sc">~</span> col)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="faceting-with-ggplot2-4" class="slide level2">
+<h2>Faceting with <code>ggplot2</code></h2>
+<ul>
+<li><code>facet_null()</code> means no faceting, and can be used to override one of the others.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>pp <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">n =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">row =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">col =</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a></a>  <span class="fu">mutate</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="fu">nrow</span>(.))) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb11-4"><a></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"lavender"</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a></a>  <span class="fu">facet_grid</span>(row <span class="sc">~</span> col)</span>
+<span id="cb11-6"><a></a></span>
+<span id="cb11-7"><a></a>pp <span class="sc">+</span> <span class="fu">facet_null</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
+<section>
+<section id="composing-with-patchwork" class="title-slide slide level1 center">
+<h1>Composing with <code>patchwork</code></h1>
+
+</section>
+<section id="composing-with-patchwork-1" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<p><br></p>
+<blockquote>
+<p>The goal of <code>patchwork</code> is to make it ridiculously simple to combine separate ggplots into the same graphic…</p>
+</blockquote>
+<p><a href="https://patchwork.data-imaginist.com/" class="external" target="_blank"><code>patchwork</code></a></p>
+</section>
+<section id="composing-with-patchwork-2" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>The main thing that makes it “ridiculously simple” is the arithmetic operators to combine plots.
+<ul>
+<li>Combine in a row with <code>+</code></li>
+<li>Combine in a column with <code>/</code></li>
+<li>Group plots to increase complexity with <code>()</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="composing-with-patchwork-3" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>Create 3 plots, named <code>p1</code>, <code>p2</code>, and <code>p3</code> to demonstrate.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>p1 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gender)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb12-4"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gender, <span class="at">y =</span> height))</span>
+<span id="cb12-5"><a></a></span>
+<span id="cb12-6"><a></a>p2 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb12-7"><a></a>  <span class="fu">filter</span>(mass <span class="sc">&lt;</span> <span class="dv">500</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-8"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb12-9"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> mass))</span>
+<span id="cb12-10"><a></a></span>
+<span id="cb12-11"><a></a>p3 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb12-12"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(birth_year)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-13"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb12-14"><a></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> birth_year), <span class="at">fill =</span> <span class="st">"#ff000050"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="composing-with-patchwork-4" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>Combine in a row with <code>+</code></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>p1 <span class="sc">+</span> p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="composing-with-patchwork-5" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>Combine in a column with <code>/</code></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>p1 <span class="sc">/</span> p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="composing-with-patchwork-6" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>Group plots to increase complexity with <code>()</code></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>(p1 <span class="sc">+</span> p2)<span class="sc">/</span>p3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="composing-with-patchwork-7" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>Group plots to increase complexity with <code>()</code></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>p1 <span class="sc">+</span> (p2<span class="sc">/</span>p3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="composing-with-patchwork-8" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>For more fine-scale control (and options), use <code>plot_layout()</code>.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># Layout design as a text string</span></span>
+<span id="cb17-2"><a></a>des <span class="ot">&lt;-</span> <span class="st">"AA##</span></span>
+<span id="cb17-3"><a></a><span class="st">        #BB#</span></span>
+<span id="cb17-4"><a></a><span class="st">        ##CC"</span></span>
+<span id="cb17-5"><a></a></span>
+<span id="cb17-6"><a></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">design =</span> des)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="12_views_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="composing-with-patchwork-9" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>Add annotations with <code>plot_annotation()</code>.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">design =</span> des) <span class="sc">+</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">"Everything Star Wars"</span>, <span class="at">subtitle =</span> <span class="st">"Well, almost..."</span>,</span>
+<span id="cb18-3"><a></a>                  <span class="at">caption =</span> <span class="st">"From the starwars dataset"</span>,</span>
+<span id="cb18-4"><a></a>                  <span class="at">tag_levels =</span> <span class="st">"A"</span>,</span>
+<span id="cb18-5"><a></a>                  <span class="at">tag_prefix =</span> <span class="st">"("</span>, <span class="at">tag_suffix =</span> <span class="st">")"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="12_views_files/figure-revealjs/unnamed-chunk-25-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="12_views_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center" width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="composing-with-patchwork-10" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>You can still add to existing plots…</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>p1 <span class="sc">+</span> (p2 <span class="sc">+</span> <span class="fu">theme_bw</span>()) <span class="sc">+</span> (p3 <span class="sc">+</span> <span class="fu">theme_dark</span>()) <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">design =</span> des)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="12_views_files/figure-revealjs/unnamed-chunk-26-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="12_views_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center" width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="composing-with-patchwork-11" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>… but you can change the theme of all plots with <code>&amp;</code>.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">design =</span> des) <span class="sc">&amp;</span></span>
+<span id="cb20-2"><a></a>  <span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="12_views_files/figure-revealjs/unnamed-chunk-27-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="12_views_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center" width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="composing-with-patchwork-12" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>Create plots with legends.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>l1 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gender)) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-3"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb21-4"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> gender, <span class="at">y =</span> height, <span class="at">color =</span> gender))</span>
+<span id="cb21-5"><a></a></span>
+<span id="cb21-6"><a></a>l2 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb21-7"><a></a>  <span class="fu">filter</span>(mass <span class="sc">&lt;</span> <span class="dv">500</span>, <span class="sc">!</span><span class="fu">is.na</span>(gender)) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-8"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb21-9"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> mass, <span class="at">color =</span> gender))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="composing-with-patchwork-13" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>Plots with legends will show the legend.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>l1 <span class="sc">+</span> l2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="12_views_files/figure-revealjs/unnamed-chunk-29-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="12_views_files/figure-revealjs/unnamed-chunk-29-1.png" class="quarto-figure quarto-figure-center" width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="composing-with-patchwork-14" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>You can also “collect” all the legends.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>l1 <span class="sc">+</span> l2 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">"collect"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="12_views_files/figure-revealjs/unnamed-chunk-30-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="12_views_files/figure-revealjs/unnamed-chunk-30-1.png" class="quarto-figure quarto-figure-center" width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="composing-with-patchwork-15" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>You can also use <code>&amp;</code> to change all the legend positions that are being collected.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>l1 <span class="sc">+</span> l2 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">"collect"</span>) <span class="sc">&amp;</span></span>
+<span id="cb24-2"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="12_views_files/figure-revealjs/unnamed-chunk-31-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="12_views_files/figure-revealjs/unnamed-chunk-31-1.png" class="quarto-figure quarto-figure-center" width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="composing-with-patchwork-16" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<ul>
+<li>You can include base R plots (or other plots) with <code>wrap_elements()</code>.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>base_plot <span class="ot">&lt;-</span> <span class="fu">wrap_elements</span>(<span class="at">full =</span> <span class="sc">~</span> <span class="fu">plot</span>(mass <span class="sc">~</span> height, <span class="at">data =</span> starwars,</span>
+<span id="cb25-2"><a></a>                                          <span class="at">subset =</span> mass <span class="sc">&lt;</span> <span class="dv">500</span>,</span>
+<span id="cb25-3"><a></a>                                          <span class="at">xlab =</span> <span class="st">"Height (cm)"</span>, <span class="at">ylab =</span> <span class="st">"Mass (kg)"</span>))</span>
+<span id="cb25-4"><a></a></span>
+<span id="cb25-5"><a></a>p2 <span class="sc">+</span> base_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="12_views_files/figure-revealjs/unnamed-chunk-32-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="12_views_files/figure-revealjs/unnamed-chunk-32-1.png" class="quarto-figure quarto-figure-center" width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="composing-with-patchwork-17" class="slide level2">
+<h2>Composing with <code>patchwork</code></h2>
+<p><br></p>
+<ul>
+<li>There are <em>lots</em> of other excellent features.</li>
+<li>Check out the <a href="https://patchwork.data-imaginist.com/articles/patchwork.html" class="external" target="_blank">Getting Started</a> page on the <code>patchwork</code> website for more.</li>
 </ul>
 </section></section>
 <section id="questions" class="title-slide slide level1 center">
@@ -405,6 +1287,82 @@ Brian J. Smith
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
@@ -489,6 +1447,8 @@ Brian J. Smith
               if (link.dataset.originalHref !== undefined) {
                 link.href = link.dataset.originalHref;
               }
+                // default icon
+                link.classList.add("external");
             }
           }
         function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

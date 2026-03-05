@@ -39,7 +39,7 @@
     "href": "syllabus.html#class-schedule",
     "title": "Syllabus",
     "section": "Class Schedule",
-    "text": "Class Schedule\nThis current schedule is tentative. Current students please see Canvas for the most current due dates.\n\nsched &lt;- read.csv(\"schedule_2026.csv\")\nknitr::kable(sched, caption = \"\")\n\n\n\n\n\n\n\n\n\n\nDate\nWeek\nDay\nTopic\n\n\n\n\n1/15/2026\n1\nThursday\nIntroductions, expectations, install software\n\n\n1/20/2026\n2\nTuesday\nComputing basics for data science; setup GitHub\n\n\n1/22/2026\n2\nThursday\nLiterate programming\n\n\n1/27/2026\n3\nTuesday\nData Visualization: What and Why\n\n\n1/29/2026\n3\nThursday\nGraphics Formats\n\n\n2/3/2026\n4\nTuesday\nData Abstraction\n\n\n2/5/2026\n4\nThursday\nData Wrangling in R\n\n\n2/10/2026\n5\nTuesday\nNo class – Brian at Montana State\n\n\n2/12/2026\n5\nThursday\n\n\n\n2/17/2026\n6\nTuesday\nMarks and Channels\n\n\n2/19/2026\n6\nThursday\nggplot2, part 1\n\n\n2/24/2026\n7\nTuesday\nArranging Tables\n\n\n2/26/2026\n7\nThursday\nggplot2, part 2\n\n\n3/3/2026\n8\nTuesday\nRules of Thumb\n\n\n3/5/2026\n8\nThursday\nManipulating Views\n\n\n3/10/2026\n9\nTuesday\nMid-term Project Presentations\n\n\n3/12/2026\n9\nThursday\n\n\n\n3/17/2026\n10\nTuesday\nSpring break\n\n\n3/19/2026\n10\nThursday\n\n\n\n3/24/2026\n11\nTuesday\nColor\n\n\n3/26/2026\n11\nThursday\nReducing Items and Attributes\n\n\n3/31/2026\n12\nTuesday\nAnimation\n\n\n4/2/2026\n12\nThursday\n\n\n\n4/7/2026\n13\nTuesday\nSpatial Data Review\n\n\n4/9/2026\n13\nThursday\nSpatial Data in R\n\n\n4/14/2026\n14\nTuesday\nNetwork Data Review\n\n\n4/16/2026\n14\nThursday\nNetwork Data in R\n\n\n4/21/2026\n15\nTuesday\nEmbedding\n\n\n4/23/2026\n15\nThursday\n\n\n\n4/28/2026\n16\nTuesday\nMiscellaneous (buffer week)\n\n\n4/30/2026\n16\nThursday\n\n\n\n5/5/2026\n17\nTuesday\nFinal Project Presentations\n\n\n5/7/2026\n17\nThursday"
+    "text": "Class Schedule\nThis current schedule is tentative. Current students please see Canvas for the most current due dates.\n\nsched &lt;- read.csv(\"schedule_2026.csv\")\nknitr::kable(sched, caption = \"\")\n\n\n\n\n\n\n\n\n\n\nDate\nWeek\nDay\nTopic\n\n\n\n\n1/15/2026\n1\nThursday\nIntroductions, expectations, install software\n\n\n1/20/2026\n2\nTuesday\nComputing basics for data science; setup GitHub\n\n\n1/22/2026\n2\nThursday\nLiterate programming\n\n\n1/27/2026\n3\nTuesday\nData Visualization: What and Why\n\n\n1/29/2026\n3\nThursday\nGraphics Formats\n\n\n2/3/2026\n4\nTuesday\nData Abstraction\n\n\n2/5/2026\n4\nThursday\nData Wrangling in R\n\n\n2/10/2026\n5\nTuesday\nNo class – Brian at Montana State\n\n\n2/12/2026\n5\nThursday\n\n\n\n2/17/2026\n6\nTuesday\nMarks and Channels\n\n\n2/19/2026\n6\nThursday\nggplot2, part 1\n\n\n2/24/2026\n7\nTuesday\nArranging Tables\n\n\n2/26/2026\n7\nThursday\nggplot2, part 2\n\n\n3/3/2026\n8\nTuesday\nRules of Thumb\n\n\n3/5/2026\n8\nThursday\nManipulating Views\n\n\n3/10/2026\n9\nTuesday\nMid-term Project Presentations\n\n\n3/12/2026\n9\nThursday\n\n\n\n3/17/2026\n10\nTuesday\nSpring break\n\n\n3/19/2026\n10\nThursday\n\n\n\n3/24/2026\n11\nTuesday\nColor\n\n\n3/26/2026\n11\nThursday\nReducing Items and Attributes\n\n\n3/31/2026\n12\nTuesday\nAnimation\n\n\n4/2/2026\n12\nThursday\nStatistical Models\n\n\n4/7/2026\n13\nTuesday\nSpatial Data Review\n\n\n4/9/2026\n13\nThursday\nSpatial Data in R\n\n\n4/14/2026\n14\nTuesday\nNetwork Data Review\n\n\n4/16/2026\n14\nThursday\nNetwork Data in R\n\n\n4/21/2026\n15\nTuesday\nEmbedding\n\n\n4/23/2026\n15\nThursday\n\n\n\n4/28/2026\n16\nTuesday\nMiscellaneous (buffer week)\n\n\n4/30/2026\n16\nThursday\n\n\n\n5/5/2026\n17\nTuesday\nFinal Project Presentations\n\n\n5/7/2026\n17\nThursday"
   },
   {
     "objectID": "readme.html",
@@ -56,18 +56,312 @@
     "text": "This GitHub repository contains the code for the course website for BCB 4200/5200 at the University of Idaho.\nThe site is rendered at (https://bsmity13.github.io/BCB5200/)."
   },
   {
-    "objectID": "lectures/12_views.html#manipulating-views",
-    "href": "lectures/12_views.html#manipulating-views",
-    "title": "Lecture 12: Manipulating Views",
-    "section": "Manipulating Views",
-    "text": "Manipulating Views\n\n\nThis lecture is based on Chapter XX of Visualization Analysis & Design.\n\n“Manipulating Views”\n\nFor this lecture, I’m going to start with some principles from the VAD Text, then transition over to creating multi-panel figures in R."
+    "objectID": "lectures/12_views.html#multiple-views",
+    "href": "lectures/12_views.html#multiple-views",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Multiple Views",
+    "text": "Multiple Views\n\n\nThe beginning of this lecture is based on Chapter 12 of Visualization Analysis & Design.\n\n“Facet into Multiple Views”\n\nFor this lecture, I’m going to start with some principles from the VAD Text, then transition over to creating multi-panel figures in R."
+  },
+  {
+    "objectID": "lectures/12_views.html#facet-into-multiple-views",
+    "href": "lectures/12_views.html#facet-into-multiple-views",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Facet into Multiple Views",
+    "text": "Facet into Multiple Views\n\n\n\n\nFig. 12.1"
+  },
+  {
+    "objectID": "lectures/12_views.html#facet-into-multiple-views-1",
+    "href": "lectures/12_views.html#facet-into-multiple-views-1",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Facet into Multiple Views",
+    "text": "Facet into Multiple Views\nDecisions to Make\n\nJuxtapose or superimpose?\nShare encoding or use different encoding?\n\nUse linked highlighting?\n\nShare data or show different data?\n\nAll\nSome\nNone\n\nShare navigation?"
+  },
+  {
+    "objectID": "lectures/12_views.html#juxtapose-or-superimpose",
+    "href": "lectures/12_views.html#juxtapose-or-superimpose",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Juxtapose or Superimpose?",
+    "text": "Juxtapose or Superimpose?"
+  },
+  {
+    "objectID": "lectures/12_views.html#juxtapose-or-superimpose-1",
+    "href": "lectures/12_views.html#juxtapose-or-superimpose-1",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Juxtapose or Superimpose?",
+    "text": "Juxtapose or Superimpose?"
+  },
+  {
+    "objectID": "lectures/12_views.html#juxtapose-or-superimpose-2",
+    "href": "lectures/12_views.html#juxtapose-or-superimpose-2",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Juxtapose or Superimpose?",
+    "text": "Juxtapose or Superimpose?\n\n\nJuxtapose\n\nEasy to compare (“Eyes beat Memory”).\nCan use a different encoding for each one.\n\nCan support multiple tasks.\n\nEach facet gets a fraction of the space.\n\nTwo facets get only half the display area each.\n\n\n\n\n\nSuperimpose\n\nEasy to compare (“Eyes beat Memory”).\nConstrains choices for visual encoding.\n\nThe two facets must be visually distinguishable layers.\nUsually limited to 2 or 3 layers.\n\nDoes not require more display area."
+  },
+  {
+    "objectID": "lectures/12_views.html#share-encoding",
+    "href": "lectures/12_views.html#share-encoding",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Share Encoding?",
+    "text": "Share Encoding?"
+  },
+  {
+    "objectID": "lectures/12_views.html#share-encoding-1",
+    "href": "lectures/12_views.html#share-encoding-1",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Share Encoding?",
+    "text": "Share Encoding?"
+  },
+  {
+    "objectID": "lectures/12_views.html#share-encoding-2",
+    "href": "lectures/12_views.html#share-encoding-2",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Share Encoding?",
+    "text": "Share Encoding?"
+  },
+  {
+    "objectID": "lectures/12_views.html#share-encoding-3",
+    "href": "lectures/12_views.html#share-encoding-3",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Share Encoding?",
+    "text": "Share Encoding?\n\n\nShared Encoding\n\nAll channels have an identical visual encoding.\n\nSimple to understand each panel.\n\n\n\n\n\nMultiform\n\nSome, but not all channels are shared.\n\nCould share one spatial dimension but not another.\nCould use different marks or channels.\n\nLinked highlighting can be useful to show corresponding data in both views.\n\nParticularly useful in an interactive setting."
+  },
+  {
+    "objectID": "lectures/12_views.html#share-data",
+    "href": "lectures/12_views.html#share-data",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Share Data?",
+    "text": "Share Data?\n\nShared data (all): both views show all the data."
+  },
+  {
+    "objectID": "lectures/12_views.html#share-data-1",
+    "href": "lectures/12_views.html#share-data-1",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Share Data?",
+    "text": "Share Data?\n\nOverview-detail (some): one view shows all the data, the other shows detail."
+  },
+  {
+    "objectID": "lectures/12_views.html#share-data-2",
+    "href": "lectures/12_views.html#share-data-2",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Share Data?",
+    "text": "Share Data?\n\nSmall multiples (none): one view shows one subset, the other shows a different subset."
+  },
+  {
+    "objectID": "lectures/12_views.html#share-encodingdata",
+    "href": "lectures/12_views.html#share-encodingdata",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Share Encoding/Data?",
+    "text": "Share Encoding/Data?\n\n\n\n\nFig. 12.6"
   },
   {
     "objectID": "lectures/12_views.html#multi-panel-figures-in-r-1",
     "href": "lectures/12_views.html#multi-panel-figures-in-r-1",
-    "title": "Lecture 12: Manipulating Views",
+    "title": "Lecture 12: Multiple Views",
     "section": "Multi-panel Figures in R",
     "text": "Multi-panel Figures in R\n\nThere are many ways to compose multi-panel figures in R, including methods using base R graphics, ggplot2, accessory packages for ggplot2 objects, and other packages.\nWe’re just scratching the surface here, but I want to give you three different tools to get started with:\n\nbase R multi-panel plots,\nfaceting with ggplot2,\ncomposing multi-panel plots with patchwork.\n\nSome other packages you might want to look into:\n\ngtable\ncowplot\ngridExtra"
+  },
+  {
+    "objectID": "lectures/12_views.html#multi-panel-base-r-1",
+    "href": "lectures/12_views.html#multi-panel-base-r-1",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Multi-panel: base R",
+    "text": "Multi-panel: base R\n\nTwo methods for creating multi-panel figures using base R:\n\nSet graphical parameters using par(),\nUse layout()."
+  },
+  {
+    "objectID": "lectures/12_views.html#multi-panel-base-r-par",
+    "href": "lectures/12_views.html#multi-panel-base-r-par",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Multi-panel: base R par()",
+    "text": "Multi-panel: base R par()\n\nGraphics devices in R have default graphical parameters.\nYou can print those parameters with par() (no arguments).\nYou can also change those parameters with par() (by adding arguments).\n\n\npar()\n\n$xlog\n[1] FALSE\n\n$ylog\n[1] FALSE\n\n$adj\n[1] 0.5\n\n$ann\n[1] TRUE\n\n$ask\n[1] FALSE\n\n$bg\n[1] \"white\"\n\n$bty\n[1] \"o\"\n\n$cex\n[1] 1\n\n$cex.axis\n[1] 1\n\n$cex.lab\n[1] 1\n\n$cex.main\n[1] 1.2\n\n$cex.sub\n[1] 1\n\n$cin\n[1] 0.15 0.20\n\n$col\n[1] \"black\"\n\n$col.axis\n[1] \"black\"\n\n$col.lab\n[1] \"black\"\n\n$col.main\n[1] \"black\"\n\n$col.sub\n[1] \"black\"\n\n$cra\n[1] 28.8 38.4\n\n$crt\n[1] 0\n\n$csi\n[1] 0.2\n\n$cxy\n[1] 0.01712329 0.06329115\n\n$din\n[1] 9.999999 4.999999\n\n$err\n[1] 0\n\n$family\n[1] \"\"\n\n$fg\n[1] \"black\"\n\n$fig\n[1] 0 1 0 1\n\n$fin\n[1] 9.999999 4.999999\n\n$font\n[1] 1\n\n$font.axis\n[1] 1\n\n$font.lab\n[1] 1\n\n$font.main\n[1] 2\n\n$font.sub\n[1] 1\n\n$lab\n[1] 5 5 7\n\n$las\n[1] 0\n\n$lend\n[1] \"round\"\n\n$lheight\n[1] 1\n\n$ljoin\n[1] \"round\"\n\n$lmitre\n[1] 10\n\n$lty\n[1] \"solid\"\n\n$lwd\n[1] 1\n\n$mai\n[1] 1.02 0.82 0.82 0.42\n\n$mar\n[1] 5.1 4.1 4.1 2.1\n\n$mex\n[1] 1\n\n$mfcol\n[1] 1 1\n\n$mfg\n[1] 1 1 1 1\n\n$mfrow\n[1] 1 1\n\n$mgp\n[1] 3 1 0\n\n$mkh\n[1] 0.001\n\n$new\n[1] FALSE\n\n$oma\n[1] 0 0 0 0\n\n$omd\n[1] 0 1 0 1\n\n$omi\n[1] 0 0 0 0\n\n$page\n[1] TRUE\n\n$pch\n[1] 1\n\n$pin\n[1] 8.759999 3.159999\n\n$plt\n[1] 0.082 0.958 0.204 0.836\n\n$ps\n[1] 12\n\n$pty\n[1] \"m\"\n\n$smo\n[1] 1\n\n$srt\n[1] 0\n\n$tck\n[1] NA\n\n$tcl\n[1] -0.5\n\n$usr\n[1] 0 1 0 1\n\n$xaxp\n[1] 0 1 5\n\n$xaxs\n[1] \"r\"\n\n$xaxt\n[1] \"s\"\n\n$xpd\n[1] FALSE\n\n$yaxp\n[1] 0 1 5\n\n$yaxs\n[1] \"r\"\n\n$yaxt\n[1] \"s\"\n\n$ylbias\n[1] 0.2"
+  },
+  {
+    "objectID": "lectures/12_views.html#multi-panel-base-r-par-1",
+    "href": "lectures/12_views.html#multi-panel-base-r-par-1",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Multi-panel: base R par()",
+    "text": "Multi-panel: base R par()\n\nIf you’re going to change the parameters inside a function, it is best practice to store and restore the defaults.\n\n\nmy_fun &lt;- function(...) {\n  opar &lt;- par(no.readonly = TRUE)\n  \n  # Do the things for the function here\n  \n  # When you're done, reset parameters:\n  par(opar)\n}"
+  },
+  {
+    "objectID": "lectures/12_views.html#multi-panel-base-r-par-2",
+    "href": "lectures/12_views.html#multi-panel-base-r-par-2",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Multi-panel: base R par()",
+    "text": "Multi-panel: base R par()\n\nTo create a multi-panel figure, change the graphical parameters mfrow or mfcol.\n\nSpecifies the number of rows and columns in the display: c(nr, nc)\nMultiple calls to plot() are drawn in subsequent rows/columns\n\nmfrow causes the plots to be drawn by rows\nmfcol causes the plots to be drawn by columns\n\n\n\n\n\nCode\npar(mfrow = c(1, 2))\nplot(rnorm(100))\nhist(rnorm(100))"
+  },
+  {
+    "objectID": "lectures/12_views.html#multi-panel-base-r-par-3",
+    "href": "lectures/12_views.html#multi-panel-base-r-par-3",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Multi-panel: base R par()",
+    "text": "Multi-panel: base R par()\n\nUse of mfrow\n\n\n\nCode\npar(mfrow = c(3, 2))\nplot(rnorm(100), main = \"Plot 1\")\nhist(rnorm(100), main = \"Plot 2\")\nplot(rnorm(100), main = \"Plot 3\")\nhist(rnorm(100), main = \"Plot 4\")\nplot(rnorm(100), main = \"Plot 5\")\nhist(rnorm(100), main = \"Plot 6\")"
+  },
+  {
+    "objectID": "lectures/12_views.html#multi-panel-base-r-par-4",
+    "href": "lectures/12_views.html#multi-panel-base-r-par-4",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Multi-panel: base R par()",
+    "text": "Multi-panel: base R par()\n\nUse of mfcol\n\n\n\nCode\npar(mfcol = c(3, 2))\nplot(rnorm(100), main = \"Plot 1\")\nhist(rnorm(100), main = \"Plot 2\")\nplot(rnorm(100), main = \"Plot 3\")\nhist(rnorm(100), main = \"Plot 4\")\nplot(rnorm(100), main = \"Plot 5\")\nhist(rnorm(100), main = \"Plot 6\")"
+  },
+  {
+    "objectID": "lectures/12_views.html#multi-panel-base-r-layout",
+    "href": "lectures/12_views.html#multi-panel-base-r-layout",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Multi-panel: base R layout()",
+    "text": "Multi-panel: base R layout()\n\nUsing layout() allows finer control over the layout using a matrix.\n\nFor example, you can allow a single plot to take up multiple slots.\n\n\n\n\nCode\nmat &lt;- matrix(c(1, 2, 3, 3), nrow = 2, ncol = 2, byrow = TRUE)\nlayout(mat)\n\nplot(rnorm(100), main = \"Plot 1\")\nhist(rnorm(100), main = \"Plot 2\")\nplot(rnorm(100), main = \"Plot 3\")"
+  },
+  {
+    "objectID": "lectures/12_views.html#multi-panel-base-r-layout-1",
+    "href": "lectures/12_views.html#multi-panel-base-r-layout-1",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Multi-panel: base R layout()",
+    "text": "Multi-panel: base R layout()\n\nThere is also function layout.show() which will show the current layout for planning something complex.\n\n\n\nCode\nmat &lt;- matrix(c(1, 2, 3, 3), nrow = 2, ncol = 2, byrow = TRUE)\nlayout(mat)\n\n# Can be useful to show how paging will occur if n &gt; max(mat)\nlayout.show(n = 3)"
+  },
+  {
+    "objectID": "lectures/12_views.html#faceting-with-ggplot2-1",
+    "href": "lectures/12_views.html#faceting-with-ggplot2-1",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Faceting with ggplot2",
+    "text": "Faceting with ggplot2\n\nWe’ve already seen some examples of using the facet_*() functions in ggplot2.\nLet’s make sure we make the different options clear here.\n\nfacet_wrap()\nfacet_grid()\nfacet_null() (for the sake of completeness)"
+  },
+  {
+    "objectID": "lectures/12_views.html#faceting-with-ggplot2-2",
+    "href": "lectures/12_views.html#faceting-with-ggplot2-2",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Faceting with ggplot2",
+    "text": "Faceting with ggplot2\n\nfacet_wrap() wraps a 1D sequence of panels to fit in the window.\n\n\n\nCode\nexpand.grid(n = 1:20, label = LETTERS[1:3]) %&gt;% \n  mutate(x = rnorm(nrow(.))) %&gt;% \n  ggplot(aes(x = x)) +\n  geom_density(fill = \"lavender\") +\n  facet_wrap(~ label)"
+  },
+  {
+    "objectID": "lectures/12_views.html#faceting-with-ggplot2-3",
+    "href": "lectures/12_views.html#faceting-with-ggplot2-3",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Faceting with ggplot2",
+    "text": "Faceting with ggplot2\n\nfacet_grid() forms a matrix of panels defined by rows and columns.\n\n\n\nCode\nexpand.grid(n = 1:20, row = LETTERS[1:3], col = letters[1:3]) %&gt;% \n  mutate(x = rnorm(nrow(.))) %&gt;% \n  ggplot(aes(x = x)) +\n  geom_density(fill = \"lavender\") +\n  facet_grid(row ~ col)"
+  },
+  {
+    "objectID": "lectures/12_views.html#faceting-with-ggplot2-4",
+    "href": "lectures/12_views.html#faceting-with-ggplot2-4",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Faceting with ggplot2",
+    "text": "Faceting with ggplot2\n\nfacet_null() means no faceting, and can be used to override one of the others.\n\n\n\nCode\npp &lt;- expand.grid(n = 1:20, row = LETTERS[1:3], col = letters[1:3]) %&gt;% \n  mutate(x = rnorm(nrow(.))) %&gt;% \n  ggplot(aes(x = x)) +\n  geom_density(fill = \"lavender\") +\n  facet_grid(row ~ col)\n\npp + facet_null()"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-1",
+    "href": "lectures/12_views.html#composing-with-patchwork-1",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\n\nThe goal of patchwork is to make it ridiculously simple to combine separate ggplots into the same graphic…\n\npatchwork"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-2",
+    "href": "lectures/12_views.html#composing-with-patchwork-2",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nThe main thing that makes it “ridiculously simple” is the arithmetic operators to combine plots.\n\nCombine in a row with +\nCombine in a column with /\nGroup plots to increase complexity with ()"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-3",
+    "href": "lectures/12_views.html#composing-with-patchwork-3",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nCreate 3 plots, named p1, p2, and p3 to demonstrate.\n\n\np1 &lt;- starwars %&gt;% \n  filter(!is.na(gender)) %&gt;% \n  ggplot() +\n  geom_boxplot(aes(x = gender, y = height))\n\np2 &lt;- starwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot() +\n  geom_point(aes(x = height, y = mass))\n\np3 &lt;- starwars %&gt;% \n  filter(!is.na(birth_year)) %&gt;% \n  ggplot() +\n  geom_density(aes(x = birth_year), fill = \"#ff000050\")"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-4",
+    "href": "lectures/12_views.html#composing-with-patchwork-4",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nCombine in a row with +\n\n\np1 + p2"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-5",
+    "href": "lectures/12_views.html#composing-with-patchwork-5",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nCombine in a column with /\n\n\np1 / p2"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-6",
+    "href": "lectures/12_views.html#composing-with-patchwork-6",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nGroup plots to increase complexity with ()\n\n\n(p1 + p2)/p3"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-7",
+    "href": "lectures/12_views.html#composing-with-patchwork-7",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nGroup plots to increase complexity with ()\n\n\np1 + (p2/p3)"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-8",
+    "href": "lectures/12_views.html#composing-with-patchwork-8",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nFor more fine-scale control (and options), use plot_layout().\n\n\n# Layout design as a text string\ndes &lt;- \"AA##\n        #BB#\n        ##CC\"\n\np1 + p2 + p3 + plot_layout(design = des)"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-9",
+    "href": "lectures/12_views.html#composing-with-patchwork-9",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nAdd annotations with plot_annotation().\n\n\np1 + p2 + p3 + plot_layout(design = des) +\n  plot_annotation(title = \"Everything Star Wars\", subtitle = \"Well, almost...\",\n                  caption = \"From the starwars dataset\",\n                  tag_levels = \"A\",\n                  tag_prefix = \"(\", tag_suffix = \")\")"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-10",
+    "href": "lectures/12_views.html#composing-with-patchwork-10",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nYou can still add to existing plots…\n\n\np1 + (p2 + theme_bw()) + (p3 + theme_dark()) + plot_layout(design = des)"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-11",
+    "href": "lectures/12_views.html#composing-with-patchwork-11",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\n… but you can change the theme of all plots with &.\n\n\np1 + p2 + p3 + plot_layout(design = des) &\n  theme_classic()"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-12",
+    "href": "lectures/12_views.html#composing-with-patchwork-12",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nCreate plots with legends.\n\n\nl1 &lt;- starwars %&gt;% \n  filter(!is.na(gender)) %&gt;% \n  ggplot() +\n  geom_point(aes(x = gender, y = height, color = gender))\n\nl2 &lt;- starwars %&gt;% \n  filter(mass &lt; 500, !is.na(gender)) %&gt;% \n  ggplot() +\n  geom_point(aes(x = height, y = mass, color = gender))"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-13",
+    "href": "lectures/12_views.html#composing-with-patchwork-13",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nPlots with legends will show the legend.\n\n\nl1 + l2"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-14",
+    "href": "lectures/12_views.html#composing-with-patchwork-14",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nYou can also “collect” all the legends.\n\n\nl1 + l2 + plot_layout(guides = \"collect\")"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-15",
+    "href": "lectures/12_views.html#composing-with-patchwork-15",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nYou can also use & to change all the legend positions that are being collected.\n\n\nl1 + l2 + plot_layout(guides = \"collect\") &\n  theme(legend.position = \"top\")"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-16",
+    "href": "lectures/12_views.html#composing-with-patchwork-16",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\nYou can include base R plots (or other plots) with wrap_elements().\n\n\nbase_plot &lt;- wrap_elements(full = ~ plot(mass ~ height, data = starwars,\n                                          subset = mass &lt; 500,\n                                          xlab = \"Height (cm)\", ylab = \"Mass (kg)\"))\n\np2 + base_plot"
+  },
+  {
+    "objectID": "lectures/12_views.html#composing-with-patchwork-17",
+    "href": "lectures/12_views.html#composing-with-patchwork-17",
+    "title": "Lecture 12: Multiple Views",
+    "section": "Composing with patchwork",
+    "text": "Composing with patchwork\n\n\nThere are lots of other excellent features.\nCheck out the Getting Started page on the patchwork website for more."
   },
   {
     "objectID": "lectures/10_tables.html#arranging-tables",
@@ -1225,6 +1519,48 @@
     "text": "Some text will go here.\n\n# Some code will go here\n\ndd &lt;- data.frame(x = seq(0, 2*pi, length.out = 100))\ndd$y &lt;- sin(dd$x)\nplot(dd$x, dd$y, type = \"b\")"
   },
   {
+    "objectID": "assign/05_panels.html",
+    "href": "assign/05_panels.html",
+    "title": "Assignment 5: Multi-panel Figures",
+    "section": "",
+    "text": "This assignment is to gain practice creating multi-panel figures. It is due March 12."
+  },
+  {
+    "objectID": "assign/05_panels.html#description",
+    "href": "assign/05_panels.html#description",
+    "title": "Assignment 5: Multi-panel Figures",
+    "section": "",
+    "text": "This assignment is to gain practice creating multi-panel figures. It is due March 12."
+  },
+  {
+    "objectID": "assign/05_panels.html#document-setup",
+    "href": "assign/05_panels.html#document-setup",
+    "title": "Assignment 5: Multi-panel Figures",
+    "section": "Document Setup",
+    "text": "Document Setup\nFor this assignment, create an HTML document using Quarto. You can refer to the homepage.qmd document we created in class for some ideas.\n\nMake sure your YAML header has:\n\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nI want to see the code chunks that create your figure, so make sure you use #| echo: true in your R code chunk.\n\nYou may use code folding (#| code-fold: true) if you’d like."
+  },
+  {
+    "objectID": "assign/05_panels.html#instructions",
+    "href": "assign/05_panels.html#instructions",
+    "title": "Assignment 5: Multi-panel Figures",
+    "section": "Instructions",
+    "text": "Instructions\n\nFind a dataset.\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nCreate a multi-panel figure either by:\n\n\nUsing base R par() or layout() to arrange the panels, or\nUsing patchwork to arrange ggplot2 panels.\n\nI.e., don’t just use ggplot2::facet_*() to create panels.\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "assign/02_formats.html",
+    "href": "assign/02_formats.html",
+    "title": "Assignment 2: Image Formats",
+    "section": "",
+    "text": "For this assignment, I’m asking you to create a single Word document (or similar non-Microsoft *.doc or *.docx file) to demonstrate different image qualities. Note I’m not having you render a document with Quarto because the point is to access the exported images rather than to create them in the document.\nYou can approximately follow the script we created in class [link will be posted after class]. Create a figure using ggplot2 or base R. Save it 5 ways:\n\nUsing RStudio “Export” button (choose any options you want or use all the defaults)\nUsing agg_jpeg with quality = 100 (no compression)\nUsing agg_jpeg with quality = 10 (high compression)\nUsing agg_tiff with compression = \"none\"\nUsing agg_tiff with compression = \"lzw\"\n\nFor each file, follow the Science figure guidelines, and choose whether you’ll create a one-column or two-column figure. Make sure your figure meets the size and resolution criteria.\nThen, in your Word doc:\n\nCreate a table showing the properties of each of the 5 images: device, compression, and file size.\nInsert the high compression JPEG and the LZW compression TIFF. Write a short paragraph describing the differences you notice.\nInsert the RStudio Export image. Write a short paragraph describing how you sized the image for the Science guidelines and whether it was easier or harder than using the scripted graphics devices.\n\nUpload the completed Word doc on Canvas.\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "assign/01_literate.html",
+    "href": "assign/01_literate.html",
+    "title": "Assignment 1: Literate Programming",
+    "section": "",
+    "text": "For this assignment, you will be creating an HTML page using Quarto. You can refer to the homepage.qmd document document we created in class for some ideas.\nYour document should have:\n\nA YAML header with:\n\nA title\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nA narrative explaining the figure you’re going to show us (this can be really trivial or something you find really interesting)\n\nwith at least two headings (H1 or H2)\nwith at least one short paragraph\n\nA code chunk that loads data and creates a figure\nThe figure\n\nDecide whether you want the figure to be centered/left-justified/right-justified\nDecide what you want the width and height to be\n\n\nFeel free to play with the options in the YAML header to see what cool features are available. There’s a list of options for the Quarto HTML format here: https://quarto.org/docs/reference/formats/html.html.\nWe haven’t even dipped our toes into creating data visualizations yet, so the figure doesn’t have to be any good. If you want to use base R’s\n\nplot(x = dat$x, y = dat$y) \n\nthat’s totally fine. If you want to make something a little nicer, feel free!\nI also don’t want you to spend a ton of time on the narrative. The point is to demonstrate how to combine the narrative with the code and the figure. I’d rather have you spend your time playing with YAML options and code than writing an interesting narrative.\nWhen you’re done, render the HTML document, and upload the HTML file here.\nLet me know if you have any questions!"
+  },
+  {
     "objectID": "assign/03_ggplot2.html",
     "href": "assign/03_ggplot2.html",
     "title": "Assignment 3/4: ggplot2",
@@ -1251,20 +1587,6 @@
     "title": "Assignment 3/4: ggplot2",
     "section": "Instructions",
     "text": "Instructions\n\nFind a dataset.\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nCreate at least two figures:\n\n\nFor at least one of them, pipe (%&gt;% or |&gt;) the data to ggplot() after manipulating the data.frame.\nUse two different idioms for the two figures. For example, a scatter plot and a bar chart. You can refer to Lecture 10 for ideas on which idioms to use. Explain in the narrative why you chose that idiom for this visualization.\nEach figure should use at least 3 channels (e.g., x-axis, y-axis, color/shape/size). Make sure the figure has a legend!\n\nLet me know if you have any questions!"
-  },
-  {
-    "objectID": "assign/01_literate.html",
-    "href": "assign/01_literate.html",
-    "title": "Assignment 1: Literate Programming",
-    "section": "",
-    "text": "For this assignment, you will be creating an HTML page using Quarto. You can refer to the homepage.qmd document document we created in class for some ideas.\nYour document should have:\n\nA YAML header with:\n\nA title\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nA narrative explaining the figure you’re going to show us (this can be really trivial or something you find really interesting)\n\nwith at least two headings (H1 or H2)\nwith at least one short paragraph\n\nA code chunk that loads data and creates a figure\nThe figure\n\nDecide whether you want the figure to be centered/left-justified/right-justified\nDecide what you want the width and height to be\n\n\nFeel free to play with the options in the YAML header to see what cool features are available. There’s a list of options for the Quarto HTML format here: https://quarto.org/docs/reference/formats/html.html.\nWe haven’t even dipped our toes into creating data visualizations yet, so the figure doesn’t have to be any good. If you want to use base R’s\n\nplot(x = dat$x, y = dat$y) \n\nthat’s totally fine. If you want to make something a little nicer, feel free!\nI also don’t want you to spend a ton of time on the narrative. The point is to demonstrate how to combine the narrative with the code and the figure. I’d rather have you spend your time playing with YAML options and code than writing an interesting narrative.\nWhen you’re done, render the HTML document, and upload the HTML file here.\nLet me know if you have any questions!"
-  },
-  {
-    "objectID": "assign/02_formats.html",
-    "href": "assign/02_formats.html",
-    "title": "Assignment 2: Image Formats",
-    "section": "",
-    "text": "For this assignment, I’m asking you to create a single Word document (or similar non-Microsoft *.doc or *.docx file) to demonstrate different image qualities. Note I’m not having you render a document with Quarto because the point is to access the exported images rather than to create them in the document.\nYou can approximately follow the script we created in class [link will be posted after class]. Create a figure using ggplot2 or base R. Save it 5 ways:\n\nUsing RStudio “Export” button (choose any options you want or use all the defaults)\nUsing agg_jpeg with quality = 100 (no compression)\nUsing agg_jpeg with quality = 10 (high compression)\nUsing agg_tiff with compression = \"none\"\nUsing agg_tiff with compression = \"lzw\"\n\nFor each file, follow the Science figure guidelines, and choose whether you’ll create a one-column or two-column figure. Make sure your figure meets the size and resolution criteria.\nThen, in your Word doc:\n\nCreate a table showing the properties of each of the 5 images: device, compression, and file size.\nInsert the high compression JPEG and the LZW compression TIFF. Write a short paragraph describing the differences you notice.\nInsert the RStudio Export image. Write a short paragraph describing how you sized the image for the Science guidelines and whether it was easier or harder than using the scripted graphics devices.\n\nUpload the completed Word doc on Canvas.\nLet me know if you have any questions!"
   },
   {
     "objectID": "assignments.html",
@@ -1957,7 +2279,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Manipulating Views"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views"
   },
   {
     "objectID": "resources.html",
@@ -1979,33 +2301,5 @@
     "title": "Resources",
     "section": "R Packages",
     "text": "R Packages\n\nggplot2\npatchwork\nggraph\nsf"
-  },
-  {
-    "objectID": "assign/05_panels.html",
-    "href": "assign/05_panels.html",
-    "title": "Assignment 5: Multi-panel Figures",
-    "section": "",
-    "text": "This assignment is to gain practice creating multi-panel figures. It is due March 12."
-  },
-  {
-    "objectID": "assign/05_panels.html#description",
-    "href": "assign/05_panels.html#description",
-    "title": "Assignment 5: Multi-panel Figures",
-    "section": "",
-    "text": "This assignment is to gain practice creating multi-panel figures. It is due March 12."
-  },
-  {
-    "objectID": "assign/05_panels.html#document-setup",
-    "href": "assign/05_panels.html#document-setup",
-    "title": "Assignment 5: Multi-panel Figures",
-    "section": "Document Setup",
-    "text": "Document Setup\nFor this assignment, create an HTML document using Quarto. You can refer to the homepage.qmd document we created in class for some ideas.\n\nMake sure your YAML header has:\n\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nI want to see the code chunks that create your figure, so make sure you use #| echo: true in your R code chunk.\n\nYou may use code folding (#| code-fold: true) if you’d like."
-  },
-  {
-    "objectID": "assign/05_panels.html#instructions",
-    "href": "assign/05_panels.html#instructions",
-    "title": "Assignment 5: Multi-panel Figures",
-    "section": "Instructions",
-    "text": "Instructions\n\nFind a dataset.\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nCreate a multi-panel figure either by:\n\n\nUsing base R par() or layout() to arrange the panels, or\nUsing patchwork to arrange ggplot2 panels.\n\nI.e., don’t just use ggplot2::facet_*() to create panels.\nLet me know if you have any questions!"
   }
 ]
