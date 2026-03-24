@@ -171,6 +171,13 @@ For this lecture, I'm going to start with some color theory from the *VAD* Text,
 ![Fig. 10.4](fig/fig10.4.png){.lightbox width="60%"}
 </center>
 
+## HCL
+
+- Hue, chroma, luminance.
+- Used to address perceptual issues with saturation.
+- **Chroma** = "colorfulness".
+- Not mentioned in the *VAD* textbook, but seems increasingly popular in the visualization world.
+
 # Choosing Color Channels
 
 ## Choosing Color Channels

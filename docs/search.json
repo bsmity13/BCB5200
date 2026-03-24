@@ -2490,5 +2490,12 @@
     "title": "Lecture 13: Color",
     "section": "Other Useful R Packages",
     "text": "Other Useful R Packages\n\ncolorspace\nnationalparkcolors\npaletteer (a comprehensive collection of other palettes)"
+  },
+  {
+    "objectID": "lectures/13_color.html#hcl",
+    "href": "lectures/13_color.html#hcl",
+    "title": "Lecture 13: Color",
+    "section": "HCL",
+    "text": "HCL\n\nHue, chroma, luminance.\nUsed to address perceptual issues with saturation.\nChroma = “colorfulness”.\nNot mentioned in the VAD textbook, but seems increasingly popular in the visualization world."
   }
 ]
