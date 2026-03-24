@@ -2279,7 +2279,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color"
   },
   {
     "objectID": "resources.html",
@@ -2301,5 +2301,194 @@
     "title": "Resources",
     "section": "R Packages",
     "text": "R Packages\n\nggplot2\npatchwork\nggraph\nsf"
+  },
+  {
+    "objectID": "lectures/13_color.html#color",
+    "href": "lectures/13_color.html#color",
+    "title": "Lecture 13: Color",
+    "section": "Color",
+    "text": "Color\n\n\nThe beginning of this lecture is based on Chapter 10 of Visualization Analysis & Design.\n\n“Map Color and Other Channels”\n\nFor this lecture, I’m going to start with some color theory from the VAD Text, incorporate a few other sources of information, then transition over to working with color in R."
+  },
+  {
+    "objectID": "lectures/13_color.html#color-vision",
+    "href": "lectures/13_color.html#color-vision",
+    "title": "Lecture 13: Color",
+    "section": "Color Vision",
+    "text": "Color Vision\n\nOur eyes have two kinds of receptors:\n\nRods\n\nActively contribute to vision only in low-light settings.\nProvide low-resolution black & white information.\n\nCones\n\nMain sensors in normal lighting.\nThree types of cones for different wavelengths."
+  },
+  {
+    "objectID": "lectures/13_color.html#color-vision-1",
+    "href": "lectures/13_color.html#color-vision-1",
+    "title": "Lecture 13: Color",
+    "section": "Color Vision",
+    "text": "Color Vision\n\nOur visual system processes these signals into three opponent color channels:\n\nOne from red to green,\none from blue to yellow,\nand one from black and white (luminance).\n\nThe luminance channel provides high-resolution edge detection.\n\nRed-green and blue-yellow channels are lower resolution.\n\nThere is an important distinction between:\n\nLuminance – how bright or dark a color is.\nChromaticity – what most people informally call “color”."
+  },
+  {
+    "objectID": "lectures/13_color.html#color-vision-2",
+    "href": "lectures/13_color.html#color-vision-2",
+    "title": "Lecture 13: Color",
+    "section": "Color Vision",
+    "text": "Color Vision\n\nColor blindness, more accurately termed color deficiency, affects a person’s ability to distinguish color along one of the chormaticity channels.\nThere are three types of color deficiency:\n\nDeuteranopia and protanopia\n\nAffect red-green channel.\nAre sex-linked (~ 8% of men).\n\nTritanopia\n\nAffects blue-yellow channel.\nExtremely rare, not sex-linked."
+  },
+  {
+    "objectID": "lectures/13_color.html#color-spaces",
+    "href": "lectures/13_color.html#color-spaces",
+    "title": "Lecture 13: Color",
+    "section": "Color Spaces",
+    "text": "Color Spaces\n\nThe color space of what we can detect is three-dimensional.\n\nIt can be adequately described by three orthogonal axes.\nThere are many ways to define these axes and convert between them.\nSome color spaces are:\n\nconvenient/commonly used (e.g., RGB)\ndesigned to match our vision (e.g., HSL)"
+  },
+  {
+    "objectID": "lectures/13_color.html#rgb",
+    "href": "lectures/13_color.html#rgb",
+    "title": "Lecture 13: Color",
+    "section": "RGB",
+    "text": "RGB\n\nRed, green, blue.\nComputationally convenient.\nNot useful as separable channels; create an integral perception.\n\nAdditive color model.\nScreens emit light.\n\nNot covered in the VAD textbook."
+  },
+  {
+    "objectID": "lectures/13_color.html#rgb-1",
+    "href": "lectures/13_color.html#rgb-1",
+    "title": "Lecture 13: Color",
+    "section": "RGB",
+    "text": "RGB\n\nDevice-dependent color model.\n\nColors can vary slightly between devices,\nor on a device over time.\n\nTVs, cameras, scanners, video cameras, smartphones, etc.\nSee the Wikipedia RGB color model page."
+  },
+  {
+    "objectID": "lectures/13_color.html#rgb-2",
+    "href": "lectures/13_color.html#rgb-2",
+    "title": "Lecture 13: Color",
+    "section": "RGB",
+    "text": "RGB\n\nGiven as a triplet of red, green, blue values.\nMay range from 0 – 1.\nMore commonly range from 0 – 255.\nOften coded using two hexadecimal digits (0-9, A-F).\n\nGoogle color picker"
+  },
+  {
+    "objectID": "lectures/13_color.html#cmyk",
+    "href": "lectures/13_color.html#cmyk",
+    "title": "Lecture 13: Color",
+    "section": "CMYK",
+    "text": "CMYK\n\nSubtractive color model.\n\nInks absorb light.\n\nCyan, magenta, yellow, black (= “key”).\nUsed in color printing.\nNot even mentioned in the VAD textbook.\nSee the Wikipedia CMYK color model page."
+  },
+  {
+    "objectID": "lectures/13_color.html#hslhsv",
+    "href": "lectures/13_color.html#hslhsv",
+    "title": "Lecture 13: Color",
+    "section": "HSL/HSV",
+    "text": "HSL/HSV\n\nHSL = Hue, saturation, lightness.\nHSV = Hue, saturation, grayscale value.\n\nV is linearly related to L.\n\nMore intuitive and heavily used by artists and designers."
+  },
+  {
+    "objectID": "lectures/13_color.html#hsl",
+    "href": "lectures/13_color.html#hsl",
+    "title": "Lecture 13: Color",
+    "section": "HSL",
+    "text": "HSL\n\nHue captures what we normally think of as “pure” colors.\n\nE.g., red, blue, green, yellow, purple, etc.\nNot white or black.\n\nSaturation captures the amount of white mixed with the color.\n\nE.g., pink is desaturated red (more white mixed in).\n\nLightness captures the amount of black mixed with the color.\n\nE.g., controlling the darkness of a gray."
+  },
+  {
+    "objectID": "lectures/13_color.html#hsl-1",
+    "href": "lectures/13_color.html#hsl-1",
+    "title": "Lecture 13: Color",
+    "section": "HSL",
+    "text": "HSL\n\nHSL is pseudoperceptual.\n\nIt doesn’t truly reflect how we perceive color.\n\n\n\n“In particular, lightness L is wildly different from how we perceive luminance.”"
+  },
+  {
+    "objectID": "lectures/13_color.html#hsl-2",
+    "href": "lectures/13_color.html#hsl-2",
+    "title": "Lecture 13: Color",
+    "section": "HSL",
+    "text": "HSL\n\n\n\n\nFig. 10.3\n\n\n\n\nLightness is all the same here.\nTrue luminance is as measured with an instrument.\nL* is perceptually linear, the closest to what we see."
+  },
+  {
+    "objectID": "lectures/13_color.html#hsl-3",
+    "href": "lectures/13_color.html#hsl-3",
+    "title": "Lecture 13: Color",
+    "section": "HSL",
+    "text": "HSL\n\nOur perception of luminance depends on the wavelength of the light.\nOur spectral sensitivity curve for daylight vision is almost bell-shaped.\n\n\n\n\n\nFig. 10.4"
+  },
+  {
+    "objectID": "lectures/13_color.html#choosing-color-channels-1",
+    "href": "lectures/13_color.html#choosing-color-channels-1",
+    "title": "Lecture 13: Color",
+    "section": "Choosing Color Channels",
+    "text": "Choosing Color Channels\n\nMagnitude channels (ordered):\n\nLuminance\nSaturation\n\nIdentity channels (categorical):\n\nHue\n\nOther channels (complementing the others):\n\nTransparency"
+  },
+  {
+    "objectID": "lectures/13_color.html#magnitude-channels",
+    "href": "lectures/13_color.html#magnitude-channels",
+    "title": "Lecture 13: Color",
+    "section": "Magnitude Channels",
+    "text": "Magnitude Channels\n\nLuminance is suitable for ordered data.\nWe have low accuracy in perceiving luminance of noncontiguous regions.\n\nDue to contrast effects.\n\nNumber of discriminable bins is probably &lt; 5 if the background is not uniform.\nLuminance contrast is very important for resolving fine details.\n\nE.g., we can’t read text without luminance contrast.\nHue and saturation are not important for this.\nIf we use the luminance channel for our data, we may not have it to use for other reasons."
+  },
+  {
+    "objectID": "lectures/13_color.html#choosing-color-channels-2",
+    "href": "lectures/13_color.html#choosing-color-channels-2",
+    "title": "Lecture 13: Color",
+    "section": "Choosing Color Channels",
+    "text": "Choosing Color Channels\n\nWe automatically perceive luminance and saturation as ordered.\nWe do not automatically perceive hue as ordered.\n\n\n\n\n\nFig. 10.5"
+  },
+  {
+    "objectID": "lectures/13_color.html#magnitude-channels-1",
+    "href": "lectures/13_color.html#magnitude-channels-1",
+    "title": "Lecture 13: Color",
+    "section": "Magnitude Channels",
+    "text": "Magnitude Channels\n\nSaturation is also suitable for ordered data.\nAlso has the low accuracy problem for noncontiguous regions.\nNumber of discernable steps is around 3.\nInteracts strongly with size:\n\nSmall marks (e.g., points/lines) are harder to discern.\nProbably only want to use two saturation bins for small marks."
+  },
+  {
+    "objectID": "lectures/13_color.html#identity-channels",
+    "href": "lectures/13_color.html#identity-channels",
+    "title": "Lecture 13: Color",
+    "section": "Identity Channels",
+    "text": "Identity Channels\n\nHue is appropriate for categorical data.\nHue is the highest ranked channel for categorical data after spatial position.\nAlso hard to make small comparisons in noncontiguous regions.\nAlso harder to distinguish in smaller marks."
+  },
+  {
+    "objectID": "lectures/13_color.html#other-channels",
+    "href": "lectures/13_color.html#other-channels",
+    "title": "Lecture 13: Color",
+    "section": "Other Channels",
+    "text": "Other Channels\n\nTransparency is a fourth available channel.\nIt interacts strongly with luminance and saturation and should not be used in conjunction with those two.\nIt can be used with hue for a small number of bins, often two.\nMost often used with superimposed layers.\n\nCreate a foreground layer distinguishable from the background.\n\nFrequently used redundantly.\n\nSame information also in another channel."
+  },
+  {
+    "objectID": "lectures/13_color.html#colormaps-1",
+    "href": "lectures/13_color.html#colormaps-1",
+    "title": "Lecture 13: Color",
+    "section": "Colormaps",
+    "text": "Colormaps\n\nColormaps specify the mapping between colors and data values.\n\nAKA, pseudocoloring or color ramps.\n\nMostly use a combination of hue, saturation, and luminance to encode data.\n\nRather than using the three independently as different channels."
+  },
+  {
+    "objectID": "lectures/13_color.html#colormaps-2",
+    "href": "lectures/13_color.html#colormaps-2",
+    "title": "Lecture 13: Color",
+    "section": "Colormaps",
+    "text": "Colormaps\n\n\n\nCategorical\nOrdered\n\nSequential\nDiverging\n\n\n\n\n\n\n\nFig. 10.6"
+  },
+  {
+    "objectID": "lectures/13_color.html#colormaps-3",
+    "href": "lectures/13_color.html#colormaps-3",
+    "title": "Lecture 13: Color",
+    "section": "Colormaps",
+    "text": "Colormaps\n\nColormaps can be continuous or segmented."
+  },
+  {
+    "objectID": "lectures/13_color.html#colormaps-4",
+    "href": "lectures/13_color.html#colormaps-4",
+    "title": "Lecture 13: Color",
+    "section": "Colormaps",
+    "text": "Colormaps\n\nColorBrewer is a good source for colormaps:\n\n\ncolorbrewer2.org.\n\n\nEasily accessible in R with RColorBrewer."
+  },
+  {
+    "objectID": "lectures/13_color.html#colormaps-5",
+    "href": "lectures/13_color.html#colormaps-5",
+    "title": "Lecture 13: Color",
+    "section": "Colormaps",
+    "text": "Colormaps\n\nviridis was created to have perceptual advantages.\nIt was created for R and has since been ported to other places.\nCheck out the viridis website.\nThe viridis vignette is a good source of information about the various colormaps."
+  },
+  {
+    "objectID": "lectures/13_color.html",
+    "href": "lectures/13_color.html",
+    "title": "Lecture 13: Color",
+    "section": "",
+    "text": "The beginning of this lecture is based on Chapter 10 of Visualization Analysis & Design.\n\n“Map Color and Other Channels”\n\nFor this lecture, I’m going to start with some color theory from the VAD Text, incorporate a few other sources of information, then transition over to working with color in R."
+  },
+  {
+    "objectID": "lectures/13_color.html#other-useful-r-packages",
+    "href": "lectures/13_color.html#other-useful-r-packages",
+    "title": "Lecture 13: Color",
+    "section": "Other Useful R Packages",
+    "text": "Other Useful R Packages\n\ncolorspace\nnationalparkcolors\npaletteer (a comprehensive collection of other palettes)"
   }
 ]

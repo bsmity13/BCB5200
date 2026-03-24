@@ -18,7 +18,8 @@ author: "Brian J. Smith"
 |2/19/2026 |[Lecture 9: `ggplot2`](lectures/09_ggplot2.qmd)                    | 
 |2/24/2026 |[Lecture 10: Arranging Tables](lectures/10_tables.qmd)             | 
 |3/3/2026  |[Lecture 11: Rules of Thumb](lectures/11_rules.qmd)                |
-|3/5/2026  |[Lecture 12: Multiple Views](lectures/12_views.qmd)            | 
+|3/5/2026  |[Lecture 12: Multiple Views](lectures/12_views.qmd)                | 
+|3/24/2026 |[Lecture 13: Color](lectures/13_color.qmd)                         | 
 
 
 
