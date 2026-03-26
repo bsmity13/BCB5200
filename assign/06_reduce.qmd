@@ -1,5 +1,5 @@
 ---
-title: "Assignment 6: Reduce Elements"
+title: "Assignment 6: Reduce Attributes"
 author: "Brian J. Smith"
 date: "26 March 2026"
 ---
