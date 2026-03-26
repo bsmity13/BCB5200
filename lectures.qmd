@@ -20,6 +20,7 @@ author: "Brian J. Smith"
 |3/3/2026  |[Lecture 11: Rules of Thumb](lectures/11_rules.qmd)                |
 |3/5/2026  |[Lecture 12: Multiple Views](lectures/12_views.qmd)                | 
 |3/24/2026 |[Lecture 13: Color](lectures/13_color.qmd)                         | 
+|3/26/2026 |[Lecture 14: Reducing Items and Attributes](lectures/14_reduce.qmd)| 
 
 
 

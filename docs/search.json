@@ -2279,7 +2279,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color\n\n\n3/26/2026\nLecture 14: Reducing Items and Attributes"
   },
   {
     "objectID": "resources.html",
@@ -2497,5 +2497,159 @@
     "title": "Lecture 13: Color",
     "section": "HCL",
     "text": "HCL\n\nHue, chroma, luminance.\nUsed to address perceptual issues with saturation.\nChroma = “colorfulness”.\nNot mentioned in the VAD textbook, but seems increasingly popular in the visualization world."
+  },
+  {
+    "objectID": "lectures/14_reduce.html#reducing-items-and-attributes",
+    "href": "lectures/14_reduce.html#reducing-items-and-attributes",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Reducing Items and Attributes",
+    "text": "Reducing Items and Attributes\n\n\nThe beginning of this lecture is based on Chapter 13 of Visualization Analysis & Design.\n\n“Reduce Items and Attributes”\n\nFor this lecture, I’m going to start with the VAD Text, then transition over to R."
+  },
+  {
+    "objectID": "lectures/14_reduce.html#reducing-items-and-attributes-1",
+    "href": "lectures/14_reduce.html#reducing-items-and-attributes-1",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Reducing Items and Attributes",
+    "text": "Reducing Items and Attributes\nWhy?\n\nManage complexity in our visualizations.\nFind a strategy that reduces the visual complexity while minimizing the changes of hiding important information from the user."
+  },
+  {
+    "objectID": "lectures/14_reduce.html#reducing-items-and-attributes-2",
+    "href": "lectures/14_reduce.html#reducing-items-and-attributes-2",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Reducing Items and Attributes",
+    "text": "Reducing Items and Attributes\nHow?\n\nFilter:\n\nEliminating elements (items or attributes).\nEasy to understand and compute.\nBut, “out of sight, out of mind.”\n\nAggregate:\n\nCreating a new single element to replace multiple others.\nChallenging to design and convey.\nSafer cognitively to avoid forgetting filtered information."
+  },
+  {
+    "objectID": "lectures/14_reduce.html#filtering",
+    "href": "lectures/14_reduce.html#filtering",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Filtering",
+    "text": "Filtering\n\nStraightfoward and intuitive.\n\nJust don’t show some things!\nCommon when exploring a new dataset.\n\nPlot only some attributes (columns).\n\nOften based on knowledge of what the attributes represent.\n\nPlot only some items (rows).\n\nOften based on values.\nSometimes based on a random subset."
+  },
+  {
+    "objectID": "lectures/14_reduce.html#filtering-1",
+    "href": "lectures/14_reduce.html#filtering-1",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Filtering",
+    "text": "Filtering\nAttribute Filtering\n\nOften, we have an idea which attributes are most important to us.\n\nPrioritize visualizations with those attributes.\n\n\n\n\nCode\ndata(\"mtcars\")\n\nplot(mtcars)"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#filtering-2",
+    "href": "lectures/14_reduce.html#filtering-2",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Filtering",
+    "text": "Filtering\nAttribute Filtering\n\nThis may be combined with attribute ordering.\n\nOrders attributes based on their similarity.\nE.g., highly correlated attributes show some redundant information.\n\n\n\n\nCode\na &lt;- mtcars %&gt;% \n  ggplot(aes(x = disp, y = hp)) +\n  geom_point() +\n  geom_label(x = 150, y = 300, \n             label = paste(\"r =\", \n                           round(cor(mtcars$disp, \n                                     mtcars$hp,\n                                     method = \"spearman\"),\n                                 2))) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  theme_classic()\n\nb &lt;- mtcars %&gt;% \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  theme_classic()\n\nc &lt;- mtcars %&gt;% \n  ggplot(aes(x = hp, y = mpg)) +\n  geom_point() +\n  theme_classic()\n\ndes &lt;- \"AB\n        AC\"\n\na + b + c + plot_layout(widths = c(0.3, 0.7),\n                        design = des)"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#filtering-3",
+    "href": "lectures/14_reduce.html#filtering-3",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Filtering",
+    "text": "Filtering\nItem Filtering\n\nFilter items based on values.\n\nE.g., remove outliers or extreme values.\n\n\n\n\nCode\ndata(\"starwars\")\n\na &lt;- starwars %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point() +\n  coord_cartesian(xlim = c(50, 250)) +\n  ggtitle(\"Without Filtering\") +\n  theme_classic()\n\nb &lt;- starwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point() +\n  coord_cartesian(xlim = c(50, 250)) +\n  ggtitle(\"Filter Extreme Values\") +\n  theme_classic()\n\na/b"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#filtering-4",
+    "href": "lectures/14_reduce.html#filtering-4",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Filtering",
+    "text": "Filtering\nItem Filtering\n\nRandomly subset items.\n\nUseful for (truly) big datasets where plotting all items would be difficult (impossible).\n\n\n\n# See ?dplyr::slice_sample\n\n# Can specify number of items\nmtcars %&gt;% \n  slice_sample(n = 5)\n\n# Can specify proportion of rows\nmtcars %&gt;% \n  slice_sample(prop = 0.1)"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregating",
+    "href": "lectures/14_reduce.html#aggregating",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregating",
+    "text": "Aggregating\n\nCreating a new derived element to represent the group.\n\nSimple examples are summary statistics.\nRemember Anscombe’s Quartet!"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation",
+    "href": "lectures/14_reduce.html#aggregation",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\n\nCreating a new derived element to represent the group.\n\nSimple examples include summary statistics.\nRemember Anscombe’s Quartet!"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-1",
+    "href": "lectures/14_reduce.html#aggregation-1",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nItem Aggregation\n\nEasily accomplished with idioms that:\n\nDisplay summary statistics.\n\nMean, SD, etc. (moments)\nCounts, densities\n\nShow distributions."
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-2",
+    "href": "lectures/14_reduce.html#aggregation-2",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nItem Aggregation\n1D Summary Stats\n\n\nCode\na &lt;- starwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = 0, y = mass)) +\n  geom_point(show.legend = FALSE) +\n  ggtitle(\"Without Aggregation\") +\n  labs(x = NULL, y = \"Mass\") +\n  theme_classic() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\nb &lt;- starwars %&gt;%\n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(y = mass)) +\n  geom_boxplot(show.legend = FALSE) +\n  ggtitle(\"Aggregate with Summary Stats (Boxplot)\") +\n  labs(x = NULL, y = \"Mass\") +\n  theme_classic() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\na/b"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-3",
+    "href": "lectures/14_reduce.html#aggregation-3",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nItem Aggregation\n2D Summary Stats\n\n\nCode\nspp &lt;- starwars %&gt;% \n  filter(!is.na(species)) %&gt;% \n  count(species) %&gt;% \n  filter(n &gt; 1)\n\nsw &lt;- starwars %&gt;% \n  filter(species %in% spp$species) %&gt;% \n  mutate(species = factor(species))\n\na &lt;- sw %&gt;% \n  ggplot(aes(x = species, y = mass, color = species)) +\n  geom_point(show.legend = FALSE) +\n  ggtitle(\"Without Aggregation\") +\n  labs(x = \"Species\", y = \"Mass\") +\n  theme_classic() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\nb &lt;- sw %&gt;%\n  ggplot(aes(x = species, y = mass, \n             color = species)) +\n  geom_boxplot(show.legend = FALSE) +\n  ggtitle(\"Aggregate by Species (Boxplot)\") +\n  labs(x = \"Species\", y = \"Mass\") +\n  theme_classic() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\na/b"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-4",
+    "href": "lectures/14_reduce.html#aggregation-4",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nItem Aggregation\n3D Summary Stats\n\n\nCode\n# 'sw' created on previous slide\n\na &lt;- sw %&gt;% \n  ggplot(aes(x = height, y = mass, color = species)) +\n  geom_point(show.legend = FALSE) +\n  coord_cartesian(xlim = c(50, 250)) +\n  ggtitle(\"Without Aggregation\") +\n  labs(x = \"Height\", y = \"Mass\") +\n  theme_classic()\n\nb &lt;- sw %&gt;% \n  group_by(species) %&gt;% \n  summarize(mass_mean = mean(mass, na.rm = TRUE),\n            mass_sd = sd(mass, na.rm = TRUE),\n            height_mean = mean(height, na.rm = TRUE),\n            height_sd = sd(height, na.rm = TRUE)) %&gt;% \n  mutate(mass_lwr = mass_mean - mass_sd,\n         mass_upr = mass_mean + mass_sd,\n         height_lwr = height_mean - height_sd,\n         height_upr = height_mean + height_sd) %&gt;% \n  ggplot(aes(x = height_mean, y = mass_mean, \n             color = species)) +\n  geom_errorbar(aes(xmin = height_lwr, xmax = height_upr),\n                width = 5) +\n  geom_errorbar(aes(ymin = mass_lwr, ymax = mass_upr),\n                width = 2) +\n  geom_point(size = 2) +\n  coord_cartesian(xlim = c(50, 250)) +\n  ggtitle(\"Aggregate by Species (mean +/- SD)\") +\n  labs(x = \"Height\", y = \"Mass\") +\n  theme_classic()\n\na/b + plot_layout(guides = \"collect\")"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-5",
+    "href": "lectures/14_reduce.html#aggregation-5",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nItem Aggregation\n1D Counts/Densities\n\n\nCode\na &lt;- starwars %&gt;% \n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(y = 0, x = height)) +\n  geom_point(show.legend = FALSE) +\n  ggtitle(\"Without Aggregation\") +\n  labs(x = \"Height\", y = NULL) +\n  theme_classic()\n\nb &lt;- starwars %&gt;%\n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = height)) +\n  geom_histogram(bins = 15, color = \"black\", fill = \"gray\") +\n  ggtitle(\"Aggregate with Counts (Histogram)\") +\n  labs(x = \"Height\", y = \"Count\") +\n  theme_classic()\n\nc &lt;- starwars %&gt;%\n  filter(mass &lt; 500) %&gt;% \n  ggplot(aes(x = height)) +\n  geom_density(color = \"black\", fill = \"gray\") +\n  ggtitle(\"Aggregate with Density (KDE)\") +\n  labs(x = \"Height\", y = \"Density\") +\n  theme_classic()\n\na/(b+c)"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-6",
+    "href": "lectures/14_reduce.html#aggregation-6",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nItem Aggregation\n2D Summary Stats\n\n\nCode\n# 'sw' created on an earlier slide\n\na &lt;- sw %&gt;% \n  ggplot(aes(x = species, y = mass, color = species)) +\n  geom_point(show.legend = FALSE) +\n  ggtitle(\"Without Aggregation\") +\n  labs(x = \"Species\", y = \"Mass\") +\n  theme_classic() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\nb &lt;- sw %&gt;%\n  filter(!is.na(mass)) %&gt;% \n  mutate(mass_bin = cut_number(mass, n = 5)) %&gt;% \n  group_by(species, mass_bin) %&gt;% \n  tally() %&gt;% \n  ggplot(aes(x = species, y = mass_bin, \n             fill = n)) +\n  geom_raster() +\n  ggtitle(\"Aggregate with Counts (Heatmap)\") +\n  labs(x = \"Species\", y = \"Mass\") +\n  scale_fill_viridis_c() +\n  theme_classic() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\na/b"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-7",
+    "href": "lectures/14_reduce.html#aggregation-7",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nItem Aggregation\n2D Summary Stats\n\n\nCode\n# 'sw' created on an earlier slide\n\na &lt;- sw %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point(show.legend = FALSE) +\n  ggtitle(\"Without Aggregation\") +\n  labs(x = \"Height\", y = \"Mass\") +\n  theme_classic()\n\nb &lt;- sw %&gt;%\n  filter(!is.na(mass)) %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_density_2d_filled(show.legend = FALSE) +\n  ggtitle(\"Aggregate with Density (2D KDE)\") +\n  labs(x = \"Height\", y = \"Mass\") +\n  scale_fill_viridis_d() +\n  theme_classic()\n\na/b"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-8",
+    "href": "lectures/14_reduce.html#aggregation-8",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nAttribute Aggregation\n\nGenerally refered to as dimensionality reduction (Wikipedia).\nGoal is preserve meaningful structure while using fewer attributes.\nSometimes, simple solutions exist.\nMostly involves complex mathematics."
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-9",
+    "href": "lectures/14_reduce.html#aggregation-9",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nAttribute Aggregation\n\nSimple solution:\n\n\\[BMI = kg/m^2\\]\n\n\nCode\n# 'sw' created on previous slide\n\na &lt;- sw %&gt;% \n  ggplot(aes(x = height, y = mass, color = species)) +\n  geom_point() +\n  coord_cartesian(xlim = c(50, 250)) +\n  ggtitle(\"Without Aggregation\") +\n  labs(x = \"Height\", y = \"Mass\") +\n  theme_classic()\n\nb &lt;- sw %&gt;% \n  mutate(bmi = mass/(height^2)) %&gt;% \n  ggplot(aes(x = species, y = bmi, \n             color = species)) +\n  geom_boxplot(show.legend = FALSE) +\n  ggtitle(\"Aggregate with BMI\") +\n  labs(x = \"Species\", y = \"BMI\") +\n  theme_classic() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\na / b + plot_layout(guides = \"collect\")"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-10",
+    "href": "lectures/14_reduce.html#aggregation-10",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nAttribute Aggregation\n\n\n\nComplex methods include:\n\nPrincipal components analysis (PCA)\nMultidimensional scaling (MDS)\n\nNon-metric multidimensional scaling (NMDS)\n\nLinear discriminant analysis (LDA)\nCanonical correlation analysis (CCA)\nMany others\n\n\n\n\n\n\n\nPCA figure from Wikipedia"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-11",
+    "href": "lectures/14_reduce.html#aggregation-11",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nAttribute Aggregation\nPCA\n\n\nCode\n# 'sw' created earlier; adding BMI here\nsw &lt;- sw %&gt;% \n  mutate(bmi = mass/height^2)\n\npca &lt;- prcomp(~ height + mass, data = sw)\npred &lt;- predict(pca, sw)\nsw$pc1 &lt;- pred[, 1]\n\npar(mfrow = c(1, 2))\nbiplot(pca)\nsumm &lt;- summary(pca)\nbarplot(summ$importance[2, ],\n        ylim = c(0, 1), ylab = \"Proportion\",\n        main = \"Variance Explained\")\nbox()"
+  },
+  {
+    "objectID": "lectures/14_reduce.html#aggregation-12",
+    "href": "lectures/14_reduce.html#aggregation-12",
+    "title": "Lecture 14: Reducing Items and Attributes",
+    "section": "Aggregation",
+    "text": "Aggregation\nAttribute Aggregation\nPCA\n\n\nCode\n# 'sw' created earlier\na &lt;- sw %&gt;% \n  ggplot(aes(x = height, y = bmi)) +\n  geom_point() +\n  labs(x = \"Height\", y = \"BMI\") +\n  theme_classic()\n\nb &lt;- sw %&gt;% \n  ggplot(aes(x = mass, y = bmi)) +\n  geom_point() +\n  labs(x = \"Mass\", y = \"BMI\") +\n  theme_classic()\n\nc &lt;- sw %&gt;% \n  ggplot(aes(x = pc1, y = bmi)) +\n  geom_point() +\n  labs(x = \"PC1\", y = \"BMI\") +\n  ggtitle(\"Attribute Agg. with PCA\") +\n  theme_classic()\n\ndes &lt;- \"AC\n        BC\"\n\na + b + c + plot_layout(widths = c(0.4, 0.6),\n                        design = des)"
   }
 ]
