@@ -1593,7 +1593,7 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2\n\n\n2/26/2026\nggplot2\nAssignment 3/4\n\n\n3/5/2026\nMulti-panel Figures\nAssignment 5"
+    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2\n\n\n2/26/2026\nggplot2\nAssignment 3/4\n\n\n3/5/2026\nMulti-panel Figures\nAssignment 5\n\n\n3/26/2026\nReduce Attributes\nAssignment 6"
   },
   {
     "objectID": "code/homepage.html",
@@ -2651,5 +2651,40 @@
     "title": "Lecture 14: Reducing Items and Attributes",
     "section": "Aggregation",
     "text": "Aggregation\nAttribute Aggregation\nPCA\n\n\nCode\n# 'sw' created earlier\na &lt;- sw %&gt;% \n  ggplot(aes(x = height, y = bmi)) +\n  geom_point() +\n  labs(x = \"Height\", y = \"BMI\") +\n  theme_classic()\n\nb &lt;- sw %&gt;% \n  ggplot(aes(x = mass, y = bmi)) +\n  geom_point() +\n  labs(x = \"Mass\", y = \"BMI\") +\n  theme_classic()\n\nc &lt;- sw %&gt;% \n  ggplot(aes(x = pc1, y = bmi)) +\n  geom_point() +\n  labs(x = \"PC1\", y = \"BMI\") +\n  ggtitle(\"Attribute Agg. with PCA\") +\n  theme_classic()\n\ndes &lt;- \"AC\n        BC\"\n\na + b + c + plot_layout(widths = c(0.4, 0.6),\n                        design = des)"
+  },
+  {
+    "objectID": "assign/06_reduce.html",
+    "href": "assign/06_reduce.html",
+    "title": "Assignment 6: Reduce Elements",
+    "section": "",
+    "text": "This assignment is to gain practice creating reducing the attributes (columns) of a dataset for clearer plotting. It is due April 2."
+  },
+  {
+    "objectID": "assign/06_reduce.html#description",
+    "href": "assign/06_reduce.html#description",
+    "title": "Assignment 6: Reduce Elements",
+    "section": "",
+    "text": "This assignment is to gain practice creating reducing the attributes (columns) of a dataset for clearer plotting. It is due April 2."
+  },
+  {
+    "objectID": "assign/06_reduce.html#document-setup",
+    "href": "assign/06_reduce.html#document-setup",
+    "title": "Assignment 6: Reduce Elements",
+    "section": "Document Setup",
+    "text": "Document Setup\nFor this assignment, create an HTML document using Quarto. You can refer to the homepage.qmd document we created in class for some ideas.\n\nMake sure your YAML header has:\n\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nI want to see the code chunks that create your figure, so make sure you use #| echo: true in your R code chunk.\n\nYou may use code folding (#| code-fold: true) if you’d like."
+  },
+  {
+    "objectID": "assign/06_reduce.html#instructions",
+    "href": "assign/06_reduce.html#instructions",
+    "title": "Assignment 6: Reduce Elements",
+    "section": "Instructions",
+    "text": "Instructions\n\nFind a dataset. It should have at least three variables of interest, and the goal is to reduce that down to two variables1.\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nReduce the number of attributes of the dataset. You can do this by simple transformations of the data (like the BMI example combining height and mass). You can also do this with a dimension reduction method (e.g., PCA, (N)MDS, etc.).\nPlot!\n\n\nPlot the original data with all the attributes. This will probably require multiple panels to show &gt; 2 dimensions.\nPlot the new data with the reduced attributes. This should be a single panel.\n\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "assign/06_reduce.html#footnotes",
+    "href": "assign/06_reduce.html#footnotes",
+    "title": "Assignment 6: Reduce Elements",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIf you’d like to reduce from &gt;3 attributes to 3 (e.g., to plot them with x, y, color), that’s fine, too.↩︎"
   }
 ]
