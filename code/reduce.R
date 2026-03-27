@@ -2,7 +2,7 @@
 
 library(tidyverse)
 
-# Penguin's dataset
+# Penguins dataset
 head(penguins)
 
 # Explore! ----
@@ -35,8 +35,8 @@ plot(penguins$body_mass, penguins$flipper_len,
      pch = 16, 
      col = factor(penguins$species))
 
-# Turn the device off to get rid of our custom palette
-dev.off()
+# Reset to the default palette
+palette("default")
 
 # Aggregate items ----
 # Plot bill depth and bill length with means/SDs for species
@@ -85,12 +85,13 @@ pca <- prcomp(~ bill_len + bill_dep + flipper_len +
 
 # Default plot shows the variance for each component
 plot(pca)
+axis(1)
+mtext("Principal Component", side = 1, line = 3)
 
 # Summary shows the variances and the % variance
 summary(pca)
 
 # Function to plot the biplot
-par(bg = "gray30")
 biplot(pca)
 
 # Get the predicted PCs for each row of data
