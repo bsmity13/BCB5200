@@ -16,3 +16,7 @@ For now, this page is just an information dump of potential data viz resources. 
 - [`patchwork`](https://patchwork.data-imaginist.com/)
 - [`ggraph`](https://ggraph.data-imaginist.com/)
 - [`sf`](https://r-spatial.github.io/sf/)
+
+## Websites
+
+- [UW Interactive Data Lab](https://idl.uw.edu/)
