@@ -2279,7 +2279,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color\n\n\n3/26/2026\nLecture 14: Reducing Items and Attributes"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color\n\n\n3/26/2026\nLecture 14: Reducing Items and Attributes\n\n\n3/31/2026\nLecture 15: Embedding"
   },
   {
     "objectID": "resources.html",
@@ -2686,5 +2686,159 @@
     "title": "Assignment 6: Reduce Attributes",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nIf you’d like to reduce from &gt;3 attributes to 3 (e.g., to plot them with x, y, color), that’s fine, too.↩︎"
+  },
+  {
+    "objectID": "lectures/15_embed.html#reducing-items-and-attributes",
+    "href": "lectures/15_embed.html#reducing-items-and-attributes",
+    "title": "Lecture 15: Embedding",
+    "section": "Reducing Items and Attributes",
+    "text": "Reducing Items and Attributes\n\n\nThe beginning of this lecture is based on Chapter 14 of Visualization Analysis & Design.\n\n“Embed: Focus+Context”\n\nFor this lecture, I’m going to start with the VAD Text, then transition over to R."
+  },
+  {
+    "objectID": "lectures/15_embed.html#embed",
+    "href": "lectures/15_embed.html#embed",
+    "title": "Lecture 15: Embedding",
+    "section": "Embed",
+    "text": "Embed\nWhy?\n\nMitigate possibility of disorientation.\nSupport orientation by providing context.\nReduce cognitive load. (“Eyes beat memory”)"
+  },
+  {
+    "objectID": "lectures/15_embed.html#reducing-items-and-attributes-1",
+    "href": "lectures/15_embed.html#reducing-items-and-attributes-1",
+    "title": "Lecture 15: Embedding",
+    "section": "Reducing Items and Attributes",
+    "text": "Reducing Items and Attributes\nHow?\n\nFilter:\n\nEliminating elements (items or attributes).\nEasy to understand and compute.\nBut, “out of sight, out of mind.”\n\nAggregate:\n\nCreating a new single element to replace multiple others.\nChallenging to design and convey.\nSafer cognitively to avoid forgetting filtered information."
+  },
+  {
+    "objectID": "lectures/15_embed.html#filtering",
+    "href": "lectures/15_embed.html#filtering",
+    "title": "Lecture 15: Embedding",
+    "section": "Filtering",
+    "text": "Filtering\n\nStraightfoward and intuitive.\n\nJust don’t show some things!\nCommon when exploring a new dataset.\n\nPlot only some attributes (columns).\n\nOften based on knowledge of what the attributes represent.\n\nPlot only some items (rows).\n\nOften based on values.\nSometimes based on a random subset."
+  },
+  {
+    "objectID": "lectures/15_embed.html#embed-1",
+    "href": "lectures/15_embed.html#embed-1",
+    "title": "Lecture 15: Embedding",
+    "section": "Embed",
+    "text": "Embed\n\n\n“Embedding idioms cannot be fully understood when considered purely from the visual encoding point of view or purely from the interaction point of view; they are fundamentally a synthesis of both.”"
+  },
+  {
+    "objectID": "lectures/15_embed.html#embed-2",
+    "href": "lectures/15_embed.html#embed-2",
+    "title": "Lecture 15: Embedding",
+    "section": "Embed",
+    "text": "Embed\nHow?\n\nElide\n\nSelectively omit data.\n\nSuperimpose\n\nPlot data in layers.\n\nDistort geometry\n\nTo emphasize part of the view."
+  },
+  {
+    "objectID": "lectures/15_embed.html#elide",
+    "href": "lectures/15_embed.html#elide",
+    "title": "Lecture 15: Embedding",
+    "section": "Elide",
+    "text": "Elide\n\nWith elision, we (1) omit some items from the view completely, (2) summarize other items using aggregation, and (3) show some items in full detail.\n\n\n\nCode\nlibrary(ggforce)\n\ndata(\"starwars\")\n\nstarwars %&gt;% \n  filter(species %in% c(\"Human\", \"Droid\", \"Kaminoan\", \"Wookiee\")) %&gt;% \n  ggplot(aes(x = height, y = mass, color = species)) +\n  ggforce::facet_zoom(x = species == \"Human\") +\n  geom_point() +\n  labs(x = \"Height\", y = \"Mass\") +\n  theme_bw() +\n  theme(text = element_text(size = 16))"
+  },
+  {
+    "objectID": "lectures/15_embed.html#elide-1",
+    "href": "lectures/15_embed.html#elide-1",
+    "title": "Lecture 15: Embedding",
+    "section": "Elide",
+    "text": "Elide\n\nA general framework for deciding which data to show is the degree of interest (DOI) function.\n\n\\(DOI = I(x) - D(x, y)\\)\n\n\\(I\\) is an interest function. (how much you want to see the item)\n\\(D\\) is a distance function. (how far it is from the selected item)\n\\(x\\) is the location of the item.\n\\(y\\) is the current focus point.\n\nContinuous function; often need to choose thresholds for omit/summarize/detail."
+  },
+  {
+    "objectID": "lectures/15_embed.html#elide-2",
+    "href": "lectures/15_embed.html#elide-2",
+    "title": "Lecture 15: Embedding",
+    "section": "Elide",
+    "text": "Elide\nDOI functions\n\n\n\n\n\nFig. 1 from Heer and Card (2004)\n\n\nHeer and Card (2004)"
+  },
+  {
+    "objectID": "resources.html#websites",
+    "href": "resources.html#websites",
+    "title": "Resources",
+    "section": "Websites",
+    "text": "Websites\n\nUW Interactive Data Lab"
+  },
+  {
+    "objectID": "lectures/15_embed.html#superimpose",
+    "href": "lectures/15_embed.html#superimpose",
+    "title": "Lecture 15: Embedding",
+    "section": "Superimpose",
+    "text": "Superimpose\n\nAdd layers to a visualization.\n\nCan be global layers showing the entire dataset.\nCan be local layers showing a zoomed view."
+  },
+  {
+    "objectID": "lectures/15_embed.html#superimpose-1",
+    "href": "lectures/15_embed.html#superimpose-1",
+    "title": "Lecture 15: Embedding",
+    "section": "Superimpose",
+    "text": "Superimpose\nGlobal\n\nWhen units are the same, a single y-axis is not misleading.\n\n\n\nCode\nurl &lt;- 'http://people.whitman.edu/~hundledr/courses/M250F03/LynxHare.txt'\nlh &lt;- read.table(url)\nnames(lh) &lt;- c(\"year\", \"hare\", \"lynx\")\n\nlhp &lt;- ggplot(lh, aes(x = year))  +\n  geom_line(aes(y = hare, color = \"Hare\"), linewidth = 1.5) +\n  geom_line(aes(y = lynx, color = \"Lynx\"), linewidth = 1.5) +\n  coord_cartesian(ylim = c(0, NA)) +\n  scale_color_discrete(name = \"Population\") +\n  xlab(\"Year\") +\n  ylab(\"Population Size (thousands)\") +\n  ggtitle(\"Lynx-Hare Data\") +\n  theme_classic() +\n  theme(text = element_text(size = 16))\nlhp"
+  },
+  {
+    "objectID": "lectures/15_embed.html#superimpose-2",
+    "href": "lectures/15_embed.html#superimpose-2",
+    "title": "Lecture 15: Embedding",
+    "section": "Superimpose",
+    "text": "Superimpose\nGlobal\n\nWhen units differ (or are on a different scale), two y-axes can be misleading.\n\n\n\nCode\n# Yellowstone northern range elk estimates\nelk &lt;- read.csv(\"data/elk_ssm_estimates_2025.csv\") %&gt;% \n  filter(winter %in% 1995:2019) %&gt;% \n  mutate(elk = round(mean)) %&gt;% \n  select(Year = winter, elk)\n\n# Yellowstone northern range (only) wolf abundance\nwolf &lt;- read.csv(\"data/nr_wolf.csv\") %&gt;% \n  select(Year = year, wolf = nr_wolf)\n\n# Combine\ncomb &lt;- elk %&gt;% \n  left_join(wolf, by = \"Year\")\n\n# Plot on one axis\none_y &lt;- comb %&gt;% \n  pivot_longer(cols = elk:wolf,\n               names_to = \"Species\",\n               values_to = \"Abundance\") %&gt;% \n  ggplot(aes(x = Year, y = Abundance, color = Species)) +\n  geom_line(linewidth = 1.5) +\n  ggtitle(\"One y-axis\") +\n  theme_bw() +\n  theme(text = element_text(size = 16))\n\n# Plot on two y-axes\ntwo_y &lt;- comb %&gt;% \n  mutate(wolf = wolf * 200) %&gt;% \n  pivot_longer(cols = elk:wolf,\n               names_to = \"Species\",\n               values_to = \"Abundance\") %&gt;% \n  ggplot(aes(x = Year, y = Abundance, color = Species)) +\n  geom_line(linewidth = 1.5) +\n  scale_y_continuous(name = \"Elk\",\n                     sec.axis = sec_axis(~ . * 2e-2, name = \"Wolves\")) +\n  coord_cartesian(ylim = c(0, NA)) +\n  ggtitle(\"Two y-axes\") +\n  theme_bw() +\n  theme(text = element_text(size = 16))\n\n# Combine\none_y/two_y + plot_layout(guides = \"collect\")"
+  },
+  {
+    "objectID": "lectures/15_embed.html#superimpose-3",
+    "href": "lectures/15_embed.html#superimpose-3",
+    "title": "Lecture 15: Embedding",
+    "section": "Superimpose",
+    "text": "Superimpose\nLocal\n\nParticularly useful for interactive visualizations.\nHides the data behind the superimposed layer.\n\n\n\nCode\nlhp_zoom &lt;- lhp +\n  coord_cartesian(xlim = c(1880, 1900)) +\n  ggtitle(NULL) +\n  xlab(NULL) +\n  ylab(NULL) +\n  theme(text = element_text(size = 12),\n        legend.position = \"none\",\n        plot.background = element_rect(colour = \"black\", fill = \"white\", linewidth = 3))\n\nlhp +\n  inset_element(lhp_zoom, 0.15, 0.2, 0.85, 0.8)"
+  },
+  {
+    "objectID": "lectures/15_embed.html#distort",
+    "href": "lectures/15_embed.html#distort",
+    "title": "Lecture 15: Embedding",
+    "section": "Distort",
+    "text": "Distort\n\nGeometric distortion can highlight a focal region.\nImportant decisions:\n\nHow many focus regions?\n\n1? More?\n\nWhat shape is the focus?\n\nRound? Rectangular? Other?\n\nWhat is the extent of the focus?\n\nGlobal? Local?\n\nWill you use interaction? How?\n\nE.g., magnifying glass, stretching a rubber sheet, etc."
+  },
+  {
+    "objectID": "lectures/15_embed.html#distort-1",
+    "href": "lectures/15_embed.html#distort-1",
+    "title": "Lecture 15: Embedding",
+    "section": "Distort",
+    "text": "Distort\n\nSimplest case of distortion is a nonlinear transformation of the axes.\n\n\n\nCode\nsw_linear &lt;- starwars %&gt;% \n  ggplot(aes(x = height, y = mass)) +\n  geom_point(size = 2) +\n  labs(x = \"Height\", y = \"Mass\") +\n  theme_bw() + \n  ggtitle(\"Natural\") +\n  theme(text = element_text(size = 16))\n\nsw_log &lt;- sw_linear +\n  scale_y_log10() +\n  ggtitle(\"log-y\")\n\nsw_linear/sw_log"
+  },
+  {
+    "objectID": "lectures/15_embed.html#superimpose-4",
+    "href": "lectures/15_embed.html#superimpose-4",
+    "title": "Lecture 15: Embedding",
+    "section": "Superimpose",
+    "text": "Superimpose\nLocal\n\nSee also the package ggmagnify\n\n\n\nCode\n# install.packages(\"ggmagnify\", repos = c(\"https://hughjonesd.r-universe.dev\", \n#                  \"https://cloud.r-project.org\"))\n# install.packages(\"ggfx\")\n\nlibrary(ggmagnify)\nlibrary(ggfx)\n\n# Adapted from ?geom_magnify\nggp &lt;- ggplot(iris, aes(Sepal.Width, Sepal.Length, \n                        color = Species)) +\n         geom_point() + \n  xlim(c(2, 6)) +\n  theme_bw() +\n  theme(text = element_text(size = 16))\nfrom &lt;- list(2.5, 3.5, 6, 7)\nto &lt;- list(4, 6, 5, 7)\n\nggp + \n  geom_magnify(from = from, to = to, \n               shape = \"ellipse\",\n               shadow = TRUE)"
+  },
+  {
+    "objectID": "lectures/15_embed.html#distort-2",
+    "href": "lectures/15_embed.html#distort-2",
+    "title": "Lecture 15: Embedding",
+    "section": "Distort",
+    "text": "Distort\n\nA popular distortion is the fisheye.\nI found an R Bloggers Post about this, but it doesn’t seem to work well with a scatterplot.\n\nR Bloggers Post\n\nHere’s a conceptual paper: Keahey (1998)\nHere’s an interactive example: AntV fisheye\n\nIt does seem to work well with network/spatial data.\n\nSakar and Brown (1992)\nCartograms on the R Graph Gallery"
+  },
+  {
+    "objectID": "lectures/15_embed.html#distort-3",
+    "href": "lectures/15_embed.html#distort-3",
+    "title": "Lecture 15: Embedding",
+    "section": "Distort",
+    "text": "Distort\n\n\nCosts\n\nDistance and length judgements are severely impaired.\nUsers may be unaware of distortion.\n\nEspecially without a distorted frame or gridlines.\n\nRequires cognitive load of object constancy.\n\nRemembering an item in two different views is the same item.\n\n\n\n\n\nBenefits\n\nShows the context and the focus in a single view.\nAvoids the need for faceting or reducing.\nWorks well with:\n\nFamiliar shapes (e.g., cartograms)\nLink-node relationships in networks."
+  },
+  {
+    "objectID": "lectures/15_embed.html#elide-3",
+    "href": "lectures/15_embed.html#elide-3",
+    "title": "Lecture 15: Embedding",
+    "section": "Elide",
+    "text": "Elide\n\nCan be done with faceting.\n\nE.g., ggplot2::facet_wrap()\n\nCan be done with a different view.\n\nE.g., patchwork\nE.g., ggforce::facet_zoom()"
+  },
+  {
+    "objectID": "lectures/15_embed.html#superimpose-5",
+    "href": "lectures/15_embed.html#superimpose-5",
+    "title": "Lecture 15: Embedding",
+    "section": "Superimpose",
+    "text": "Superimpose\n\nCan be done with multiple axes.\n\nE.g., ggplot2::scale_y_continuous(..., sec.axis = sec_axis(...))\n\nCan be done with an inset panel.\n\nE.g., patchwork::inset_element()\nE.g., ggmagnify::geom_magnify()\nE.g., ggmapinset::geom_inset_frame() (for maps)"
+  },
+  {
+    "objectID": "lectures/15_embed.html#distort-4",
+    "href": "lectures/15_embed.html#distort-4",
+    "title": "Lecture 15: Embedding",
+    "section": "Distort",
+    "text": "Distort\n\nCan be done by transforming axes.\n\nE.g., ggplot2::coord_transform()\nI wish it could show untransformed gridlines.\n\nggplot2 doesn’t seem very amenable to this, but custom transforms can be done prior to plotting."
   }
 ]
