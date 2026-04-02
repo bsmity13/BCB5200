@@ -1,0 +1,109 @@
+---
+title: "Lecture 16: Surveys"
+author: "Brian J. Smith"
+date: "2 April 2026"
+format: 
+  revealjs:
+    width: 1400
+    height: 900
+    margin: 0.1
+    theme: simple
+    link-external-icon: true
+    mermaid: 
+      theme: forest
+editor: source
+---
+
+
+```{r, setup}
+#| include: false
+
+library(ggplot2)
+library(dplyr)
+library(patchwork)
+library(tidyr)
+
+```
+
+## Surveys
+
+### Outline
+
+- Visualizing Survey Results
+- Graphics in Surveys
+  - HTML Crash Course
+  - Qualtrics
+  - Google Forms
+  
+# Visualizing Survey Results
+
+## Visualizing Survey Results
+
+- Likert Scale
+  - [Wikipedia](https://en.wikipedia.org/wiki/Likert_scale#Visual_presentation_of_Likert-type_data){target="_blank"}
+    - [Robbins & Heiberger (2011)](http://www.asasrms.org/Proceedings/y2011/Files/300784_64164.pdf){target="_blank"}
+    - [Heiberger & Robbins (2014)](https://doi.org/10.18637/jss.v057.i05){target="_blank"}
+      - [`HH` R Package](https://cran.r-project.org/package=HH){target="_blank"}
+  - [Daydreaming Numbers](https://daydreamingnumbers.com/4-ways-to-visualize-likert-scales/){target="_blank"}
+  
+```{r}
+#| echo: true
+#| eval: false
+
+# Check this out:
+library(HH)
+demo("likert-paper")
+```
+  
+## Visualizing Survey Results
+
+- Fancy Stuff
+  - [Flourish](https://flourish.studio/blog/visualizing-survey-data/){target="_blank"}
+
+## Visualizing Survey Results
+
+- Lots of Excel-based Advice
+  - [SurveyMoneky](https://www.surveymonkey.com/learn/survey-best-practices/basic-chart-types-for-reports/){target="_blank"}
+  - [Pointerpro](https://pointerpro.com/blog/survey-results-presentation/){target="_blank"}
+
+# Graphics in Surveys
+
+## Graphics in Surveys
+
+### HTML Crash Course
+
+- [HTML Cheat Sheet](https://syntaxsimplified.com/cheatsheet/HTML/hypertext_markup_language.html){target="_blank"}
+- [HTML Cheat Sheet](https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf){target="_blank"}
+- [HTML Cheat Sheet](https://htmlcheatsheet.com/){target="_blank"}
+
+## Graphics in Surveys
+
+### Qualtrics
+
+- [How to access Qualtrics?](https://support.uidaho.edu/TDClient/40/Portal/KB/ArticleDet?ID=63){target="_blank"}
+- [U of I Knowledge Base](https://support.uidaho.edu/TDClient/40/Portal/KB/?CategoryID=412){target="_blank"}
+- [U of I Qualtrics](https://surveys.uidaho.edu){target="_blank"}
+
+## Graphics in Surveys
+
+### Google Forms
+
+- [Google Forms](https://docs.google.com/forms){target="_blank"}
+- [How to use Google Forms](https://support.google.com/docs/answer/6281888){target="_blank"}
+
+## Graphics in Surveys
+
+- [Qualtrics Survey](https://uidaho.co1.qualtrics.com/jfe/form/SV_4IaeTwJqxhiiQcK){target="_blank"}
+- [Google Forms Survey](https://docs.google.com/forms/d/e/1FAIpQLSfELjskX-PzZZpGlfnSqO2MquH5ChOLtw529eQDytRmR6LO_g/viewform?usp=publish-editor){target="_blank"}
+- [Code for Graphics](){target="_blank"}
+
+# Questions?
+
+</br>
+
+</br>
+
+
+:::{style="font-size: 50%"}
+[BCB5200 Home](https://bsmity13.github.io/BCB5200/)
+:::

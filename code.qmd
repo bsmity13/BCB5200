@@ -17,6 +17,8 @@ Links to code walkthroughs.
 |3/5/2026   | Multi-panel Figures |[ggplot2_compose.R](https://github.com/bsmity13/BCB5200/blob/main/code/ggplot2_compose.R){target="_blank"} |  
 |3/24/2026  | Colors |[colors.R](https://github.com/bsmity13/BCB5200/blob/main/code/colors.R){target="_blank"} |  
 |3/26/2026  | Reduce Items and Attributes |[reduce.R](https://github.com/bsmity13/BCB5200/blob/main/code/reduce.R){target="_blank"} |  
+|3/31/2026  | Embed |[embed.R](https://github.com/bsmity13/BCB5200/blob/main/code/embed.R){target="_blank"} |  
+|4/2/2026  | Graphics for the Surveys |[survey_figs.R](https://github.com/bsmity13/BCB5200/blob/main/code/survey_figs.R){target="_blank"} |  
 
 
 

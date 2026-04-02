@@ -21,7 +21,8 @@ author: "Brian J. Smith"
 |3/5/2026  |[Lecture 12: Multiple Views](lectures/12_views.qmd)                | 
 |3/24/2026 |[Lecture 13: Color](lectures/13_color.qmd)                         | 
 |3/26/2026 |[Lecture 14: Reducing Items and Attributes](lectures/14_reduce.qmd)| 
-|3/31/2026 |[Lecture 15: Embedding](lectures/15_embed.qmd)| 
+|3/31/2026 |[Lecture 15: Embedding](lectures/15_embed.qmd)                     | 
+|4/2/2026  |[Lecture 16: Surveys](lectures/16_surveys.qmd)                     | 
 
 
 

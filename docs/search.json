@@ -1509,7 +1509,7 @@
     "href": "code.html",
     "title": "Code",
     "section": "",
-    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nImage Formats\nimage_formats.R\n\n\n2/5/2026\nData Wrangling\ndata_wrangling.R\n\n\n2/5/2026\nData Wrangling Extras\ndata_wrangling_extra.R\n\n\n2/19/2026\nggplot2, Part 1\nggplot2_pt1.R\n\n\n2/26/2026\nggplot2, Part 2\nggplot2_pt2.R\n\n\n3/5/2026\nMulti-panel Figures\nggplot2_compose.R\n\n\n3/24/2026\nColors\ncolors.R\n\n\n3/26/2026\nReduce Items and Attributes\nreduce.R"
+    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nImage Formats\nimage_formats.R\n\n\n2/5/2026\nData Wrangling\ndata_wrangling.R\n\n\n2/5/2026\nData Wrangling Extras\ndata_wrangling_extra.R\n\n\n2/19/2026\nggplot2, Part 1\nggplot2_pt1.R\n\n\n2/26/2026\nggplot2, Part 2\nggplot2_pt2.R\n\n\n3/5/2026\nMulti-panel Figures\nggplot2_compose.R\n\n\n3/24/2026\nColors\ncolors.R\n\n\n3/26/2026\nReduce Items and Attributes\nreduce.R\n\n\n3/31/2026\nEmbed\nembed.R\n\n\n4/2/2026\nGraphics for the Surveys\nsurvey_figs.R"
   },
   {
     "objectID": "code/00_dummy.html",
@@ -2279,7 +2279,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color\n\n\n3/26/2026\nLecture 14: Reducing Items and Attributes\n\n\n3/31/2026\nLecture 15: Embedding"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color\n\n\n3/26/2026\nLecture 14: Reducing Items and Attributes\n\n\n3/31/2026\nLecture 15: Embedding\n\n\n4/2/2026\nLecture 16: Surveys"
   },
   {
     "objectID": "resources.html",
@@ -2840,5 +2840,68 @@
     "title": "Lecture 15: Embedding",
     "section": "Distort",
     "text": "Distort\n\nCan be done by transforming axes.\n\nE.g., ggplot2::coord_transform()\nI wish it could show untransformed gridlines.\n\nggplot2 doesn’t seem very amenable to this, but custom transforms can be done prior to plotting."
+  },
+  {
+    "objectID": "lectures/16_surveys.html#surveys",
+    "href": "lectures/16_surveys.html#surveys",
+    "title": "Lecture 16: Surveys",
+    "section": "",
+    "text": "Visualizing Survey Results\nGraphics in Surveys\n\nHTML Crash Course\nQualtrics\nGoogle Forms"
+  },
+  {
+    "objectID": "lectures/16_surveys.html#visualizing-survey-results-1",
+    "href": "lectures/16_surveys.html#visualizing-survey-results-1",
+    "title": "Lecture 16: Surveys",
+    "section": "Visualizing Survey Results",
+    "text": "Visualizing Survey Results\n\nLikert Scale\n\nWikipedia\n\nRobbins & Heiberger (2011)\nHeiberger & Robbins (2014)\n\nHH R Package\n\n\nDaydreaming Numbers\n\n\n\n# Check this out:\nlibrary(HH)\ndemo(\"likert-paper\")"
+  },
+  {
+    "objectID": "lectures/16_surveys.html#visualizing-survey-results-2",
+    "href": "lectures/16_surveys.html#visualizing-survey-results-2",
+    "title": "Lecture 16: Surveys",
+    "section": "Visualizing Survey Results",
+    "text": "Visualizing Survey Results\n\nFancy Stuff\n\nFlourish"
+  },
+  {
+    "objectID": "lectures/16_surveys.html#visualizing-survey-results-3",
+    "href": "lectures/16_surveys.html#visualizing-survey-results-3",
+    "title": "Lecture 16: Surveys",
+    "section": "Visualizing Survey Results",
+    "text": "Visualizing Survey Results\n\nLots of Excel-based Advice\n\nSurveyMoneky\nPointerpro"
+  },
+  {
+    "objectID": "lectures/16_surveys.html#graphics-in-surveys-1",
+    "href": "lectures/16_surveys.html#graphics-in-surveys-1",
+    "title": "Lecture 16: Surveys",
+    "section": "Graphics in Surveys",
+    "text": "Graphics in Surveys\n\nHTML Crash Course\n\nHTML Cheat Sheet\nHTML Cheat Sheet\nHTML Cheat Sheet"
+  },
+  {
+    "objectID": "lectures/16_surveys.html#graphics-in-surveys-2",
+    "href": "lectures/16_surveys.html#graphics-in-surveys-2",
+    "title": "Lecture 16: Surveys",
+    "section": "Graphics in Surveys",
+    "text": "Graphics in Surveys\n\nQualtrics\n\nHow to access Qualtrics?\nU of I Knowledge Base\nU of I Qualtrics"
+  },
+  {
+    "objectID": "lectures/16_surveys.html#graphics-in-surveys-3",
+    "href": "lectures/16_surveys.html#graphics-in-surveys-3",
+    "title": "Lecture 16: Surveys",
+    "section": "Graphics in Surveys",
+    "text": "Graphics in Surveys\n\nGoogle Forms\n\nGoogle Forms\nHow to use Google Forms"
+  },
+  {
+    "objectID": "lectures/16_surveys.html",
+    "href": "lectures/16_surveys.html",
+    "title": "Lecture 16: Surveys",
+    "section": "",
+    "text": "Visualizing Survey Results\nGraphics in Surveys\n\nHTML Crash Course\nQualtrics\nGoogle Forms"
+  },
+  {
+    "objectID": "lectures/16_surveys.html#graphics-in-surveys-4",
+    "href": "lectures/16_surveys.html#graphics-in-surveys-4",
+    "title": "Lecture 16: Surveys",
+    "section": "Graphics in Surveys",
+    "text": "Graphics in Surveys\n\nQualtrics Survey\nGoogle Forms Survey\nCode for Graphics"
   }
 ]
