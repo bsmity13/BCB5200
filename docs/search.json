@@ -2293,14 +2293,14 @@
     "href": "resources.html#texts",
     "title": "Resources",
     "section": "Texts",
-    "text": "Texts\n\nggplot2, the book, by Hadley Wickham\nFundamentals of Data Visualization, by Claus O. Wilke"
+    "text": "Texts\n\nggplot2, the book, by Hadley Wickham\nFundamentals of Data Visualization, by Claus O. Wilke\nData Visualization: A Practical Introduction, by Kieran Healy\nModern Data Visualization with R, by Robert Kabacoff"
   },
   {
     "objectID": "resources.html#r-packages",
     "href": "resources.html#r-packages",
     "title": "Resources",
     "section": "R Packages",
-    "text": "R Packages\n\nggplot2\npatchwork\nggraph\nsf"
+    "text": "R Packages\n\nGeneral Data Viz\n\nggplot2\n\nggplot2 Extensions\n\nggforce\nggmagnify\nggfx\n\nAwesome ggplot2 (curated list of ggplot2 related stuff)\n\npatchwork\ncowplot\n\n\n\nSpatial Data\n\nsf\nterra\nleaflet\n\n\n\nNetwork Data\n\nggraph"
   },
   {
     "objectID": "lectures/13_color.html#color",
@@ -2755,7 +2755,7 @@
     "href": "resources.html#websites",
     "title": "Resources",
     "section": "Websites",
-    "text": "Websites\n\nUW Interactive Data Lab"
+    "text": "Websites\n\nThe R Graph Gallery\nUW Interactive Data Lab"
   },
   {
     "objectID": "lectures/15_embed.html#superimpose",
@@ -3077,6 +3077,20 @@
     "href": "resources.html#spatial-data",
     "title": "Resources",
     "section": "Spatial Data",
-    "text": "Spatial Data\n\nGeocomputation with R, e-book\nSpatial Data Science, e-book\nA Gentle Introduction to GIS, by QGIS"
+    "text": "Spatial Data\n\nGeocomputation with R, e-book\nSpatial Data Science, e-book\nA Gentle Introduction to GIS, by QGIS\nDrawing beautiful maps programmatically…\nleaflet\n\n\nSpatial Data Sources\n\nUS Federal\n\nThe National Map\nUS Census Bureau TIGER/Line Shapefiles\n\ntigris (R package)\n\n\n\n\nUS States\n\nIdaho Geospatial Office\n\n\n\nOther Sources\n\nNatural Earth (great for World data)\n\nrnaturalearth\n\nUSAboundaries (includes historical boundaries)\n\nA sample analysis using USAboundaries"
+  },
+  {
+    "objectID": "resources.html#spatial-data-1",
+    "href": "resources.html#spatial-data-1",
+    "title": "Resources",
+    "section": "Spatial Data",
+    "text": "Spatial Data\n\nGeocomputation with R, e-book\nSpatial Data Science, e-book\nA Gentle Introduction to GIS, by QGIS\nDrawing beautiful maps programmatically…\n\n\nSpatial Data Sources\n\nUS Federal\n\nThe National Map\nUS Census Bureau TIGER/Line Shapefiles\n\ntigris (R package)\n\n\n\n\nUS States\n\nIdaho Geospatial Office\n\n\n\nOther Sources\n\nNatural Earth (great for World data)\n\nrnaturalearth\n\nUSAboundaries (includes historical boundaries)\n\nA sample analysis using USAboundaries"
+  },
+  {
+    "objectID": "resources.html#just-fun",
+    "href": "resources.html#just-fun",
+    "title": "Resources",
+    "section": "Just Fun",
+    "text": "Just Fun\n\nMapping Middle Earth"
   }
 ]

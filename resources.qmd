@@ -9,20 +9,61 @@ For now, this page is just an information dump of potential data viz resources. 
 
 - [`ggplot2`](https://ggplot2-book.org/), the book, by Hadley Wickham
 - [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/), by Claus O. Wilke
-
-## R Packages
-
-- [`ggplot2`](https://ggplot2.tidyverse.org/)
-- [`patchwork`](https://patchwork.data-imaginist.com/)
-- [`ggraph`](https://ggraph.data-imaginist.com/)
-- [`sf`](https://r-spatial.github.io/sf/)
+- [Data Visualization: A Practical Introduction](https://socviz.co/), by Kieran Healy
+- [Modern Data Visualization with R](https://rkabacoff.github.io/datavis/), by Robert Kabacoff
 
 ## Websites
 
+- [The R Graph Gallery](https://r-graph-gallery.com/)
 - [UW Interactive Data Lab](https://idl.uw.edu/)
+
+
+## R Packages
+
+### General Data Viz
+
+- [`ggplot2`](https://ggplot2.tidyverse.org/)
+  - [`ggplot2` Extensions](https://exts.ggplot2.tidyverse.org/)
+    - [`ggforce`](https://ggforce.data-imaginist.com/)
+    - [`ggmagnify`](https://hughjonesd.github.io/ggmagnify/)
+    - [`ggfx`](https://ggfx.data-imaginist.com/)
+  - [Awesome `ggplot2`](https://github.com/erikgahner/awesome-ggplot2?tab=readme-ov-file) (curated list of `ggplot2` related stuff)
+- [`patchwork`](https://patchwork.data-imaginist.com/)
+- [`cowplot`](https://wilkelab.org/cowplot/)
+
+### Spatial Data
+
+- [`sf`](https://r-spatial.github.io/sf/)
+- [`terra`](https://rspatial.github.io/terra/)
+- [`leaflet`](https://rstudio.github.io/leaflet/)
+
+### Network Data
+
+- [`ggraph`](https://ggraph.data-imaginist.com/)
 
 ## Spatial Data
 
 - [*Geocomputation with R*, e-book](https://r.geocompx.org/)
 - [*Spatial Data Science*, e-book](https://r-spatial.org/book/)
 - [*A Gentle Introduction to GIS*, by QGIS](https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/index.html)
+- [Drawing beautiful maps programmatically...](https://r-spatial.org/r/2018/10/25/ggplot2-sf.html)
+
+### Spatial Data Sources
+
+#### US Federal
+- [The National Map](https://www.usgs.gov/programs/national-geospatial-program/national-map)
+- [US Census Bureau TIGER/Line Shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html)
+  - [`tigris`](https://github.com/walkerke/tigris?tab=readme-ov-file) (R package)
+
+#### US States
+- [Idaho Geospatial Office](https://gis.idaho.gov/)
+
+#### Other Sources
+- [Natural Earth](https://www.naturalearthdata.com/) (great for World data)
+  - [`rnaturalearth`](https://ropensci.github.io/rnaturalearth/)
+- [`USAboundaries`](https://docs.ropensci.org/USAboundaries/) (includes historical boundaries)
+  - [A sample analysis using `USAboundaries`](https://docs.ropensci.org/USAboundaries/articles/usaboundaries-sample-analysis.html)
+  
+## Just Fun
+
+- [Mapping Middle Earth](https://www.andrewheiss.com/blog/2023/04/26/middle-earth-mapping-sf-r-gis/)
