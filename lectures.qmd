@@ -23,6 +23,8 @@ author: "Brian J. Smith"
 |3/26/2026 |[Lecture 14: Reducing Items and Attributes](lectures/14_reduce.qmd)| 
 |3/31/2026 |[Lecture 15: Embedding](lectures/15_embed.qmd)                     | 
 |4/2/2026  |[Lecture 16: Surveys](lectures/16_surveys.qmd)                     | 
+|4/7/2026  | No class                                                          | 
+|4/9/2026  |[Lecture 17: Spatial Data](lectures/17_spatial.qmd)                | 
 
 
 
