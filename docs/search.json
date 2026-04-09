@@ -2903,5 +2903,173 @@
     "title": "Lecture 16: Surveys",
     "section": "Graphics in Surveys",
     "text": "Graphics in Surveys\n\nQualtrics Survey\nGoogle Forms Survey\nCode for Graphics"
+  },
+  {
+    "objectID": "lectures/17_spatial.html#geographic-information-systems-gis-1",
+    "href": "lectures/17_spatial.html#geographic-information-systems-gis-1",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Geographic Information Systems (GIS)",
+    "text": "Geographic Information Systems (GIS)\n\n\nGIS is a broad term for the data and tools we use to work in geographic space."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#geographic-information-systems-gis-2",
+    "href": "lectures/17_spatial.html#geographic-information-systems-gis-2",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Geographic Information Systems (GIS)",
+    "text": "Geographic Information Systems (GIS)\n\nFrom Esri\n\n\nGIS is a technology that is used to create, manage, analyze, and map all types of data."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#geographic-information-systems-gis-3",
+    "href": "lectures/17_spatial.html#geographic-information-systems-gis-3",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Geographic Information Systems (GIS)",
+    "text": "Geographic Information Systems (GIS)\n\nFrom Wikipedia\n\n\nA geographic information system (GIS) consists of integrated computer hardware and software that store, manage, analyze, edit, output, and visualize geographic data."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#geographic-information-systems-gis-4",
+    "href": "lectures/17_spatial.html#geographic-information-systems-gis-4",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Geographic Information Systems (GIS)",
+    "text": "Geographic Information Systems (GIS)\n\nGIS is a large and complex field.\nEntire undergraduate and graduate degrees are related to this topic:\n\nB.S. in Geographic Information Systems at U of I\nM.S. in Geographic Information Science at U of I\n\nNote that GIScience is the academic discipline that studies GIS.\n\nGrad Cert in GIS\n\n\n\nToday, we just want to scratch the surface on a few core ideas that will help us process and visualize spatial data."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#concepts-in-gis",
+    "href": "lectures/17_spatial.html#concepts-in-gis",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Concepts in GIS",
+    "text": "Concepts in GIS\n\n\n\nCoordinate Reference Systems\n\nGeographic vs. projected\nDatum\nReferring to a CRS\n\nEPSG Codes\n\n\n\n\n\nSpatial Data Types\n\nVector\nRaster\n\n\nThese terms are not merely analogous to the image formats we talked about early in the semester – they are identical."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-systems-crs",
+    "href": "lectures/17_spatial.html#coordinate-reference-systems-crs",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference Systems (CRS)",
+    "text": "Coordinate Reference Systems (CRS)\n\n“A … coordinate reference system (CRS) is a framework used to precisely measure locations on, or relative to, the surface of Earth as coordinates. It is thus the application of the abstract mathematics of coordinate systems and analytic geometry to geographic space.”\n\n— Wikipedia"
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\n“A … coordinate reference system (CRS) is a framework used to precisely measure locations on, or relative to, the surface of Earth as coordinates. It is thus the application of the abstract mathematics of coordinate systems and analytic geometry to geographic space.”\n\n— Wikipedia"
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-1",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-1",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\n\n\n\nGeographic Coordinate Systems\n\nTreat the Earth as a spheroid (not flat).\n\nDepends on the datum.\n\nExpresses locations in units of degrees.\nLatitude = N/S (y-coordinate).\nLongitude = E/W (x-coordinate)."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-2",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-2",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\n\n\nProjected Coordinate Systems\n\nProject the round Earth onto a flat plane.\nPlanar coordinates obey properties of flat geometry\n\nE.g.,\n\nParallel lines never meet\nAngles of a triangle sum to 180°\n\\(a^2 + b^2 = c^2\\) holds (Pythagorean theorem)\n\n\nUnits are linear\n\nUsually meters, sometimes feet"
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-3",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-3",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\n\n\nProjected Coordinate Systems\n\nProjections can be thought of as shining a light through the globe and tracing the resulting map on a flat surface.\n\nMostly a metaphor, although some simple projections literally work this way.\n\n\n\n\n\n\n\n\n\n\nOriginally from: www.geography.hunter.cuny.edu/~jochen/GTECH361/lectures/lecture04/concepts/"
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-4",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-4",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\n\n\nProjected Coordinate Systems\n\nProjections all come with tradeoffs, since the surface of the Earth is not truly flat.\n\nSomething must get distorted.\nOften illustrated with the orange peel metaphor.\n\n\n\n\n\n\n\n\n\n\n\n\nEsri Blog Post"
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-5",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-5",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\n\n\nProjected Coordinate Systems\n\nNo projection can preserve all the properties of a map.\n\nArea\nShape\nDirection\nBearing\nDistance"
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-systems-1",
+    "href": "lectures/17_spatial.html#coordinate-reference-systems-1",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference Systems",
+    "text": "Coordinate Reference Systems\n\nThe Wikipedia article on map projections has a lot of great details."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-6",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-6",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\nThe Wikipedia article on map projections has a lot of great details."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-7",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-7",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\n\n\nUniversal Transverse Mercator (UTM) projections.\n\nUse the transverse Mercator projection, which has minimal distortion along the central meridian.\nMinimizes distortion by using 60 different central meridians, defining 60 different “zones”.\nUnits are meters."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-8",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-8",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\nDatums*\n\nA datum is a model connecting coordinates to their location on Earth.\n\nHorizontal datums measure position on the Earth’s surface.\nVertical datums measure height above an origin, such as mean sea level.\n3D datums combine both.\n\nA datum sets the reference frame from which all measurements are made.\n\n\n\n\n* data is the plural of datum; however, in this context, we’ve come to refer to more than one datum as datums."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-9",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-9",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\n\n\nDatums*\n\nThe most common datum today is WGS84, which defines both the reference frame and an ellipsoid of the Earth.\n\nWGS84 is the standard that GPS relies on.\n\nOther older datums are often region specific, e.g.:\n\nNAD83\nNAD27\n\n\n\n\n\n\n\n\n\n\nNASA Gravity Map"
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-10",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-10",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\nA CRS is defined by many potential parameters. E.g., UTM Zone 12N on the WGS84 datum:\n\nPROJCRS[\"WGS 84 / UTM zone 12N\",\n    BASEGEOGCRS[\"WGS 84\",\n        ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n            MEMBER[\"World Geodetic System 1984 (Transit)\"],\n            MEMBER[\"World Geodetic System 1984 (G730)\"],\n            MEMBER[\"World Geodetic System 1984 (G873)\"],\n            MEMBER[\"World Geodetic System 1984 (G1150)\"],\n            MEMBER[\"World Geodetic System 1984 (G1674)\"],\n            MEMBER[\"World Geodetic System 1984 (G1762)\"],\n            MEMBER[\"World Geodetic System 1984 (G2139)\"],\n            MEMBER[\"World Geodetic System 1984 (G2296)\"],\n            ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n                LENGTHUNIT[\"metre\",1]],\n            ENSEMBLEACCURACY[2.0]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4326]],\n    CONVERSION[\"UTM zone 12N\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-111,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",500000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",0,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Navigation and medium accuracy spatial referencing.\"],\n        AREA[\"Between 114°W and 108°W, northern hemisphere between equator and 84°N, onshore and offshore. Canada - Alberta; Northwest Territories (NWT); Nunavut; Saskatchewan. Mexico. United States (USA).\"],\n        BBOX[0,-114,84,-108]],\n    ID[\"EPSG\",32612]]\n\n\n(this format for information about a CRS is called “well-known text” (WKT).)"
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-11",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-11",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\nAll of that can be shortened to a single code. E.g., UTM Zone 12N on the WGS84 datum:\n\nEPSG:32612\n\nEPSG codes were developed by the “European Petroleum Specialist Group” to make sharing CRS information easier.\nThe EPSG registry was made public in 1993 and has been used widely since.\nThe EPSG is no longer a standalone organization, but the name has remained to avoid confusion."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#coordinate-reference-system-crs-12",
+    "href": "lectures/17_spatial.html#coordinate-reference-system-crs-12",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Coordinate Reference System (CRS)",
+    "text": "Coordinate Reference System (CRS)\n\n\n\nSome useful EPSG codes:\n\n\n\n\n\n\n\n\n\nDescription\nCode\n\n\n\n\nLat/long, WGS84\n4326\n\n\nUTM Zone 10, WGS84\n32610\n\n\nUTM Zone 11, WGS84\n32611\n\n\nUTM Zone 10, NAD83\n26910\n\n\nUTM Zone 11, NAD83\n26911"
+  },
+  {
+    "objectID": "lectures/17_spatial.html#data-types-1",
+    "href": "lectures/17_spatial.html#data-types-1",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Data Types",
+    "text": "Data Types\n\n\n\nVector\n\nPoint, line, or polygon.\n(Other less common classes exist).\nStore coordinates of vertices and their attributes."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#data-types-2",
+    "href": "lectures/17_spatial.html#data-types-2",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Data Types",
+    "text": "Data Types\n\n\n\nRaster\n\nGridded data.\n\nMost often square; sometimes rectangular or hexagonal.\n\nOften represent continuous values in discrete space.\nStore coordinates of origin, cell dimensions, and values."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#gis-in-r-1",
+    "href": "lectures/17_spatial.html#gis-in-r-1",
+    "title": "Lecture 17: Spatial Data",
+    "section": "GIS in R",
+    "text": "GIS in R\n\n\n\nsf\n\n“Simple features”.\nPrimary R package for working with vector spatial data.\nReplaced sp (same core developers).\n\n\n\n\n\n\n\n\n\n\nterra\n\nPrimary R package for working with raster spatial data.\nReplaced raster (same core developers)."
+  },
+  {
+    "objectID": "lectures/17_spatial.html#more-gis-resources",
+    "href": "lectures/17_spatial.html#more-gis-resources",
+    "title": "Lecture 17: Spatial Data",
+    "section": "More GIS Resources",
+    "text": "More GIS Resources\n\nGeocomputation with R, e-book\nA Gentle Introduction to GIS, by QGIS"
   }
 ]
