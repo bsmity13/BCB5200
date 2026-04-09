@@ -3070,6 +3070,13 @@
     "href": "lectures/17_spatial.html#more-gis-resources",
     "title": "Lecture 17: Spatial Data",
     "section": "More GIS Resources",
-    "text": "More GIS Resources\n\nGeocomputation with R, e-book\nA Gentle Introduction to GIS, by QGIS"
+    "text": "More GIS Resources\n\nGeocomputation with R, e-book\nSpatial Data Science, e-book\nA Gentle Introduction to GIS, by QGIS"
+  },
+  {
+    "objectID": "resources.html#spatial-data",
+    "href": "resources.html#spatial-data",
+    "title": "Resources",
+    "section": "Spatial Data",
+    "text": "Spatial Data\n\nGeocomputation with R, e-book\nSpatial Data Science, e-book\nA Gentle Introduction to GIS, by QGIS"
   }
 ]
