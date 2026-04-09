@@ -27,6 +27,6 @@ For this assignment, create an HTML document using Quarto. You can refer to the 
   i. Recall, both `sf` and `terra` have base R `plot()` methods.
   ii. Recall, `ggplot2` can plot `sf` objects. Rasters are easy to plot with `as.data.frame(..., xy = TRUE`).
   iii. Include some context on your map. Borders, cities, placenames, etc.
-  iv. Check the [Resources page](resources.qmd) for some help/ideas. There are tons of other resources for plotting spatial data in R online. I welcome suggested additions to the [Resources page](resources.qmd)!
+  iv. Check the [Resources page](../resources.qmd) for some help/ideas. There are tons of other resources for plotting spatial data in R online. I welcome suggested additions to the [Resources page](../resources.qmd)!
 
 Let me know if you have any questions!
