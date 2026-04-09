@@ -1,0 +1,32 @@
+---
+title: "Assignment 7: Spatial Data"
+author: "Brian J. Smith"
+date: "09 April 2026"
+---
+
+## Description
+
+This assignment is to gain practice creating maps to show data. It is due April 16.
+
+## Document Setup
+
+For this assignment, create an HTML document using Quarto. You can refer to the [homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd) document we created in class for some ideas.
+
+- Make sure your YAML header has:
+  - The option `embed-resources: true`
+    - This goes under the html: format option.
+    - It will make sure the HTML file stands alone, rather than referring to an external figure. I won't be able to see your figure if you upload and HTML file without this option.
+- I want to see the code chunks that create your figure, so make sure you use `#| echo: true` in your R code chunk.
+  - You may use code folding (`#| code-fold: true`) if you'd like.
+    
+## Instructions
+
+1. Find a dataset. It can be explicitly spatial (containing coordinates) or it can just refer to spatial units (e.g., data for particular states or counties). If it's explicitly spatial, it can be raster or vector data. If it's implicitly spatial, you'll probably want to join it to some vector data (e.g., to polygon state boundaries).
+2. Write a *small* amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. *Don't spend a lot of time on the narrative.*
+3. Plot! or rather... map! I'm just asking for a single map, but you can make multiple maps if your heart desires.
+  i. Recall, both `sf` and `terra` have base R `plot()` methods.
+  ii. Recall, `ggplot2` can plot `sf` objects. Rasters are easy to plot with `as.data.frame(..., xy = TRUE`).
+  iii. Include some context on your map. Borders, cities, placenames, etc.
+  iv. Check the [Resources page](resources.qmd) for some help/ideas. There are tons of other resources for plotting spatial data in R online. I welcome suggested additions to the [Resources page](resources.qmd)!
+
+Let me know if you have any questions!

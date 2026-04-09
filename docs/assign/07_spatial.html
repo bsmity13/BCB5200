@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Brian J. Smith">
+<meta name="dcterms.date" content="2026-04-09">
 
-<title>Assignments – BCB5200</title>
+<title>Assignment 7: Spatial Data – BCB5200</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -81,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">BCB5200</span>
     </a>
   </div>
@@ -92,27 +93,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html"> 
+    <a class="nav-link" href="../syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./lectures.html"> 
+    <a class="nav-link" href="../lectures.html"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./code.html"> 
+    <a class="nav-link" href="../code.html"> 
 <span class="menu-text">Code</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./assignments.html" aria-current="page"> 
+    <a class="nav-link" href="../assignments.html"> 
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> 
+    <a class="nav-link" href="../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -126,15 +127,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
+  <li><a href="#document-setup" id="toc-document-setup" class="nav-link" data-scroll-target="#document-setup">Document Setup</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignments</h1>
+<h1 class="title">Assignment 7: Spatial Data</h1>
 </div>
 
 
@@ -148,6 +157,12 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 9, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -157,50 +172,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Links to assignments.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Topic</th>
-<th style="text-align: left;">Code</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1/22/2026</td>
-<td style="text-align: left;">Literate Programming</td>
-<td style="text-align: left;"><a href="./assign/01_literate.html">Assignment 1</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">1/29/2026</td>
-<td style="text-align: left;">Image Formats</td>
-<td style="text-align: left;"><a href="./assign/02_formats.html">Assignment 2</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2/26/2026</td>
-<td style="text-align: left;"><code>ggplot2</code></td>
-<td style="text-align: left;"><a href="./assign/03_ggplot2.html">Assignment 3/4</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">3/5/2026</td>
-<td style="text-align: left;">Multi-panel Figures</td>
-<td style="text-align: left;"><a href="./assign/05_panels.html">Assignment 5</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3/26/2026</td>
-<td style="text-align: left;">Reduce Attributes</td>
-<td style="text-align: left;"><a href="./assign/06_reduce.html">Assignment 6</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4/9/2026</td>
-<td style="text-align: left;">Spatial Data</td>
-<td style="text-align: left;"><a href="./assign/07_spatial.html">Assignment 7</a></td>
-</tr>
-</tbody>
-</table>
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>This assignment is to gain practice creating maps to show data. It is due April 16.</p>
+</section>
+<section id="document-setup" class="level2">
+<h2 class="anchored" data-anchor-id="document-setup">Document Setup</h2>
+<p>For this assignment, create an HTML document using Quarto. You can refer to the <a href="https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd">homepage.qmd</a> document we created in class for some ideas.</p>
+<ul>
+<li>Make sure your YAML header has:
+<ul>
+<li>The option <code>embed-resources: true</code>
+<ul>
+<li>This goes under the html: format option.</li>
+<li>It will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.</li>
+</ul></li>
+</ul></li>
+<li>I want to see the code chunks that create your figure, so make sure you use <code>#| echo: true</code> in your R code chunk.
+<ul>
+<li>You may use code folding (<code>#| code-fold: true</code>) if you’d like.</li>
+</ul></li>
+</ul>
+</section>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<ol type="1">
+<li>Find a dataset. It can be explicitly spatial (containing coordinates) or it can just refer to spatial units (e.g., data for particular states or counties). If it’s explicitly spatial, it can be raster or vector data. If it’s implicitly spatial, you’ll probably want to join it to some vector data (e.g., to polygon state boundaries).</li>
+<li>Write a <em>small</em> amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. <em>Don’t spend a lot of time on the narrative.</em></li>
+<li>Plot! or rather… map! I’m just asking for a single map, but you can make multiple maps if your heart desires.</li>
+</ol>
+<ol type="i">
+<li>Recall, both <code>sf</code> and <code>terra</code> have base R <code>plot()</code> methods.</li>
+<li>Recall, <code>ggplot2</code> can plot <code>sf</code> objects. Rasters are easy to plot with <code>as.data.frame(..., xy = TRUE</code>).</li>
+<li>Include some context on your map. Borders, cities, placenames, etc.</li>
+<li>Check the <a href="resources.qmd">Resources page</a> for some help/ideas. There are tons of other resources for plotting spatial data in R online. I welcome suggested additions to the <a href="resources.qmd">Resources page</a>!</li>
+</ol>
+<p>Let me know if you have any questions!</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

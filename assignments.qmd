@@ -13,3 +13,4 @@ Links to assignments.
 |2/26/2026 | `ggplot2`            |[Assignment 3/4](assign/03_ggplot2.qmd)    |
 |3/5/2026  | Multi-panel Figures  |[Assignment 5](assign/05_panels.qmd)       |
 |3/26/2026 | Reduce Attributes    |[Assignment 6](assign/06_reduce.qmd)       |
+|4/9/2026  | Spatial Data         |[Assignment 7](assign/07_spatial.qmd)      |
