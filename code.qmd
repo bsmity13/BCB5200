@@ -20,6 +20,7 @@ Links to code walkthroughs.
 |3/31/2026  | Embed |[embed.R](https://github.com/bsmity13/BCB5200/blob/main/code/embed.R){target="_blank"} |  
 |4/2/2026  | Graphics for the Surveys |[survey_figs.R](https://github.com/bsmity13/BCB5200/blob/main/code/survey_figs.R){target="_blank"} |  
 |4/14/2026  | GIS in R |[gis.R](https://github.com/bsmity13/BCB5200/blob/main/code/gis.R){target="_blank"} |  
+|4/16/2026  | Networks |[network.R](https://github.com/bsmity13/BCB5200/blob/main/code/network.R){target="_blank"} |  
 
 
 
