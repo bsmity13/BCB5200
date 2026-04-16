@@ -1215,7 +1215,7 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2\n\n\n2/26/2026\nggplot2\nAssignment 3/4\n\n\n3/5/2026\nMulti-panel Figures\nAssignment 5\n\n\n3/26/2026\nReduce Attributes\nAssignment 6\n\n\n4/9/2026\nSpatial Data\nAssignment 7"
+    "text": "Links to assignments.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nAssignment 1\n\n\n1/29/2026\nImage Formats\nAssignment 2\n\n\n2/26/2026\nggplot2\nAssignment 3/4\n\n\n3/5/2026\nMulti-panel Figures\nAssignment 5\n\n\n3/26/2026\nReduce Attributes\nAssignment 6\n\n\n4/9/2026\nSpatial Data\nAssignment 7/8\n\n\n4/16/2026\nNetwork Data\nAssignment 9"
   },
   {
     "objectID": "assign/06_reduce.html",
@@ -3400,5 +3400,47 @@
     "title": "Resources",
     "section": "Networks/Graph Theory",
     "text": "Networks/Graph Theory\n\nA Simple Introduction to Graph Theory, by Brian Heinhold"
+  },
+  {
+    "objectID": "assign/09_network.html",
+    "href": "assign/09_network.html",
+    "title": "Assignment 9: Network Data",
+    "section": "",
+    "text": "This assignment is to gain practice visualizing network data. It is due April 23."
+  },
+  {
+    "objectID": "assign/09_network.html#description",
+    "href": "assign/09_network.html#description",
+    "title": "Assignment 9: Network Data",
+    "section": "",
+    "text": "This assignment is to gain practice visualizing network data. It is due April 23."
+  },
+  {
+    "objectID": "assign/09_network.html#document-setup",
+    "href": "assign/09_network.html#document-setup",
+    "title": "Assignment 9: Network Data",
+    "section": "Document Setup",
+    "text": "Document Setup\nFor this assignment, create an HTML document using Quarto. You can refer to the homepage.qmd document we created in class for some ideas.\n\nMake sure your YAML header has:\n\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nI want to see the code chunks that create your figure, so make sure you use #| echo: true in your R code chunk.\n\nYou may use code folding (#| code-fold: true) if you’d like."
+  },
+  {
+    "objectID": "assign/09_network.html#datasets",
+    "href": "assign/09_network.html#datasets",
+    "title": "Assignment 9: Network Data",
+    "section": "Datasets",
+    "text": "Datasets\nSince none of us actually work with network data in our own research, I decided to compile a few potential sources of sample data.\n\nNetwork Repository\n\nThis is both a repository for network data and a visualization platform.\n\nStanford Large Network Dataset Collection\n\nStanford hosts this repository of large networks. Some of them seem like they might be reasonably sized. Feel free to use one of the large ones if you are interested in the topic!\n\n\nI downloaded a dataset on bison dominance from the Network Repository. Here’s how I loaded it into R to work with igraph.\n\nlibrary(igraph)\n\n# Path to the dataset\npath &lt;- \"../data/mammalia-bison-dominance/mammalia-bison-dominance.edges\"\n\n# Read it in\nedges &lt;- read.delim(path, sep = \" \")\n\n# Convert to igraph\ng &lt;- graph_from_data_frame(edges)"
+  },
+  {
+    "objectID": "assign/09_network.html#layouts",
+    "href": "assign/09_network.html#layouts",
+    "title": "Assignment 9: Network Data",
+    "section": "Layouts",
+    "text": "Layouts\nDeciding how to layout the nodes is an important step. In some cases, you might want to encode information in the layout. In other cases, you might want to use an algorithm to layout nodes.\nFor information on layouts in igraph, see help(layout).\nThe package ggraph can implement the igraph layouts and has several options of its own. See help(ggraph) for more information."
+  },
+  {
+    "objectID": "assign/09_network.html#instructions",
+    "href": "assign/09_network.html#instructions",
+    "title": "Assignment 9: Network Data",
+    "section": "Instructions",
+    "text": "Instructions\n\nFind a dataset. I’ve suggested a couple of repositories above and provided some demo code to load the data into R.\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nDecide on a layout (see above).\nPlot! If your network has node attributes or edge attributes, try to show one of them.\n\nLet me know if you have any questions!"
   }
 ]

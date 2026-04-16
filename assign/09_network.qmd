@@ -1,0 +1,65 @@
+---
+title: "Assignment 9: Network Data"
+author: "Brian J. Smith"
+date: "16 April 2026"
+---
+
+## Description
+
+This assignment is to gain practice visualizing network data. It is due April 23.
+
+## Document Setup
+
+For this assignment, create an HTML document using Quarto. You can refer to the [homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd) document we created in class for some ideas.
+
+- Make sure your YAML header has:
+  - The option `embed-resources: true`
+    - This goes under the html: format option.
+    - It will make sure the HTML file stands alone, rather than referring to an external figure. I won't be able to see your figure if you upload and HTML file without this option.
+- I want to see the code chunks that create your figure, so make sure you use `#| echo: true` in your R code chunk.
+  - You may use code folding (`#| code-fold: true`) if you'd like.
+  
+## Datasets
+
+Since none of us actually work with network data in our own research, I decided to compile a few potential sources of sample data.
+
+- [Network Repository](https://networkrepository.com/)
+  - This is *both* a repository for network data and a visualization platform.
+- [Stanford Large Network Dataset Collection](https://snap.stanford.edu/data/)
+  - Stanford hosts this repository of large networks. Some of them seem like they might be reasonably sized. Feel free to use one of the large ones if you are interested in the topic!
+  
+I downloaded a [dataset on bison dominance](https://networkrepository.com/mammalia-bison-dominance.php) from the [Network Repository](https://networkrepository.com/). Here's how I loaded it into R to work with `igraph`.
+
+```{r}
+#| echo: true
+#| eval: false
+
+library(igraph)
+
+# Path to the dataset
+path <- "../data/mammalia-bison-dominance/mammalia-bison-dominance.edges"
+
+# Read it in
+edges <- read.delim(path, sep = " ")
+
+# Convert to igraph
+g <- graph_from_data_frame(edges)
+
+```
+
+## Layouts
+
+Deciding how to layout the nodes is an important step. In some cases, you might want to encode information in the layout. In other cases, you might want to use an algorithm to layout nodes.
+
+For information on layouts in `igraph`, see `help(layout)`.
+
+The package `ggraph` can implement the `igraph` layouts and has several options of its own. See `help(ggraph)` for more information.
+    
+## Instructions
+
+1. Find a dataset. I've suggested a couple of repositories above and provided some demo code to load the data into R.
+2. Write a *small* amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. *Don't spend a lot of time on the narrative.*
+3. Decide on a layout (see above).
+4. Plot! If your network has node attributes or edge attributes, try to show one of them.
+
+Let me know if you have any questions!
