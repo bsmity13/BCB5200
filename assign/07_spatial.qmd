@@ -1,12 +1,12 @@
 ---
-title: "Assignment 7: Spatial Data"
+title: "Assignment 7/8: Spatial Data"
 author: "Brian J. Smith"
 date: "09 April 2026"
 ---
 
 ## Description
 
-This assignment is to gain practice creating maps to show data. It is due April 16.
+This a double assignment (7 & 8). The goal is to gain practice creating maps to show data. It is due April 21.
 
 ## Document Setup
 
@@ -23,7 +23,7 @@ For this assignment, create an HTML document using Quarto. You can refer to the 
 
 1. Find a dataset. It can be explicitly spatial (containing coordinates) or it can just refer to spatial units (e.g., data for particular states or counties). If it's explicitly spatial, it can be raster or vector data. If it's implicitly spatial, you'll probably want to join it to some vector data (e.g., to polygon state boundaries).
 2. Write a *small* amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. *Don't spend a lot of time on the narrative.*
-3. Plot! or rather... map! I'm just asking for a single map, but you can make multiple maps if your heart desires.
+3. Plot! or rather... map! I'm asking for **two** independent maps, but each one can have multiple panels if your heart desires.
   i. Recall, both `sf` and `terra` have base R `plot()` methods.
   ii. Recall, `ggplot2` can plot `sf` objects. Rasters are easy to plot with `as.data.frame(..., xy = TRUE`).
   iii. Include some context on your map. Borders, cities, placenames, etc.

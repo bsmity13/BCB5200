@@ -1325,30 +1325,30 @@
   {
     "objectID": "assign/07_spatial.html",
     "href": "assign/07_spatial.html",
-    "title": "Assignment 7: Spatial Data",
+    "title": "Assignment 7/8: Spatial Data",
     "section": "",
-    "text": "This assignment is to gain practice creating maps to show data. It is due April 16."
+    "text": "This a double assignment (7 & 8). The goal is to gain practice creating maps to show data. It is due April 21."
   },
   {
     "objectID": "assign/07_spatial.html#description",
     "href": "assign/07_spatial.html#description",
-    "title": "Assignment 7: Spatial Data",
+    "title": "Assignment 7/8: Spatial Data",
     "section": "",
-    "text": "This assignment is to gain practice creating maps to show data. It is due April 16."
+    "text": "This a double assignment (7 & 8). The goal is to gain practice creating maps to show data. It is due April 21."
   },
   {
     "objectID": "assign/07_spatial.html#document-setup",
     "href": "assign/07_spatial.html#document-setup",
-    "title": "Assignment 7: Spatial Data",
+    "title": "Assignment 7/8: Spatial Data",
     "section": "Document Setup",
     "text": "Document Setup\nFor this assignment, create an HTML document using Quarto. You can refer to the homepage.qmd document we created in class for some ideas.\n\nMake sure your YAML header has:\n\nThe option embed-resources: true\n\nThis goes under the html: format option.\nIt will make sure the HTML file stands alone, rather than referring to an external figure. I won’t be able to see your figure if you upload and HTML file without this option.\n\n\nI want to see the code chunks that create your figure, so make sure you use #| echo: true in your R code chunk.\n\nYou may use code folding (#| code-fold: true) if you’d like."
   },
   {
     "objectID": "assign/07_spatial.html#instructions",
     "href": "assign/07_spatial.html#instructions",
-    "title": "Assignment 7: Spatial Data",
+    "title": "Assignment 7/8: Spatial Data",
     "section": "Instructions",
-    "text": "Instructions\n\nFind a dataset. It can be explicitly spatial (containing coordinates) or it can just refer to spatial units (e.g., data for particular states or counties). If it’s explicitly spatial, it can be raster or vector data. If it’s implicitly spatial, you’ll probably want to join it to some vector data (e.g., to polygon state boundaries).\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nPlot! or rather… map! I’m just asking for a single map, but you can make multiple maps if your heart desires.\n\n\nRecall, both sf and terra have base R plot() methods.\nRecall, ggplot2 can plot sf objects. Rasters are easy to plot with as.data.frame(..., xy = TRUE).\nInclude some context on your map. Borders, cities, placenames, etc.\nCheck the Resources page for some help/ideas. There are tons of other resources for plotting spatial data in R online. I welcome suggested additions to the Resources page!\n\nLet me know if you have any questions!"
+    "text": "Instructions\n\nFind a dataset. It can be explicitly spatial (containing coordinates) or it can just refer to spatial units (e.g., data for particular states or counties). If it’s explicitly spatial, it can be raster or vector data. If it’s implicitly spatial, you’ll probably want to join it to some vector data (e.g., to polygon state boundaries).\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nPlot! or rather… map! I’m asking for two independent maps, but each one can have multiple panels if your heart desires.\n\n\nRecall, both sf and terra have base R plot() methods.\nRecall, ggplot2 can plot sf objects. Rasters are easy to plot with as.data.frame(..., xy = TRUE).\nInclude some context on your map. Borders, cities, placenames, etc.\nCheck the Resources page for some help/ideas. There are tons of other resources for plotting spatial data in R online. I welcome suggested additions to the Resources page!\n\nLet me know if you have any questions!"
   },
   {
     "objectID": "code/00_dummy.html",
