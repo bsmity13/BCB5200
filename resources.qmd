@@ -39,7 +39,9 @@ For now, this page is just an information dump of potential data viz resources. 
 
 ### Network Data
 
-- [`ggraph`](https://ggraph.data-imaginist.com/)
+- [`igraph`](https://r.igraph.org/), go-to package for networks in R?
+- [`ggraph`](https://ggraph.data-imaginist.com/), extension of `ggplot2` for networks.
+- [`tidygraph`](https://tidygraph.data-imaginist.com/), a tidy API for network manipulation.
 
 ## Spatial Data
 
@@ -63,6 +65,11 @@ For now, this page is just an information dump of potential data viz resources. 
   - [`rnaturalearth`](https://ropensci.github.io/rnaturalearth/)
 - [`USAboundaries`](https://docs.ropensci.org/USAboundaries/) (includes historical boundaries)
   - [A sample analysis using `USAboundaries`](https://docs.ropensci.org/USAboundaries/articles/usaboundaries-sample-analysis.html)
+  
+## Networks/Graph Theory
+
+- [*A Simple Introduction to Graph Theory*](https://www.brianheinold.net/graph_theory/A_Simple_Introduction_to_Graph_Theory_Heinold.pdf), by Brian Heinhold
+
   
 ## Just Fun
 

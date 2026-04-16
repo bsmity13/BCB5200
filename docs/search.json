@@ -3021,7 +3021,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color\n\n\n3/26/2026\nLecture 14: Reducing Items and Attributes\n\n\n3/31/2026\nLecture 15: Embedding\n\n\n4/2/2026\nLecture 16: Surveys\n\n\n4/7/2026\nNo class\n\n\n4/9/2026\nLecture 17: Spatial Data"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color\n\n\n3/26/2026\nLecture 14: Reducing Items and Attributes\n\n\n3/31/2026\nLecture 15: Embedding\n\n\n4/2/2026\nLecture 16: Surveys\n\n\n4/7/2026\nNo class\n\n\n4/9/2026\nLecture 17: Spatial Data\n\n\n4/16/2026\nLecture 18: Network Data"
   },
   {
     "objectID": "resources.html",
@@ -3049,7 +3049,7 @@
     "href": "resources.html#r-packages",
     "title": "Resources",
     "section": "R Packages",
-    "text": "R Packages\n\nGeneral Data Viz\n\nggplot2\n\nggplot2 Extensions\n\nggforce\nggmagnify\nggfx\n\nAwesome ggplot2 (curated list of ggplot2 related stuff)\n\npatchwork\ncowplot\n\n\n\nSpatial Data\n\nsf\nterra\nleaflet\n\n\n\nNetwork Data\n\nggraph"
+    "text": "R Packages\n\nGeneral Data Viz\n\nggplot2\n\nggplot2 Extensions\n\nggforce\nggmagnify\nggfx\n\nAwesome ggplot2 (curated list of ggplot2 related stuff)\n\npatchwork\ncowplot\n\n\n\nSpatial Data\n\nsf\nterra\nleaflet\n\n\n\nNetwork Data\n\nigraph, go-to package for networks in R?\nggraph, extension of ggplot2 for networks.\ntidygraph, a tidy API for network manipulation."
   },
   {
     "objectID": "resources.html#spatial-data-1",
@@ -3064,5 +3064,341 @@
     "title": "Resources",
     "section": "Just Fun",
     "text": "Just Fun\n\nMapping Middle Earth"
+  },
+  {
+    "objectID": "lectures/18_network.html",
+    "href": "lectures/18_network.html",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "GIS is a broad term for the data and tools we use to work in geographic space.\n\n\n\n\n\nFrom Esri\n\n\nGIS is a technology that is used to create, manage, analyze, and map all types of data.\n\n\n\n\n\nFrom Wikipedia\n\n\nA geographic information system (GIS) consists of integrated computer hardware and software that store, manage, analyze, edit, output, and visualize geographic data.\n\n\n\n\n\nGIS is a large and complex field.\nEntire undergraduate and graduate degrees are related to this topic:\n\nB.S. in Geographic Information Systems at U of I\nM.S. in Geographic Information Science at U of I\n\nNote that GIScience is the academic discipline that studies GIS.\n\nGrad Cert in GIS\n\n\n\nToday, we just want to scratch the surface on a few core ideas that will help us process and visualize spatial data.\n\n\n\n\n\n\n\n\n\n\nGeographic vs. projected\nDatum\nReferring to a CRS\n\nEPSG Codes\n\n\n\n\n\n\n\n\n\nVector\nRaster\n\n\nThese terms are not merely analogous to the image formats we talked about early in the semester – they are identical.\n\n\n\n\n\n\n\n\n“A … coordinate reference system (CRS) is a framework used to precisely measure locations on, or relative to, the surface of Earth as coordinates. It is thus the application of the abstract mathematics of coordinate systems and analytic geometry to geographic space.”\n\n— Wikipedia\n\n\n\n\n\n\n\nGeographic Coordinate Systems\n\nTreat the Earth as a spheroid (not flat).\n\nDepends on the datum.\n\nExpresses locations in units of degrees.\nLatitude = N/S (y-coordinate).\nLongitude = E/W (x-coordinate).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProjected Coordinate Systems\n\nProject the round Earth onto a flat plane.\nPlanar coordinates obey properties of flat geometry\n\nE.g.,\n\nParallel lines never meet\nAngles of a triangle sum to 180°\n\\(a^2 + b^2 = c^2\\) holds (Pythagorean theorem)\n\n\nUnits are linear\n\nUsually meters, sometimes feet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProjected Coordinate Systems\n\nProjections can be thought of as shining a light through the globe and tracing the resulting map on a flat surface.\n\nMostly a metaphor, although some simple projections literally work this way.\n\n\n\n\n\n\n\n\n\n\nOriginally from: www.geography.hunter.cuny.edu/~jochen/GTECH361/lectures/lecture04/concepts/\n\n\n\n\n\n\n\n\n\nProjected Coordinate Systems\n\nProjections all come with tradeoffs, since the surface of the Earth is not truly flat.\n\nSomething must get distorted.\nOften illustrated with the orange peel metaphor.\n\n\n\n\n\n\n\n\n\n\n\n\nEsri Blog Post\n\n\n\n\n\n\n\n\n\nProjected Coordinate Systems\n\nNo projection can preserve all the properties of a map.\n\nArea\nShape\nDirection\nBearing\nDistance\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Wikipedia article on map projections has a lot of great details.\n\n\n\n\n\n\n\n\n\n\n\n\nUniversal Transverse Mercator (UTM) projections.\n\nUse the transverse Mercator projection, which has minimal distortion along the central meridian.\nMinimizes distortion by using 60 different central meridians, defining 60 different “zones”.\nUnits are meters.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDatums*\n\nA datum is a model connecting coordinates to their location on Earth.\n\nHorizontal datums measure position on the Earth’s surface.\nVertical datums measure height above an origin, such as mean sea level.\n3D datums combine both.\n\nA datum sets the reference frame from which all measurements are made.\n\n\n\n\n* data is the plural of datum; however, in this context, we’ve come to refer to more than one datum as datums.\n\n\n\n\n\n\n\nDatums*\n\nThe most common datum today is WGS84, which defines both the reference frame and an ellipsoid of the Earth.\n\nWGS84 is the standard that GPS relies on.\n\nOther older datums are often region specific, e.g.:\n\nNAD83\nNAD27\n\n\n\n\n\n\n\n\n\n\nNASA Gravity Map\n\n\n\n\n\n\n\nA CRS is defined by many potential parameters. E.g., UTM Zone 12N on the WGS84 datum:\n\nPROJCRS[\"WGS 84 / UTM zone 12N\",\n    BASEGEOGCRS[\"WGS 84\",\n        ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n            MEMBER[\"World Geodetic System 1984 (Transit)\"],\n            MEMBER[\"World Geodetic System 1984 (G730)\"],\n            MEMBER[\"World Geodetic System 1984 (G873)\"],\n            MEMBER[\"World Geodetic System 1984 (G1150)\"],\n            MEMBER[\"World Geodetic System 1984 (G1674)\"],\n            MEMBER[\"World Geodetic System 1984 (G1762)\"],\n            MEMBER[\"World Geodetic System 1984 (G2139)\"],\n            MEMBER[\"World Geodetic System 1984 (G2296)\"],\n            ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n                LENGTHUNIT[\"metre\",1]],\n            ENSEMBLEACCURACY[2.0]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4326]],\n    CONVERSION[\"UTM zone 12N\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-111,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",500000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",0,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Navigation and medium accuracy spatial referencing.\"],\n        AREA[\"Between 114°W and 108°W, northern hemisphere between equator and 84°N, onshore and offshore. Canada - Alberta; Northwest Territories (NWT); Nunavut; Saskatchewan. Mexico. United States (USA).\"],\n        BBOX[0,-114,84,-108]],\n    ID[\"EPSG\",32612]]\n\n\n(this format for information about a CRS is called “well-known text” (WKT).)\n\n\n\n\n\nAll of that can be shortened to a single code. E.g., UTM Zone 12N on the WGS84 datum:\n\nEPSG:32612\n\nEPSG codes were developed by the “European Petroleum Specialist Group” to make sharing CRS information easier.\nThe EPSG registry was made public in 1993 and has been used widely since.\nThe EPSG is no longer a standalone organization, but the name has remained to avoid confusion.\n\n\n\n\n\n\n\nSome useful EPSG codes:\n\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\n\n\n\n\n\n\nDescription\nCode\n\n\n\n\nLat/long, WGS84\n4326\n\n\nUTM Zone 10, WGS84\n32610\n\n\nUTM Zone 11, WGS84\n32611\n\n\nUTM Zone 10, NAD83\n26910\n\n\nUTM Zone 11, NAD83\n26911"
+  },
+  {
+    "objectID": "lectures/18_network.html#geographic-information-systems-gis-1",
+    "href": "lectures/18_network.html#geographic-information-systems-gis-1",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "GIS is a broad term for the data and tools we use to work in geographic space."
+  },
+  {
+    "objectID": "lectures/18_network.html#geographic-information-systems-gis-2",
+    "href": "lectures/18_network.html#geographic-information-systems-gis-2",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "From Esri\n\n\nGIS is a technology that is used to create, manage, analyze, and map all types of data."
+  },
+  {
+    "objectID": "lectures/18_network.html#geographic-information-systems-gis-3",
+    "href": "lectures/18_network.html#geographic-information-systems-gis-3",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "From Wikipedia\n\n\nA geographic information system (GIS) consists of integrated computer hardware and software that store, manage, analyze, edit, output, and visualize geographic data."
+  },
+  {
+    "objectID": "lectures/18_network.html#geographic-information-systems-gis-4",
+    "href": "lectures/18_network.html#geographic-information-systems-gis-4",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "GIS is a large and complex field.\nEntire undergraduate and graduate degrees are related to this topic:\n\nB.S. in Geographic Information Systems at U of I\nM.S. in Geographic Information Science at U of I\n\nNote that GIScience is the academic discipline that studies GIS.\n\nGrad Cert in GIS\n\n\n\nToday, we just want to scratch the surface on a few core ideas that will help us process and visualize spatial data."
+  },
+  {
+    "objectID": "lectures/18_network.html#concepts-in-gis",
+    "href": "lectures/18_network.html#concepts-in-gis",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "Geographic vs. projected\nDatum\nReferring to a CRS\n\nEPSG Codes\n\n\n\n\n\n\n\n\n\nVector\nRaster\n\n\nThese terms are not merely analogous to the image formats we talked about early in the semester – they are identical."
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "“A … coordinate reference system (CRS) is a framework used to precisely measure locations on, or relative to, the surface of Earth as coordinates. It is thus the application of the abstract mathematics of coordinate systems and analytic geometry to geographic space.”\n\n— Wikipedia"
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-1",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-1",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "Geographic Coordinate Systems\n\nTreat the Earth as a spheroid (not flat).\n\nDepends on the datum.\n\nExpresses locations in units of degrees.\nLatitude = N/S (y-coordinate).\nLongitude = E/W (x-coordinate)."
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-2",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-2",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "Projected Coordinate Systems\n\nProject the round Earth onto a flat plane.\nPlanar coordinates obey properties of flat geometry\n\nE.g.,\n\nParallel lines never meet\nAngles of a triangle sum to 180°\n\\(a^2 + b^2 = c^2\\) holds (Pythagorean theorem)\n\n\nUnits are linear\n\nUsually meters, sometimes feet"
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-3",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-3",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "Projected Coordinate Systems\n\nProjections can be thought of as shining a light through the globe and tracing the resulting map on a flat surface.\n\nMostly a metaphor, although some simple projections literally work this way.\n\n\n\n\n\n\n\n\n\n\nOriginally from: www.geography.hunter.cuny.edu/~jochen/GTECH361/lectures/lecture04/concepts/"
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-4",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-4",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "Projected Coordinate Systems\n\nProjections all come with tradeoffs, since the surface of the Earth is not truly flat.\n\nSomething must get distorted.\nOften illustrated with the orange peel metaphor.\n\n\n\n\n\n\n\n\n\n\n\n\nEsri Blog Post"
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-5",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-5",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "Projected Coordinate Systems\n\nNo projection can preserve all the properties of a map.\n\nArea\nShape\nDirection\nBearing\nDistance"
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-6",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-6",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "The Wikipedia article on map projections has a lot of great details."
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-7",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-7",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "Universal Transverse Mercator (UTM) projections.\n\nUse the transverse Mercator projection, which has minimal distortion along the central meridian.\nMinimizes distortion by using 60 different central meridians, defining 60 different “zones”.\nUnits are meters."
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-8",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-8",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "Datums*\n\nA datum is a model connecting coordinates to their location on Earth.\n\nHorizontal datums measure position on the Earth’s surface.\nVertical datums measure height above an origin, such as mean sea level.\n3D datums combine both.\n\nA datum sets the reference frame from which all measurements are made.\n\n\n\n\n* data is the plural of datum; however, in this context, we’ve come to refer to more than one datum as datums."
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-9",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-9",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "Datums*\n\nThe most common datum today is WGS84, which defines both the reference frame and an ellipsoid of the Earth.\n\nWGS84 is the standard that GPS relies on.\n\nOther older datums are often region specific, e.g.:\n\nNAD83\nNAD27\n\n\n\n\n\n\n\n\n\n\nNASA Gravity Map"
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-10",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-10",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "A CRS is defined by many potential parameters. E.g., UTM Zone 12N on the WGS84 datum:\n\nPROJCRS[\"WGS 84 / UTM zone 12N\",\n    BASEGEOGCRS[\"WGS 84\",\n        ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n            MEMBER[\"World Geodetic System 1984 (Transit)\"],\n            MEMBER[\"World Geodetic System 1984 (G730)\"],\n            MEMBER[\"World Geodetic System 1984 (G873)\"],\n            MEMBER[\"World Geodetic System 1984 (G1150)\"],\n            MEMBER[\"World Geodetic System 1984 (G1674)\"],\n            MEMBER[\"World Geodetic System 1984 (G1762)\"],\n            MEMBER[\"World Geodetic System 1984 (G2139)\"],\n            MEMBER[\"World Geodetic System 1984 (G2296)\"],\n            ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n                LENGTHUNIT[\"metre\",1]],\n            ENSEMBLEACCURACY[2.0]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4326]],\n    CONVERSION[\"UTM zone 12N\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-111,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",500000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",0,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Navigation and medium accuracy spatial referencing.\"],\n        AREA[\"Between 114°W and 108°W, northern hemisphere between equator and 84°N, onshore and offshore. Canada - Alberta; Northwest Territories (NWT); Nunavut; Saskatchewan. Mexico. United States (USA).\"],\n        BBOX[0,-114,84,-108]],\n    ID[\"EPSG\",32612]]\n\n\n(this format for information about a CRS is called “well-known text” (WKT).)"
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-11",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-11",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "All of that can be shortened to a single code. E.g., UTM Zone 12N on the WGS84 datum:\n\nEPSG:32612\n\nEPSG codes were developed by the “European Petroleum Specialist Group” to make sharing CRS information easier.\nThe EPSG registry was made public in 1993 and has been used widely since.\nThe EPSG is no longer a standalone organization, but the name has remained to avoid confusion."
+  },
+  {
+    "objectID": "lectures/18_network.html#coordinate-reference-system-crs-12",
+    "href": "lectures/18_network.html#coordinate-reference-system-crs-12",
+    "title": "Lecture 17: Spatial Data",
+    "section": "",
+    "text": "Some useful EPSG codes:\n\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\n\n\n\n\n\n\nDescription\nCode\n\n\n\n\nLat/long, WGS84\n4326\n\n\nUTM Zone 10, WGS84\n32610\n\n\nUTM Zone 11, WGS84\n32611\n\n\nUTM Zone 10, NAD83\n26910\n\n\nUTM Zone 11, NAD83\n26911"
+  },
+  {
+    "objectID": "lectures/18_network.html#data-types-1",
+    "href": "lectures/18_network.html#data-types-1",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Data Types",
+    "text": "Data Types\n\n\n\nVector\n\nPoint, line, or polygon.\n(Other less common classes exist).\nStore coordinates of vertices and their attributes."
+  },
+  {
+    "objectID": "lectures/18_network.html#data-types-2",
+    "href": "lectures/18_network.html#data-types-2",
+    "title": "Lecture 17: Spatial Data",
+    "section": "Data Types",
+    "text": "Data Types\n\n\n\nRaster\n\nGridded data.\n\nMost often square; sometimes rectangular or hexagonal.\n\nOften represent continuous values in discrete space.\nStore coordinates of origin, cell dimensions, and values."
+  },
+  {
+    "objectID": "lectures/18_network.html#gis-in-r-1",
+    "href": "lectures/18_network.html#gis-in-r-1",
+    "title": "Lecture 17: Spatial Data",
+    "section": "GIS in R",
+    "text": "GIS in R\n\n\n\nsf\n\n“Simple features”.\nPrimary R package for working with vector spatial data.\nReplaced sp (same core developers).\n\n\n\n\n\n\n\n\n\n\nterra\n\nPrimary R package for working with raster spatial data.\nReplaced raster (same core developers)."
+  },
+  {
+    "objectID": "lectures/18_network.html#more-gis-resources",
+    "href": "lectures/18_network.html#more-gis-resources",
+    "title": "Lecture 17: Spatial Data",
+    "section": "More GIS Resources",
+    "text": "More GIS Resources\n\nGeocomputation with R, e-book\nSpatial Data Science, e-book\nA Gentle Introduction to GIS, by QGIS"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-1",
+    "href": "lectures/18_network.html#networks-1",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nNetworks are mathematical structures containing nodes and edges.\n\n\n\nCode\n# Create a random graph\nset.seed(20260416)\ng &lt;- sample_gnm(60, 100) %&gt;% \n  set_edge_attr(name = \"weight\",\n                value = rexp(n = 100, rate = 0.9))\n\n# Graph\nggraph(g, layout = \"igraph\", algorithm = \"fr\") +\n  geom_edge_link(linewidth = 1) +\n  geom_node_point(size = 5, color = \"purple\") +\n  coord_equal() +\n  theme_graph()"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-2",
+    "href": "lectures/18_network.html#networks-2",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nNodes are the items in a network.\n\nOther terms for a node:\n\nVertex\nPoint\n\n\nEdges specify relations between nodes.\n\nOther terms for an edge:\n\nLink\nConnection\nArc\nLine"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-3",
+    "href": "lectures/18_network.html#networks-3",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nThe branch of mathematics concerned with networks is known as graph theory.\n\nUses the term graph for a network.\nTerm dates back to Sylvester (1878, Nature)."
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-4",
+    "href": "lectures/18_network.html#networks-4",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nOrigins of graph theory date back to Leonhard Euler and the Seven Bridges of Königsberg problem.\n\n\n\n\n\nSeven Bridges of Königsberg. Wikipedia"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-5",
+    "href": "lectures/18_network.html#networks-5",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nNodes can have attributes.\n\n\n\nCode\n# Create a random graph\nset.seed(20260416)\ng &lt;- sample_gnm(10, 12) %&gt;% \n  set_vertex_attr(name = \"size\", value = rpois(n = 10, lambda = 3) + 1)\n\nggraph(g, layout = \"auto\") +\n  geom_edge_link() +\n  geom_node_point(aes(size = size, color = size)) +\n  scale_color_viridis_c() +\n  theme_graph()"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-6",
+    "href": "lectures/18_network.html#networks-6",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nEdges can have attributes.\n\n\n\nCode\n# Create a random graph\nset.seed(20260416)\ng &lt;- sample_gnm(8, 12) %&gt;% \n  set_edge_attr(name = \"size\", value = rbinom(n = 12, size = 2, prob = 0.5))\n\nggraph(g, layout = \"auto\") +\n  geom_edge_link(aes(linewidth = size, color = size)) +\n  geom_node_point(size = 6) +\n  theme_graph()"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-7",
+    "href": "lectures/18_network.html#networks-7",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nEdges can be undirected or directed.\n\n\n\nCode\n# Create a graph\ng1 &lt;- make_graph(edges = c(1, 2, 2, 3, 3, 4),\n                 directed = FALSE)\n\ng2 &lt;- make_graph(edges = c(1, 2, 2, 3, 3, 4),\n                 directed = TRUE)\n\np1 &lt;- ggraph(g1, layout = \"linear\") +\n  geom_edge_link(linewidth = 1,\n                 color = \"purple\") +\n  geom_node_point(size = 6) +\n  coord_flip() +\n  ggtitle(\"Undirected\") +\n  theme_graph() +\n  theme(plot.title = element_text(hjust = 0.5))\n\np2 &lt;- ggraph(g2, layout = \"linear\") +\n  geom_edge_link(linewidth = 1, arrow = arrow(angle = 30, \n                                               length = unit(0.2, \"inches\"),\n                                               type = \"closed\"),\n                  end_cap = circle(0.11, \"inches\"),\n                  color = \"purple\") +\n  geom_node_point(size = 6) +\n  coord_flip() +\n  ggtitle(\"Directed\") +\n  theme_graph() +\n  theme(plot.title = element_text(hjust = 0.5))\n\np1 + p2"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-8",
+    "href": "lectures/18_network.html#networks-8",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nWhen an edge connects a node to itself, it is called a loop.\n\n\n\nCode\ng &lt;- make_graph(edges = c(1, 2, 2, 3, 3, 4, 4, 4),\n                directed = TRUE)\n\nggraph(g, layout = \"linear\") +\n  geom_edge_loop(linewidth = 1,\n                arrow = arrow(angle = 30, \n                              length = unit(0.2, \"inches\"),\n                              type = \"closed\"),\n                end_cap = circle(0.11, \"inches\"), \n                color = \"purple\") +\n  geom_edge_link(linewidth = 1,\n                arrow = arrow(angle = 30, \n                              length = unit(0.2, \"inches\"),\n                              type = \"closed\"),\n                end_cap = circle(0.11, \"inches\"), \n                color = \"purple\") +\n  geom_node_point(size = 6) +\n  coord_cartesian(ylim = c(-0.5, 0.75)) +\n  theme_graph()"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-9",
+    "href": "lectures/18_network.html#networks-9",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nNetworks can have cycles where connections between nodes create a loop.\n\nA network with at least one cycle is called cyclic,\nand a network with no cycles is called acyclic.\n\n\n\n\nCode\n# Create a graph\ng1 &lt;- make_graph(edges = c(1, 2, 2, 3, 3, 4),\n                 directed = FALSE)\n\ng2 &lt;- make_graph(edges = c(1, 2, 2, 3, 3, 4, 4, 2),\n                 directed = FALSE)\n\np1 &lt;- ggraph(g1, layout = \"linear\") +\n  geom_edge_link(linewidth = 1,\n                 color = \"purple\") +\n  geom_node_point(size = 6) +\n  coord_flip() +\n  ggtitle(\"Acyclic\") +\n  theme_graph() +\n  theme(plot.title = element_text(hjust = 0.5))\n\np2 &lt;- ggraph(g2, layout = \"auto\") +\n  geom_edge_link(linewidth = 1, \n                  color = \"purple\") +\n  geom_node_point(size = 6) +\n  coord_flip() +\n  ggtitle(\"Cyclic\") +\n  theme_graph() +\n  theme(plot.title = element_text(hjust = 0.5))\n\np1 + p2"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-10",
+    "href": "lectures/18_network.html#networks-10",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nA network with hierarchical structure is called a tree.\nTrees cannot have cycles.\n\n\n\nCode\n# Random graph\nset.seed(20260416)\ntr &lt;- sample_tree(n = 30, directed = TRUE, method = \"lerw\")\n\nggraph(tr, layout = 'dendrogram') + \n  geom_edge_elbow(linewidth = 1) +\n  theme_graph()"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-11",
+    "href": "lectures/18_network.html#networks-11",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nA connected network has some way to get between any two nodes.\nA disconnected graph has some gaps.\n\n\n\nCode\n# Create a graph\ng1 &lt;- make_graph(edges = c(1, 2, 2, 3, 3, 4, 4, 2),\n                 directed = FALSE)\n\ng2 &lt;- make_graph(edges = c(1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 7, 5),\n                 directed = FALSE)\n\np1 &lt;- ggraph(g1, layout = \"igraph\", algorith = \"fr\") +\n  geom_edge_link(linewidth = 1,\n                 color = \"purple\") +\n  geom_node_point(size = 6) +\n  ggtitle(\"Connected\") +\n  theme_graph() +\n  theme(plot.title = element_text(hjust = 0.5))\n\np2 &lt;- ggraph(g2, layout = \"igraph\", algorith = \"fr\") +\n  geom_edge_link(linewidth = 1, \n                  color = \"purple\") +\n  geom_node_point(size = 6) +\n  ggtitle(\"Disconnected\") +\n  theme_graph() +\n  theme(plot.title = element_text(hjust = 0.5))\n\np1 + p2"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-12",
+    "href": "lectures/18_network.html#networks-12",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks",
+    "text": "Networks\n\nA connected network might have a node or edge that acts as a bottleneck. If that node/edge is removed, the network becomes disconnected.\n\nCut node or cut edge.\n\n\n\n\nCode\n# Create a graph\ng1 &lt;- make_graph(edges = c(1, 2, 2, 3, 3, 1, \n                           # Node 4 is cut node\n                           3, 4, 4, 5,\n                           5, 6, 6, 7, 7, 5),\n                 directed = FALSE) %&gt;% \n  set_vertex_attr(name = \"cut\", value = c((1:7) == 4))\n\ng2 &lt;- make_graph(edges = c(1, 2, 2, 3, 3, 1, \n                           # Cut vertex between 3 and 4\n                           3, 4,\n                           4, 5, 5, 6, 6, 7, 7, 4),\n                 directed = FALSE) %&gt;% \n  set_edge_attr(name = \"cut\", value = c((1:8) == 4))\n\np1 &lt;- ggraph(g1, layout = \"igraph\", algorith = \"fr\") +\n  geom_edge_link(linewidth = 1,\n                 color = \"black\") +\n  geom_node_point(size = 7, aes(color = cut)) +\n  ggtitle(\"Cut Node\") +\n  theme_graph() +\n  theme(plot.title = element_text(hjust = 0.5))\n\np2 &lt;- ggraph(g2, layout = \"igraph\", algorith = \"fr\") +\n  geom_edge_link(linewidth = 1, aes(color = cut)) +\n  geom_node_point(size = 6) +\n  ggtitle(\"Cut Edge\") +\n  theme_graph() +\n  theme(plot.title = element_text(hjust = 0.5))\n\np1 + p2"
+  },
+  {
+    "objectID": "lectures/18_network.html#visualizing-networks-1",
+    "href": "lectures/18_network.html#visualizing-networks-1",
+    "title": "Lecture 18: Network Data",
+    "section": "Visualizing Networks",
+    "text": "Visualizing Networks\n\n\nThis part of the lecture is largely based on Chapter 9 of Visualization Analysis & Design.\n\n“Arrange Networks and Trees”\n\nWe’ll take some ideas from the text and some other examples from the internet to talk about how to visualize networks."
+  },
+  {
+    "objectID": "lectures/18_network.html#visualizing-networks-2",
+    "href": "lectures/18_network.html#visualizing-networks-2",
+    "title": "Lecture 18: Network Data",
+    "section": "Visualizing Networks",
+    "text": "Visualizing Networks\n\n\n\nVAD, Fig. 9.1"
+  },
+  {
+    "objectID": "lectures/18_network.html#networks-in-r-1",
+    "href": "lectures/18_network.html#networks-in-r-1",
+    "title": "Lecture 18: Network Data",
+    "section": "Networks in R",
+    "text": "Networks in R\n\nSome useful R packages:\n\nigraph, go-to package for networks in R?\nggraph, extension of ggplot2 for networks.\ntidygraph, a tidy API for network manipulation.\nOthers?\n\nR Graph Gallery\n\nNetwork graph"
+  },
+  {
+    "objectID": "lectures/18_network.html#node-link-diagrams",
+    "href": "lectures/18_network.html#node-link-diagrams",
+    "title": "Lecture 18: Network Data",
+    "section": "Node-Link Diagrams",
+    "text": "Node-Link Diagrams\n\nNode-link diagrams are the most common visual encoding idiom for networks.\n\nPoint marks for nodes.\nLine marks for links.\nVertical/horizontal position may or may not be used to encode any information."
+  },
+  {
+    "objectID": "lectures/18_network.html#node-link-diagrams-1",
+    "href": "lectures/18_network.html#node-link-diagrams-1",
+    "title": "Lecture 18: Network Data",
+    "section": "Node-Link Diagrams",
+    "text": "Node-Link Diagrams\n\n\n\nGrizzly Bear Life-cycle Diagram"
+  },
+  {
+    "objectID": "lectures/18_network.html#node-link-diagrams-2",
+    "href": "lectures/18_network.html#node-link-diagrams-2",
+    "title": "Lecture 18: Network Data",
+    "section": "Node-Link Diagrams",
+    "text": "Node-Link Diagrams\n\n\n\nExample from WLF 2200: Principles of Ecology\nThis network is known as a life-cycle diagram and the projection matrix associated with it is known as a Leslie matrix.\nHorizontal position encodes age.\n\n\n\n\n\n\nGrizzly Bear Life-cycle Diagram"
+  },
+  {
+    "objectID": "lectures/18_network.html#node-link-diagrams-3",
+    "href": "lectures/18_network.html#node-link-diagrams-3",
+    "title": "Lecture 18: Network Data",
+    "section": "Node-Link Diagrams",
+    "text": "Node-Link Diagrams\n\nA spindle diagram shows phylogenetic relationships in a tree.\nHorizontal width (of edges) encodes taxonomic diversity.\nVertical position encodes geological time.\n\n\n\n\n\nVertebrate Spindle Diagram. Wikipedia."
+  },
+  {
+    "objectID": "lectures/18_network.html#node-link-diagrams-4",
+    "href": "lectures/18_network.html#node-link-diagrams-4",
+    "title": "Lecture 18: Network Data",
+    "section": "Node-Link Diagrams",
+    "text": "Node-Link Diagrams\n\nTrees can also be displayed with a radial layout.\n\n\n\n\n\nDavid Hillis’s Tree of Life. Wikipedia."
+  },
+  {
+    "objectID": "lectures/18_network.html#node-link-diagrams-5",
+    "href": "lectures/18_network.html#node-link-diagrams-5",
+    "title": "Lecture 18: Network Data",
+    "section": "Node-Link Diagrams",
+    "text": "Node-Link Diagrams\n\nWhen spatial position is not used to encode an attribute, the layout of nodes can be arbitrary.\nMany potential algorithms for deciding the placement of nodes for visual aesthetics or readability."
+  },
+  {
+    "objectID": "lectures/18_network.html#node-link-diagrams-6",
+    "href": "lectures/18_network.html#node-link-diagrams-6",
+    "title": "Lecture 18: Network Data",
+    "section": "Node-Link Diagrams",
+    "text": "Node-Link Diagrams\n\nA popular layout idiom is force-directed placement.\n\nMany variants on the basic idea.\nPosition nodes with a simulation of physical forces.\n\nNodes repel each other.\nEdges act like springs to draw each other together.\n\nMany algorithms are nondeterministic (stochastic)."
+  },
+  {
+    "objectID": "lectures/18_network.html#matrix-views",
+    "href": "lectures/18_network.html#matrix-views",
+    "title": "Lecture 18: Network Data",
+    "section": "Matrix Views",
+    "text": "Matrix Views\n\nA network can be transformed into an adjacency matrix.\n\nAn \\(n \\times n\\) square matrix, where \\(n\\) is the number of nodes.\n\nVisualization can be based on the matrix instead of using node-link diagrams.\n\n\n\nCode\n# Create a graph\ng1 &lt;- make_graph(edges = c(1, 2, 2, 3, 3, 1, \n                           # Node 4 is cut node\n                           3, 4, 4, 5,\n                           5, 6, 6, 7, 7, 5),\n                 directed = FALSE) %&gt;% \n  set_vertex_attr(name = \"cut\", value = c((1:7) == 4))\n\nmat &lt;- g1 %&gt;% \n  as.matrix() %&gt;% \n  as.matrix\ncolnames(mat) &lt;- 1:7\nrownames(mat) &lt;- 1:7\n\npar(mfrow = c(1, 2))\nplot(g1, main = \"Node-Link Diagram\")\nimage(mat, asp = 1, axes = FALSE, main = \"Adjacency Matrix\", lwd = 0.5)\naxis(1, at = seq(0, 1, length.out = 7), labels = 1:7)\naxis(2, at = seq(0, 1, length.out = 7), labels = 1:7)\nbox()"
+  },
+  {
+    "objectID": "lectures/18_network.html#containment-hierarchy-marks",
+    "href": "lectures/18_network.html#containment-hierarchy-marks",
+    "title": "Lecture 18: Network Data",
+    "section": "Containment: Hierarchy Marks",
+    "text": "Containment: Hierarchy Marks\n\nAnother approach is to show hierarchical structure with containment rather than connection.\n\nTreemaps\nCircular packing"
+  },
+  {
+    "objectID": "resources.html#networksgraph-theory",
+    "href": "resources.html#networksgraph-theory",
+    "title": "Resources",
+    "section": "Networks/Graph Theory",
+    "text": "Networks/Graph Theory\n\nA Simple Introduction to Graph Theory, by Brian Heinhold"
   }
 ]
