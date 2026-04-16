@@ -1362,7 +1362,7 @@
     "href": "code.html",
     "title": "Code",
     "section": "",
-    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nImage Formats\nimage_formats.R\n\n\n2/5/2026\nData Wrangling\ndata_wrangling.R\n\n\n2/5/2026\nData Wrangling Extras\ndata_wrangling_extra.R\n\n\n2/19/2026\nggplot2, Part 1\nggplot2_pt1.R\n\n\n2/26/2026\nggplot2, Part 2\nggplot2_pt2.R\n\n\n3/5/2026\nMulti-panel Figures\nggplot2_compose.R\n\n\n3/24/2026\nColors\ncolors.R\n\n\n3/26/2026\nReduce Items and Attributes\nreduce.R\n\n\n3/31/2026\nEmbed\nembed.R\n\n\n4/2/2026\nGraphics for the Surveys\nsurvey_figs.R"
+    "text": "Links to code walkthroughs.\n\n\n\nDate\nTopic\nCode\n\n\n\n\n1/22/2026\nLiterate Programming\nhomepage.qmd\n\n\n1/29/2026\nImage Formats\nimage_formats.R\n\n\n2/5/2026\nData Wrangling\ndata_wrangling.R\n\n\n2/5/2026\nData Wrangling Extras\ndata_wrangling_extra.R\n\n\n2/19/2026\nggplot2, Part 1\nggplot2_pt1.R\n\n\n2/26/2026\nggplot2, Part 2\nggplot2_pt2.R\n\n\n3/5/2026\nMulti-panel Figures\nggplot2_compose.R\n\n\n3/24/2026\nColors\ncolors.R\n\n\n3/26/2026\nReduce Items and Attributes\nreduce.R\n\n\n3/31/2026\nEmbed\nembed.R\n\n\n4/2/2026\nGraphics for the Surveys\nsurvey_figs.R\n\n\n4/14/2026\nGIS in R\ngis.R"
   },
   {
     "objectID": "lectures/00_test.html#slide-1",
