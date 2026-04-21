@@ -26,6 +26,7 @@ author: "Brian J. Smith"
 |4/7/2026  | No class                                                          | 
 |4/9/2026  |[Lecture 17: Spatial Data](lectures/17_spatial.qmd)                | 
 |4/16/2026  |[Lecture 18: Network Data](lectures/18_network.qmd)               | 
+|4/21/2026  |[Lecture 19: Animation](lectures/19_animate.qmd)                  | 
 
 
 
