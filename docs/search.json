@@ -3442,5 +3442,320 @@
     "title": "Assignment 9: Network Data",
     "section": "Instructions",
     "text": "Instructions\n\nFind a dataset. I’ve suggested a couple of repositories above and provided some demo code to load the data into R.\nWrite a small amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. Don’t spend a lot of time on the narrative.\nDecide on a layout (see above).\nPlot! If your network has node attributes or edge attributes, try to show one of them.\n\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "lectures/19_animate.html#animation-1",
+    "href": "lectures/19_animate.html#animation-1",
+    "title": "Lecture 19: Animation",
+    "section": "Animation",
+    "text": "Animation\n\nWhy animate?\n\nWhy not animate?\n\nWhat is an animation?\nAnimation with gganimate\nCustom animation with ImageMagick"
+  },
+  {
+    "objectID": "lectures/19_animate.html#why-animate",
+    "href": "lectures/19_animate.html#why-animate",
+    "title": "Lecture 19: Animation",
+    "section": "Why animate?",
+    "text": "Why animate?\n\nShow different subsets of data.\nShow dynamics (usually over time, but other dimensions possible).\nGuide the eye to subtle changes.\nBuild up a figure gradually."
+  },
+  {
+    "objectID": "lectures/19_animate.html#why-not-animate",
+    "href": "lectures/19_animate.html#why-not-animate",
+    "title": "Lecture 19: Animation",
+    "section": "Why not animate?",
+    "text": "Why not animate?\n\n“Eyes beat memory.”\nNot available in print (obviously) or print-like media (e.g., PDF).\nResource intensive.\nInterpolation between discrete states may be misleading.\n\nInterpolated states aren’t data."
+  },
+  {
+    "objectID": "lectures/19_animate.html#gganimate-1",
+    "href": "lectures/19_animate.html#gganimate-1",
+    "title": "Lecture 19: Animation",
+    "section": "gganimate",
+    "text": "gganimate\n\n \n\n\nR package extending ggplot2 for animation.\n\n\n\n\n\ngganimate README Animation"
+  },
+  {
+    "objectID": "lectures/19_animate.html#what-is-an-animation-1",
+    "href": "lectures/19_animate.html#what-is-an-animation-1",
+    "title": "Lecture 19: Animation",
+    "section": "What is an animation?",
+    "text": "What is an animation?\n\nSet of frames that are displayed in sequence."
+  },
+  {
+    "objectID": "lectures/19_animate.html#gganimate-2",
+    "href": "lectures/19_animate.html#gganimate-2",
+    "title": "Lecture 19: Animation",
+    "section": "gganimate",
+    "text": "gganimate\n\nThe gganimate help files organize functions into these grammar classes:\n\nTransitions\n\ntransition_*() defines how the items change.\n\nViews\n\nview_*() defines how the view changes.\n\nShadows\n\nshadow_*() defines how items out-of-focus should appear.\n\nTweening\n\nenter_*()/exit_*() defines how items come and go.\nease_aes() defines how different aesthetics should be eased during transitions."
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions",
+    "href": "lectures/19_animate.html#transitions",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_states()\n\nTransition between several distinct stages of the data\n\ntransition_time()\n\nTransition through distinct states in time\n\ntransition_reveal()\n\nReveal data along a given dimension\n\ntransition_events()\n\nTransition individual events in and out\n\ntransition_filter()\n\nTransition between different filters\n\ntransition_layers()\n\nBuild up a plot, layer by layer (literally the ggplot2 layers)\n\ntransition_components()\n\nDefine when each independent component enters and exits."
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions-1",
+    "href": "lectures/19_animate.html#transitions-1",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_states()\n\nUsed to transition using discrete variables (i.e., factors).\nThink of this as an alternative to facet_wrap().\n\nE.g., we made this figure in Lecture 12\n\n\n\n\n\nCode\nset.seed(19)\np &lt;- expand.grid(n = 1:20, label = LETTERS[1:3]) %&gt;% \n  mutate(x = rnorm(nrow(.))) %&gt;% \n  ggplot(aes(x = x)) +\n  geom_density(fill = \"lavender\") +\n  facet_wrap(~ label)\np"
+  },
+  {
+    "objectID": "lectures/19_animate.html#views",
+    "href": "lectures/19_animate.html#views",
+    "title": "Lecture 19: Animation",
+    "section": "Views",
+    "text": "Views\n\nChange the axes as the data change.\nview_follow()\n\nFollow the data in each frame.\n\nview_step()\n\nFollow the data in steps.\n\nview_zoom()\n\nZoom between states."
+  },
+  {
+    "objectID": "lectures/19_animate.html#shadows",
+    "href": "lectures/19_animate.html#shadows",
+    "title": "Lecture 19: Animation",
+    "section": "Shadows",
+    "text": "Shadows\n\nDefine how data from other frames are shown.\nshadow_wake()\n\nShow preceding frames with gradual falloff.\n\nshadow_trail()\n\nA trail of evenly spaced old frames.\n\nshadow_mark()\n\nShow original data as background marks."
+  },
+  {
+    "objectID": "lectures/19_animate.html#tweening",
+    "href": "lectures/19_animate.html#tweening",
+    "title": "Lecture 19: Animation",
+    "section": "Tweening",
+    "text": "Tweening\n\nControl how data enter/leave the animation.\nenter_appear()/exit_disappear()\nenter_fade()/exit_fade()\nenter_grow()/exit_shrink()\nenter_recolor()/exit_recolor()\nenter_fly()/exit_fly()\nenter_drift()/exit_drift()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions-2",
+    "href": "lectures/19_animate.html#transitions-2",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_states()\n\nAnimate rather than facet:\n\n\n\n\nCode\np +\n  facet_null() +\n  transition_states(label,\n                    transition_length = 1,\n                    state_length = 2) +\n  labs(title = \"{closest_state}\")"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions-3",
+    "href": "lectures/19_animate.html#transitions-3",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_time()\n\nUsed to transition using continuous variables (e.g., time).\nAn alternative to showing a classic timeseries.\n\n\n\n\nCode\np &lt;- airquality %&gt;% \n  mutate(Date = lubridate::ymd(paste0(\"1973-\", Month, \"-\", Day))) %&gt;% \n  ggplot(aes(x = Date, y = Temp)) +\n  geom_point(size = 2) +\n  theme_bw()\np +\n  geom_line()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions-4",
+    "href": "lectures/19_animate.html#transitions-4",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_time()\n\n(Time shown redundantly with x-position)\n\n\n\n\nCode\np +\n  transition_time(Date)"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions-5",
+    "href": "lectures/19_animate.html#transitions-5",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_reveal()\n\nUsed to gradually reveal along a dimension.\n\n\n\n\nCode\np +\n  geom_line() +\n  transition_reveal(Date)"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions-6",
+    "href": "lectures/19_animate.html#transitions-6",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_events()\n\nGives you detailed control over when items enter and exit.\nLet’s animate the Billboard Top 100 artists.\n\n\n\n# Data on Billboard Hot 100 songs\n# 1960 - 2016\nlibrary(billboard)\n\ndata(\"wiki_hot_100s\")\n\nwiki_hot_100s &lt;- wiki_hot_100s %&gt;% \n  mutate(no = as.numeric(no),\n         year = as.numeric(year))\n\nhead(wiki_hot_100s)\n\n  no                     title              artist year\n1  1 Theme from A Summer Place         Percy Faith 1960\n2  2          He'll Have to Go          Jim Reeves 1960\n3  3             Cathy's Clown The Everly Brothers 1960\n4  4              Running Bear      Johnny Preston 1960\n5  5                Teen Angel        Mark Dinning 1960\n6  6                 I'm Sorry          Brenda Lee 1960"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions-7",
+    "href": "lectures/19_animate.html#transitions-7",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_events()\n\nGives you detailed control over when items enter and exit.\nSome data wrangling:\n\n\n\n# Find those artists with at least 10 appearances\nmulti &lt;- wiki_hot_100s %&gt;% \n  count(artist) %&gt;% \n  filter(n &gt; 10)\n\n# Subset data to just those\ntens &lt;- wiki_hot_100s %&gt;% \n  filter(artist %in% multi$artist)\n\n# Sort by earliest appearance\nsorted &lt;- tens %&gt;% \n  group_by(artist) %&gt;% \n  summarize(start = min(year)) %&gt;% \n  arrange(start) %&gt;% \n  # Pull vector of artist names\n  pull(artist)\n\n# Change artist to factor by date\ntens &lt;- tens %&gt;% \n  mutate(artist = factor(artist, levels = sorted)) %&gt;% \n  # Categorize number of song\n  mutate(no_cat = case_when(\n           no == 1 ~ \"1\",\n           no == 2 ~ \"2\",\n           no == 3 ~ \"3\", \n           no &lt;= 10 ~ \"Top 10\",\n           no &lt;= 25 ~ \"Top 25\",\n           no &lt;= 50 ~ \"Top 50\",\n           no &lt;= 100 ~ \"Top 100\"\n         )) %&gt;% \n  # Factor\n  mutate(no_cat = factor(no_cat, \n                         levels = c(\"1\", \"2\", \"3\", \"Top 10\",\n                                    \"Top 25\", \"Top 50\", \"Top 100\")))\n\n# Create data.frame of first and last appearance\nfl &lt;- tens %&gt;% \n  group_by(artist) %&gt;% \n  summarize(first = min(year), last = max(year))\n\n# Join\ntens_fl &lt;- tens %&gt;% \n  left_join(fl, by = \"artist\")"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions-8",
+    "href": "lectures/19_animate.html#transitions-8",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_events()\n\nGives you detailed control over when items enter and exit.\nStatic plot:\n\n\n\n\nCode\n# Plot\np &lt;- ggplot(tens_fl, aes(x = year, y = artist, color = no_cat)) +\n  geom_point(size = 2.5) +\n  scale_color_viridis_d(name = \"Ranking\", direction = -1) +\n  scale_x_continuous(breaks = seq(1960, 2016, by = 4)) +\n  theme_bw() +\n  theme(axis.text.x = element_text(angle = 90, hjust = 1),\n        axis.text = element_text(size = 7))\np"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions-9",
+    "href": "lectures/19_animate.html#transitions-9",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_events()\n\nGives you detailed control over when items enter and exit.\nAnimation that groups contemporaries together:\n\n\n\n\nCode\n# Animate\np +\n  transition_events(start = first, end = last,\n                    enter_length = 1, exit_length = 2) +\n  enter_appear() +\n  exit_disappear()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#what-is-an-animation",
+    "href": "lectures/19_animate.html#what-is-an-animation",
+    "title": "Lecture 19: Animation",
+    "section": "What is an animation?",
+    "text": "What is an animation?\n\nSet of frames that are displayed in sequence.\nEach frame is a static image.\n\nInterpolation between static states can be useful for guiding the eye.\n\nAnimation formats vary in their efficiency.\n\nSome store 100% of the pixels of each frame.\n\nHigh image quality, very large file size.\n\nOthers only store the changes from one frame to the next.\n\nSignificantly reduces file size.\nCan introduce visual artifacts.\n\n\nBoth image formats and video formats exist.\n\nE.g., GIF is an image format.\nE.g., MP4 is a video format."
+  },
+  {
+    "objectID": "lectures/19_animate.html#transitions-10",
+    "href": "lectures/19_animate.html#transitions-10",
+    "title": "Lecture 19: Animation",
+    "section": "Transitions",
+    "text": "Transitions\n\ntransition_filter()\n\nLet’s you use sequential filters to remove pieces of data.\nUseful for gradually arriving at a relevant subset of data.\n\n\n\n\nCode\n# Animate\np +\n  transition_filter(transition_length = 1,\n                    filter_length = 1,\n                    `The 1960s` = year %in% 1960:1969,\n                    `The 1970s` = year %in% 1970:1979,\n                    `New Millenium` = year &gt; 1999) +\n  ggtitle(\n    'Filter: {closest_filter}',\n    subtitle = '{closest_expression}'\n  ) +\n  enter_appear() +\n  exit_fade()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transition",
+    "href": "lectures/19_animate.html#transition",
+    "title": "Lecture 19: Animation",
+    "section": "Transition",
+    "text": "Transition\n\ntransition_layers()\n\nBuild-up an animation one layer at a time.\nI.e., add each geom sequentially.\n\n\n\n\nCode\n# Plot penguins data\ndata(\"penguins\")\n\np &lt;- penguins %&gt;% \n  ggplot() +\n  geom_point(aes(x = bill_len, y = flipper_len, color = species)) +\n  geom_smooth(aes(x = bill_len, y = flipper_len), \n              method = \"lm\", color = \"gray30\", linetype = \"dashed\") +\n  geom_smooth(aes(x = bill_len, y = flipper_len, color = species),\n              method = \"lm\") +\n  coord_cartesian(xlim = c(30, 60),\n                  ylim = c(170, 240)) +\n  labs(x = \"Bill Length (mm)\",\n       y = \"Flipper Length (mm)\") +\n  theme_bw()\n\np"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transition-1",
+    "href": "lectures/19_animate.html#transition-1",
+    "title": "Lecture 19: Animation",
+    "section": "Transition",
+    "text": "Transition\n\ntransition_layers()\n\nBuild-up an animation one layer at a time.\nI.e., add each geom sequentially.\n\n\n\n\nCode\n# Animate\np +\n  transition_layers()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transition-2",
+    "href": "lectures/19_animate.html#transition-2",
+    "title": "Lecture 19: Animation",
+    "section": "Transition",
+    "text": "Transition\n\ntransition_components()\n\nTransitions individual “components” around the figure.\nEach component has its own time column, so can enter and exit at any time.\n\n\n\n# Function sample data from a random walk.\nrw &lt;- function(id) {\n  # Empty data.frame\n  df &lt;- data.frame(id = id, \n                   t = 1:30,\n                   x = NA, y = NA)\n  # Random starting location\n  df$x[1] &lt;- runif(1, min = -3, max = 3)\n  df$y[1] &lt;- runif(1, min = -3, max = 3)\n  \n  # Loop to \"walk\"\n  for (t in 2:30) {\n    df$x[t] &lt;- df$x[t - 1] + rnorm(1)\n    df$y[t] &lt;- df$y[t - 1] + rnorm(1)\n  }\n  \n  # Return\n  return(df)\n}\n\n# Sample 3 individuals\nset.seed(123456)\ndat &lt;- lapply(1:3, rw) %&gt;% \n  bind_rows()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transition-3",
+    "href": "lectures/19_animate.html#transition-3",
+    "title": "Lecture 19: Animation",
+    "section": "Transition",
+    "text": "Transition\n\ntransition_components()\n\nTransitions individual “components” around the figure.\nEach component has its own time column, so can enter and exit at any time.\n\n\n\n\nCode\ndat %&gt;% \n  group_by(id) %&gt;% \n  mutate(xend = lead(x), yend = lead(y)) %&gt;% \n  ggplot(aes(x = x, y = y, color = factor(id), group = factor(id))) +\n  geom_point() +\n  geom_segment(aes(xend = xend, yend = yend)) +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#transition-4",
+    "href": "lectures/19_animate.html#transition-4",
+    "title": "Lecture 19: Animation",
+    "section": "Transition",
+    "text": "Transition\n\ntransition_components()\n\nTransitions individual “components” around the figure.\nEach component has its own time column, so can enter and exit at any time.\n\n\n\n\nCode\ndat %&gt;% \n  # Let ID 1 go all 30 timesteps\n  # Only let ID 2 enter at t = 10\n  # Have ID 3 go from t = 5 to 20\n  filter(id == 1 | (id == 2 & t &gt; 9) | (id == 3 & t %in% 5:20)) %&gt;% \n  ggplot(aes(x = x, y = y, color = factor(id), group = factor(id))) +\n  geom_point(size = 3) +\n  theme_bw() +\n  transition_components(time = t) +\n  ggtitle(\"t = {frame_time}\")"
+  },
+  {
+    "objectID": "lectures/19_animate.html#views-1",
+    "href": "lectures/19_animate.html#views-1",
+    "title": "Lecture 19: Animation",
+    "section": "Views",
+    "text": "Views\n\nview_follow()\n\nFollow the data in each frame.\n\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 4, state_length = 1) +\n  view_follow()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#views-2",
+    "href": "lectures/19_animate.html#views-2",
+    "title": "Lecture 19: Animation",
+    "section": "Views",
+    "text": "Views\n\nview_step()\n\nFollow the data in steps.\n\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 4, state_length = 1) +\n  view_step(pause_length = 2, step_length = 1, nsteps = 3)"
+  },
+  {
+    "objectID": "lectures/19_animate.html#views-3",
+    "href": "lectures/19_animate.html#views-3",
+    "title": "Lecture 19: Animation",
+    "section": "Views",
+    "text": "Views\n\nview_zoom()\n\nZoom between states.\nDoes a combination of zooming and panning.\n\nControlled by argument pan_zoom.\n\n\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 4, state_length = 1) +\n  view_zoom(pause_length = 1, step_length = 2, nsteps = 3)"
+  },
+  {
+    "objectID": "lectures/19_animate.html#shadows-1",
+    "href": "lectures/19_animate.html#shadows-1",
+    "title": "Lecture 19: Animation",
+    "section": "Shadows",
+    "text": "Shadows\n\nshadow_wake()\n\nShow preceding frames with gradual falloff.\n\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 4, state_length = 1) +\n  shadow_wake(wake_length = 0.1)"
+  },
+  {
+    "objectID": "lectures/19_animate.html#shadows-2",
+    "href": "lectures/19_animate.html#shadows-2",
+    "title": "Lecture 19: Animation",
+    "section": "Shadows",
+    "text": "Shadows\n\nshadow_trail()\n\nA trail of evenly spaced old frames.\n\n\n\n\nCode\ndat %&gt;% \n  # Let ID 1 go all 30 timesteps\n  # Only let ID 2 enter at t = 10\n  # Have ID 3 go from t = 5 to 20\n  filter(id == 1 | (id == 2 & t &gt; 9) | (id == 3 & t %in% 5:20)) %&gt;% \n  ggplot(aes(x = x, y = y, color = factor(id), group = factor(id))) +\n  geom_point(size = 3) +\n  theme_bw() +\n  transition_components(time = t) +\n  ggtitle(\"t = {frame_time}\") +\n  shadow_trail(max_frames = 3, alpha = 0.3)"
+  },
+  {
+    "objectID": "lectures/19_animate.html#shadows-3",
+    "href": "lectures/19_animate.html#shadows-3",
+    "title": "Lecture 19: Animation",
+    "section": "Shadows",
+    "text": "Shadows\n\nshadow_mark()\n\nShow original data as background marks.\n\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 1, state_length = 1) +\n  shadow_mark(past = TRUE, future = TRUE, colour = 'grey')"
+  },
+  {
+    "objectID": "lectures/19_animate.html#custom-animations-1",
+    "href": "lectures/19_animate.html#custom-animations-1",
+    "title": "Lecture 19: Animation",
+    "section": "Custom Animations",
+    "text": "Custom Animations\n\ngganimate provides a ton of flexibility.\nBut sometimes I envision a very specific animation and can’t figure out how to implement it using gganimate.\nMy solution?\n\nWrite my own frames and then animate them with ImageMagick."
+  },
+  {
+    "objectID": "lectures/19_animate.html#custom-animations-with-imagemagick",
+    "href": "lectures/19_animate.html#custom-animations-with-imagemagick",
+    "title": "Lecture 19: Animation",
+    "section": "Custom Animations with ImageMagick",
+    "text": "Custom Animations with ImageMagick\n\nI will show you the details in the R code.\nBasic idea:\n\nSave frames in order, numbers for file names.\n\nUse leading 0s to make sure alphabetical order matches numerical order.\n\nUse simple terminal command to combine frames using ImageMagick."
+  },
+  {
+    "objectID": "lectures/19_animate.html#custom-animations-with-imagemagick-1",
+    "href": "lectures/19_animate.html#custom-animations-with-imagemagick-1",
+    "title": "Lecture 19: Animation",
+    "section": "Custom Animations with ImageMagick",
+    "text": "Custom Animations with ImageMagick\nFile names with leading 0s\nBase R\n\nformatC(1:10, width = 2, format = \"d\", flag = \"0\")\n\n [1] \"01\" \"02\" \"03\" \"04\" \"05\" \"06\" \"07\" \"08\" \"09\" \"10\"\n\n\n\nTidyverse\n\nstringr::str_pad(1:10, width = 2, side = \"left\", pad = \"0\")\n\n [1] \"01\" \"02\" \"03\" \"04\" \"05\" \"06\" \"07\" \"08\" \"09\" \"10\""
+  },
+  {
+    "objectID": "lectures/19_animate.html#custom-animations-with-imagemagick-2",
+    "href": "lectures/19_animate.html#custom-animations-with-imagemagick-2",
+    "title": "Lecture 19: Animation",
+    "section": "Custom Animations with ImageMagick",
+    "text": "Custom Animations with ImageMagick\nTerminal command for ImageMagick\nmagick -delay 20 folder/*.png anim_file.gif\n\nmagick calls the program.\n-delay 20 means display each frame for 20 milliseconds.\n\n(Bigger numbers for slower animations)\n\nfolder/*.png returns the filenames of all PNG files inside of folder/ (relative to the current path in your terminal).\nanim_file.gif is the output file."
+  },
+  {
+    "objectID": "lectures/19_animate.html#custom-animations-2",
+    "href": "lectures/19_animate.html#custom-animations-2",
+    "title": "Lecture 19: Animation",
+    "section": "Custom Animations",
+    "text": "Custom Animations\n\n\n\n\nCustom animation of my own work"
+  },
+  {
+    "objectID": "lectures/19_animate.html#tweening-1",
+    "href": "lectures/19_animate.html#tweening-1",
+    "title": "Lecture 19: Animation",
+    "section": "Tweening",
+    "text": "Tweening\n\nenter_appear()/exit_disappear()\nDefault options for transitions.\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 1, state_length = 1) +\n  enter_appear() +\n  exit_disappear()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#tweening-2",
+    "href": "lectures/19_animate.html#tweening-2",
+    "title": "Lecture 19: Animation",
+    "section": "Tweening",
+    "text": "Tweening\n\nenter_fade()/exit_fade()\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 1, state_length = 1) +\n  enter_fade() +\n  exit_fade()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#tweening-3",
+    "href": "lectures/19_animate.html#tweening-3",
+    "title": "Lecture 19: Animation",
+    "section": "Tweening",
+    "text": "Tweening\n\nenter_grow()/exit_shrink()\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 3, state_length = 1) +\n  enter_grow() +\n  exit_shrink()"
+  },
+  {
+    "objectID": "lectures/19_animate.html#tweening-4",
+    "href": "lectures/19_animate.html#tweening-4",
+    "title": "Lecture 19: Animation",
+    "section": "Tweening",
+    "text": "Tweening\n\nenter_recolor()/exit_recolor()\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 2, state_length = 1) +\n  enter_recolor(color = \"gray\") +\n  exit_recolor(color = \"gray\")"
+  },
+  {
+    "objectID": "lectures/19_animate.html#tweening-5",
+    "href": "lectures/19_animate.html#tweening-5",
+    "title": "Lecture 19: Animation",
+    "section": "Tweening",
+    "text": "Tweening\n\nenter_fly()/exit_fly()\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 1, state_length = 1) +\n  enter_fly(x_loc = 30, y_loc = 170) +\n  exit_fly(x_loc = 60, y_loc = 230)"
+  },
+  {
+    "objectID": "lectures/19_animate.html#tweening-6",
+    "href": "lectures/19_animate.html#tweening-6",
+    "title": "Lecture 19: Animation",
+    "section": "Tweening",
+    "text": "Tweening\n\nenter_drift()/exit_drift()\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 1, state_length = 1) +\n  enter_drift(x_mod = 20) +\n  exit_drift(y_mod = 100)"
+  },
+  {
+    "objectID": "lectures/19_animate.html#tweening-7",
+    "href": "lectures/19_animate.html#tweening-7",
+    "title": "Lecture 19: Animation",
+    "section": "Tweening",
+    "text": "Tweening\n\nYou can combine multiple enter_*()/exit_*() effects.\n\n\n\nCode\npenguins %&gt;% \n  filter(!is.na(bill_len),\n         !is.na(flipper_len)) %&gt;% \n  ggplot(aes(bill_len, flipper_len, color = species)) +\n  geom_point() +\n  theme_bw() +\n  labs(x = \"Bill Length (mm)\", \n       y = \"Flipper Length (mm)\", \n       title = \"{closest_state}\") +\n  transition_states(species, transition_length = 2, state_length = 1) +\n  # Two enter_*()\n  enter_fade() + enter_grow() +\n  # Two exit_*()\n  exit_fly(x_loc = 7, y_loc = 40) + exit_recolor(color = \"black\")"
+  },
+  {
+    "objectID": "lectures/19_animate.html#render-time",
+    "href": "lectures/19_animate.html#render-time",
+    "title": "Lecture 19: Animation",
+    "section": "Render time",
+    "text": "Render time\n\n\nRender took: 25.5 minutes."
   }
 ]
