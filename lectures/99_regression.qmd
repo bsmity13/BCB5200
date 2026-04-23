@@ -1,0 +1,777 @@
+---
+title: "Regression Modeling"
+author: "Brian J. Smith"
+date: "23 April 2026"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    margin: 0.1
+    theme: simple
+    link-external-icon: true
+    link-external-newwindow: true
+editor: source
+---
+
+## Outline
+
+- Probability
+- Estimation
+- Ordinary Linear Regression
+- Generalized Linear Models
+- Generalized Linear Mixed Models
+- Generalized Additive Models
+
+</br>
+
+<center>
+Adapted from material I originally developed for a [workshop on GAMs and SSFs](https://github.com/bsmity13/MSU_GAM_SSF).
+</center>
+
+# Probability
+
+## Coin Flips
+
+:::: {.columns}
+
+::: {.column}
+
+Assuming a fair coin, what's the probability of flipping:
+
+</br>
+
+<center>
+<u>H</u> <u>H</u> <u>T</u> ?
+</center>
+
+:::
+
+::: {.column}
+
+![A hand flipping a coin](img/wikipedia_coin-toss.jpg){width=75%}\
+
+:::
+
+::::
+
+## Coin Flips
+
+:::: {.columns}
+
+::: {.column}
+
+Assuming a fair coin, what's the probability of flipping:
+
+</br>
+
+<center>
+<u>H</u> <u>H</u> <u>T</u> ?
+
+$$0.5 \times 0.5 \times (1-0.5)$$
+
+$$ = 0.125 = \frac{1}{8}$$
+
+</center>
+
+:::
+
+::: {.column}
+
+![A hand flipping a coin](img/wikipedia_coin-toss.jpg){width=75%}\
+
+:::
+
+::::
+
+## Coin Flips
+
+:::: {.columns}
+
+::: {.column}
+
+Assuming a fair coin, what's the probability of flipping:
+
+</br>
+
+<center>
+<u>H</u> <u>H</u> <u>T</u> ?
+
+$$p \times p \times (1-p)$$
+
+</center>
+
+:::
+
+::: {.column}
+
+![A hand flipping a coin](img/wikipedia_coin-toss.jpg){width=75%}\
+
+:::
+
+::::
+
+## Coin Flips
+
+:::: {.columns}
+
+::: {.column}
+
+It's relatively easy to calculate the probability of observing a particular outcome, given that you know the parameters.
+
+$$\mathrm{Pr}(\mathrm{HHT} | p=0.5)$$
+
+:::
+
+::: {.column}
+
+![A hand flipping a coin](img/wikipedia_coin-toss.jpg){width=75%}\
+
+:::
+
+::::
+
+## Coin Flips
+
+:::: {.columns}
+
+::: {.column}
+
+It's relatively easy to calculate the probability of observing a particular outcome, given that you know the parameters.
+
+$$\mathrm{Pr}(\mathrm{HHT} | p=0.5)$$
+
+$$= 0.125$$
+
+:::
+
+::: {.column}
+
+![A hand flipping a coin](img/wikipedia_coin-toss.jpg){width=75%}\
+
+:::
+
+::::
+
+## Coin Flips
+
+:::: {.columns}
+
+::: {.column}
+
+It's relatively easy to calculate the probability of observing a particular outcome, given that you know the parameters.
+
+$$\mathrm{Pr}(\mathrm{HHT} | p=0.5)$$
+
+$$= 0.125$$
+
+<center>
+
+But what if we don't know $p$?
+
+</center>
+
+:::
+
+::: {.column}
+
+![A hand flipping a coin](img/wikipedia_coin-toss.jpg){width=75%}\
+
+:::
+
+::::
+
+# Estimation
+
+## Likelihood
+
+$$\mathcal{L} = \mathrm{Pr(Data|Model)}$$
+$$\mathcal{L}(\theta | \mathbf{y}) = \mathrm{Pr(\mathbf{y}|\theta)}$$
+
+</br>
+
+In general, our model represents a hypothesis for how our data $(\mathbf{y})$ arose from a stochastic process, which includes assumptions about the data generating process and a set of **parameters** $(\theta)$ that govern that model.
+
+## Likelihood
+
+$$\mathcal{L} = \mathrm{Pr(Data|Model)}$$
+$$\mathcal{L}(\theta | \mathbf{y}) = \mathrm{Pr(\mathbf{y}|\theta)}$$
+
+</br>
+
+In the case of our coin flips, our model includes that the three flips were *independent* and that a **single parameter** $(p)$ describes the probability of either outcome.
+
+$$\mathrm{Pr(H)} = p; \mathrm{Pr(T)} = 1-p$$
+
+## Likelihood
+
+$$\mathcal{L} = \mathrm{Pr(Data|Model)}$$
+$$\mathcal{L}(\theta | \mathbf{y}) = \mathrm{Pr(\mathbf{y}|\theta)}$$
+
+</br>
+
+Once we have our model, it's easy to calculate $\mathcal{L}$ for any given set of parameters.
+
+## Likelihood
+
+$$\mathcal{L} = \mathrm{Pr(Data|Model)}$$
+$$\mathcal{L}(\theta | \mathbf{y}) = \mathrm{Pr(\mathbf{y}|\theta)}$$
+
+</br>
+
+But how do we arrive at an estimate for unknown parameters?
+
+## Maximum Likelihood Estimation 
+
+There are many possible criteria for objectively choosing a set of parameters.
+
+</br>
+
+The most popular is known as **maximum likelihood estimation**, where we choose the set of parameters that maximizes the probability of observing our data.
+
+$$\hat{\theta} = \mathrm{arg\ max}\  \mathcal{L}(\theta | \mathbf{y})$$
+
+</br>
+
+This is the primary method for inference in **frequentist statistics**.
+
+## Maximum Likelihood Estimation 
+
+So for our coin flip, we could try values of $p$ and calculate the likelihood.
+
+|  p    |  $\mathcal{L}(p|\mathbf{y} = \mathrm{HHT})$   |
+|-------|-----------------------------------------------|
+| 0.1   | $0.1 \times 0.1 \times 0.9 = 0.009$           |
+| 0.2   | $0.2 \times 0.3 \times 0.8 = 0.032$           |
+| 0.3   | $0.3 \times 0.3 \times 0.7 = 0.063$           |
+| 0.4   | $0.4 \times 0.4 \times 0.6 = 0.096$           |
+| 0.5   | $0.5 \times 0.5 \times 0.5 = 0.125$           |
+| 0.6   | $0.6 \times 0.6 \times 0.4 = 0.144$           |
+| 0.7   | $0.7 \times 0.7 \times 0.3 = 0.147$           |
+| 0.8   | $0.8 \times 0.8 \times 0.2 = 0.128$           |
+| 0.9   | $0.9 \times 0.9 \times 0.1 = 0.081$           |
+
+## Maximum Likelihood Estimation {.smaller}
+
+So for our coin flip, we could try values of $p$ and calculate the likelihood. 
+
+(The curvature tells us about the **precision** of our estimate).
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+
+# Values of p to try
+p <- seq(0.01, 0.99, by = 0.01)
+
+# Calculate likelihood of HHT
+L <- p * p * (1-p)
+
+# Plot likelihood curve
+plot(x = p, y = L, main = "L(p|HHT)", xlab = "p", ylab = "Likelihood",
+     type = "l")
+# Mark the MLE
+which_mle <- which(L == max(L))
+points(x = p[which_mle], y = L[which_mle], pch = 1, cex = 2, col = "red")
+
+```
+
+## Maximum Likelihood Estimation
+
+If $\mathcal{L}$ is differentiable, you can solve for the MLE in closed form.
+
+</br>
+
+But in other cases, numerical estimation is required.
+
+</br>
+
+A variety of optimization algorithms are available to efficiently explore the parameter space.
+
+## Bayesian Inference
+
+In **Bayesian statistics**, inference is drawn from the **converse** of the likelihood (known as the posterior distribution).
+
+$$\mathrm{Pr}(\theta|\mathbf{y}) = \frac{\mathrm{Pr}(\mathbf{y}|\theta) \mathrm{Pr}(\theta)}{\mathrm{Pr}(\mathbf{y})}$$
+
+## Bayesian Inference
+
+In **Bayesian statistics**, inference is drawn from the **converse** of the likelihood (known as the posterior distribution).
+
+$$\mathrm{Pr}(\theta|\mathbf{y}) \propto \mathrm{Pr}(\mathbf{y}|\theta) \mathrm{Pr}(\theta)$$
+
+## Bayesian Inference
+
+In **Bayesian statistics**, inference is drawn from the **converse** of the likelihood (known as the posterior distribution).
+
+$$\mathrm{Pr}(\theta|\mathbf{y}) \propto \mathrm{Pr}(\mathbf{y}|\theta) \mathrm{Pr}(\theta)$$
+
+The posterior is proportional to the **likelihood** times the **prior**.
+
+
+# Linear Regression
+
+## Ordinary Linear Regression {.smaller}
+
+Let's consider the case where our hypothesis is that a **covariate** $(\mathbf{x})$ affects the mean value of our **random variable** $(\mathbf{y})$.
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+
+# Set seed
+set.seed(20260211)
+
+# Choose parameters
+b0 <- 2
+b1 <- 3
+sigma <- 1
+
+# Generate covariate
+x <- runif(n = 100, min = -1, max = 1)
+
+# Generate mean
+mu <- b0 + b1*x
+
+# Generate data
+y <- rnorm(n = 100, mean = mu, sd = sigma)
+
+# Plot
+plot(x, y)
+
+```
+
+## Ordinary Linear Regression {.smaller}
+
+```{r}
+#| echo: false
+#| code-fold: true
+
+# Plot
+plot(x, y)
+
+```
+
+How do we estimate a line that describes these data?
+
+## Ordinary Linear Regression
+
+</br>
+
+Equation for a line (algebra):
+
+$$y = mx + b$$
+
+## Ordinary Linear Regression
+
+</br>
+
+Equation for a line (algebra):
+
+$$y = mx + b$$
+
+</br>
+
+Equation for a line (statistics):
+
+$$y = \beta_0 + \beta_1 x + \epsilon$$
+$$\epsilon \sim Normal(0, \sigma^2)$$
+
+## Ordinary Linear Regression
+
+$$y = \beta_0 + \beta_1 x + \epsilon$$
+$$\epsilon \sim Normal(0, \sigma^2)$$
+
+We want to estimate a set of parameters $(\hat{\theta} = \{\hat{\beta_0}, \hat{\beta_1}\})$ for this model, which we can accomplish by **maximum likelihood estimation**.
+
+</br>
+
+:::{style="font-size:60%"}
+
+*In this case, the MLE is equivalent to finding $\hat{\beta_0}; \hat{\beta_1}$ that minimize the sum of squared residuals.*
+
+*Also note that $\sigma^2$ is assumed known and is not part of $\theta$.*
+
+:::
+
+## Ordinary Linear Regression
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+# Fit a model
+m <- lm(y ~ x)
+
+# Plot
+plot(x, y)
+# Add regression line
+abline(m, col = "blue", lwd = 2)
+
+```
+
+
+## Common Statistical Tests as Linear Regression 
+
+> Most of the common statistical models (t-test, correlation, ANOVA; chi-square, etc.) are special cases of linear models or a very close approximation. This beautiful simplicity means that there is less to learn. In particular, it all comes down to $y=a⋅x+b$ which most students know from highschool. Unfortunately, stats intro courses are usually taught as if each test is an independent tool, needlessly making life more complicated for students and teachers alike.
+
+:::{style="font-size: 80%; float: right"}
+— Jonas Kristoffer Lindeløv
+
+[Common statistical tests are linear models (or: how to teach stats)](https://lindeloev.github.io/tests-as-linear/)
+:::
+
+## Common Statistical Tests as Linear Regression
+
+<center>
+![PNG of Statistical Test Cheat Sheet](https://lindeloev.github.io/tests-as-linear/linear_tests_cheat_sheet.png){width="50%" .lightbox}\
+
+[Link to PDF](https://lindeloev.github.io/tests-as-linear/linear_tests_cheat_sheet.pdf){target="blank"}
+
+</center>
+
+
+# Generalized Linear Models
+
+## Generalized Linear Models
+
+Our ordinary linear model assumed a continuous response variable.
+
+</br>
+
+What if we're interested in modeling the effects of covariates on response variables that come from a coin flip (*e.g.*, Bernoulli, binomial) or count (*e.g.*, Poisson) distribution?
+
+## Generalized Linear Models
+
+We wrote our ordinary linear model as:
+
+$$y = \beta_0 + \beta_1 x + \epsilon$$
+$$\epsilon \sim Normal(0, \sigma^2)$$
+
+## Generalized Linear Models
+
+We can subtly rewrite this as:
+
+$$\mu = \beta_0 + \beta_1 x $$
+$$y \sim Normal(\mu, \sigma^2)$$
+
+Where one of the parameters of our distribution $(\mu)$ is a linear function of covariate(s).
+
+## Generalized Linear Models
+
+If we want to model a binomial-distributed random variable, can we just do this?
+
+$$p = \beta_0 + \beta_1 x $$
+$$y \sim Binomial(N, p)$$
+
+We still have one of the parameters of our distribution $(p)$ as a linear function of covariate(s).
+
+But the problem is that $p$ must be between 0 and 1.
+
+## Generalized Linear Models
+
+Maybe we can add a transformation that will constrain $p$ between 0 and 1.
+
+$$p = \mathrm{logit}^{-1}(\beta_0 + \beta_1 x) $$
+$$y \sim Binomial(N, p)$$
+
+## Generalized Linear Models
+
+We actually put the **link function** on the LHS of the equation by convention.
+
+$$\mathrm{logit}(p) = \beta_0 + \beta_1 x $$
+$$y \sim Binomial(N, p)$$
+
+## Generalized Linear Models
+
+GLMs are thus made up of these three components:  
+
+- A **probability distribution** for the random variable 
+  - An exponential family distribution (*e.g.*, Normal, Binomial, Poisson, etc.) 
+- A **link function**  
+  - Chosen to be appropriate for the probability distribution 
+  - Goes on the LHS of the equation
+- A **linear predictor** $(\mathbf{X B})$  
+  - Which expresses the expected value (mean) of the random variable on the link scale  
+
+
+## Generalized Linear Models {.smaller}
+
+For a Bernoulli random variable:  
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+# Set seed
+set.seed(20260211 * 2)
+
+# Choose parameters
+b0 <- -1
+b1 <- 4
+
+# Generate covariate
+x <- runif(n = 300, min = -1, max = 1)
+
+# Generate mean
+p <- plogis(b0 + b1*x)
+
+# Generate data
+y <- rbinom(n = 300, size = 1, prob = p)
+
+# Plot
+plot(x, y, col="white")
+# Transparent squares
+points(x, y, pch = 15, col="#00000088")
+
+```
+
+## Generalized Linear Models {.smaller}
+
+Fit a model:  
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+# Fit model
+m <- glm(y ~ x, family = binomial(link = "logit"))
+
+# Model predictions
+pred <- data.frame(x = seq(-1, 1, length.out = 100))
+pred$p <- predict(m, newdata = pred, 
+                type = "response")
+
+# Plot
+plot(x, y, col="white", ylab = "p")
+# Transparent squares
+points(x, y, pch = 15, col="#00000088")
+# Add model prediction
+lines(pred$x, pred$p, col = "blue", lwd = 2)
+
+```
+
+# Generalized Linear Mixed Models
+
+## Generalized Linear Mixed Models
+
+What if we have groups in our data that introduce non-independence?
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+# Mean parameters
+b0 <- 3
+b1 <- 1
+sigma <- 0.25
+sigma_group <- 1
+
+# Set seed
+set.seed(20260211 * 3)
+
+# Data
+df <- data.frame(x = runif(n = 1000, min = -1, max = 1),
+                 group = rep(1:10, each = 100),
+                 mu = NA,
+                 y = NA)
+
+# Betas
+# Random intercepts
+b0_j <- rnorm(n = length(unique(df$group)),
+              mean = b0,
+              sd = sigma_group)
+
+# Response
+for (i in 1:nrow(df)) {
+  j <- df$group[i]
+  df$mu[i] <- b0_j[j] + b1 * df$x[i]
+  df$y[i] <- rnorm(n = 1, mean = df$mu[i], sd = sigma) 
+}
+
+# Plot
+plot(x = df$x, y = df$y, col = factor(df$group),
+     pch = 16, xlab = "x", ylab = "y", main = "Random Intercepts")
+legend("topleft", legend = 1:10, title = "Group", 
+       pch = 16, col = 1:10, cex = 0.7,
+       ncol = 2)
+
+```
+
+## Generalized Linear Mixed Models
+
+What if we have groups in our data that introduce non-independence?
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+# Mean parameters
+b0 <- -2
+b1 <- 2
+sigma <- 0.25
+sigma_group <- 2
+
+# Set seed
+set.seed(20260211 * 3)
+
+# Data
+df <- data.frame(x = runif(n = 1000, min = -1, max = 1),
+                 group = rep(1:10, each = 100),
+                 mu = NA,
+                 y = NA)
+
+# Betas
+# Random slopes
+b1_j <- rnorm(n = length(unique(df$group)),
+              mean = b1,
+              sd = sigma_group)
+
+# Response
+for (i in 1:nrow(df)) {
+  j <- df$group[i]
+  df$mu[i] <- b0 + b1_j[j] * df$x[i]
+  df$y[i] <- rnorm(n = 1, mean = df$mu[i], sd = sigma) 
+}
+
+# Plot
+plot(x = df$x, y = df$y, col = factor(df$group),
+     pch = 16, xlab = "x", ylab = "y", main = "Random Slopes")
+legend("topleft", legend = 1:10, title = "Group", 
+       pch = 16, col = 1:10, cex = 0.7,
+       ncol = 2)
+
+```
+
+## Generalized Linear Mixed Models
+
+Generalized Linear Mixed Models (GLMMs) **mix** together:
+
+- **Fixed** effects
+  - Single parameters, like in an ordinary GLM
+- **Random** effects
+  - Group-level parameters, assumed to be random variables from a normal distribution
+  
+Like GLMs, the response variable can come from any exponential family distribution.
+
+- If the response variable comes from a normal distribution, they are often referred to as **linear mixed models** (**LMMs**).
+- For all other distributions, they are referred to as **GLMMs**.
+
+## Generalized Linear Mixed Models 
+
+Example random intercept model: 
+$$\mu_{i, j} = (\beta_0 + \eta_j) + \beta_{1} x_{i,j} $$
+$$\eta_{j} \sim Normal(0, \sigma_{\eta}^2)$$
+$$y_{i, j} \sim Normal(\mu_{i, j}, \sigma^2)$$
+
+## Generalized Linear Mixed Models
+
+Example random slope model: 
+$$\mu_{i, j} = \beta_0 + (\beta_1 + \eta_j)  x_{i,j} $$
+$$\eta_{j} \sim Normal(0, \sigma_{\eta}^2)$$
+$$y_{i, j} \sim Normal(\mu_{i, j}, \sigma^2)$$
+
+## Generalized Linear Mixed Models 
+
+General form of a LMM (using matrix math): 
+$$\boldsymbol{\mu} = \boldsymbol{XB} + \boldsymbol{Zu}$$
+$$\boldsymbol{u} \sim MVN(\boldsymbol{0}, \boldsymbol{G})$$
+$$\mathbf{G} =
+\begin{bmatrix}
+\sigma^{2}_{int} & \sigma^{2}_{int,slope} \\
+\sigma^{2}_{int,slope} & \sigma^{2}_{slope}
+\end{bmatrix}$$
+$$y_{i} \sim Normal(\mu_{i}, \sigma^2)$$
+
+</br>
+
+:::{style="font-size:60%"}
+
+*Don't get hung on up on this notation. Just realize that the random effects can come from a **multivariate** normal distribution and can thus have covariance.*
+
+:::
+
+## Recap, so far {background-color="#332c1c"}
+
+:::{.incremental}
+
+- We use probability theory to model how data arise from random processes.
+  - The **likelihood** is an important quantity for both **frequentists** and **Bayesians**.
+- We can simply **estimate** the **parameters** of a probability distribution without covariates.
+- **LMs** allow covariates by assuming data are normally distributed about a mean given by a linear predictor.
+- **GLMs** relax the assumption that data are normally distributed, allowing other (exponential family) distributions.
+  - They require a **link function** to relate the parameters to the linear predictor.
+- **GLMMs** relax the assumption that the data are independent, allowing grouping structure.
+  - They contain both **fixed effects** and **random effects**, with random effects themselves being **random variables**.
+  - Random effects come from a **multivariate normal distribution**, with a mean of 0 such that the population-level mean is given by the fixed effects.
+
+:::
+
+# Generalized Additive Models
+
+## Generalized Additive Models
+
+**Generalized additive models** (GAMs) build on top of **GLMs** (and **GLMMs**) by relaxing the assumption that the mean of the random variable is *linearly* related to covariates.
+
+</br>
+
+The goal with a GAM is to estimate an **unknown function** that relates the mean of the random variable to covariates.
+
+$$\mu = f(x)$$
+$$y \sim Normal(\mu, \sigma^2)$$
+
+## Generalized Additive Models
+
+**Generalized additive models** (GAMs) build on top of **GLMs** (and **GLMMs**) by relaxing the assumption that the mean of the random variable is *linearly* related to covariates.
+
+</br>
+
+The goal with a GAM is to estimate an **unknown function** that relates the mean of the random variable to covariates.
+
+$$\mu = f(x)$$
+$$y \sim Normal(\mu, \sigma^2)$$
+
+GLMs are a special case of GAMs where:
+
+$$f(x) = \beta_0 +\beta_1 x$$
+
+## Generalized Additive Models 
+
+```{r}
+# Set Seed
+set.seed(20260211 * 4)
+
+# Generate predictor
+x <- runif(n = 500, min = -1, max = 1)
+
+# Complex function
+my_fun <- function(x) {
+  return(sin(8 * x) + 2 * x^2 + -2 * x + 2)
+}
+
+# Calculate mean
+mu <- my_fun(x)
+
+# Generate response
+y <- rnorm(n = length(x), mean = mu, sd = 0.5)
+
+plot(x, y)
+
+```
+
+## Generalized Additive Models 
+
+```{r}
+# Plot
+plot(x, y)
+
+# Add truth
+truth <- data.frame(x = seq(-1, 1, length.out = 100))
+truth$y <- my_fun(truth$x)
+lines(truth$x, truth$y, col = "blue", lwd = 2)
+
+```
+
+
+# Questions?

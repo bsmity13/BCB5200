@@ -1,0 +1,62 @@
+---
+title: "Lecture 20: Visualizing Statistical Models"
+author: "Brian J. Smith"
+date: "23 April 2026"
+format: 
+  revealjs:
+    width: 1400
+    height: 900
+    margin: 0.1
+    theme: simple
+    link-external-icon: true
+    link-external-newwindow: true
+    mermaid: 
+      theme: forest
+editor: source
+---
+
+```{r setup}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(patchwork)
+
+```
+
+## Visualizing Statistical Models
+
+- We've spent most of the semester so far talking about visualizing data.
+- But we often fit models to data, and communicating the results of our modeling is also an important topic in visualization.
+- These next two lectures/code demos are not meant to teach you statistical modeling, *per se*, but rather some considerations in visualizing your models.
+
+## Visualizing Statistical Models
+
+#### Topics to Cover
+
+- Randomness
+  - Random variables
+  - Signal vs. noise
+- Mathematical models vs. statistical models
+- Parameter estimates
+- Model "predictions"
+- Multivariate methods
+  - Covariance
+  
+## Visualizing Statistical Model
+
+</br>
+
+- **Bonus** material: [Lecture on Regression Modeling](99_regression.qmd)
+
+# Questions?
+
+</br>
+
+</br>
+
+
+:::{style="font-size: 50%"}
+[BCB5200 Home](https://bsmity13.github.io/BCB5200/)
+:::

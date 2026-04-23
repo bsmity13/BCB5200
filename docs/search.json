@@ -3021,7 +3021,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color\n\n\n3/26/2026\nLecture 14: Reducing Items and Attributes\n\n\n3/31/2026\nLecture 15: Embedding\n\n\n4/2/2026\nLecture 16: Surveys\n\n\n4/7/2026\nNo class\n\n\n4/9/2026\nLecture 17: Spatial Data\n\n\n4/16/2026\nLecture 18: Network Data\n\n\n4/21/2026\nLecture 19: Animation"
+    "text": "Date\nLecture\n\n\n\n\n1/15/2026\nLecture 1: Introduction\n\n\n1/20/2026\nLecture 2: Computing Basics\n\n\n1/22/2026\nLecture 3: Literate Programming\n\n\n1/27/2026\nLecture 4: Data Visualization: What and Why\n\n\n1/29/2026\nLecture 5: Image Formats\n\n\n2/3/2026\nLecture 6: Data Abstraction\n\n\n2/5/2026\nLecture 7: Data Wrangling\n\n\n2/10/2026\nNo class\n\n\n2/12/2026\nNo class\n\n\n2/17/2026\nLecture 8: Marks and Channels\n\n\n2/19/2026\nLecture 9: ggplot2\n\n\n2/24/2026\nLecture 10: Arranging Tables\n\n\n3/3/2026\nLecture 11: Rules of Thumb\n\n\n3/5/2026\nLecture 12: Multiple Views\n\n\n3/24/2026\nLecture 13: Color\n\n\n3/26/2026\nLecture 14: Reducing Items and Attributes\n\n\n3/31/2026\nLecture 15: Embedding\n\n\n4/2/2026\nLecture 16: Surveys\n\n\n4/7/2026\nNo class\n\n\n4/9/2026\nLecture 17: Spatial Data\n\n\n4/16/2026\nLecture 18: Network Data\n\n\n4/21/2026\nLecture 19: Animation\n\n\n4/23/2026\nLecture 20: Statistical Models, part 1\n\n\n4/23/2026\nBonus Slides: Regression Models"
   },
   {
     "objectID": "resources.html",
@@ -3757,5 +3757,355 @@
     "title": "Lecture 19: Animation",
     "section": "Render time",
     "text": "Render time\n\n\nRender took: 25.5 minutes."
+  },
+  {
+    "objectID": "lectures/99_regression.html#outline",
+    "href": "lectures/99_regression.html#outline",
+    "title": "Regression Modeling",
+    "section": "Outline",
+    "text": "Outline\n\nProbability\nEstimation\nOrdinary Linear Regression\nGeneralized Linear Models\nGeneralized Linear Mixed Models\nGeneralized Additive Models\n\n\n\nAdapted from material I originally developed for a workshop on GAMs and SSFs."
+  },
+  {
+    "objectID": "lectures/99_regression.html#coin-flips",
+    "href": "lectures/99_regression.html#coin-flips",
+    "title": "Regression Modeling",
+    "section": "Coin Flips",
+    "text": "Coin Flips\n\n\nAssuming a fair coin, what’s the probability of flipping:\n\n\nH H T ?"
+  },
+  {
+    "objectID": "lectures/99_regression.html#coin-flips-1",
+    "href": "lectures/99_regression.html#coin-flips-1",
+    "title": "Regression Modeling",
+    "section": "Coin Flips",
+    "text": "Coin Flips\n\n\nAssuming a fair coin, what’s the probability of flipping:\n\n\nH H T ?\n\\[0.5 \\times 0.5 \\times (1-0.5)\\]\n\\[ = 0.125 = \\frac{1}{8}\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#coin-flips-2",
+    "href": "lectures/99_regression.html#coin-flips-2",
+    "title": "Regression Modeling",
+    "section": "Coin Flips",
+    "text": "Coin Flips\n\n\nAssuming a fair coin, what’s the probability of flipping:\n\n\nH H T ?\n\\[p \\times p \\times (1-p)\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#coin-flips-3",
+    "href": "lectures/99_regression.html#coin-flips-3",
+    "title": "Regression Modeling",
+    "section": "Coin Flips",
+    "text": "Coin Flips\n\n\nIt’s relatively easy to calculate the probability of observing a particular outcome, given that you know the parameters.\n\\[\\mathrm{Pr}(\\mathrm{HHT} | p=0.5)\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#coin-flips-4",
+    "href": "lectures/99_regression.html#coin-flips-4",
+    "title": "Regression Modeling",
+    "section": "Coin Flips",
+    "text": "Coin Flips\n\n\nIt’s relatively easy to calculate the probability of observing a particular outcome, given that you know the parameters.\n\\[\\mathrm{Pr}(\\mathrm{HHT} | p=0.5)\\]\n\\[= 0.125\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#coin-flips-5",
+    "href": "lectures/99_regression.html#coin-flips-5",
+    "title": "Regression Modeling",
+    "section": "Coin Flips",
+    "text": "Coin Flips\n\n\nIt’s relatively easy to calculate the probability of observing a particular outcome, given that you know the parameters.\n\\[\\mathrm{Pr}(\\mathrm{HHT} | p=0.5)\\]\n\\[= 0.125\\]\n\nBut what if we don’t know \\(p\\)?"
+  },
+  {
+    "objectID": "lectures/99_regression.html#likelihood",
+    "href": "lectures/99_regression.html#likelihood",
+    "title": "Regression Modeling",
+    "section": "Likelihood",
+    "text": "Likelihood\n\\[\\mathcal{L} = \\mathrm{Pr(Data|Model)}\\] \\[\\mathcal{L}(\\theta | \\mathbf{y}) = \\mathrm{Pr(\\mathbf{y}|\\theta)}\\]\n\nIn general, our model represents a hypothesis for how our data \\((\\mathbf{y})\\) arose from a stochastic process, which includes assumptions about the data generating process and a set of parameters \\((\\theta)\\) that govern that model."
+  },
+  {
+    "objectID": "lectures/99_regression.html#likelihood-1",
+    "href": "lectures/99_regression.html#likelihood-1",
+    "title": "Regression Modeling",
+    "section": "Likelihood",
+    "text": "Likelihood\n\\[\\mathcal{L} = \\mathrm{Pr(Data|Model)}\\] \\[\\mathcal{L}(\\theta | \\mathbf{y}) = \\mathrm{Pr(\\mathbf{y}|\\theta)}\\]\n\nIn the case of our coin flips, our model includes that the three flips were independent and that a single parameter \\((p)\\) describes the probability of either outcome.\n\\[\\mathrm{Pr(H)} = p; \\mathrm{Pr(T)} = 1-p\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#likelihood-2",
+    "href": "lectures/99_regression.html#likelihood-2",
+    "title": "Regression Modeling",
+    "section": "Likelihood",
+    "text": "Likelihood\n\\[\\mathcal{L} = \\mathrm{Pr(Data|Model)}\\] \\[\\mathcal{L}(\\theta | \\mathbf{y}) = \\mathrm{Pr(\\mathbf{y}|\\theta)}\\]\n\nOnce we have our model, it’s easy to calculate \\(\\mathcal{L}\\) for any given set of parameters."
+  },
+  {
+    "objectID": "lectures/99_regression.html#likelihood-3",
+    "href": "lectures/99_regression.html#likelihood-3",
+    "title": "Regression Modeling",
+    "section": "Likelihood",
+    "text": "Likelihood\n\\[\\mathcal{L} = \\mathrm{Pr(Data|Model)}\\] \\[\\mathcal{L}(\\theta | \\mathbf{y}) = \\mathrm{Pr(\\mathbf{y}|\\theta)}\\]\n\nBut how do we arrive at an estimate for unknown parameters?"
+  },
+  {
+    "objectID": "lectures/99_regression.html#maximum-likelihood-estimation",
+    "href": "lectures/99_regression.html#maximum-likelihood-estimation",
+    "title": "Regression Modeling",
+    "section": "Maximum Likelihood Estimation",
+    "text": "Maximum Likelihood Estimation\nThere are many possible criteria for objectively choosing a set of parameters.\n\nThe most popular is known as maximum likelihood estimation, where we choose the set of parameters that maximizes the probability of observing our data.\n\\[\\hat{\\theta} = \\mathrm{arg\\ max}\\  \\mathcal{L}(\\theta | \\mathbf{y})\\]\n\nThis is the primary method for inference in frequentist statistics."
+  },
+  {
+    "objectID": "lectures/99_regression.html#maximum-likelihood-estimation-1",
+    "href": "lectures/99_regression.html#maximum-likelihood-estimation-1",
+    "title": "Regression Modeling",
+    "section": "Maximum Likelihood Estimation",
+    "text": "Maximum Likelihood Estimation\nSo for our coin flip, we could try values of \\(p\\) and calculate the likelihood.\n\n\n\np\n\\(\\mathcal{L}(p|\\mathbf{y} = \\mathrm{HHT})\\)\n\n\n\n\n0.1\n\\(0.1 \\times 0.1 \\times 0.9 = 0.009\\)\n\n\n0.2\n\\(0.2 \\times 0.3 \\times 0.8 = 0.032\\)\n\n\n0.3\n\\(0.3 \\times 0.3 \\times 0.7 = 0.063\\)\n\n\n0.4\n\\(0.4 \\times 0.4 \\times 0.6 = 0.096\\)\n\n\n0.5\n\\(0.5 \\times 0.5 \\times 0.5 = 0.125\\)\n\n\n0.6\n\\(0.6 \\times 0.6 \\times 0.4 = 0.144\\)\n\n\n0.7\n\\(0.7 \\times 0.7 \\times 0.3 = 0.147\\)\n\n\n0.8\n\\(0.8 \\times 0.8 \\times 0.2 = 0.128\\)\n\n\n0.9\n\\(0.9 \\times 0.9 \\times 0.1 = 0.081\\)"
+  },
+  {
+    "objectID": "lectures/99_regression.html#maximum-likelihood-estimation-2",
+    "href": "lectures/99_regression.html#maximum-likelihood-estimation-2",
+    "title": "Regression Modeling",
+    "section": "Maximum Likelihood Estimation",
+    "text": "Maximum Likelihood Estimation\nSo for our coin flip, we could try values of \\(p\\) and calculate the likelihood.\n(The curvature tells us about the precision of our estimate).\n\n\nCode\n# Values of p to try\np &lt;- seq(0.01, 0.99, by = 0.01)\n\n# Calculate likelihood of HHT\nL &lt;- p * p * (1-p)\n\n# Plot likelihood curve\nplot(x = p, y = L, main = \"L(p|HHT)\", xlab = \"p\", ylab = \"Likelihood\",\n     type = \"l\")\n# Mark the MLE\nwhich_mle &lt;- which(L == max(L))\npoints(x = p[which_mle], y = L[which_mle], pch = 1, cex = 2, col = \"red\")"
+  },
+  {
+    "objectID": "lectures/99_regression.html#maximum-likelihood-estimation-3",
+    "href": "lectures/99_regression.html#maximum-likelihood-estimation-3",
+    "title": "Regression Modeling",
+    "section": "Maximum Likelihood Estimation",
+    "text": "Maximum Likelihood Estimation\nIf \\(\\mathcal{L}\\) is differentiable, you can solve for the MLE in closed form.\n\nBut in other cases, numerical estimation is required.\n\nA variety of optimization algorithms are available to efficiently explore the parameter space."
+  },
+  {
+    "objectID": "lectures/99_regression.html#bayesian-inference",
+    "href": "lectures/99_regression.html#bayesian-inference",
+    "title": "Regression Modeling",
+    "section": "Bayesian Inference",
+    "text": "Bayesian Inference\nIn Bayesian statistics, inference is drawn from the converse of the likelihood (known as the posterior distribution).\n\\[\\mathrm{Pr}(\\theta|\\mathbf{y}) = \\frac{\\mathrm{Pr}(\\mathbf{y}|\\theta) \\mathrm{Pr}(\\theta)}{\\mathrm{Pr}(\\mathbf{y})}\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#bayesian-inference-1",
+    "href": "lectures/99_regression.html#bayesian-inference-1",
+    "title": "Regression Modeling",
+    "section": "Bayesian Inference",
+    "text": "Bayesian Inference\nIn Bayesian statistics, inference is drawn from the converse of the likelihood (known as the posterior distribution).\n\\[\\mathrm{Pr}(\\theta|\\mathbf{y}) \\propto \\mathrm{Pr}(\\mathbf{y}|\\theta) \\mathrm{Pr}(\\theta)\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#bayesian-inference-2",
+    "href": "lectures/99_regression.html#bayesian-inference-2",
+    "title": "Regression Modeling",
+    "section": "Bayesian Inference",
+    "text": "Bayesian Inference\nIn Bayesian statistics, inference is drawn from the converse of the likelihood (known as the posterior distribution).\n\\[\\mathrm{Pr}(\\theta|\\mathbf{y}) \\propto \\mathrm{Pr}(\\mathbf{y}|\\theta) \\mathrm{Pr}(\\theta)\\]\nThe posterior is proportional to the likelihood times the prior."
+  },
+  {
+    "objectID": "lectures/99_regression.html#ordinary-linear-regression",
+    "href": "lectures/99_regression.html#ordinary-linear-regression",
+    "title": "Regression Modeling",
+    "section": "Ordinary Linear Regression",
+    "text": "Ordinary Linear Regression\nLet’s consider the case where our hypothesis is that a covariate \\((\\mathbf{x})\\) affects the mean value of our random variable \\((\\mathbf{y})\\).\n\n\nCode\n# Set seed\nset.seed(20260211)\n\n# Choose parameters\nb0 &lt;- 2\nb1 &lt;- 3\nsigma &lt;- 1\n\n# Generate covariate\nx &lt;- runif(n = 100, min = -1, max = 1)\n\n# Generate mean\nmu &lt;- b0 + b1*x\n\n# Generate data\ny &lt;- rnorm(n = 100, mean = mu, sd = sigma)\n\n# Plot\nplot(x, y)"
+  },
+  {
+    "objectID": "lectures/99_regression.html#ordinary-linear-regression-1",
+    "href": "lectures/99_regression.html#ordinary-linear-regression-1",
+    "title": "Regression Modeling",
+    "section": "Ordinary Linear Regression",
+    "text": "Ordinary Linear Regression\n\nHow do we estimate a line that describes these data?"
+  },
+  {
+    "objectID": "lectures/99_regression.html#ordinary-linear-regression-2",
+    "href": "lectures/99_regression.html#ordinary-linear-regression-2",
+    "title": "Regression Modeling",
+    "section": "Ordinary Linear Regression",
+    "text": "Ordinary Linear Regression\n\nEquation for a line (algebra):\n\\[y = mx + b\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#ordinary-linear-regression-3",
+    "href": "lectures/99_regression.html#ordinary-linear-regression-3",
+    "title": "Regression Modeling",
+    "section": "Ordinary Linear Regression",
+    "text": "Ordinary Linear Regression\n\nEquation for a line (algebra):\n\\[y = mx + b\\]\n\nEquation for a line (statistics):\n\\[y = \\beta_0 + \\beta_1 x + \\epsilon\\] \\[\\epsilon \\sim Normal(0, \\sigma^2)\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#ordinary-linear-regression-4",
+    "href": "lectures/99_regression.html#ordinary-linear-regression-4",
+    "title": "Regression Modeling",
+    "section": "Ordinary Linear Regression",
+    "text": "Ordinary Linear Regression\n\\[y = \\beta_0 + \\beta_1 x + \\epsilon\\] \\[\\epsilon \\sim Normal(0, \\sigma^2)\\]\nWe want to estimate a set of parameters \\((\\hat{\\theta} = \\{\\hat{\\beta_0}, \\hat{\\beta_1}\\})\\) for this model, which we can accomplish by maximum likelihood estimation.\n\n\nIn this case, the MLE is equivalent to finding \\(\\hat{\\beta_0}; \\hat{\\beta_1}\\) that minimize the sum of squared residuals.\nAlso note that \\(\\sigma^2\\) is assumed known and is not part of \\(\\theta\\)."
+  },
+  {
+    "objectID": "lectures/99_regression.html#ordinary-linear-regression-5",
+    "href": "lectures/99_regression.html#ordinary-linear-regression-5",
+    "title": "Regression Modeling",
+    "section": "Ordinary Linear Regression",
+    "text": "Ordinary Linear Regression\n\n\nCode\n# Fit a model\nm &lt;- lm(y ~ x)\n\n# Plot\nplot(x, y)\n# Add regression line\nabline(m, col = \"blue\", lwd = 2)"
+  },
+  {
+    "objectID": "lectures/99_regression.html#common-statistical-tests-as-linear-regression",
+    "href": "lectures/99_regression.html#common-statistical-tests-as-linear-regression",
+    "title": "Regression Modeling",
+    "section": "Common Statistical Tests as Linear Regression",
+    "text": "Common Statistical Tests as Linear Regression\n\nMost of the common statistical models (t-test, correlation, ANOVA; chi-square, etc.) are special cases of linear models or a very close approximation. This beautiful simplicity means that there is less to learn. In particular, it all comes down to \\(y=a⋅x+b\\) which most students know from highschool. Unfortunately, stats intro courses are usually taught as if each test is an independent tool, needlessly making life more complicated for students and teachers alike.\n\n\n— Jonas Kristoffer Lindeløv\nCommon statistical tests are linear models (or: how to teach stats)"
+  },
+  {
+    "objectID": "lectures/99_regression.html#common-statistical-tests-as-linear-regression-1",
+    "href": "lectures/99_regression.html#common-statistical-tests-as-linear-regression-1",
+    "title": "Regression Modeling",
+    "section": "Common Statistical Tests as Linear Regression",
+    "text": "Common Statistical Tests as Linear Regression\n\n\n\nLink to PDF"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-models-1",
+    "href": "lectures/99_regression.html#generalized-linear-models-1",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\nOur ordinary linear model assumed a continuous response variable.\n\nWhat if we’re interested in modeling the effects of covariates on response variables that come from a coin flip (e.g., Bernoulli, binomial) or count (e.g., Poisson) distribution?"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-models-2",
+    "href": "lectures/99_regression.html#generalized-linear-models-2",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\nWe wrote our ordinary linear model as:\n\\[y = \\beta_0 + \\beta_1 x + \\epsilon\\] \\[\\epsilon \\sim Normal(0, \\sigma^2)\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-models-3",
+    "href": "lectures/99_regression.html#generalized-linear-models-3",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\nWe can subtly rewrite this as:\n\\[\\mu = \\beta_0 + \\beta_1 x \\] \\[y \\sim Normal(\\mu, \\sigma^2)\\]\nWhere one of the parameters of our distribution \\((\\mu)\\) is a linear function of covariate(s)."
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-models-4",
+    "href": "lectures/99_regression.html#generalized-linear-models-4",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\nIf we want to model a binomial-distributed random variable, can we just do this?\n\\[p = \\beta_0 + \\beta_1 x \\] \\[y \\sim Binomial(N, p)\\]\nWe still have one of the parameters of our distribution \\((p)\\) as a linear function of covariate(s).\nBut the problem is that \\(p\\) must be between 0 and 1."
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-models-5",
+    "href": "lectures/99_regression.html#generalized-linear-models-5",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\nMaybe we can add a transformation that will constrain \\(p\\) between 0 and 1.\n\\[p = \\mathrm{logit}^{-1}(\\beta_0 + \\beta_1 x) \\] \\[y \\sim Binomial(N, p)\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-models-6",
+    "href": "lectures/99_regression.html#generalized-linear-models-6",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\nWe actually put the link function on the LHS of the equation by convention.\n\\[\\mathrm{logit}(p) = \\beta_0 + \\beta_1 x \\] \\[y \\sim Binomial(N, p)\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-models-7",
+    "href": "lectures/99_regression.html#generalized-linear-models-7",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\nGLMs are thus made up of these three components:\n\nA probability distribution for the random variable\n\nAn exponential family distribution (e.g., Normal, Binomial, Poisson, etc.)\n\nA link function\n\nChosen to be appropriate for the probability distribution\nGoes on the LHS of the equation\n\nA linear predictor \\((\\mathbf{X B})\\)\n\nWhich expresses the expected value (mean) of the random variable on the link scale"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-models-8",
+    "href": "lectures/99_regression.html#generalized-linear-models-8",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\nFor a Bernoulli random variable:\n\n\nCode\n# Set seed\nset.seed(20260211 * 2)\n\n# Choose parameters\nb0 &lt;- -1\nb1 &lt;- 4\n\n# Generate covariate\nx &lt;- runif(n = 300, min = -1, max = 1)\n\n# Generate mean\np &lt;- plogis(b0 + b1*x)\n\n# Generate data\ny &lt;- rbinom(n = 300, size = 1, prob = p)\n\n# Plot\nplot(x, y, col=\"white\")\n# Transparent squares\npoints(x, y, pch = 15, col=\"#00000088\")"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-models-9",
+    "href": "lectures/99_regression.html#generalized-linear-models-9",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\nFit a model:\n\n\nCode\n# Fit model\nm &lt;- glm(y ~ x, family = binomial(link = \"logit\"))\n\n# Model predictions\npred &lt;- data.frame(x = seq(-1, 1, length.out = 100))\npred$p &lt;- predict(m, newdata = pred, \n                type = \"response\")\n\n# Plot\nplot(x, y, col=\"white\", ylab = \"p\")\n# Transparent squares\npoints(x, y, pch = 15, col=\"#00000088\")\n# Add model prediction\nlines(pred$x, pred$p, col = \"blue\", lwd = 2)"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-mixed-models-1",
+    "href": "lectures/99_regression.html#generalized-linear-mixed-models-1",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Mixed Models",
+    "text": "Generalized Linear Mixed Models\nWhat if we have groups in our data that introduce non-independence?\n\n\nCode\n# Mean parameters\nb0 &lt;- 3\nb1 &lt;- 1\nsigma &lt;- 0.25\nsigma_group &lt;- 1\n\n# Set seed\nset.seed(20260211 * 3)\n\n# Data\ndf &lt;- data.frame(x = runif(n = 1000, min = -1, max = 1),\n                 group = rep(1:10, each = 100),\n                 mu = NA,\n                 y = NA)\n\n# Betas\n# Random intercepts\nb0_j &lt;- rnorm(n = length(unique(df$group)),\n              mean = b0,\n              sd = sigma_group)\n\n# Response\nfor (i in 1:nrow(df)) {\n  j &lt;- df$group[i]\n  df$mu[i] &lt;- b0_j[j] + b1 * df$x[i]\n  df$y[i] &lt;- rnorm(n = 1, mean = df$mu[i], sd = sigma) \n}\n\n# Plot\nplot(x = df$x, y = df$y, col = factor(df$group),\n     pch = 16, xlab = \"x\", ylab = \"y\", main = \"Random Intercepts\")\nlegend(\"topleft\", legend = 1:10, title = \"Group\", \n       pch = 16, col = 1:10, cex = 0.7,\n       ncol = 2)"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-mixed-models-2",
+    "href": "lectures/99_regression.html#generalized-linear-mixed-models-2",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Mixed Models",
+    "text": "Generalized Linear Mixed Models\nWhat if we have groups in our data that introduce non-independence?\n\n\nCode\n# Mean parameters\nb0 &lt;- -2\nb1 &lt;- 2\nsigma &lt;- 0.25\nsigma_group &lt;- 2\n\n# Set seed\nset.seed(20260211 * 3)\n\n# Data\ndf &lt;- data.frame(x = runif(n = 1000, min = -1, max = 1),\n                 group = rep(1:10, each = 100),\n                 mu = NA,\n                 y = NA)\n\n# Betas\n# Random slopes\nb1_j &lt;- rnorm(n = length(unique(df$group)),\n              mean = b1,\n              sd = sigma_group)\n\n# Response\nfor (i in 1:nrow(df)) {\n  j &lt;- df$group[i]\n  df$mu[i] &lt;- b0 + b1_j[j] * df$x[i]\n  df$y[i] &lt;- rnorm(n = 1, mean = df$mu[i], sd = sigma) \n}\n\n# Plot\nplot(x = df$x, y = df$y, col = factor(df$group),\n     pch = 16, xlab = \"x\", ylab = \"y\", main = \"Random Slopes\")\nlegend(\"topleft\", legend = 1:10, title = \"Group\", \n       pch = 16, col = 1:10, cex = 0.7,\n       ncol = 2)"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-mixed-models-3",
+    "href": "lectures/99_regression.html#generalized-linear-mixed-models-3",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Mixed Models",
+    "text": "Generalized Linear Mixed Models\nGeneralized Linear Mixed Models (GLMMs) mix together:\n\nFixed effects\n\nSingle parameters, like in an ordinary GLM\n\nRandom effects\n\nGroup-level parameters, assumed to be random variables from a normal distribution\n\n\nLike GLMs, the response variable can come from any exponential family distribution.\n\nIf the response variable comes from a normal distribution, they are often referred to as linear mixed models (LMMs).\nFor all other distributions, they are referred to as GLMMs."
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-mixed-models-4",
+    "href": "lectures/99_regression.html#generalized-linear-mixed-models-4",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Mixed Models",
+    "text": "Generalized Linear Mixed Models\nExample random intercept model: \\[\\mu_{i, j} = (\\beta_0 + \\eta_j) + \\beta_{1} x_{i,j} \\] \\[\\eta_{j} \\sim Normal(0, \\sigma_{\\eta}^2)\\] \\[y_{i, j} \\sim Normal(\\mu_{i, j}, \\sigma^2)\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-mixed-models-5",
+    "href": "lectures/99_regression.html#generalized-linear-mixed-models-5",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Mixed Models",
+    "text": "Generalized Linear Mixed Models\nExample random slope model: \\[\\mu_{i, j} = \\beta_0 + (\\beta_1 + \\eta_j)  x_{i,j} \\] \\[\\eta_{j} \\sim Normal(0, \\sigma_{\\eta}^2)\\] \\[y_{i, j} \\sim Normal(\\mu_{i, j}, \\sigma^2)\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-linear-mixed-models-6",
+    "href": "lectures/99_regression.html#generalized-linear-mixed-models-6",
+    "title": "Regression Modeling",
+    "section": "Generalized Linear Mixed Models",
+    "text": "Generalized Linear Mixed Models\nGeneral form of a LMM (using matrix math): \\[\\boldsymbol{\\mu} = \\boldsymbol{XB} + \\boldsymbol{Zu}\\] \\[\\boldsymbol{u} \\sim MVN(\\boldsymbol{0}, \\boldsymbol{G})\\] \\[\\mathbf{G} =\n\\begin{bmatrix}\n\\sigma^{2}_{int} & \\sigma^{2}_{int,slope} \\\\\n\\sigma^{2}_{int,slope} & \\sigma^{2}_{slope}\n\\end{bmatrix}\\] \\[y_{i} \\sim Normal(\\mu_{i}, \\sigma^2)\\]\n\n\nDon’t get hung on up on this notation. Just realize that the random effects can come from a multivariate normal distribution and can thus have covariance."
+  },
+  {
+    "objectID": "lectures/99_regression.html#recap-so-far",
+    "href": "lectures/99_regression.html#recap-so-far",
+    "title": "Regression Modeling",
+    "section": "Recap, so far",
+    "text": "Recap, so far\n\nWe use probability theory to model how data arise from random processes.\n\nThe likelihood is an important quantity for both frequentists and Bayesians.\n\nWe can simply estimate the parameters of a probability distribution without covariates.\nLMs allow covariates by assuming data are normally distributed about a mean given by a linear predictor.\nGLMs relax the assumption that data are normally distributed, allowing other (exponential family) distributions.\n\nThey require a link function to relate the parameters to the linear predictor.\n\nGLMMs relax the assumption that the data are independent, allowing grouping structure.\n\nThey contain both fixed effects and random effects, with random effects themselves being random variables.\nRandom effects come from a multivariate normal distribution, with a mean of 0 such that the population-level mean is given by the fixed effects."
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-additive-models-1",
+    "href": "lectures/99_regression.html#generalized-additive-models-1",
+    "title": "Regression Modeling",
+    "section": "Generalized Additive Models",
+    "text": "Generalized Additive Models\nGeneralized additive models (GAMs) build on top of GLMs (and GLMMs) by relaxing the assumption that the mean of the random variable is linearly related to covariates.\n\nThe goal with a GAM is to estimate an unknown function that relates the mean of the random variable to covariates.\n\\[\\mu = f(x)\\] \\[y \\sim Normal(\\mu, \\sigma^2)\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-additive-models-2",
+    "href": "lectures/99_regression.html#generalized-additive-models-2",
+    "title": "Regression Modeling",
+    "section": "Generalized Additive Models",
+    "text": "Generalized Additive Models\nGeneralized additive models (GAMs) build on top of GLMs (and GLMMs) by relaxing the assumption that the mean of the random variable is linearly related to covariates.\n\nThe goal with a GAM is to estimate an unknown function that relates the mean of the random variable to covariates.\n\\[\\mu = f(x)\\] \\[y \\sim Normal(\\mu, \\sigma^2)\\]\nGLMs are a special case of GAMs where:\n\\[f(x) = \\beta_0 +\\beta_1 x\\]"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-additive-models-3",
+    "href": "lectures/99_regression.html#generalized-additive-models-3",
+    "title": "Regression Modeling",
+    "section": "Generalized Additive Models",
+    "text": "Generalized Additive Models"
+  },
+  {
+    "objectID": "lectures/99_regression.html#generalized-additive-models-4",
+    "href": "lectures/99_regression.html#generalized-additive-models-4",
+    "title": "Regression Modeling",
+    "section": "Generalized Additive Models",
+    "text": "Generalized Additive Models"
+  },
+  {
+    "objectID": "lectures/20_stats1.html",
+    "href": "lectures/20_stats1.html",
+    "title": "Lecture 20: Visualizing Statistical Models",
+    "section": "",
+    "text": "Attaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union"
+  },
+  {
+    "objectID": "lectures/20_stats1.html#visualizing-statistical-models",
+    "href": "lectures/20_stats1.html#visualizing-statistical-models",
+    "title": "Lecture 20: Visualizing Statistical Models",
+    "section": "Visualizing Statistical Models",
+    "text": "Visualizing Statistical Models\n\nWe’ve spent most of the semester so far talking about visualizing data.\nBut we often fit models to data, and communicating the results of our modeling is also an important topic in visualization.\nThese next two lectures/code demos are not meant to teach you statistical modeling, per se, but rather some considerations in visualizing your models."
+  },
+  {
+    "objectID": "lectures/20_stats1.html#visualizing-statistical-models-1",
+    "href": "lectures/20_stats1.html#visualizing-statistical-models-1",
+    "title": "Lecture 20: Visualizing Statistical Models",
+    "section": "Visualizing Statistical Models",
+    "text": "Visualizing Statistical Models\nTopics to Cover\n\nRandomness\n\nRandom variables\nSignal vs. noise\n\nMathematical models vs. statistical models\nParameter estimates\nModel “predictions”\nMultivariate methods\n\nCovariance"
+  },
+  {
+    "objectID": "lectures/20_stats1.html#visualizing-statistical-model",
+    "href": "lectures/20_stats1.html#visualizing-statistical-model",
+    "title": "Lecture 20: Visualizing Statistical Models",
+    "section": "Visualizing Statistical Model",
+    "text": "Visualizing Statistical Model\n\n\nBonus material: Lecture on Regression Modeling"
   }
 ]
