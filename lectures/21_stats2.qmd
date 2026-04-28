@@ -474,7 +474,7 @@ ggplot(beta_data, aes(x = param, y = est, ymin = lwr, ymax = upr)) +
 
 ```
 
-You can see the true values for the parameters ($beta_0 = $ `r b0`, $beta_1 = $ `r b1`) do fall inside the confidence intervals. You can also see that the estimated parameters are significantly different from 0.
+You can see the true values for the parameters ($\beta_0 =\,$ `r b0`, $\beta_1 =\,$ `r b1`) do fall inside the confidence intervals. You can also see that the estimated parameters are significantly different from 0.
 
 ### Predictions
 
