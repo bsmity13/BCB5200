@@ -1,0 +1,32 @@
+---
+title: "Assignment 10: Statistical Models"
+author: "Brian J. Smith"
+date: "28 April 2026"
+---
+
+## Description
+
+This assignment is to gain practice visualizing fitted regression models. It is due May 7th.
+
+## Document Setup
+
+For this assignment, create an HTML document using Quarto. You can refer to the [homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd) document we created in class for some ideas.
+
+- Make sure your YAML header has:
+  - The option `embed-resources: true`
+    - This goes under the html: format option.
+    - It will make sure the HTML file stands alone, rather than referring to an external figure. I won't be able to see your figure if you upload and HTML file without this option.
+- I want to see the code chunks that create your figure, so make sure you use `#| echo: true` in your R code chunk.
+  - You may use code folding (`#| code-fold: true`) if you'd like.
+  
+
+## Instructions
+
+1. Find a dataset. 
+2. Write a *small* amount of narrative in your Quarto document about the dataset and why you want to make a particular visualization. *Don't spend a lot of time on the narrative.*
+3. Decide on a statistical model. I'd suggest an ordinary linear model (LM) or a generalized linear model (GLM), but feel free to use a mixed model or other more complex regression model if that's part of your grad project.
+4. Plot! I'd like to see two plots, like the two I made in the Quarto Doc for [Lecture 21](../lectures/21_stats2.qmd):
+  i. Show the significance of each parameter by plotting the coefficients and their confidence intervals.
+  ii. Draw a regression line.
+
+Let me know if you have any questions!

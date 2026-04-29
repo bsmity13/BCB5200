@@ -15,3 +15,4 @@ Links to assignments.
 |3/26/2026 | Reduce Attributes    |[Assignment 6](assign/06_reduce.qmd)       |
 |4/9/2026  | Spatial Data         |[Assignment 7/8](assign/07_spatial.qmd)    |
 |4/16/2026 | Network Data         |[Assignment 9](assign/09_network.qmd)      |
+|4/28/2026 | Statistical Models   |[Assignment 10](assign/10_stats.qmd)       |
