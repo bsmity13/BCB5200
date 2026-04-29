@@ -1,6 +1,10 @@
 ---
 title: "Code"
 author: "Brian J. Smith"
+format: 
+  html:    
+    link-external-icon: true
+    link-external-newwindow: true
 ---
 
 Links to code walkthroughs.
@@ -8,20 +12,21 @@ Links to code walkthroughs.
 
 | Date     | Topic        |  Code                                       |
 |:---------|:-------------|:--------------------------------------------|
-|1/22/2026 | Literate Programming  |[homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd){target="_blank"} |
-|1/29/2026 | Image Formats  |[image_formats.R](https://github.com/bsmity13/BCB5200/blob/main/code/image_formats.R){target="_blank"} |  
-|2/5/2026  | Data Wrangling  |[data_wrangling.R](https://github.com/bsmity13/BCB5200/blob/main/code/data_wrangling.R){target="_blank"} |
-|2/5/2026  | Data Wrangling Extras  |[data_wrangling_extra.R](https://github.com/bsmity13/BCB5200/blob/main/code/data_wrangling_extra.R){target="_blank"} |  
-|2/19/2026  | `ggplot2`, Part 1  |[ggplot2_pt1.R](https://github.com/bsmity13/BCB5200/blob/main/code/ggplot2_pt1.R){target="_blank"} |
-|2/26/2026  | `ggplot2`, Part 2  |[ggplot2_pt2.R](https://github.com/bsmity13/BCB5200/blob/main/code/ggplot2_pt2.R){target="_blank"} | 
-|3/5/2026   | Multi-panel Figures |[ggplot2_compose.R](https://github.com/bsmity13/BCB5200/blob/main/code/ggplot2_compose.R){target="_blank"} |  
-|3/24/2026  | Colors |[colors.R](https://github.com/bsmity13/BCB5200/blob/main/code/colors.R){target="_blank"} |  
-|3/26/2026  | Reduce Items and Attributes |[reduce.R](https://github.com/bsmity13/BCB5200/blob/main/code/reduce.R){target="_blank"} |  
-|3/31/2026  | Embed |[embed.R](https://github.com/bsmity13/BCB5200/blob/main/code/embed.R){target="_blank"} |  
-|4/2/2026  | Graphics for the Surveys |[survey_figs.R](https://github.com/bsmity13/BCB5200/blob/main/code/survey_figs.R){target="_blank"} |  
-|4/14/2026  | GIS in R |[gis.R](https://github.com/bsmity13/BCB5200/blob/main/code/gis.R){target="_blank"} |  
-|4/16/2026  | Networks |[network.R](https://github.com/bsmity13/BCB5200/blob/main/code/network.R){target="_blank"} |  
-|4/21/2026  | Animations |[anim.R](https://github.com/bsmity13/BCB5200/blob/main/code/anim.R){target="_blank"} |  
+|1/22/2026 | Literate Programming  |[homepage.qmd](https://github.com/bsmity13/BCB5200/blob/main/code/homepage.qmd) |
+|1/29/2026 | Image Formats  |[image_formats.R](https://github.com/bsmity13/BCB5200/blob/main/code/image_formats.R) |  
+|2/5/2026  | Data Wrangling  |[data_wrangling.R](https://github.com/bsmity13/BCB5200/blob/main/code/data_wrangling.R) |
+|2/5/2026  | Data Wrangling Extras  |[data_wrangling_extra.R](https://github.com/bsmity13/BCB5200/blob/main/code/data_wrangling_extra.R) |  
+|2/19/2026  | `ggplot2`, Part 1  |[ggplot2_pt1.R](https://github.com/bsmity13/BCB5200/blob/main/code/ggplot2_pt1.R) |
+|2/26/2026  | `ggplot2`, Part 2  |[ggplot2_pt2.R](https://github.com/bsmity13/BCB5200/blob/main/code/ggplot2_pt2.R) | 
+|3/5/2026   | Multi-panel Figures |[ggplot2_compose.R](https://github.com/bsmity13/BCB5200/blob/main/code/ggplot2_compose.R) |  
+|3/24/2026  | Colors |[colors.R](https://github.com/bsmity13/BCB5200/blob/main/code/colors.R) |  
+|3/26/2026  | Reduce Items and Attributes |[reduce.R](https://github.com/bsmity13/BCB5200/blob/main/code/reduce.R) |  
+|3/31/2026  | Embed |[embed.R](https://github.com/bsmity13/BCB5200/blob/main/code/embed.R) |  
+|4/2/2026  | Graphics for the Surveys |[survey_figs.R](https://github.com/bsmity13/BCB5200/blob/main/code/survey_figs.R) |  
+|4/14/2026  | GIS in R |[gis.R](https://github.com/bsmity13/BCB5200/blob/main/code/gis.R) |  
+|4/16/2026  | Networks |[network.R](https://github.com/bsmity13/BCB5200/blob/main/code/network.R) |  
+|4/21/2026  | Animations |[anim.R](https://github.com/bsmity13/BCB5200/blob/main/code/anim.R) |   
+|4/28/2026  | Stats      |[stats.R](https://github.com/bsmity13/BCB5200/blob/main/code/stats.R) |  
 
 
 
